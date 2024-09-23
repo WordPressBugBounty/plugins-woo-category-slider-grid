@@ -1,0 +1,1 @@
+# plugins-woo-category-slider-grid
