@@ -57,7 +57,7 @@ class SP_WCS_Slider {
 										'type'       => 'slider',
 										'title'      => __( 'AutoPlay Delay', 'woo-category-slider-grid' ),
 										'subtitle'   => __( 'Set auto play delay time in millisecond.', 'woo-category-slider-grid' ),
-										'title_help' => __( '<div class="spf-info-label">AutoPlay Delay Time</div><div class="spf-short-content">Set autoplay delay or interval time. The amount of time to delay between automatically cycling a category item. e.g. 1000 milliseconds(ms) = 1 second.</div>', 'woo-category-slider-grid' ),
+										'title_help' => '<div class="spf-info-label">' . __( 'AutoPlay Delay Time', 'woo-category-slider-grid' ) . '</div><div class="spf-short-content">' . __( 'Set autoplay delay or interval time. The amount of time to delay between automatically cycling a category item. e.g. 1000 milliseconds(ms) = 1 second.', 'woo-category-slider-grid' ) . '</div>',
 										'unit'       => __( 'ms', 'woo-category-slider-grid' ),
 										'step'       => 100,
 										'max'        => 20000,
@@ -75,7 +75,7 @@ class SP_WCS_Slider {
 										'type'       => 'slider',
 										'title'      => __( 'Scroll Speed', 'woo-category-slider-grid' ),
 										'subtitle'   => __( 'Set pagination speed in millisecond.', 'woo-category-slider-grid' ),
-										'title_help' => __( '<div class="spf-info-label">Scroll Speed</div><div class="spf-short-content">Set carousel scrolling speed. e.g. 1000 milliseconds(ms) = 1 second.</div>', 'woo-category-slider-grid' ),
+										'title_help' => '<div class="spf-info-label">' . __( 'Scroll Speed', 'woo-category-slider-grid' ) . '</div><div class="spf-short-content">' . __( 'Set carousel scrolling speed. e.g. 1000 milliseconds(ms) = 1 second.', 'woo-category-slider-grid' ) . '</div>',
 										'unit'       => __( 'ms', 'woo-category-slider-grid' ),
 										'step'       => 100,
 										'max'        => 20000,
@@ -95,6 +95,7 @@ class SP_WCS_Slider {
 											'wcsp_auto_play',
 											'==',
 											'true',
+											true,
 										),
 									),
 									array(
@@ -113,7 +114,7 @@ class SP_WCS_Slider {
 										'type'       => 'select',
 										'title'      => __( 'Slide Effect', 'woo-category-slider-grid' ),
 										'subtitle'   => __( 'Select a sliding effect.', 'woo-category-slider-grid' ),
-										'title_help' => __( '<div class="spf-info-label">Slide Effect</div><div class="spf-short-content">Enhance your slide transition with charming Slide Effects to add elegance and dynamic motion to your slides.</div>', 'woo-category-slider-grid' ),
+										'title_help' => '<div class="spf-info-label">' . __( 'Slide Effect', 'woo-category-slider-grid' ) . '</div><div class="spf-short-content">' . __( 'Enhance your slide transition with charming Slide Effects to add elegance and dynamic motion to your slides.', 'woo-category-slider-grid' ) . '</div>',
 										'options'    => array(
 											'slide'     => __( 'Slide', 'woo-category-slider-grid' ),
 											'fade'      => __( 'Fade (Pro)', 'woo-category-slider-grid' ),
@@ -162,7 +163,12 @@ class SP_WCS_Slider {
 									array(
 										'type'    => 'notice',
 										'style'   => 'normal',
-										'content' => __( 'Want even more fine-tuned control over your Category Slider navigation display? <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade to Pro</b></a>', 'woo-category-slider-grid' ),
+										'content' => sprintf(
+											/* translators: 1: start link and bold tag, 2: close tag. */
+											__( 'Want even more fine-tuned control over your Category Slider navigation display? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
+											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+											'</b></a>'
+										),
 									),
 									array(
 										'id'     => 'wcsp_carousel_navigation',
@@ -246,6 +252,7 @@ class SP_WCS_Slider {
 											'navigation',
 											'!=',
 											'false',
+											true,
 										),
 									),
 									array(
@@ -265,6 +272,7 @@ class SP_WCS_Slider {
 											'navigation',
 											'!=',
 											'false',
+											true,
 										),
 									),
 
@@ -278,7 +286,12 @@ class SP_WCS_Slider {
 									array(
 										'type'    => 'notice',
 										'style'   => 'normal',
-										'content' => __( 'Want even more fine-tuned control over your Category Slider pagination display? <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade to Pro</b></a>', 'woo-category-slider-grid' ),
+										'content' => sprintf(
+											/* translators: 1: start link and bold tag, 2: close tag. */
+											__( 'Want even more fine-tuned control over your Category Slider pagination display? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
+											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+											'</b></a>'
+										),
 									),
 									array(
 										'id'     => 'wcsp_carousel_pagination',
@@ -367,6 +380,7 @@ class SP_WCS_Slider {
 											'pagination',
 											'!=',
 											'false',
+											true,
 										),
 									),
 								),

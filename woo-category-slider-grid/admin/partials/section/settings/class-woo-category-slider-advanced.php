@@ -39,7 +39,7 @@ class SP_WCS_Advanced {
 						'id'         => 'wcsp_delete_all_data',
 						'type'       => 'checkbox',
 						'title'      => __( 'Clean-up Data on Deletion', 'woo-category-slider-grid' ),
-						'title_help' => __( 'Check this box if you would like Category Slider for WooCommerce to completely remove all of its data when the plugin is deleted.', 'woo-category-slider-grid' ),
+						'title_help' => __( 'Check this box if you would like WooCategory to completely remove all of its data when the plugin is deleted.', 'woo-category-slider-grid' ),
 						'default'    => false,
 					),
 					array(

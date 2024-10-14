@@ -112,6 +112,10 @@ div.sp-wcsp-options.spf-theme-light .spf-nav ul li .spf-section-active {
 	font-weight: 500;
 }
 
+.sp-wcsp-options .spf-tab-active a {
+	margin-right: -1px;
+}
+
 /**
  * Free Version
  */
@@ -170,7 +174,7 @@ div.sp-wcsp-options.spf-theme-light .spf-nav ul li .spf-section-active {
 }
 
 .spf-field.spf-field-image_select.wcsp_layout_presets img {
-	width: 110px;
+	width: 106px;
 }
 
 .spf-field.spf-field-image_select.wcsp_cat_content_position.thumbnail_shape img {
@@ -372,17 +376,9 @@ div.sp-wcsp-options.spf-theme-light .spf-nav ul li .spf-section-active {
 	padding-top: 15px;
 }
 
-#sp_wcsp_shortcode_banner_options.postbox {
+#sp_wcsp_layout_options.postbox {
 	margin-bottom: 0;
 }
-
-/* .spf-nav {
-  display: block;
-  position: relative;
-  z-index: 10;
-  float: left;
-  width: 225px;
-} */
 
 .spf-nav ul {
 	clear: left;
@@ -406,7 +402,7 @@ div.sp-wcsp-options.spf-theme-light .spf-nav ul li .spf-section-active {
 	transition: all 0.3s ease;
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-header .support a,
+#spf-section-sp_wcsp_layout_options_1 .wcsp-admin-header .support a,
 .spf-nav ul li a:focus {
 	outline: none;
 	-moz-box-shadow: none;
@@ -550,7 +546,7 @@ div.sp-wcsp-options.spf-theme-light .spf-nav ul li .spf-section-active {
 }
 
 /*
-Category Slider for WooCommerce Custom CSS.
+WooCategory Custom CSS.
 */
 
 .sp-wcsp-options .spf-nav {
@@ -730,7 +726,7 @@ Category Slider for WooCommerce Custom CSS.
 	text-align: left;
 	text-decoration: none;
 	max-width: 250px;
-	background-color: rgba(12, 25, 36, .9);
+	background-color: rgba(12, 25, 36, .98);
 	border-radius: 3px;
 	padding: 14px 20px;
 	color: #94b2c1;
@@ -989,10 +985,53 @@ Category Slider for WooCommerce Custom CSS.
 	display: none;
 }
 
+/* Layout presets */
+#sp_wcsp_layout_options .spf-field .spf-title {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#sp_wcsp_layout_options .spf-field .spf-fieldset {
+    margin-left: unset;
+    width: 100%;
+}
+
+#spf-section-sp_wcsp_layout_options_1 .spf-field:nth-child(2),
+#spf-section-sp_wcsp_layout_options_1 .spf-field:nth-child(3),
+#spf-section-sp_wcsp_layout_options_1 .spf-field:nth-child(4) {
+    padding-bottom: 0;
+}
+
+#spf-section-sp_wcsp_layout_options_1 .spf-field:nth-child(3),
+#spf-section-sp_wcsp_layout_options_1 .spf-field:nth-child(4) {
+	padding-top: 15px
+}
+
+#spf-section-sp_wcsp_layout_options_1 .spf-field:nth-child(6) {
+	padding-top: 10px
+}
+
+.sp-category-slider-banner .sp-category-logo {
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.sp-category-slider-version {
+    color: #ffffff;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: 1px solid #ffffff;
+    padding: 3px 10px;
+    border-radius: 15px;
+    margin: 0 5px;
+}
+
 /**
 * Custom CSS
 */
-
 .spf-field.spf-field-wp_editor.wcsp_carousel_content_source .spf-fieldset,
 .spf-field.spf-field-background_adv.wcsp_carousel_content_bg .spf-fieldset {
 	margin-left: 0;
@@ -1205,7 +1244,7 @@ Category Slider for WooCommerce Custom CSS.
 	z-index: 1;
 	float: left;
 	cursor: pointer;
-	padding: 7px 14px;
+	padding: 10px 14px;
 	min-width: 40px;
 	text-align: center;
 	color: #555;
@@ -1351,11 +1390,23 @@ Category Slider for WooCommerce Custom CSS.
 	pointer-events: none;
 }
 
+.spf--sibling.spf--image.wcsp-pro-feature img {
+	/* opacity: 0.7; */
+	cursor: default;
+}
+
 .spf-field-image_select .spf--image p {
 	text-align: center;
 	margin-top: 5px;
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 13px;
+}
+
+.spf-field-image_select.wcsp_cat_content_position .spf--image
+ p {
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 8px;
 }
 
 .spf-field-image_select.carousel-style .spf--image p,
@@ -1920,14 +1971,8 @@ Category Slider for WooCommerce Custom CSS.
 	box-shadow: none;
 }
 
-
 .spf-field-notice .spf-notice{
-    border-radius: 2px;
-    padding: 8px 16px;
-    background: #edf8fc;
-    color: #3c434a;
     position: relative;
-    border: 1px solid #c9dbe3;
 }
 
 /**
@@ -2016,7 +2061,10 @@ Category Slider for WooCommerce Custom CSS.
 }
 
 .spf-tooltip.support-tooltip {
-	max-width: 300px;
+    max-width: 299px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .spf-tooltip.support-tooltip a.spf-open-docs {
@@ -3825,7 +3873,7 @@ span.tooltip-icon {
  *Custom Style for the wcsp
  *
  **/
-#spf-section-sp_wcsp_shortcode_banner_options_1 .spf-field-gallery .spf-title,
+#spf-section-sp_wcsp_layout_options_1 .spf-field-gallery .spf-title,
 .wcsp_carousel_content_wrapper .spf-title,
 .wcsp-video-description .spf-title,
 .wcsp-video-field-wrapper>.spf-title {
@@ -3833,7 +3881,7 @@ span.tooltip-icon {
 	/* margin-bottom: 12px; */
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .spf-field-gallery .spf-fieldset,
+#spf-section-sp_wcsp_layout_options_1 .spf-field-gallery .spf-fieldset,
 .wcsp_carousel_content_wrapper .spf-fieldset,
 .wcsp-video-description .spf-fieldset,
 .wcsp-video-field-wrapper>.spf-fieldset {
@@ -3841,19 +3889,19 @@ span.tooltip-icon {
 	margin-left: 0;
 }
 
-#sp_wcsp_shortcode_banner_options .postbox-header,
+#sp_wcsp_layout_options .postbox-header,
 #sp_wcsp_shortcode_options .postbox-header,
 #sp_wcsp_display_shortcode .postbox-header,
 #sp_wcsp_display_shortcode .hndle,
 #sp_wcsp_display_shortcode .handlediv,
 #sp_wcsp_shortcode_options .hndle,
 #sp_wcsp_shortcode_options .handlediv,
-#sp_wcsp_shortcode_banner_options .handlediv,
-#sp_wcsp_shortcode_banner_options .hndle {
+#sp_wcsp_layout_options .handlediv,
+#sp_wcsp_layout_options .hndle {
 	display: none;
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-header {
+#spf-section-sp_wcsp_layout_options_1 .wcsp-admin-header {
 	/* background-color: #cc2b5e; */
 	padding: 18px 26px;
 	overflow: hidden;
@@ -3861,17 +3909,17 @@ span.tooltip-icon {
 	background: linear-gradient(90deg, #6D296D, #C92A5F);
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-header img {
+#spf-section-sp_wcsp_layout_options_1 .wcsp-admin-header img {
 	max-width: 200px;
 	height: 35px;
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-header .support {
+#spf-section-sp_wcsp_layout_options_1 .wcsp-admin-header .support {
 	margin-left: 16px;
 	float: right;
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-header .support a {
+#spf-section-sp_wcsp_layout_options_1 .wcsp-admin-header .support a {
 	color: #ffffff;
 	text-decoration: none;
 	line-height: 35px;
@@ -3880,69 +3928,28 @@ span.tooltip-icon {
 }
 
 /* ShortCode Area */
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-admin-shortcode {
+#spf-section-sp_wcsp_copy_shortcode_1 .wcsp-admin-shortcode {
 	margin: 0;
 	padding: 0;
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap {
-	display: inline-flex;
-	width: 100%;
-	background-color: #fffdfd;
-	text-align: center;
-}
-
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-col-lg-3 {
-	border-right: 1px solid #dddddd;
-	width: 50%;
-}
-
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-col-lg-3:last-of-type {
-	border-right: 0;
-}
-
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-col-lg-3 .wcsp-scode-content {
-	padding: 42px 20px;
-}
-
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-col-lg-3:last-of-type .wcsp-scode-content {
-	padding: 42px 20px 0 20px;
-}
-
-@media screen and (max-width: 1200px) {
-	#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap {
-		display: block;
-	}
-
-	#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-col-lg-3 {
-		width: 100%;
-		display: block;
-		border-bottom: 1px solid #ddd;
-		border-right: none;
-	}
-
-	#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-col-lg-3:last-child {
-		padding-bottom: 42px;
-	}
-}
-
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-scode-title {
+#spf-section-sp_wcsp_copy_shortcode_1 .wcsp-scode-wrap .wcsp-scode-title {
 	font-weight: 500;
 	font-size: 17px;
 	padding-top: 0;
 	color: #5b6571;
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-scode-content p {
+#spf-section-sp_wcsp_copy_shortcode_1 .wcsp-scode-wrap .wcsp-scode-content p {
 	margin-top: 2px;
 	color: #4c5158;
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-scode-content .selectable {
+#spf-section-sp_wcsp_copy_shortcode_1 .wcsp-scode-wrap .wcsp-scode-content .selectable {
 	background-color: rgba(204, 43, 94, 0.04);
 	color: #5b5b5b;
 	padding: 10px 10px 10px 30px;
-	display: inline-block;
+	display: block;
 	-webkit-user-select: all;
 	-moz-user-select: all;
 	-ms-user-select: all;
@@ -3957,14 +3964,13 @@ span.tooltip-icon {
 }
 
 .wcsp-after-copy-text {
-	top: 0px;
+	bottom: -50px;
 	opacity: 0;
 	z-index: 9999;
 	position: fixed;
-	width: 250px;
-	left: 50%;
+	width: 220px;
+	left: 182px;
 	text-align: center;
-	margin-left: -125px;
 	padding: 13px 15px;
 	line-height: 15px;
 	color: #5db62e;
@@ -3973,23 +3979,20 @@ span.tooltip-icon {
 	border: 1px solid #a2de83;
 }
 
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .wcsp-scode-content .wcsp-copy-btn {
-	width: 16px;
-	margin-left: 10px;
-	position: absolute;
-	top: 50%;
-	margin-top: -7px;
-}
-
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap .shortcode-wrap {
-	position: relative;
-	display: inline-block;
-}
-
-#spf-section-sp_wcsp_shortcode_banner_options_1 .wcsp-scode-wrap img {
+#spf-section-sp_wcsp_copy_shortcode_1 .wcsp-scode-wrap img {
 	max-width: 100%;
 	display: block;
 	margin: 0 auto;
+}
+
+#sp_wcsp_promotion_section .handle-actions,
+#sp_wcsp_copy_shortcode .handle-actions {
+	display: none;
+}
+
+#sp_wcsp_promotion_section .postbox-header,
+#sp_wcsp_copy_shortcode .postbox-header {
+	pointer-events: none;
 }
 
 /* Pro only filed css */
@@ -4180,6 +4183,7 @@ span.tooltip-icon {
 	opacity: 1;
 	pointer-events: painted;
 	transition: all 0.2s linear;
+	font-size: 12px;
 }
 
 /* title-tip down */
@@ -4234,7 +4238,7 @@ p.category-pro-img-title {
 }
 
 .category-pro-img-title a.wcsp-live-demo-icon {
-	margin-left: 6px;
+	margin-left: 3px;
 }
 
 .category-pro-img-title a.wcsp-live-demo-icon>i.icon-demo_link {
@@ -4535,7 +4539,7 @@ p.category-pro-img-title {
 	max-width: 670px;
 	box-sizing: border-box;
 	position: relative;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	margin-top: 6px;
 }
 
@@ -4544,14 +4548,12 @@ p.category-pro-img-title {
 }
 
 .spf-text-desc {
-	color: #23282d;
-	border-radius: 2px;
-	padding: 8px 16px;
-	background: #edf8fc;
-	color: #3c434a;
-	position: relative;
-	border: 1px solid #c9dbe3;
 	position: absolute;
+}
+
+.wcsp_cat_content_position .spf-description-wrap .spf-text-desc {
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .sp_category-carousel-nav-position .spf-description-wrap .spf-text-desc{

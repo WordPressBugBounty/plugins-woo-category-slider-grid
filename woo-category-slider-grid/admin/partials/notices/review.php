@@ -72,11 +72,11 @@ class Woo_Category_Slider_Review {
 		?>
 		<div id="sp-woocatslider-review-notice" class="sp-woocatslider-review-notice">
 			<div class="sp-woocatslider-plugin-icon">
-				<img src="<?php echo esc_url( SP_WCS_URL . 'admin/img/wcs-notice.svg' ); ?>" alt="Category Slider for Woocommerce">
+				<img src="<?php echo esc_url( SP_WCS_URL . 'admin/img/wcs-notice.svg' ); ?>" alt="WooCategory">
 			</div>
 			<div class="sp-woocatslider-notice-text">
-				<h3>Enjoying <strong>Category Slider for Woocommerce</strong>?</h3>
-				<p>We hope you had a wonderful experience using <strong>Category Slider for Woocommerce</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/?filter=5#new-post" target="_blank"><strong>WordPress.org</strong></a>.
+				<h3>Enjoying <strong>WooCategory</strong>?</h3>
+				<p>We hope you had a wonderful experience using <strong>WooCategory</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/?filter=5#new-post" target="_blank"><strong>WordPress.org</strong></a>.
 				Your positive review will help us improve. Thank you! 😊</p>
 
 				<p class="sp-woocatslider-review-actions" data-nonce="<?php echo esc_attr( wp_create_nonce( 'dismiss-review-notice' ) ); ?>">

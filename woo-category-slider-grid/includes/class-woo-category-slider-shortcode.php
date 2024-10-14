@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that defines the woo category slider shortcode.
+ * The file that defines the woocategory shortcode.
  *
  * @link       https://shapedplugin.com/
  * @since      1.1.0
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Woo category slider shortcode class
+ * Woocategory slider shortcode class
  */
 class Woo_Category_Slider_Shortcode {
 
@@ -76,12 +76,13 @@ class Woo_Category_Slider_Shortcode {
 	 * @param array $post_id Shortcode ID.
 	 * @param array $shortcode_meta get all options.
 	 * @param array $title shows section title.
+	 * @param array $layout_meta get layout options.
 	 */
-	public static function sp_wcsp_html_show( $post_id, $shortcode_meta, $title ) {
+	public static function sp_wcsp_html_show( $post_id, $shortcode_meta, $title, $layout_meta ) {
 		//
 		// GENERAL SETTINGS.
 		//
-		$layout_preset = isset( $shortcode_meta['wcsp_layout_presets'] ) ? $shortcode_meta['wcsp_layout_presets'] : '';
+		$layout_preset = isset( $layout_meta['wcsp_layout_presets'] ) ? $layout_meta['wcsp_layout_presets'] : '';
 
 		// Columns.
 		$column        = isset( $shortcode_meta['wcsp_number_of_column'] ) ? $shortcode_meta['wcsp_number_of_column'] : '';
@@ -127,10 +128,8 @@ class Woo_Category_Slider_Shortcode {
 		$mobile_scroll        = isset( $slide_to_scroll['mobile'] ) ? $slide_to_scroll['mobile'] : '';
 
 		// Navigation.
-		// $navigation = isset( $shortcode_meta['wcsp_navigation'] ) ? $shortcode_meta['wcsp_navigation'] : '';
 		$navigation = isset( $shortcode_meta['wcsp_carousel_navigation']['navigation'] ) && $shortcode_meta['wcsp_carousel_navigation']['navigation'] ? 'show' : 'hide';
 		// Pagination.
-		// $pagination = isset( $shortcode_meta['wcsp_pagination'] ) ? $shortcode_meta['wcsp_pagination'] : '';.
 		$pagination = isset( $shortcode_meta['wcsp_carousel_pagination']['pagination'] ) && $shortcode_meta['wcsp_carousel_pagination']['pagination'] ? 'show' : 'hide';
 
 		// Miscellaneous.
@@ -297,9 +296,10 @@ class Woo_Category_Slider_Shortcode {
 			return;
 		}
 		$post_id        = esc_attr( intval( $attributes['id'] ) );
+		$layout_meta    = get_post_meta( $post_id, 'sp_wcsp_layout_options', true );
 		$shortcode_meta = get_post_meta( $post_id, 'sp_wcsp_shortcode_options', true );
 		// check the shortcode options existence.
-		if ( ! is_array( $shortcode_meta ) ) {
+		if ( ! is_array( $shortcode_meta ) || ! is_array( $layout_meta ) ) {
 			return;
 		}
 		$title = get_the_title( $post_id );
@@ -314,12 +314,12 @@ class Woo_Category_Slider_Shortcode {
 			wp_enqueue_style( 'sp-wcs-font-awesome' );
 			wp_enqueue_style( 'woo-category-slider-grid' );
 			// Load dynamic style.
-			$dynamic_style = Woo_Category_Slider_Public::load_dynamic_style( $post_id, $shortcode_meta );
+			$dynamic_style = Woo_Category_Slider_Public::load_dynamic_style( $post_id, $shortcode_meta, $layout_meta );
 			echo '<style id="sp_category_dynamic_css' . $post_id . '">' . wp_strip_all_tags( $dynamic_style['dynamic_css'] ) . '</style>'; // phpcs:ignore
 		}
 		// Update options if the existing shortcode id option not found.
 		Woo_Category_Slider_Public::wcs_db_options_update( $post_id, $get_page_data );
-		self::sp_wcsp_html_show( $post_id, $shortcode_meta, $title );
+		self::sp_wcsp_html_show( $post_id, $shortcode_meta, $title, $layout_meta );
 		return ob_get_clean();
 	}
 }

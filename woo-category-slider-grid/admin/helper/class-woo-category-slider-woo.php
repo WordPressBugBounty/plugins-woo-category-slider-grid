@@ -102,7 +102,12 @@ class SP_WCS_WOO {
 	 */
 	public function show_activation_notice() {
 		echo '<div class="updated notice is-dismissible"><p>';
-		echo __( 'Plugin <strong>activated.</strong>', 'woo-category-slider-grid' );
+		printf(
+			/* translators: 1: start bold tag, 2: close tag. */
+			__( 'Plugin %1$sactivated.%2$s', 'woo-category-slider-grid' ),
+			'<strong>',
+			'</strong>'
+		);
 		echo '</p></div>';
 	}
 

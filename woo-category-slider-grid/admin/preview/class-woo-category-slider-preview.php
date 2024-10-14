@@ -50,19 +50,26 @@ class Woo_Category_Slider_Preview {
 		parse_str( $data, $setting );
 		// Shortcode id.
 		$post_id        = esc_attr( $setting['post_ID'] );
+		$layout_meta    = $setting['sp_wcsp_layout_options'];
 		$shortcode_meta = $setting['sp_wcsp_shortcode_options'];
-		$layout_preset  = isset( $shortcode_meta['wcsp_layout_presets'] ) ? $shortcode_meta['wcsp_layout_presets'] : '';
+		$layout_preset  = isset( $layout_meta['wcsp_layout_presets'] ) ? $layout_meta['wcsp_layout_presets'] : '';
 
 		// If layout is not slider or carousel then show a pro notice in the preview.
 		if ( 'slider' !== $layout_preset && 'carousel' !== $layout_preset ) {
-			echo '<div class="wcsp-pro-notice-preview">This feature is only available to pro users. To access it, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade to Pro!</b></a></div>';
+			printf(
+				/* translators: 1: start div tag, 2: start link and bold tag, 3: close bold and link tag. */
+				__( '%1$sThis feature is only available to pro users. To access it, %2$sUpgrade to Pro!%3$s', 'woo-category-slider-grid' ),
+				'<div class="wcsp-pro-notice-preview">',
+				'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+				'</b></a></div>'
+			);
 			die();
 		}
 		$title         = $setting['post_title'];
-		$dynamic_style = Woo_Category_Slider_Public::load_dynamic_style( $post_id, $shortcode_meta );
+		$dynamic_style = Woo_Category_Slider_Public::load_dynamic_style( $post_id, $shortcode_meta, $layout_meta );
 
 		echo '<style id="sp_category_dynamic_css' . $post_id . '">' . wp_strip_all_tags( $dynamic_style['dynamic_css'] ) . '</style>';//phpcs:ignore
-		Woo_Category_Slider_Shortcode::sp_wcsp_html_show( $post_id, $shortcode_meta, $title );
+		Woo_Category_Slider_Shortcode::sp_wcsp_html_show( $post_id, $shortcode_meta, $title, $layout_meta );
 		?>
 		<script src="<?php echo esc_url( SP_WCS_URL . 'public/js/swiper-config.js' ); ?>" ></script>
 		<script src="<?php echo esc_url( SP_WCS_URL . 'public/js/preloader.js' ); ?>" ></script>

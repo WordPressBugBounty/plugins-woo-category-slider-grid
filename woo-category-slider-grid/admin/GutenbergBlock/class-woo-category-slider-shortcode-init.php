@@ -161,14 +161,15 @@ if ( ! class_exists( 'Woo_Category_Slider_Gutenberg_Block_Init' ) ) {
 			}
 
 			if ( is_null( $attributes['shortcode'] ) || '' === $attributes['shortcode'] ) {
-				return __( '<i></i>', 'woo-category-slider-grid' );
+				return '<i></i>';
 			}
 
 			if ( ! $attributes['is_admin'] ) {
 				return do_shortcode( '[woocatslider id="' . sanitize_text_field( $attributes['shortcode'] ) . '"]' );
 			}
+			$edit_page_link = get_edit_post_link( sanitize_text_field( $attributes['shortcode'] ) );
 
-			return '<div id="' . uniqid() . '">' . do_shortcode( '[woocatslider id="' . sanitize_text_field( $attributes['shortcode'] ) . '"]' ) . '</div>';
+			return '<div id="' . uniqid() . '"><a href="' . esc_url( $edit_page_link ) . '" target="_blank" class="wcsp-block-edit-button">' . esc_html__( 'Edit Category View', 'woo-category-slider-grid' ) . '</a>' . do_shortcode( '[woocatslider id="' . sanitize_text_field( $attributes['shortcode'] ) . '"]' ) . '</div>';
 		}
 	}
 }

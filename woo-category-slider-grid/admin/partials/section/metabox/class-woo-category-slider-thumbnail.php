@@ -56,6 +56,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail',
 							'==',
 							'true',
+							true,
 						),
 					),
 					array(
@@ -91,6 +92,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail|wcsp_thumbnail_size',
 							'==|==',
 							'true|custom',
+							true,
 						),
 					),
 					array(
@@ -112,6 +114,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail|wcsp_thumbnail_size',
 							'==|==',
 							'true|custom',
+							true,
 						),
 					),
 					array(
@@ -129,6 +132,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail',
 							'==',
 							'true',
+							true,
 						),
 					),
 					array(
@@ -139,7 +143,12 @@ class SP_WCS_Thumbnail {
 						'option_name' => true,
 						'title'       => __( 'Shape', 'woo-category-slider-grid' ),
 						'subtitle'    => __( 'Choose a shape for thumbnail.', 'woo-category-slider-grid' ),
-						'desc'        => __( 'To unleash your creativity with flexible Category Thumbnail styling options, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade to Pro!</b></a>', 'woo-category-slider-grid' ),
+						'desc'        => sprintf(
+							/* translators: 1: start link and bold tag, 2: close tag. */
+							__( 'To unleash your creativity with flexible Category Thumbnail styling options, %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
+							'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+							'</b></a>'
+						),
 						'options'     => array(
 							'square'  => array(
 								'image'       => SP_WCS_URL . 'admin/img/shapes/square.svg',
@@ -166,6 +175,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail',
 							'==',
 							'true',
+							true,
 						),
 					),
 
@@ -182,6 +192,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail',
 							'==',
 							'true',
+							true,
 						),
 					),
 					array(
@@ -200,6 +211,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail|wcsp_category_thumb_border',
 							'==|==',
 							'true|true',
+							true,
 						),
 					),
 					array(
@@ -221,6 +233,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail|wcsp_category_thumb_border',
 							'==|==',
 							'true|true',
+							true,
 						),
 					),
 					array(
@@ -251,6 +264,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail',
 							'==',
 							'true',
+							true,
 						),
 					),
 					array(
@@ -271,6 +285,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail',
 							'==',
 							'true',
+							true,
 						),
 					),
 
@@ -289,6 +304,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail',
 							'==',
 							'true',
+							true,
 						),
 					),
 					array(
@@ -314,6 +330,7 @@ class SP_WCS_Thumbnail {
 							'wcsp_thumbnail',
 							'==',
 							'true',
+							true,
 						),
 					),
 				), // End of fields array.

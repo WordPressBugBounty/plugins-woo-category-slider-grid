@@ -55,7 +55,7 @@ function sp_wcsp_delete_plugin_data() {
 	}
 
 	// Delete slider post meta.
-	delete_post_meta_by_key( 'sp_wcsp_shortcode_banner_options' );
+	delete_post_meta_by_key( 'sp_wcsp_layout_options' );
 	delete_post_meta_by_key( 'sp_wcsp_shortcode_options' );
 }
 

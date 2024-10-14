@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Elementor woo category slider free shortcode Widget.
+ * Elementor WooCategory slider free shortcode Widget.
  *
  * @since 1.4.4
  */
@@ -27,7 +27,7 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Woo Category Slider Deprecated', 'woo-category-slider-grid' );
+		return __( 'WooCategory Deprecated', 'woo-category-slider-grid' );
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 		$this->add_control(
 			'sp_woo_category_slider_free_shortcode',
 			array(
-				'label'       => __( 'Woo Category Slider Shortcode(s)', 'woo-category-slider-grid' ),
+				'label'       => __( 'WooCategory Shortcode(s)', 'woo-category-slider-grid' ),
 				'type'        => \Elementor\Controls_Manager::SELECT2,
 				'label_block' => true,
 				'default'     => '',
@@ -106,11 +106,11 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 			'deprecated_notice',
 			array(
 				'type'            => \Elementor\Controls_Manager::DEPRECATED_NOTICE,
-				'widget'          => 'Woo Category Slider Deprecated',
+				'widget'          => 'WooCategory Deprecated',
 				'since'           => '1.4.6',
 				'last'            => '2.2.0',
-				'plugin'          => 'Category Slider for WooCommerce',
-				'replacement'     => 'Woo Category Slider',
+				'plugin'          => 'WooCategory',
+				'replacement'     => 'WooCategory',
 				'content_classes' => 'sp-woo-category-slider-deprecated',
 			)
 		);
@@ -120,7 +120,7 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 	}
 
 	/**
-	 * Render woo category slider free shortcode widget output on the frontend.
+	 * Render WooCategory slider free shortcode widget output on the frontend.
 	 *
 	 * @since 1.4.4
 	 * @access protected
@@ -142,12 +142,13 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 
 			// Preset Layouts.
 			$shortcode_meta = get_post_meta( $post_id, 'sp_wcsp_shortcode_options', true );
+			$layout_meta    = get_post_meta( $post_id, 'sp_wcsp_layout_options', true );
 			$title          = get_the_title( $post_id );
 			// Load dynamic style.
 			$dynamic_style = Woo_Category_Slider_Public::load_dynamic_style( $post_id, $shortcode_meta );
 			echo '<style id="sp_category_dynamic_css' . esc_attr( $post_id ) . '">' . wp_strip_all_tags( $dynamic_style['dynamic_css'] ) . '</style>'; // phpcs:ignore
 
-			Woo_Category_Slider_Shortcode::sp_wcsp_html_show( $post_id, $shortcode_meta, $title );
+			Woo_Category_Slider_Shortcode::sp_wcsp_html_show( $post_id, $shortcode_meta, $title, $layout_meta );
 			?>
 			<script src="<?php echo esc_url( SP_WCS_URL . 'public/js/swiper-config.min.js' ); ?>" ></script>
 			<script src="<?php echo esc_url( SP_WCS_URL . 'public/js/preloader.min.js' ); ?>" ></script>

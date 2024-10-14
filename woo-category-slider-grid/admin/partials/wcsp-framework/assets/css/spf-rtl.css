@@ -533,3 +533,105 @@
 .sp-wcsp-options .spf-buttons {
   direction: rtl;
 }
+
+.rtl .wcsp-after-copy-text {
+  left: unset;
+  right: 182px;
+}
+
+.rtl .wcsp-submit-options a {
+  margin-left: unset;
+  margin-right: 20px;
+}
+
+.rtl .spf-metabox .sp-category-short-links a i.fa {
+  margin-right: unset;
+  margin-left: 7px;
+}
+
+.rtl #sp_wcsp_layout_options .spf-field .spf-fieldset {
+  margin-right: unset;
+}
+
+.rtl .spf-field-image_select .spf--image {
+  margin: 0 0 5px 10px;
+}
+
+.rtl .spf-field.spf-field-fieldset.wcsp-navigation-and-pagination-style .spf-fieldset-content>.wcsp_navigation .spf-title, 
+.rtl .spf-field.spf-field-fieldset.wcsp-navigation-and-pagination-style .spf-fieldset-content>.wcsp_pagination .spf-title {
+  right: 20px;
+  left: unset;
+}
+
+.rtl .spf-field.spf-field-switcher.wcsp_pagination .spf-fieldset,
+.rtl .spf-field.spf-field-switcher.wcsp_navigation .spf-fieldset {
+  margin-right: 340px;
+}
+
+.rtl .spf-field.spf-field-column:not(.spf-field-checkbox.wcsp_hide_on_mobile)>.spf-fieldset {
+  margin-left: 34%;
+}
+
+.rtl .spf-tooltip:not(.support-tooltip):before {
+  right: -10px;
+  transform: rotate(180deg);
+}
+
+.rtl .spf-tooltip,
+.rtl .spf-tooltip .spf-info-label {
+  text-align: right;
+}
+
+.rtl .spf-tooltip.support-tooltip {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 4px;
+}
+
+.rtl .spf-tooltip.support-tooltip a.spf-open-docs {
+  margin-right: 0;
+}
+
+.rtl .spf-field-tabbed .spf-pros-tabbed-nav a:focus,
+.rtl .spf-field-tabbed .spf-tabbed-nav a.spf-tabbed-active {
+  -webkit-box-shadow: inset -4px 0px 0px #c92a5f;
+  box-shadow: inset -4px 0px 0px #c92a5f;
+}
+
+.rtl .spf-field.spf-field-tabbed .sp--category-icon {
+  margin-right: unset;
+  margin-left: 5px;
+}
+
+.rtl .spf-field-slider .spf--input {
+  direction: ltr;
+}
+
+.rtl .spf-field-slider .ui-slider {
+  direction: ltr;
+  margin-left: 15px;
+  margin-right: unset;
+}
+
+.rtl #spf-section-sp_wcsp_copy_shortcode_1 .wcsp-scode-wrap .wcsp-scode-content .selectable {
+  background-position: calc( 100% - 10px ) center;
+  padding-right: 35px;
+  text-align: right;
+}
+
+.rtl .sp-wcsp-options .spf-tab-active a {
+	margin-left: -1px;
+}
+
+@media screen and (min-width: 1600px) {
+  .rtl .sp-woo-cat-slider-help .plugin-card:nth-child(odd) {
+      margin-left: 8px
+  }
+
+  .rtl .sp-woo-cat-slider-help .plugin-card:nth-child(2n),
+  .rtl .sp-woo-cat-slider-help .plugin-card:nth-child(3n+1),
+  .rtl .sp-woo-cat-slider-help .plugin-card:nth-child(3n) {
+      margin-right: 8px;
+  }
+}

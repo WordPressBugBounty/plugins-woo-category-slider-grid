@@ -1,8 +1,8 @@
 <?php
 /**
- * The help page for the Woo Category Slider
+ * The help page for the WooCategory
  *
- * @package Woo Category Slider
+ * @package WooCategory
  * @subpackage woo-category-slider-grid/admin
  */
 
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }  // if direct access.
 
 /**
- * The help class for the Woo Category Slider
+ * The help class for the WooCategory
  */
 class Woo_Category_Slider_Help {
 
@@ -118,7 +118,7 @@ class Woo_Category_Slider_Help {
 		);
 		add_submenu_page(
 			'edit.php?post_type=sp_wcslider',
-			__( 'Woo Category Slider Help', 'woo-category-slider-grid' ),
+			__( 'WooCategory Help', 'woo-category-slider-grid' ),
 			__( 'Get Help', 'woo-category-slider-grid' ),
 			'manage_options',
 			'wcsp_help',
@@ -207,6 +207,8 @@ class Woo_Category_Slider_Help {
 						$image_type = 'jpg';
 						break;
 					case 'location-weather':
+					case 'testimonial-free':
+					case 'easy-accordion-free':
 					case 'gallery-slider-for-woocommerce':
 						$image_type = 'gif';
 						break;
@@ -377,7 +379,7 @@ class Woo_Category_Slider_Help {
 	}
 
 	/**
-	 * The Woo Category Slider Help Callback.
+	 * The WooCategory Slider Help Callback.
 	 *
 	 * @return void
 	 */
@@ -401,12 +403,12 @@ class Woo_Category_Slider_Help {
 			<!-- Header section start -->
 			<section class="spwoocs__help header">
 				<div class="spwoocs-header-area-top">
-					<p>You’re currently using <b>Woo Category Slider Lite</b>. To access additional features, consider <a target="_blank" href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=1" ><b>upgrading to Pro!</b></a> 🚀</p>
+					<p>You’re currently using <b>WooCategory Lite</b>. To access additional features, consider <a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115#pricing" ><b>upgrading to Pro!</b></a> 🚀</p>
 				</div>
 				<div class="spwoocs-header-area">
 					<div class="spwoocs-container">
 						<div class="spwoocs-header-logo">
-							<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/logo.svg' ); ?>" alt="">
+							<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/logo-new.svg' ); ?>" alt="">
 							<span><?php echo esc_html( SP_WCS_VERSION ); ?></span>
 						</div>
 					</div>
@@ -434,13 +436,13 @@ class Woo_Category_Slider_Help {
 				<div class="spwoocs-container">
 					<div class="spwoocs-start-page-wrap">
 						<div class="spwoocs-video-area">
-							<h2 class='spwoocs-section-title'>Welcome to Woo Category Slider!</h2>
-							<span class='spwoocs-normal-paragraph'>Thank you for installing Woo Category Slider! This video will help you get started with the plugin. Enjoy!</span>
+							<h2 class='spwoocs-section-title'>Welcome to WooCategory!</h2>
+							<span class='spwoocs-normal-paragraph'>Thank you for installing WooCategory! This video will help you get started with the plugin. Enjoy!</span>
 							<iframe width="724" height="405" src="https://www.youtube.com/embed/X_Czmx3ndjU?si=FG32mVzfhkC-3WEA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 							<ul>
-								<li><a class='spwoocs-medium-btn' href="<?php echo esc_url( home_url( '/' ) . 'wp-admin/post-new.php?post_type=sp_wcslider' ); ?>">Create a Slider</a></li>
+								<li><a class='spwoocs-medium-btn' href="<?php echo esc_url( home_url( '/' ) . 'wp-admin/post-new.php?post_type=sp_wcslider' ); ?>">Create a Category View</a></li>
 								<li><a target="_blank" class='spwoocs-medium-btn' href="https://demo.shapedplugin.com/woocommerce-category-slider/">Live Demo</a></li>
-								<li><a target="_blank" class='spwoocs-medium-btn arrow-btn' href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=1">Explore Woo Category Slider <i class="spwoocs-icon-button-arrow-icon"></i></a></li>
+								<li><a target="_blank" class='spwoocs-medium-btn arrow-btn' href="https://shapedplugin.com/woocategory/?ref=115">Explore WooCategory <i class="spwoocs-icon-button-arrow-icon"></i></a></li>
 							</ul>
 						</div>
 						<div class="spwoocs-start-page-sidebar">
@@ -448,7 +450,7 @@ class Woo_Category_Slider_Help {
 								<div class="spwoocs-info-box-title">
 									<h4><i class="spwoocs-icon-doc-icon"></i> Documentation</h4>
 								</div>
-								<span class='spwoocs-normal-paragraph'>Explore Woo Category Slider plugin capabilities in our enriched documentation.</span>
+								<span class='spwoocs-normal-paragraph'>Explore WooCategory plugin capabilities in our enriched documentation.</span>
 								<a target="_blank" class='spwoocs-small-btn' href="https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/">Browse Now</a>
 							</div>
 							<div class="spwoocs-start-page-sidebar-info-box">
@@ -475,7 +477,7 @@ class Woo_Category_Slider_Help {
 				<div class="spwoocs-container">
 					<div class="spwoocs-call-to-action-top">
 						<h2 class="spwoocs-section-title">Lite vs Pro Comparison</h2>
-						<a target="_blank" href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=1" class='spwoocs-big-btn'>Upgrade to Pro Now!</a>
+						<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115#pricing" class='spwoocs-big-btn'>Upgrade to Pro Now!</a>
 					</div>
 					<div class="spwoocs-lite-to-pro-wrap">
 						<div class="spwoocs-features">
@@ -491,9 +493,9 @@ class Woo_Category_Slider_Help {
 									<span class='spwoocs-pro spwoocs-check-icon'></span>
 								</li>
 								<li class='spwoocs-body'>
-									<span class='spwoocs-title'>Layout Presets (Slider, Grid, Block)</span>
-									<span class='spwoocs-free'><b>1</b></span>
-									<span class='spwoocs-pro'><b>3</b></span>
+									<span class='spwoocs-title'>Category Layouts (Carousel, Slider, Grid, Hierarchy Grid, Inline, etc.)</span>
+									<span class='spwoocs-free'><b>2</b></span>
+									<span class='spwoocs-pro'><b>10+</b></span>
 								</li>
 								<li class='spwoocs-body'>
 									<span class='spwoocs-title'>Ticker Mode Carousel</span>
@@ -659,13 +661,13 @@ class Woo_Category_Slider_Help {
 						</div>
 						<div class="spwoocs-upgrade-to-pro">
 							<h2 class='spwoocs-section-title'>Upgrade to PRO & Enjoy Advanced Features!</h2>
-							<span class='spwoocs-section-subtitle'>Already, <b>15000+</b> people are using Woo Category Slider on their websites to create beautiful showcase, why won’t you!</span>
+							<span class='spwoocs-section-subtitle'>Already, <b>15000+</b> people are using WooCategory on their websites to create beautiful showcase, why won’t you!</span>
 							<div class="spwoocs-upgrade-to-pro-btn">
 								<div class="spwoocs-action-btn">
-									<a target="_blank" href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=1" class='spwoocs-big-btn'>Upgrade to Pro Now!</a>
+									<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115#pricing" class='spwoocs-big-btn'>Upgrade to Pro Now!</a>
 									<span class='spwoocs-small-paragraph'>14-Day No-Questions-Asked <a target="_blank" href="https://shapedplugin.com/refund-policy/">Refund Policy</a></span>
 								</div>
-								<a target="_blank" href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=1" class='spwoocs-big-btn-border'>See All Features</a>
+								<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115" class='spwoocs-big-btn-border'>See All Features</a>
 								<a target="_blank" href="https://demo.shapedplugin.com/woocommerce-category-slider/" class='spwoocs-big-btn-border spwoocs-live-pro-demo'>Pro Live Demo</a>
 							</div>
 						</div>
@@ -673,7 +675,7 @@ class Woo_Category_Slider_Help {
 					<div class="spwoocs-testimonial">
 						<div class="spwoocs-testimonial-title-section">
 							<span class='spwoocs-testimonial-subtitle'>NO NEED TO TAKE OUR WORD FOR IT</span>
-							<h2 class="spwoocs-section-title">Our Users Love Woo Category Slider Pro!</h2>
+							<h2 class="spwoocs-section-title">Our Users Love WooCategory Pro!</h2>
 						</div>
 						<div class="spwoocs-testimonial-wrap">
 							<div class="spwoocs-testimonial-area">
@@ -748,11 +750,11 @@ class Woo_Category_Slider_Help {
 				<div class="spwoocs-container">
 					<div class="spwoocs-about-box">
 						<div class="spwoocs-about-info">
-							<h3>The Best WooCommerce Category Showcase plugin by the Woo Category Slider Team, ShapedPlugin, LLC</h3>
+							<h3>The Best WooCommerce Category Showcase plugin by the WooCategory Team, ShapedPlugin, LLC</h3>
 							<p>At <b>ShapedPlugin LLC</b>, we always want to help WooCommerce store owners boost sales with different easy sales booster plugins. However, we have yet to find a plugin that effectively displays product categories when it's vital for customers to know what products you offer.</p>
 							<p>Hence, we have created a plugin that beautifully displays WooCommerce categories. You can easily filter categories, including parent, child, grandchild, great-grandchild, and more. Check it out now, and you'll love it!</p>
 							<div class="spwoocs-about-btn">
-								<a target="_blank" href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=1" class='spwoocs-medium-btn'>Explore Woo Category Slider</a>
+								<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115" class='spwoocs-medium-btn'>Explore WooCategory</a>
 								<a target="_blank" href="https://shapedplugin.com/about-us/" class='spwoocs-medium-btn spwoocs-arrow-btn'>More About Us <i class="spwoocs-icon-button-arrow-icon"></i></a>
 							</div>
 						</div>
@@ -772,7 +774,7 @@ class Woo_Category_Slider_Help {
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://realtestimonials.io/">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="https://ps.w.org/testimonial-free/assets/icon-256x256.png" alt="">
+								<img src="https://ps.w.org/testimonial-free/assets/icon-256x256.gif" alt="">
 								<h4>Real Testimonials</h4>
 								<p>Simply collect, manage, and display Testimonials on your website and boost conversions.</p>
 							</a>
@@ -788,10 +790,10 @@ class Woo_Category_Slider_Help {
 								<h4>Product Slider for WooCommerce</h4>
 								<p>Boost sales by interactive product Slider, Grid, and Table in your WooCommerce website or store.</p>
 							</a>
-							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://shapedplugin.com/plugin/woocommerce-gallery-slider-pro/">
+							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://woogallery.io/">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="https://ps.w.org/gallery-slider-for-woocommerce/assets/icon-256x256.png" alt="">
-								<h4>Gallery Slider for WooCommerce</h4>
+								<img src="https://ps.w.org/gallery-slider-for-woocommerce/assets/icon-256x256.gif" alt="">
+								<h4>WooGallery</h4>
 								<p>Product gallery slider and additional variation images gallery for WooCommerce and boost your sales.</p>
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://getwpteam.com/">
@@ -812,10 +814,10 @@ class Woo_Category_Slider_Help {
 								<h4>Easy Accordion</h4>
 								<p>Minimize customer support by offering comprehensive FAQs and increasing conversions.</p>
 							</a>
-							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/">
+							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://shapedplugin.com/woocategory/?ref=115">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
 								<img src="https://ps.w.org/woo-category-slider-grid/assets/icon-256x256.png" alt="">
-								<h4>Category Slider for WooCommerce</h4>
+								<h4>WooCategory</h4>
 								<p>Display by filtering the list of categories aesthetically and boosting sales.</p>
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://wptabs.com/">

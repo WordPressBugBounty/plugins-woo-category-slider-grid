@@ -1,12 +1,12 @@
-=== Product Category Slider and Product Category Showcase for WooCommerce – WooCat Slider ===
+=== Product Category Slider and Product Category Showcase for WooCommerce – WooCategory ===
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: product category slider, woocommerce category carousel, product category showcase, woocommerce category slider, product category list
 Requires at least: 5.0
-Tested up to: 6.6
+Tested up to: 6.6.2
 Requires PHP: 5.6
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 WC requires at least: 4.5
-WC tested up to: 9.0.2
+WC tested up to: 9.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,22 +14,22 @@ Display product categories in a visually appealing slider or grid to strategical
 
 == Description ==
 
-[__Live Demo__](https://demo.shapedplugin.com/woocommerce-category-slider/) | [__Documentation__](https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/) | [__Upgrade to Pro!__](https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115)
+[__Live Demo__](https://demo.shapedplugin.com/woocommerce-category-slider/) | [__Documentation__](https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/) | [__Upgrade to Pro!__](https://shapedplugin.com/woocategory/?ref=115#pricing)
 
 [youtube https://www.youtube.com/watch?v=X_Czmx3ndjU&list=PLoUb-7uG-5jMzpAUaCkor0Ldc4F_7gfjz]
 
 = Overview =
 
-[__Category Slider for WooCommerce__](https://demo.shapedplugin.com/woocommerce-category-slider/) helps you display by filtering specific WooCommerce Categories aesthetically in a sliding manner. You can show your product categories with thumbnail, child category, description, shop now button. The plugin has simple and easy to use shortcode generator interface with many handy options which will help you to customize and manage WooCommerce Categories and its content easily without coding.
+[__WooCategory__](https://demo.shapedplugin.com/woocommerce-category-slider/) helps you display by filtering specific WooCommerce Categories aesthetically in a sliding manner. You can show your product categories with thumbnail, child category, description, shop now button. The plugin has simple and easy to use shortcode generator interface with many handy options which will help you to customize and manage WooCommerce Categories and its content easily without coding.
 
-A Category Slider for WooCommerce is one of the best ways to highlight your specific product categories and, if put in the strategic or right position, it will certainly allow you to increase the conversion rate in your shop or site. Category Slider for WooCommerce is free, rapidly growing and comes with great support.
+A WooCategory is one of the best ways to highlight your specific product categories and, if put in the strategic or right position, it will certainly allow you to increase the conversion rate in your shop or site. WooCategory is free, rapidly growing and comes with great support.
 
 
-= Why Category Slider for WooCommerce is important? =
+= Why WooCategory is important? =
 
 In a WooCommerce store or shop, there are many products and their categories. Generally, the product categories are not highlighted well in the store. That’s why your potential customers can’t understand what categories of products are being offered or sold in your shop.
 
-Category Slider for WooCommerce lets your visitors find the category they are looking for without struggling and looking all over the WooCommerce store or site. You can show more product categories at the same time and let them scroll automatically in a slider or show in grid or block view so that your prospective customers can see them all. This makes your shop or site look much more professional, clean and sharp in your customers’ eyes.
+WooCategory lets your visitors find the category they are looking for without struggling and looking all over the WooCommerce store or site. You can show more product categories at the same time and let them scroll automatically in a slider or show in grid or block view so that your prospective customers can see them all. This makes your shop or site look much more professional, clean and sharp in your customers’ eyes.
 
 If you can showcase your product categories in the strategic spots of your store or site, it will effectively increase the conversion rate and achieve the goal!
 
@@ -111,8 +111,8 @@ Designed and Developed by [__ShapedPlugin__](https://shapedplugin.com/)
 
 = AUTOMATIC INSTALLATION (EASIEST WAY) =
 
-To do an automatic install of Category Slider for WooCommerce, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
-In the search field type "Category Slider for WooCommerce". Once you have found it you can install it by simply clicking "Install Now" and then "Activate".
+To do an automatic install of WooCategory, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
+In the search field type "WooCategory". Once you have found it you can install it by simply clicking "Install Now" and then "Activate".
 
 = MANUAL INSTALLATION =
 
@@ -153,6 +153,19 @@ The WordPress codex contains <a href="https://codex.wordpress.org/Managing_Plugi
 
 
 == Changelog ==
+
+= 1.5.1 - Oct 14, 2024 =
+* Improved: The plugin manu name was renamed to 'WooCategory'.
+* Improved: The plugin-backed options have been enhanced.
+* Improved: The Layout Preset option is moved to the top of the Edit Category View page.
+* Improved: The Slider Orientation and Carousel Style options are placed after the Layout Preset option.
+* Improved: The Typography tab options are placed into the Display Settings tab.
+* Improved: The How To Use Shortcode section moved to the right side of the page.
+* Fix: The Fontello icon conflict issue was resolved using a prefix.
+* Fix: Some strings translation issue.
+* Updated: The language (.pot) file.
+* Tested: WordPress 6.6.2 compatibility.
+* Tested: WooCommerce 9.3.3 compatibility.
 
 = 1.5.0 - Jun 28, 2024 =
 * New: The Slider Layout feature.

@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that defines the woo category slider widget.
+ * The file that defines the woocategory widget.
  *
  * @link       https://shapedplugin.com/
  * @since      1.0.0
@@ -23,9 +23,9 @@ class Woo_Category_Slider_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'Woo_Category_Slider_Widget',
-			__( 'Woo Category Slider', 'woo-category-slider-grid' ),
+			__( 'WooCategory', 'woo-category-slider-grid' ),
 			array(
-				'description' => __( 'Display Category Slider for WooCommerce.', 'woo-category-slider-grid' ),
+				'description' => __( 'Display WooCategory.', 'woo-category-slider-grid' ),
 			)
 		);
 	}
@@ -141,7 +141,7 @@ class Woo_Category_Slider_Widget extends WP_Widget {
 }
 
 /**
- *  Category Slider for WooCommerce Widget
+ *  WooCategory Widget
  */
 function sp_wcs_shortcode_widget() {
 	register_widget( 'Woo_Category_Slider_Widget' );

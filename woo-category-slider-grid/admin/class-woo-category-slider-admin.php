@@ -39,7 +39,8 @@ class Woo_Category_Slider_Admin {
 		SP_WCS_Settings::settings( 'sp_wcsp_settings' );
 		SP_WCS_Tools::tools( 'sp_wcsp_tools' );
 		SP_WCS_Metaboxs::preview_metabox( 'sp_wcsp_live_preview' );
-		SP_WCS_Metaboxs::metabox_banner( 'sp_wcsp_shortcode_banner_options' );
+		SP_WCS_Metaboxs::side_metabox();
+		SP_WCS_Metaboxs::metabox_layout( 'sp_wcsp_layout_options' );
 		SP_WCS_Metaboxs::metabox( 'sp_wcsp_shortcode_options' );
 
 		add_action( 'admin_action_wcs_shortcode_duplicate', array( $this, 'wcs_shortcode_duplicate' ) );
@@ -67,7 +68,7 @@ class Woo_Category_Slider_Admin {
 	}
 
 	/**
-	 * Function creates woo category slider duplicate as a draft.
+	 * Function creates WooCategory slider duplicate as a draft.
 	 */
 	public function wcs_shortcode_duplicate() {
 		global $wpdb;
@@ -231,7 +232,7 @@ class Woo_Category_Slider_Admin {
 	public function add_shortcode_form( $column, $post_id ) {
 		switch ( $column ) {
 			case 'shortcode':
-				echo '<div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  Shortcode  Copied to Clipboard! </div><input style="width: 230px;padding: 6pwidth: 230px;padding: 6px;;cursor:pointer;" type="text" onClick="this.select();" readonly="readonly" value="[woocatslider id=&quot;' . esc_attr( $post_id ) . '&quot;]"/>';
+				echo '<div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  ' . esc_html__( 'Shortcode  Copied to Clipboard!', 'woo-category-slider-grid' ) . ' </div><input style="width: 230px;padding: 6pwidth: 230px;padding: 6px;;cursor:pointer;" type="text" onClick="this.select();" readonly="readonly" value="[woocatslider id=&quot;' . esc_attr( $post_id ) . '&quot;]"/>';
 				break;
 			default:
 				break;
@@ -249,13 +250,13 @@ class Woo_Category_Slider_Admin {
 	 */
 	public function add_plugin_action_links( $links, $file ) {
 
-		if ( $file === SP_WCS_BASENAME ) {
+		if ( SP_WCS_BASENAME === $file ) {
 
 			$ui_links = sprintf( '<a href="%s">%s</a>', admin_url( 'post-new.php?post_type=sp_wcslider' ), __( 'Add New', 'woo-category-slider-grid' ) );
 
 			array_unshift( $links, $ui_links );
 
-			$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #35b747; font-weight: 700;">Go Pro!</a>', 'https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115' );
+			$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #35b747; font-weight: 700;">Go Pro!</a>', 'https://shapedplugin.com/woocategory/?ref=115#pricing' );
 		}
 
 		return $links;
@@ -318,7 +319,14 @@ class Woo_Category_Slider_Admin {
 		$screen = get_current_screen();
 		if ( 'sp_wcslider' === $screen->post_type ) {
 			$url  = 'https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/?filter=5#new-post';
-			$text = sprintf( wp_kses_post( 'Enjoying <strong>Category Slider for WooCommerce?</strong> Please rate us <span class="spwoocs-footer-text-star">★★★★★</span> <a href="%s" target="_blank">WordPress.org</a>. Your positive feedback will help us grow more. Thank you! 😊', 'woo-category-slider-grid' ), $url );
+			$text = sprintf(
+				/* translators: 1: start strong tag, 2: close strong tag, 3: start link tag, 4: close link tag. */
+				__( 'Enjoying %1$sWooCategory?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊', 'woo-category-slider-grid' ),
+				'<strong>',
+				'</strong>',
+				'<span class="spwoocs-footer-text-star">★★★★★</span> <a href="' . esc_url( $url ) . '" target="_blank">',
+				'</a>'
+			);
 		}
 
 		return $text;
@@ -332,7 +340,7 @@ class Woo_Category_Slider_Admin {
 	public function admin_footer_version( $text ) {
 		$screen = get_current_screen();
 		if ( 'sp_wcslider' === $screen->post_type ) {
-			$text = 'Woo Category Slider ' . SP_WCS_VERSION;
+			$text = 'WooCategory ' . SP_WCS_VERSION;
 		}
 
 		return $text;
@@ -385,7 +393,7 @@ class Woo_Category_Slider_Admin {
 		$sign        = empty( $_GET ) ? '?' : '&';
 
 		echo '<div class="updated notice is-dismissible notice-sp-wcsp-woo" data-nonce="' . wp_create_nonce( 'dismiss-wcsp-woo-notice' ) . '"><p>';
-		echo wp_kses_post( 'Please ' . $type . ' <a href="' . esc_url( $actual_link . $sign . 'sp-wcsp-woo=' . $type ) . '">WooCommerce</a> plugin to make the <b>Category Slider for WooCommerce</b> work.', 'woo-category-slider-grid' );
+		echo wp_kses_post( 'Please ' . $type . ' <a href="' . esc_url( $actual_link . $sign . 'sp-wcsp-woo=' . $type ) . '">WooCommerce</a> plugin to make the <b>WooCategory</b> work.', 'woo-category-slider-grid' );
 		echo '</p></div>';
 	}
 
@@ -432,5 +440,4 @@ class Woo_Category_Slider_Admin {
 			exit();
 		}
 	}
-
 }

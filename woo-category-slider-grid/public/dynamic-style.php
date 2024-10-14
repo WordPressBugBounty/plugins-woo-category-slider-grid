@@ -12,7 +12,7 @@
 $cat_padding  = isset( $shortcode_meta['wcsp_cat_padding'] ) ? $shortcode_meta['wcsp_cat_padding'] : '';
 $wcsp_options = get_option( 'sp_wcsp_settings' );
 
-$layout_preset              = isset( $shortcode_meta['wcsp_layout_presets'] ) ? $shortcode_meta['wcsp_layout_presets'] : '';
+$layout_preset              = isset( $layout_meta['wcsp_layout_presets'] ) ? $layout_meta['wcsp_layout_presets'] : '';
 $section_title              = isset( $shortcode_meta['wcsp_section_title'] ) && $shortcode_meta['wcsp_section_title'] ? $shortcode_meta['wcsp_section_title'] : false;
 $cat_description            = isset( $shortcode_meta['wcsp_cat_description'] ) ? $shortcode_meta['wcsp_cat_description'] : '';
 $cat_name                   = isset( $shortcode_meta['wcsp_cat_name'] ) ? $shortcode_meta['wcsp_cat_name'] : '';

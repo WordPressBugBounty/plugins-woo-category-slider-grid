@@ -142,6 +142,10 @@
 .sp-woo-cat-slider-help .spwoocs-header-logo {
   position: relative;
   display: inline-block;
+  height: 60px;
+}
+.spwoocs-header-logo img {
+  min-width: 250px;
 }
 .sp-woo-cat-slider-help .spwoocs-header-logo span{
   position: absolute;

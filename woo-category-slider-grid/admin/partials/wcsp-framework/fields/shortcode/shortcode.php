@@ -46,30 +46,42 @@ if ( ! class_exists( 'SP_WCS_Field_shortcode' ) ) {
 			// Get the Post ID.
 			$post_id = get_the_ID();
 
-			echo ( ! empty( $post_id ) ) ? '
-			<div class="wcsp-scode-wrap">
-				<div class="wcsp-col-lg-3">
-					<div class="wcsp-scode-content">
-						<h2 class="wcsp-scode-title">Shortcode</h2>
-						<p>Copy and paste this shortcode into your posts or pages:</p>
-						<div class="shortcode-wrap"><div class="selectable">[woocatslider id="' . esc_attr( $post_id ) . '"]</div></div><div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  Shortcode  Copied to Clipboard! </div>
-					</div>
-				</div>
-				<div class="wcsp-col-lg-3">
-					<div class="wcsp-scode-content">
-						<h2 class="wcsp-scode-title">' . esc_html__( 'Page Builders', 'woo-category-slider-grid' ) . '</h2>
-						<p>' . wp_kses_post( 'Woo Category Slider has seamless integration with <strong>Gutenberg</strong>, Classic Editor, Elementor, Divi, Bricks, Beaver, Oxygen, WPBakery Builder, etc.' ) . '</p>
-					</div> 
-				</div> 
-				<div class="wcsp-col-lg-3">
-					<div class="wcsp-scode-content">
-						<h2 class="wcsp-scode-title">Template Include</h2>
-						<p>Paste the PHP code into your template file:</p>
-						<div class="shortcode-wrap"><div class="selectable">&lt;?php woocatslider(' . esc_attr( $post_id ) . '); ?&gt;</div>
-						</div>
-					</div>
-				</div>
-			</div>' : '';
+			if ( empty( $post_id ) ) {
+				return '';
+			}
+
+			echo '<div class="wcsp-scode-wrap">';
+			if ( isset( $this->field['shortcode'] ) && 'manage_view' === $this->field['shortcode'] ) {
+
+				echo '
+				<div class="wcsp-after-copy-text woo-cat-pagination-not-work"><i class="fa fa-check-circle"></i>  ' . esc_html__( 'The pagination will work in the frontend well.', 'woo-category-slider-grid' ) . '</div>
+				<div class="wcsp-scode-content">
+					<p>' . sprintf(
+						/* translators: 1: start link tag, 2: close link tag. */
+					__( 'To display your product category view, add the following shortcode into your post, custom post types, page, widget or block editor. If adding the category view to your theme files, additionally include the surrounding PHP code, %1$ssee how%2$s.', 'woo-category-slider-grid' ),
+					'<a href="https://docs.shapedplugin.com/docs/woocommerce-category-slider-pro/faq/#template-include" target="_blank">',
+					'</a>'
+				) . '</p>
+					<div class="shortcode-wrap">
+					<div class="selectable">[woocatslider id="' . esc_attr( $post_id ) . '"]</div></div>
+					<div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  ' . esc_html__( 'Shortcode  Copied to Clipboard!', 'woo-category-slider-grid' ) . '</div>
+				</div>';
+
+			} else {
+
+				echo '
+				<div class="wcsp-scode-content">
+					<p>' .
+					sprintf(
+						/* translators: 1: start strong tag, 2: close tag. */
+						__( 'WooCategory has seamless integration with Gutenberg, Classic Editor, %1$sElementor%2$s, Divi, Bricks, Beaver, Oxygen, WPBakery Builder, etc.', 'woo-category-slider-grid' ),
+						'<strong>',
+						'</strong>'
+					) . '
+					</p>
+				</div>';
+			}
+			echo '</div>';
 		}
 	}
 }

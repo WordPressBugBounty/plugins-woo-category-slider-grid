@@ -70,8 +70,9 @@ if ( ! class_exists( 'SP_WCS_Field_image_select' ) ) {
 					$active        = ( in_array( $key, $value, true ) ) ? ' spf--active' : '';
 					$checked       = ( in_array( $key, $value, true ) ) ? ' checked' : '';
 					$pro_only      = isset( $option['pro_only'] ) ? ' disabled' : '';
+					$opt_class     = isset( $option['class'] ) && ! empty( $option['class'] ) ? $option['class'] : '';
 					$pro_only_text = isset( $option['pro_only'] ) ? '<strong class="wcs-pro-only">' . esc_html__( 'PRO', 'woo-category-slider-grid' ) . '</strong>' : '';
-					echo '<div class="spf--sibling spf--image' . esc_attr( $active ) . '">';
+					echo '<div class="spf--sibling spf--image' . esc_attr( $active . ' ' . $opt_class ) . '">';
 					echo '<div class="spf--image-area">';
 					echo '<img src="' . esc_url( $option['image'] ) . '" alt="img-' . esc_attr( $num++ ) . '" />';
 					echo '<input ' . esc_attr( $pro_only ) . ' type="' . esc_attr( $type ) . '" name="' . esc_attr( $this->field_name( $extra ) ) . '" value="' . esc_attr( $key ) . '"' . wp_kses_post( $this->field_attributes() . $checked ) . '/>' . wp_kses_post( $pro_only_text ) . '';

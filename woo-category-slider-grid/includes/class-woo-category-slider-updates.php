@@ -30,6 +30,7 @@ class Woo_Category_Slider_Updates {
 		'1.2.1'  => 'updates/update-1.2.1.php',
 		'1.4.15' => 'updates/update-1.4.15.php',
 		'1.5.0'  => 'updates/update-1.5.0.php',
+		'1.5.1'  => 'updates/update-1.5.1.php',
 	);
 
 	/**

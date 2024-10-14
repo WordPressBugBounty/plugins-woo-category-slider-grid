@@ -37,149 +37,10 @@ class SP_WCS_General {
 				'class'  => 'active',
 				'fields' => array(
 					array(
-						'id'          => 'wcsp_layout_presets',
-						'type'        => 'image_select',
-						'title'       => __( 'Layout Preset', 'woo-category-slider-grid' ),
-						'subtitle'    => __( 'Choose a layout preset.', 'woo-category-slider-grid' ),
-						'desc'        => __( 'To access Ticker, Multi-Row, Vertical Slider, Grid, Hierarchical Grid, and Inline layouts, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade to Pro!</b></a>', 'woo-category-slider-grid' ),
-						'class'       => 'wcsp_layout_presets',
-						'option_name' => true,
-						'options'     => array(
-							'carousel' => array(
-								'image'           => SP_WCS_URL . 'admin/img/layout-preset/carousel.svg',
-								'option_name'     => __( 'Carousel', 'woo-category-slider-grid' ),
-								'option_demo_url' => 'https://demo.shapedplugin.com/woocommerce-category-slider/#carousel',
-							),
-							'slider'   => array(
-								'image'           => SP_WCS_URL . 'admin/img/layout-preset/slider.svg',
-								'option_name'     => __( 'Slider', 'woo-category-slider-grid' ),
-								'option_demo_url' => 'https://demo.shapedplugin.com/woocommerce-category-slider/#slider',
-							),
-							'grid'     => array(
-								'image'           => SP_WCS_URL . 'admin/img/layout-preset/grid.svg',
-								'option_name'     => __( 'Grid', 'woo-category-slider-grid' ),
-								'option_demo_url' => 'https://demo.shapedplugin.com/woocommerce-category-slider/#grid',
-								'pro_only'        => true,
-							),
-							'block'    => array(
-								'image'           => SP_WCS_URL . 'admin/img/layout-preset/hierarchical-grid.svg',
-								'option_name'     => __( 'Hierarchical Grid', 'woo-category-slider-grid' ),
-								'option_demo_url' => 'https://demo.shapedplugin.com/woocommerce-category-slider/#hierarchical-grid',
-								'pro_only'        => true,
-							),
-							'inline'   => array(
-								'image'           => SP_WCS_URL . 'admin/img/layout-preset/inline-outer.svg',
-								'option_name'     => __( 'Inline', 'woo-category-slider-grid' ),
-								'option_demo_url' => 'https://demo.shapedplugin.com/woocommerce-category-slider/#inline',
-								'pro_only'        => true,
-							),
-						),
-						'default'     => 'carousel',
-					),
-
-					array(
-						'id'          => 'wcsp_carousel_style',
-						'type'        => 'image_select',
-						'title'       => __( 'Carousel Style', 'woo-category-slider-grid' ),
-						'subtitle'    => __( 'Choose a style for the carousel.', 'woo-category-slider-grid' ),
-						'class'       => 'wcsp_layout_presets carousel-style sp-no-selected-icon',
-						'option_name' => true,
-						'options'     => array(
-							'standard'  => array(
-								'image'       => SP_WCS_URL . 'admin/img/carousel-styles/standard.svg',
-								'option_name' => __( 'Standard', 'woo-category-slider-grid' ),
-							),
-							'ticker'    => array(
-								'image'       => SP_WCS_URL . 'admin/img/carousel-styles/ticker.svg',
-								'option_name' => __( 'Ticker', 'woo-category-slider-grid' ),
-								'pro_only'    => true,
-
-							),
-							'multi_row' => array(
-								'image'       => SP_WCS_URL . 'admin/img/carousel-styles/multi-carousel.svg',
-								'option_name' => __( 'Multi-row', 'woo-category-slider-grid' ),
-								'pro_only'    => true,
-							),
-						),
-						'default'     => 'standard',
-						'dependency'  => array(
-							'wcsp_layout_presets',
-							'==',
-							'carousel',
-						),
-					),
-					array(
-						'id'          => 'wcsp_slider_orientation',
-						'type'        => 'image_select',
-						'title'       => __( 'Slider Orientation', 'woo-category-slider-grid' ),
-						'subtitle'    => __( 'Set category slider orientation.', 'woo-category-slider-grid' ),
-						'class'       => 'wcsp_layout_presets carousel-style sp-no-selected-icon',
-						'option_name' => true,
-						'options'     => array(
-							'horizontal' => array(
-								'image'       => SP_WCS_URL . 'admin/img/horizontal.svg',
-								'option_name' => __( 'Horizontal', 'woo-category-slider-grid' ),
-							),
-							'vertical'   => array(
-								'image'       => SP_WCS_URL . 'admin/img/vertical.svg',
-								'option_name' => __( 'Vertical', 'woo-category-slider-grid' ),
-								'pro_only'    => true,
-							),
-						),
-						'default'     => 'horizontal',
-						'dependency'  => array(
-							'wcsp_layout_presets',
-							'==',
-							'slider',
-						),
-					),
-					array(
-						'id'          => 'wcsp_block_orientation',
-						'type'        => 'image_select',
-						'title'       => __( 'Hierarchical Grid Style', 'woo-category-slider-grid' ),
-						'subtitle'    => __( 'Choose a hierarchical grid style.', 'woo-category-slider-grid' ),
-						'class'       => 'wcsp_layout_presets wcsp_block_orientation sp-no-selected-icon',
-						'only_pro'    => true,
-						'option_name' => true,
-						'options'     => array(
-							'block-1' => array(
-								'image'       => SP_WCS_URL . 'admin/img/hierarchical-grid-style/block-1.svg',
-								'option_name' => __( 'Hierarchical Grid', 'woo-category-slider-grid' ),
-								'pro_only'    => true,
-							),
-							'block-2' => array(
-								'image'       => SP_WCS_URL . 'admin/img/hierarchical-grid-style/block-2.svg',
-								'option_name' => __( 'Hierarchical 1', 'woo-category-slider-grid' ),
-								'pro_only'    => true,
-							),
-							'block-3' => array(
-								'image'       => SP_WCS_URL . 'admin/img/hierarchical-grid-style/block-3.svg',
-								'option_name' => __( 'Hierarchical 2', 'woo-category-slider-grid' ),
-								'pro_only'    => true,
-							),
-							'block-4' => array(
-								'image'       => SP_WCS_URL . 'admin/img/hierarchical-grid-style/block-4.svg',
-								'option_name' => __( 'Hierarchial 3', 'woo-category-slider-grid' ),
-								'pro_only'    => true,
-							),
-							'block-5' => array(
-								'image'       => SP_WCS_URL . 'admin/img/hierarchical-grid-style/block-5.svg',
-								'option_name' => __( 'Hierarchical 4', 'woo-category-slider-grid' ),
-								'pro_only'    => true,
-							),
-						),
-						'default'     => 'block-1',
-						'dependency'  => array(
-							'wcsp_layout_presets',
-							'==',
-							'block',
-						),
-					),
-					array(
 						'id'         => 'wcsp_number_of_column',
 						'type'       => 'column',
-						'title'      => __( 'Column(s)', 'woo-category-slider-grid' ),
-						'subtitle'   => __( 'Set number of column(s) in different responsive devices.', 'woo-category-slider-grid' ),
+						'title'      => __( 'Columns', 'woo-category-slider-grid' ),
+						'subtitle'   => __( 'Set number of columns in different responsive devices.', 'woo-category-slider-grid' ),
 						'min'        => '1',
 						'default'    => array(
 							'large_desktop' => '4',
@@ -193,7 +54,7 @@ class SP_WCS_General {
 							<i class="fa fa-laptop"></i> LAPTOP - Screens smaller than 980px.<br/>
 							<i class="fa fa-tablet"></i> TABLET - Screens smaller than 736px.<br/>
 							<i class="fa fa-mobile"></i> MOBILE - Screens smaller than 480px.<br/>',
-						'dependency' => array( 'wcsp_layout_presets', '!=', 'slider' ),
+						'dependency' => array( 'wcsp_layout_presets', '!=', 'slider', true ),
 					),
 
 					array(
@@ -212,6 +73,7 @@ class SP_WCS_General {
 							'all'  => '20',
 							'unit' => 'px',
 						),
+						'dependency'  => array( 'wcsp_layout_presets', '!=', 'slider', true ),
 					),
 					array(
 						'id'       => 'wcsp_child_categories',
@@ -237,8 +99,15 @@ class SP_WCS_General {
 						'type'       => 'custom_select',
 						'title'      => __( 'Parent and Child', 'woo-category-slider-grid' ),
 						'subtitle'   => __( 'Select category(s). Leave it empty to show all level of categories', 'woo-category-slider-grid' ),
-						'desc'       => __( 'To display Parent with <strong>Child, Grand Child, Great-grand Child</strong>, <a href="https://shapedplugin.com/plugin/woocommerce-category-slider-pro/?ref=115" target="_blank"><b>Upgrade to Pro!</b></a>', 'woo-category-slider-grid' ),
-						'dependency' => array( 'wcsp_child_categories', '==', 'parent_and_child' ),
+						'desc'       => sprintf(
+							/* translators: 1: start bold tag, 2: close bold tag, 3: start link and bold tag, 4: close link and bold tag. */
+							__( 'To display Parent with %1$sChild, Grand Child, Great-grand Child%2$s, %3$sUpgrade to Pro!%4$s', 'woo-category-slider-grid' ),
+							'<strong>',
+							'</strong>',
+							'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+							'</b></a>'
+						),
+						'dependency' => array( 'wcsp_child_categories', '==', 'parent_and_child', true ),
 					),
 					array(
 						'id'          => 'wcsp_parent_child_display_type',
@@ -260,7 +129,7 @@ class SP_WCS_General {
 								'pro_only'    => true,
 							),
 						),
-						'dependency'  => array( 'wcsp_child_categories', '==', 'parent_and_child' ),
+						'dependency'  => array( 'wcsp_child_categories', '==', 'parent_and_child', true ),
 					),
 					array(
 						'id'         => 'wcsp_exclude_level',
@@ -276,7 +145,7 @@ class SP_WCS_General {
 							'grandchild'       => __( 'Grand Child (Pro)', 'woo-category-slider-grid' ),
 							'great_grandchild' => __( 'Great-grand Child (Pro)', 'woo-category-slider-grid' ),
 						),
-						'dependency' => array( 'wcsp_child_categories', '==', 'parent_and_child' ),
+						'dependency' => array( 'wcsp_child_categories', '==', 'parent_and_child', true ),
 					),
 					array(
 						'id'         => 'wcsp_filter_categories',
@@ -298,7 +167,7 @@ class SP_WCS_General {
 							),
 						),
 						'default'    => 'all',
-						'dependency' => array( 'wcsp_child_categories', '==', 'hide' ),
+						'dependency' => array( 'wcsp_child_categories', '==', 'hide', true ),
 
 					),
 					array(
@@ -317,6 +186,7 @@ class SP_WCS_General {
 							'wcsp_filter_categories|wcsp_child_categories',
 							'==|==',
 							'specific|hide',
+							true,
 						),
 					),
 					array(

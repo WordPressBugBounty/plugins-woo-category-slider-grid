@@ -1,6 +1,6 @@
 <?php
 /**
- * The file that defines the woo category slider post type.
+ * The file that defines the woocategory post type.
  *
  * @link       https://shapedplugin.com/
  * @since      1.1.0
@@ -73,21 +73,21 @@ class Woo_Category_Slider_Post_Type {
 		$labels = apply_filters(
 			'woo_category_slider_post_type_labels',
 			array(
-				'name'               => esc_html__( 'All Category Sliders', 'woo-category-slider-grid' ),
-				'singular_name'      => esc_html__( 'Category Slider', 'woo-category-slider-grid' ),
-				'menu_name'          => esc_html__( 'Woo Cat Slider', 'woo-category-slider-grid' ),
+				'name'               => esc_html__( 'All Category Views', 'woo-category-slider-grid' ),
+				'singular_name'      => esc_html__( 'Category View', 'woo-category-slider-grid' ),
+				'menu_name'          => esc_html__( 'WooCategory', 'woo-category-slider-grid' ),
 				'add_new'            => esc_html__( 'Add New', 'woo-category-slider-grid' ),
-				'add_new_item'       => esc_html__( 'Add New Slider', 'woo-category-slider-grid' ),
+				'add_new_item'       => esc_html__( 'Add New Category View', 'woo-category-slider-grid' ),
 				'edit'               => esc_html__( 'Edit', 'woo-category-slider-grid' ),
-				'edit_item'          => esc_html__( 'Edit Slider', 'woo-category-slider-grid' ),
-				'new_item'           => esc_html__( 'New Slider', 'woo-category-slider-grid' ),
-				'view'               => esc_html__( 'View Slider', 'woo-category-slider-grid' ),
-				'view_item'          => esc_html__( 'View Slider', 'woo-category-slider-grid' ),
-				'search_items'       => esc_html__( 'Search Slider', 'woo-category-slider-grid' ),
-				'not_found'          => esc_html__( 'No Category Slider Found', 'woo-category-slider-grid' ),
-				'not_found_in_trash' => esc_html__( 'No Category Slider Found in Trash', 'woo-category-slider-grid' ),
-				'parent'             => esc_html__( 'Parent Category Slider', 'woo-category-slider-grid' ),
-				'all_items'          => esc_html__( 'Manage Sliders', 'woo-category-slider-grid' ),
+				'edit_item'          => esc_html__( 'Edit View', 'woo-category-slider-grid' ),
+				'new_item'           => esc_html__( 'New View', 'woo-category-slider-grid' ),
+				'view'               => esc_html__( 'View Category View', 'woo-category-slider-grid' ),
+				'view_item'          => esc_html__( 'View Category View', 'woo-category-slider-grid' ),
+				'search_items'       => esc_html__( 'Search View', 'woo-category-slider-grid' ),
+				'not_found'          => esc_html__( 'No Category View Found', 'woo-category-slider-grid' ),
+				'not_found_in_trash' => esc_html__( 'No Category View Found in Trash', 'woo-category-slider-grid' ),
+				'parent'             => esc_html__( 'Parent Category View', 'woo-category-slider-grid' ),
+				'all_items'          => esc_html__( 'All Category Views', 'woo-category-slider-grid' ),
 			)
 		);
 		// Base 64 encoded SVG image.
