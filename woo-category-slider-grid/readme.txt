@@ -2,9 +2,9 @@
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: product category slider, woocommerce category carousel, product category showcase, woocommerce category slider, product category list
 Requires at least: 5.0
-Tested up to: 6.6.2
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 WC requires at least: 4.5
 WC tested up to: 9.3.3
 License: GPLv2 or later
@@ -154,8 +154,11 @@ The WordPress codex contains <a href="https://codex.wordpress.org/Managing_Plugi
 
 == Changelog ==
 
+= 1.5.2 - Nov 11, 2024 =
+* Tested: WordPress 6.7 compatibility.
+
 = 1.5.1 - Oct 14, 2024 =
-* Improved: The plugin manu name was renamed to 'WooCategory'.
+* Improved: The plugin menu name was renamed to 'WooCategory'.
 * Improved: The plugin-backed options have been enhanced.
 * Improved: The Layout Preset option is moved to the top of the Edit Category View page.
 * Improved: The Slider Orientation and Carousel Style options are placed after the Layout Preset option.
