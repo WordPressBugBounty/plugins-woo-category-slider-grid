@@ -29,5 +29,4 @@ class Woo_Category_Slider_i18n {
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
 	}
-
 }

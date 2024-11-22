@@ -2,11 +2,11 @@
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: product category slider, woocommerce category carousel, product category showcase, woocommerce category slider, product category list
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.7.1
 Requires PHP: 5.6
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 WC requires at least: 4.5
-WC tested up to: 9.3.3
+WC tested up to: 9.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -153,6 +153,11 @@ The WordPress codex contains <a href="https://codex.wordpress.org/Managing_Plugi
 
 
 == Changelog ==
+
+= 1.5.3 - Nov 22, 2024 =
+* Fix: The plugin style issue for RTL sites.
+* Fix: The translation-related warning found with WP 6.7.1
+* Tested: WooCommerce 9.4.2 compatibility.
 
 = 1.5.2 - Nov 11, 2024 =
 * Tested: WordPress 6.7 compatibility.

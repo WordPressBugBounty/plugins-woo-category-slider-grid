@@ -82,7 +82,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 		 * @return void
 		 */
 		public static function init() {
-
 			// init action.
 			do_action( 'spf_init' );
 
@@ -93,13 +92,12 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 			self::includes();
 
 			// setup textdomain.
-			self::textdomain();
+			add_action( 'init', array( 'SP_WCS', 'textdomain' ) );
 
 			add_action( 'after_setup_theme', array( 'SP_WCS', 'setup' ) );
 			add_action( 'init', array( 'SP_WCS', 'setup' ) );
 			add_action( 'switch_theme', array( 'SP_WCS', 'setup' ) );
 			add_action( 'admin_enqueue_scripts', array( 'SP_WCS', 'add_admin_enqueue_scripts' ), 20 );
-
 		}
 
 		/**
@@ -114,7 +112,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 			if ( ! empty( self::$args['options'] ) ) {
 				foreach ( self::$args['options'] as $key => $value ) {
 					if ( ! empty( self::$args['sections'][ $key ] ) && ! isset( self::$inited[ $key ] ) ) {
-
 						$params['args']       = $value;
 						$params['sections']   = self::$args['sections'][ $key ];
 						self::$inited[ $key ] = true;
@@ -145,7 +142,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 			}
 
 			do_action( 'spf_loaded' );
-
 		}
 
 		/**
@@ -201,7 +197,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 
 			self::$dir = $dirname;
 			self::$url = $directory_uri . $foldername;
-
 		}
 
 		/**
@@ -245,7 +240,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 				return self::$dir . '/' . $file;
 
 			}
-
 		}
 
 		/**
@@ -300,7 +294,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 			if ( self::$premium ) {
 				self::include_plugin_file( 'classes/metabox.class.php' );
 			}
-
 		}
 
 		/**
@@ -347,7 +340,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 					}
 				}
 			}
-
 		}
 
 		/**
@@ -418,7 +410,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 
 				do_action( 'spf_enqueue' );
 			} // Check screen ID.
-
 		}
 
 		/**
@@ -499,10 +490,7 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 			echo ( ! empty( $field['title'] ) ) ? '</div>' : '';
 			echo '<div class="clear"></div>';
 			echo '</div>';
-
 		}
-
 	}
-
 	SP_WCS::init();
 }
