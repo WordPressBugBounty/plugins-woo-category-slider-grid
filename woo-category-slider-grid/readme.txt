@@ -2,11 +2,11 @@
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: product category slider, woocommerce category carousel, product category showcase, woocommerce category slider, product category list
 Requires at least: 5.0
-Tested up to: 6.7.1
-Requires PHP: 5.6
-Stable tag: 1.5.3
+Tested up to: 6.8
+Requires PHP: 7.0
+Stable tag: 1.6.0
 WC requires at least: 4.5
-WC tested up to: 9.4.2
+WC tested up to: 9.8.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -153,6 +153,21 @@ The WordPress codex contains <a href="https://codex.wordpress.org/Managing_Plugi
 
 
 == Changelog ==
+
+= 1.6.0 - Apr 11, 2025 =
+* New: The Item Border Option.
+* New: The Item Border Radius Option.
+* New: The Item Background option for the card and non-card style.
+* New: The Item Box-Shadow option with Inset and Outset styles.
+* Improved: The plugin's options are reorganized to make them more user-friendly.
+* Improved: The default category item style is set to card style. 
+* Improved: The minus value support was added to the section title margin option.
+* Fix: The translation-related warning was found with WP 6.8.
+* Fix: The help page recommended plugins logo URL not found issue.
+* Updated: The translation (.pot) file. 
+* Dev: The minimum required PHP version is now set to 7.0
+* Tested: WordPress 6.8 compatibility.
+* Tested: WooCommerce 9.8.1 compatibility.
 
 = 1.5.3 - Nov 22, 2024 =
 * Fix: The plugin style issue for RTL sites.

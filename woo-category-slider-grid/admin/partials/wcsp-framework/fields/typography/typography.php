@@ -63,9 +63,19 @@ if ( ! class_exists( 'SP_WCS_Field_typography' ) ) {
 					'font_family'        => true,
 					'font_weight'        => true,
 					'font_style'         => true,
+
+					// Large device.
 					'font_size'          => true,
 					'line_height'        => true,
-					'letter_spacing'     => true,
+					'letter_spacing'     => false,
+					'word_spacing'       => false,
+
+					// Medium device.
+					'font_size_medium'   => true,
+
+					// Mobile device.
+					'font_size_mobile'   => true,
+
 					'text_align'         => true,
 					'text_transform'     => true,
 					'color'              => true,
@@ -77,10 +87,9 @@ if ( ! class_exists( 'SP_WCS_Field_typography' ) ) {
 					'extra_styles'       => false,
 					'backup_font_family' => false,
 					'font_variant'       => false,
-					'word_spacing'       => false,
 					'text_decoration'    => false,
 					'custom_style'       => false,
-					'exclude'            => '',
+					'exclude'            => '',  // phpcs:ignore
 					'unit'               => 'px',
 					'preview_text'       => 'The quick brown fox jumps over the lazy dog',
 				)
@@ -91,10 +100,19 @@ if ( ! class_exists( 'SP_WCS_Field_typography' ) ) {
 				'font-weight'        => '',
 				'font-style'         => '',
 				'font-variant'       => '',
+
+				// Large device.
 				'font-size'          => '',
 				'line-height'        => '',
 				'letter-spacing'     => '',
 				'word-spacing'       => '',
+
+				// Medium device.
+				'font-size-medium'   => '',
+
+				// Mobile device.
+				'font-size-mobile'   => '',
+
 				'text-align'         => '',
 				'text-transform'     => '',
 				'text-decoration'    => '',
@@ -247,50 +265,45 @@ if ( ! class_exists( 'SP_WCS_Field_typography' ) ) {
 
 			echo '<div class="spf--blocks spf--blocks-inputs">';
 
-			//
 			// Font Size.
 			if ( ! empty( $args['font_size'] ) ) {
 				echo '<div class="spf--block">';
-				echo '<div class="spf--title">' . esc_html__( 'Font Size', 'woo-category-slider-grid' ) . '</div>';
+				echo '<div class="spf--title">' . esc_html__( 'Font Size', 'woo-category-slider-grid' ) . ' <i class="fa fa-laptop"></i></div>';
 				echo '<div class="spf--blocks">';
-				echo '<div class="spf--block"><input disabled type="text" name="' . esc_attr( $this->field_name( '[font-size]' ) ) . '" class="spf--font-size spf--input spf-number" value="' . esc_attr( $this->value['font-size'] ) . '" /></div>';
-				echo '<div class="spf--block spf--unit">' . esc_html( $args['unit'] ) . '</div>';
+				echo '<div class="spf--block"><input disabled type="number" name="' . esc_attr( $this->field_name( '[font-size]' ) ) . '" class="spf--font-size spf--input spf-number" value="' . esc_attr( $this->value['font-size'] ) . '" step="any" /></div>';
+				echo '<div class="spf--block spf--unit">' . esc_attr( $args['unit'] ) . '</div>';
 				echo '</div>';
 				echo '</div>';
 			}
 
-			//
+			// Font size medium.
+			if ( ! empty( $args['font_size_medium'] ) ) {
+				echo '<div class="spf--block">';
+				echo '<div class="spf--title">' . esc_html__( 'Font Size', 'woo-category-slider-grid' ) . ' <i class="fa fa-tablet"></i></div>';
+				echo '<div class="spf--blocks">';
+				echo '<div class="spf--block"><input disabled type="number" name="' . esc_attr( $this->field_name( '[font-size-medium]' ) ) . '" class="spf--font-size spf--input spf-number" value="' . esc_attr( $this->value['font-size-medium'] ) . '" step="any" /></div>';
+				echo '<div class="spf--block spf--unit">' . esc_attr( $args['unit'] ) . '</div>';
+				echo '</div>';
+				echo '</div>';
+			}
+
+			// Font size mobile.
+			if ( ! empty( $args['font_size_mobile'] ) ) {
+				echo '<div class="spf--block">';
+				echo '<div class="spf--title">' . esc_html__( 'Font Size', 'woo-category-slider-grid' ) . ' <i class="fa fa-mobile"></i></div>';
+				echo '<div class="spf--blocks">';
+				echo '<div class="spf--block"><input disabled type="number" name="' . esc_attr( $this->field_name( '[font-size-mobile]' ) ) . '" class="spf--font-size spf--input spf-number" value="' . esc_attr( $this->value['font-size-mobile'] ) . '" step="any" /></div>';
+				echo '<div class="spf--block spf--unit">' . esc_attr( $args['unit'] ) . '</div>';
+				echo '</div>';
+				echo '</div>';
+			}
+
 			// Line Height.
 			if ( ! empty( $args['line_height'] ) ) {
 				echo '<div class="spf--block">';
 				echo '<div class="spf--title">' . esc_html__( 'Line Height', 'woo-category-slider-grid' ) . '</div>';
 				echo '<div class="spf--blocks">';
-				echo '<div class="spf--block"><input disabled type="text" name="' . esc_attr( $this->field_name( '[line-height]' ) ) . '" class="spf--line-height spf--input spf-number" value="' . esc_attr( $this->value['line-height'] ) . '" /></div>';
-				echo '<div class="spf--block spf--unit">' . esc_html( $args['unit'] ) . '</div>';
-				echo '</div>';
-				echo '</div>';
-			}
-
-			//
-			// Letter Spacing.
-			if ( ! empty( $args['letter_spacing'] ) ) {
-				echo '<div class="spf--block">';
-				echo '<div class="spf--title">' . esc_html__( 'Letter Spacing', 'woo-category-slider-grid' ) . '</div>';
-				echo '<div class="spf--blocks">';
-				echo '<div class="spf--block"><input disabled type="text" name="' . esc_attr( $this->field_name( '[letter-spacing]' ) ) . '" class="spf--letter-spacing spf--input spf-number" value="' . esc_attr( $this->value['letter-spacing'] ) . '" /></div>';
-				echo '<div class="spf--block spf--unit">' . esc_html( $args['unit'] ) . '</div>';
-				echo '</div>';
-				echo '</div>';
-			}
-
-			//
-			// Word Spacing.
-			if ( ! empty( $args['word_spacing'] ) ) {
-				echo '<div class="spf--block">';
-				echo '<div class="spf--title">' . esc_html__( 'Word Spacing', 'woo-category-slider-grid' ) . '</div>';
-				echo '<div class="spf--blocks">';
-				echo '<div class="spf--block"><input disabled type="text" name="' . esc_attr( $this->field_name( '[word-spacing]' ) ) . '" class="spf--word-spacing spf--input spf-number" value="' . esc_attr( $this->value['word-spacing'] ) . '" /></div>';
-				echo '<div class="spf--block spf--unit">' . esc_html( $args['unit'] ) . '</div>';
+				echo '<div class="spf--block spf-line-height"><input disabled type="number" name="' . esc_attr( $this->field_name( '[line-height]' ) ) . '" class="spf--line-height spf--input spf-input-number" value="' . esc_attr( $this->value['line-height'] ) . '" step="any" /></div>';
 				echo '</div>';
 				echo '</div>';
 			}

@@ -9,17 +9,18 @@
  * Plugin Name:       WooCategory
  * Plugin URI:        https://shapedplugin.com/woocategory/?ref=115
  * Description:       WooCategory helps you display WooCommerce Categories aesthetically in a nice Slider, Grid, Hierarchy Grid, or Inline layouts. You can manage and show your product categories with thumbnail, child category (beside), description, shop now button with an easy to use shortcode generator interface with many handy options.
- * Version:           1.5.3
+ * Version:           1.6.0
  * Author:            ShapedPlugin LLC
  * Author URI:        https://shapedplugin.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       woo-category-slider-grid
  * Domain Path:       /languages
+ * Requires Plugins: woocommerce
  * Requires at least: 5.0
- * Requires PHP: 5.6
+ * Requires PHP: 7.0
  * WC requires at least: 4.5
- * WC tested up to: 9.4.2
+ * WC tested up to: 9.8.1
  */
 
 // If this file is called directly, abort.
@@ -64,7 +65,7 @@ class Woo_Category_Slider {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $version = '1.5.3';
+	protected $version = '1.6.0';
 
 	/**
 	 * Holds class object

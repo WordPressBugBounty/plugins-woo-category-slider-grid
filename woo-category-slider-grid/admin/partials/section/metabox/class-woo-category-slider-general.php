@@ -101,10 +101,12 @@ class SP_WCS_General {
 						'subtitle'   => __( 'Select category(s). Leave it empty to show all level of categories', 'woo-category-slider-grid' ),
 						'desc'       => sprintf(
 							/* translators: 1: start bold tag, 2: close bold tag, 3: start link and bold tag, 4: close link and bold tag. */
-							__( 'To display Parent with %1$sChild, Grand Child, Great-grand Child%2$s, %3$sUpgrade to Pro!%4$s', 'woo-category-slider-grid' ),
+							__( 'To display %5$sParent with Child%6$s%1$s, Grand Child, Great-grand Child%2$s, %3$sUpgrade to Pro!%4$s', 'woo-category-slider-grid' ),
 							'<strong>',
 							'</strong>',
 							'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+							'</b></a>',
+							'<a href="https://demo.shapedplugin.com/woocategory/carousel/#parent-and-child-both" target="_blank"><b>',
 							'</b></a>'
 						),
 						'dependency' => array( 'wcsp_child_categories', '==', 'parent_and_child', true ),
@@ -161,7 +163,7 @@ class SP_WCS_General {
 								'text'     => __( 'Specific', 'woo-category-slider-grid' ),
 								'pro_only' => false,
 							),
-							'exclude'  => array(
+							'exclude'  => array( // phpcs:ignore
 								'text'     => __( 'Exclude (Pro)', 'woo-category-slider-grid' ),
 								'pro_only' => true,
 							),
@@ -198,6 +200,7 @@ class SP_WCS_General {
 					),
 					array(
 						'id'              => 'wcsp_number_of_total_categories',
+						'class'           => 'wcsp-number-of-total-categories',
 						'type'            => 'spacing',
 						'title'           => __( 'Total Categories to Show', 'woo-category-slider-grid' ),
 						'subtitle'        => __( 'Total number of categories to display.', 'woo-category-slider-grid' ),

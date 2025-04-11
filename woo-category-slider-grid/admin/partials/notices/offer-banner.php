@@ -133,7 +133,7 @@ class Woo_Category_Slider_Offer_Banner {
 					</div>
 				<?php } ?>
 				<div class="sp_wcs-offer-additional-text">
-					<span class="sp_wcs-clock-icon">⏱</span><p><?php esc_html_e( 'Limited Time Offer, Upgrade Now!', 'wp-carousel-free' ); ?></p>
+					<span class="sp_wcs-clock-icon">⏱</span><p><?php esc_html_e( 'Limited Time Offer, Upgrade Now!', 'woo-category-slider-grid' ); ?></p>
 				</div>
 				<?php if ( ! empty( $action_url ) ) { ?>
 					<div class="sp_wcs-banner-action-button">

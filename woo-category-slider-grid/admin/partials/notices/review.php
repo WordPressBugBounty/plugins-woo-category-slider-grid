@@ -240,8 +240,8 @@ class Woo_Category_Slider_Review {
 		</svg>';
 
 			if ( in_array( 'smart-brands-for-woocommerce/smart-brands-for-woocommerce.php', $plugins, true ) ) {
-				$text        = esc_html__( 'Activate', 'gallery-slider-for-woocommerce' );
-				$button_text = esc_html__( 'Activate', 'gallery-slider-for-woocommerce' );
+				$text        = esc_html__( 'Activate', 'woo-category-slider-grid' );
+				$button_text = esc_html__( 'Activate', 'woo-category-slider-grid' );
 				$install_url = esc_url( self_admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( 'smart-brands-for-woocommerce/smart-brands-for-woocommerce.php' ) . '&plugin_status=all&paged=1&s&_wpnonce=' . rawurlencode( wp_create_nonce( 'activate-plugin_smart-brands-for-woocommerce/smart-brands-for-woocommerce.php' ) ) ) );
 			}
 

@@ -12,8 +12,14 @@
 $cat_padding  = isset( $shortcode_meta['wcsp_cat_padding'] ) ? $shortcode_meta['wcsp_cat_padding'] : '';
 $wcsp_options = get_option( 'sp_wcsp_settings' );
 
-$layout_preset              = isset( $layout_meta['wcsp_layout_presets'] ) ? $layout_meta['wcsp_layout_presets'] : '';
-$section_title              = isset( $shortcode_meta['wcsp_section_title'] ) && $shortcode_meta['wcsp_section_title'] ? $shortcode_meta['wcsp_section_title'] : false;
+$layout_preset   = isset( $layout_meta['wcsp_layout_presets'] ) ? $layout_meta['wcsp_layout_presets'] : '';
+$section_title   = isset( $shortcode_meta['wcsp_section_title'] ) && $shortcode_meta['wcsp_section_title'] ? $shortcode_meta['wcsp_section_title'] : false;
+$cat_item        = isset( $shortcode_meta['wcsp_slide_border'] ) ? $shortcode_meta['wcsp_slide_border'] : array();
+$cat_item_border = isset( $cat_item['all'] ) ? $cat_item['all'] : 0;
+$cat_item_style  = isset( $cat_item['style'] ) ? $cat_item['style'] : 'solid';
+$cat_item_color  = isset( $cat_item['color'] ) ? $cat_item['color'] : '#dddddd';
+$cat_item_radius = isset( $cat_item['radius'] ) ? $cat_item['radius'] : 0;
+
 $cat_description            = isset( $shortcode_meta['wcsp_cat_description'] ) ? $shortcode_meta['wcsp_cat_description'] : '';
 $cat_name                   = isset( $shortcode_meta['wcsp_cat_name'] ) ? $shortcode_meta['wcsp_cat_name'] : '';
 $cat_product_count          = isset( $shortcode_meta['wcsp_cat_product_count'] ) ? $shortcode_meta['wcsp_cat_product_count'] : '';
@@ -24,11 +30,64 @@ $cat_shop_now_button        = isset( $shortcode_meta['wcsp_cat_shop_now_button']
 $cat_shop_button_color      = isset( $shortcode_meta['wcsp_cat_shop_button_color'] ) ? $shortcode_meta['wcsp_cat_shop_button_color'] : '';
 $border_box_shadow          = isset( $shortcode_meta['wcsp_cat_border_box_shadow'] ) ? $shortcode_meta['wcsp_cat_border_box_shadow'] : '';
 
-$show_thumb_border    = isset( $shortcode_meta['wcsp_category_thumb_border'] ) ? $shortcode_meta['wcsp_category_thumb_border'] : true;
+$show_thumb_border    = isset( $shortcode_meta['wcsp_category_thumb_border'] ) ? $shortcode_meta['wcsp_category_thumb_border'] : false;
 $thumb_border         = isset( $shortcode_meta['wcsp_cat_thumb_border'] ) ? $shortcode_meta['wcsp_cat_thumb_border'] : '';
 $thumb_border_style   = isset( $shortcode_meta['wcsp_cat_thumb_border_style'] ) ? $shortcode_meta['wcsp_cat_thumb_border_style'] : '';
 $section_title_margin = isset( $shortcode_meta['wcsp_section_title_margin'] ) ? $shortcode_meta['wcsp_section_title_margin'] : '';
 $thumb_margin         = isset( $shortcode_meta['wcsp_thumb_margin'] ) ? $shortcode_meta['wcsp_thumb_margin'] : '';
+
+// Shadow style and values.
+$item_box_shadow_style   = $shortcode_meta['wcsp_box_shadow_style'] ?? '';
+$item_box_shadow         = $shortcode_meta['wcsp_box_shadow'] ?? array();
+$item_shadow_vertical    = $item_box_shadow['vertical'] ?? 0;
+$item_shadow_horizontal  = $item_box_shadow['horizontal'] ?? 0;
+$item_shadow_blur        = $item_box_shadow['blur'] ?? 0;
+$item_shadow_spread      = $item_box_shadow['spread'] ?? 0;
+$item_shadow_color       = $item_box_shadow['color'] ?? '#dddddd';
+$item_shadow_hover_color = $item_box_shadow['hover_color'] ?? '#dddddd';
+$cat_background          = $shortcode_meta['wcsp_cat_background'] ?? array(
+	'background'       => 'transparent',
+	'hover_background' => 'transparent',
+);
+// Determine box shadow value.
+$shadow_value                = 'inset' === $item_box_shadow_style ? 'inset ' : '';
+$item_box_shadow_value       = $shadow_value . "{$item_shadow_vertical}px {$item_shadow_horizontal}px {$item_shadow_blur}px {$item_shadow_spread}px $item_shadow_color";
+$item_box_shadow_hover_value = $shadow_value . "{$item_shadow_vertical}px {$item_shadow_horizontal}px {$item_shadow_blur}px {$item_shadow_spread}px $item_shadow_hover_color";
+
+// If box-shadow is none.
+if ( 'none' === $item_box_shadow_style ) {
+	$item_box_shadow_value       = 'none';
+	$item_box_shadow_hover_value = 'none';
+}
+
+/**
+ * Category item style.
+ */
+$dynamic_style .= '
+	.sp-wcsp-slider-area #sp-wcsp-slider-section-' . $post_id . ' .sp-wcsp-cat-item .sp-wcsp-cat-item-thumb-content {
+		border: ' . $cat_item_border . 'px ' . $cat_item_style . ' ' . $cat_item_color . ';
+		border-radius: ' . $cat_item_radius . 'px;
+	}
+	.sp-wcsp-slider-area #sp-wcsp-slider-section-' . $post_id . ' .sp-wcsp-cat-item {
+		box-shadow: ' . $item_box_shadow_value . ';
+		background: ' . $cat_background['background'] . ';
+	}
+	.sp-wcsp-slider-area #sp-wcsp-slider-section-' . $post_id . ' .sp-wcsp-cat-item:hover{
+		box-shadow: ' . $item_box_shadow_hover_value . ';
+		background: ' . $cat_background['hover_background'] . ';
+	}
+';
+
+// Item shadow extra margin.
+if ( 'outset' === $item_box_shadow_style ) {
+	$item_box_shadow_margin = isset( $item_shadow_spread ) && $item_shadow_spread > 0 ? $item_shadow_spread : $item_shadow_blur;
+	$dynamic_style         .= '
+		.sp-wcsp-slider-area #sp-wcsp-slider-section-' . $post_id . ' {
+			padding-left: ' . $item_box_shadow_margin . 'px;
+			padding-right: ' . $item_box_shadow_margin . 'px;
+		}
+	';
+}
 
 if ( $section_title ) {
 	$section_title_color = isset( $shortcode_meta['wpsp_section_title_typography']['color'] ) ? $shortcode_meta['wpsp_section_title_typography']['color'] : '#444444';
@@ -108,22 +167,29 @@ if ( $cat_name ) {
 
 $make_it_card_style = isset( $shortcode_meta['wcsp_make_it_card_style'] ) ? $shortcode_meta['wcsp_make_it_card_style'] : '';
 if ( $make_it_card_style ) {
-	$cat_background        = isset( $shortcode_meta['wcsp_cat_background'] ) ? $shortcode_meta['wcsp_cat_background'] : '';
-	$cat_border            = isset( $shortcode_meta['wcsp_cat_border'] ) ? $shortcode_meta['wcsp_cat_border'] : '';
-	$wcsp_cat_border_style = isset( $shortcode_meta['wcsp_cat_border_style'] ) ? $shortcode_meta['wcsp_cat_border_style'] : '';
-	$dynamic_style        .= '.sp-wcsp-slider-area #sp-wcsp-slider-section-' . $post_id . ' .sp-wcsp-cat-item .sp-wcsp-cat-details .sp-wcsp-cat-details-content {
-		background: ' . $cat_background['background'] . ';
-		border-top: ' . $cat_border['top'] . 'px;
-		border-left: ' . $cat_border['left'] . 'px;
-		border-right: ' . $cat_border['right'] . 'px;
-		border-bottom: ' . $cat_border['bottom'] . 'px;
-		border-style: ' . $wcsp_cat_border_style['style'] . ';
-		border-color: ' . $wcsp_cat_border_style['color'] . ';
-	}
-	.sp-wcsp-slider-area #sp-wcsp-slider-section-' . $post_id . ' .sp-wcsp-cat-item:hover .sp-wcsp-cat-details .sp-wcsp-cat-details-content {
-		background: ' . $cat_background['hover_background'] . ';
-		border-color: ' . $wcsp_cat_border_style['hover_color'] . ';
-	}';
+	$cat_border            = isset( $shortcode_meta['wcsp_cat_border'] ) ? $shortcode_meta['wcsp_cat_border'] : array(
+		'top'    => '0',
+		'left'   => '0',
+		'right'  => '0',
+		'bottom' => '0',
+	);
+	$wcsp_cat_border_style = isset( $shortcode_meta['wcsp_cat_border_style'] ) ? $shortcode_meta['wcsp_cat_border_style'] : array(
+		'style'       => 'solid',
+		'color'       => '#e2e2e2',
+		'hover_color' => '#e2e2e2',
+	);
+	$dynamic_style        .= '
+		.sp-wcsp-slider-area #sp-wcsp-slider-section-' . $post_id . ' .sp-wcsp-cat-item .sp-wcsp-cat-details .sp-wcsp-cat-details-content {
+			border-top: ' . $cat_border['top'] . 'px;
+			border-left: ' . $cat_border['left'] . 'px;
+			border-right: ' . $cat_border['right'] . 'px;
+			border-bottom: ' . $cat_border['bottom'] . 'px;
+			border-style: ' . $wcsp_cat_border_style['style'] . ';
+			border-color: ' . $wcsp_cat_border_style['color'] . ';
+		}
+		.sp-wcsp-slider-area #sp-wcsp-slider-section-' . $post_id . ' .sp-wcsp-cat-item:hover .sp-wcsp-cat-details .sp-wcsp-cat-details-content {
+			border-color: ' . $wcsp_cat_border_style['hover_color'] . ';
+		}';
 }
 
 $cat_padding_top    = isset( $cat_padding['top'] ) ? $cat_padding['top'] : '';

@@ -100,7 +100,7 @@ class SP_WCS_Thumbnail {
 						'class'      => 'pro_only_field',
 						'type'       => 'switcher',
 						'only_pro'   => true,
-						'title'      => __( 'Load 2x Resolution Image in Retina Display' ),
+						'title'      => __( 'Load 2x Resolution Image in Retina Display', 'woo-category-slider-grid' ),
 						'subtitle'   => __(
 							'You should upload 2x sized images to show in retina display.
 						',
@@ -145,8 +145,10 @@ class SP_WCS_Thumbnail {
 						'subtitle'    => __( 'Choose a shape for thumbnail.', 'woo-category-slider-grid' ),
 						'desc'        => sprintf(
 							/* translators: 1: start link and bold tag, 2: close tag. */
-							__( 'To unleash your creativity with flexible Category Thumbnail styling options, %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
+							__( 'To unleash your creativity with flexible Category %3$sThumbnail styling%4$s options, %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
 							'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+							'</b></a>',
+							'<a href="https://demo.shapedplugin.com/woocategory/carousel/#Category-with-Thumbnails" target="_blank"><b>',
 							'</b></a>'
 						),
 						'options'     => array(
@@ -182,12 +184,13 @@ class SP_WCS_Thumbnail {
 					array(
 						'id'         => 'wcsp_category_thumb_border',
 						'type'       => 'switcher',
+						'class'      => 'wcsp_category_thumb_border',
 						'title'      => __( 'Border', 'woo-category-slider-grid' ),
 						'subtitle'   => __( 'Set border for the category thumbnail.', 'woo-category-slider-grid' ),
 						'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
 						'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
 						'text_width' => 80,
-						'default'    => true,
+						'default'    => false,
 						'dependency' => array(
 							'wcsp_thumbnail',
 							'==',

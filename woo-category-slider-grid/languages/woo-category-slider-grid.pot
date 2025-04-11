@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Category Slider for WooCommerce v1.5.1\n"
-"POT-Creation-Date: 2024-10-11 09:59+0600\n"
+"Project-Id-Version: Category Slider for WooCommerce v1.6.0\n"
+"POT-Creation-Date: 2025-04-09 15:41+0600\n"
 "PO-Revision-Date: 2022-06-14 10:07+0600\n"
 "Last-Translator: \n"
 "Language-Team: support@shapedplugin.com\n"
@@ -63,71 +63,71 @@ msgstr ""
 msgid "-- Select a shortcode --"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:76
-#: admin/class-woo-category-slider-admin.php:93
+#: admin/class-woo-category-slider-admin.php:85
+#: admin/class-woo-category-slider-admin.php:102
 msgid "No shortcode to duplicate has been supplied!"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:160
+#: admin/class-woo-category-slider-admin.php:169
 msgid "Shortcode creation failed, could not find original post: "
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:175
+#: admin/class-woo-category-slider-admin.php:184
 msgid "Duplicate"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:218
+#: admin/class-woo-category-slider-admin.php:227
 msgid "Title"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:219
+#: admin/class-woo-category-slider-admin.php:228
 msgid "Shortcode"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:221
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:221
+#: admin/class-woo-category-slider-admin.php:230
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:224
 msgid "Date"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:235
+#: admin/class-woo-category-slider-admin.php:244
 #: admin/partials/wcsp-framework/fields/shortcode/shortcode.php:67
 msgid "Shortcode  Copied to Clipboard!"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:255
+#: admin/class-woo-category-slider-admin.php:264
 #: includes/class-woo-category-slider-post-types.php:79
 msgid "Add New"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:285
+#: admin/class-woo-category-slider-admin.php:294
 msgid "Live Demo"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:302
-#: admin/class-woo-category-slider-admin.php:303
+#: admin/class-woo-category-slider-admin.php:311
+#: admin/class-woo-category-slider-admin.php:312
 msgid "Slider updated."
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:304
+#: admin/class-woo-category-slider-admin.php:313
 msgid "Slider published."
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:305
+#: admin/class-woo-category-slider-admin.php:314
 msgid "Slider submitted."
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:306
+#: admin/class-woo-category-slider-admin.php:315
 msgid "Slider draft updated."
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:324
+#: admin/class-woo-category-slider-admin.php:333
 #, php-format
 msgid ""
 "Enjoying %1$sWooCategory?%2$s Please rate us %3$sWordPress.org%4$s. Your "
 "positive feedback will help us grow more. Thank you! 😊"
 msgstr ""
 
-#: admin/class-woo-category-slider-admin.php:411
+#: admin/class-woo-category-slider-admin.php:435
 #: admin/partials/notices/review.php:131 admin/partials/notices/review.php:277
 #: admin/partials/notices/review.php:293
 msgid "Authorization failed!"
@@ -153,34 +153,34 @@ msgstr ""
 msgid "Get Help"
 msgstr ""
 
-#: admin/help-page/help-page.php:241 admin/partials/notices/review.php:189
+#: admin/help-page/help-page.php:237 admin/partials/notices/review.php:189
 #: admin/partials/notices/review.php:190 admin/partials/notices/review.php:243
 #: admin/partials/notices/review.php:244
 msgid "Activate"
 msgstr ""
 
-#: admin/help-page/help-page.php:248 admin/partials/notices/review.php:182
+#: admin/help-page/help-page.php:244 admin/partials/notices/review.php:182
 #: admin/partials/notices/review.php:236
 msgid "Install Now"
 msgstr ""
 
-#: admin/help-page/help-page.php:254
+#: admin/help-page/help-page.php:250
 msgid "More Details"
 msgstr ""
 
-#: admin/help-page/help-page.php:286
+#: admin/help-page/help-page.php:282
 msgid "Version:"
 msgstr ""
 
-#: admin/help-page/help-page.php:295
+#: admin/help-page/help-page.php:291
 msgid "+ Active Installations"
 msgstr ""
 
-#: admin/help-page/help-page.php:303
+#: admin/help-page/help-page.php:299
 msgid "Last Updated:"
 msgstr ""
 
-#: admin/help-page/help-page.php:304
+#: admin/help-page/help-page.php:300
 msgid "ago"
 msgstr ""
 
@@ -257,50 +257,67 @@ msgstr ""
 msgid "Ticker"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:246
-msgid "Slider Orientation"
+#: admin/partials/class-woo-category-slider-metaboxs.php:237
+#: admin/partials/class-woo-category-slider-metaboxs.php:262
+msgid "Fade"
 msgstr ""
 
 #: admin/partials/class-woo-category-slider-metaboxs.php:252
-msgid "Horizontal"
+msgid "Slider Styles"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:256
-msgid "Vertical"
+#: admin/partials/class-woo-category-slider-metaboxs.php:258
+msgid "Slide"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:271
+#: admin/partials/class-woo-category-slider-metaboxs.php:268
+msgid "Coverflow"
+msgstr ""
+
+#: admin/partials/class-woo-category-slider-metaboxs.php:274
+msgid "Flip"
+msgstr ""
+
+#: admin/partials/class-woo-category-slider-metaboxs.php:280
+msgid "Cube"
+msgstr ""
+
+#: admin/partials/class-woo-category-slider-metaboxs.php:286
+msgid "Ken Burns"
+msgstr ""
+
+#: admin/partials/class-woo-category-slider-metaboxs.php:305
 msgid "Hierarchical Grid Style"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:278
+#: admin/partials/class-woo-category-slider-metaboxs.php:312
 msgid "Hierarchical Grid"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:283
+#: admin/partials/class-woo-category-slider-metaboxs.php:317
 msgid "Hierarchical 1"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:288
+#: admin/partials/class-woo-category-slider-metaboxs.php:322
 msgid "Hierarchical 2"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:293
+#: admin/partials/class-woo-category-slider-metaboxs.php:327
 msgid "Hierarchial 3"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:298
+#: admin/partials/class-woo-category-slider-metaboxs.php:332
 msgid "Hierarchical 4"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:314
+#: admin/partials/class-woo-category-slider-metaboxs.php:348
 #, php-format
 msgid ""
 "To enhance your store with beautiful Ticker, Multi-row, Grid, Hierarchy "
 "Grid, Inline layouts, and more to boost sales, %1$sUpgrade to Pro!%2$s"
 msgstr ""
 
-#: admin/partials/class-woo-category-slider-metaboxs.php:338
+#: admin/partials/class-woo-category-slider-metaboxs.php:372
 msgid "Shortcode Section"
 msgstr ""
 
@@ -343,6 +360,10 @@ msgstr ""
 msgid "Import JSON File To Upload"
 msgstr ""
 
+#: admin/partials/notices/offer-banner.php:136
+msgid "Limited Time Offer, Upgrade Now!"
+msgstr ""
+
 #: admin/partials/notices/review.php:181 admin/partials/notices/review.php:235
 msgid "Install"
 msgstr ""
@@ -364,32 +385,34 @@ msgid "Show/Hide category showcase section title."
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-display.php:51
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:231
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:241
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:276
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:342
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:353
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:404
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:185
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:308
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:303
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:313
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:348
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:414
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:424
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:477
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:210
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:333
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:412
 #: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:43
 #: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:127
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:187
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:190
 msgid "Show"
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-display.php:52
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:232
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:242
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:277
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:343
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:354
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:405
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:186
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:309
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:304
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:314
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:349
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:415
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:425
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:478
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:211
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:334
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:413
 #: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:44
 #: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:128
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:188
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:191
 msgid "Hide"
 msgstr ""
 
@@ -401,469 +424,523 @@ msgstr ""
 msgid "Select a position for the category content."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:62
-msgid "To access amazing category Content Positions and Settings, "
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:64
+#, php-format
+msgid ""
+"To access amazing category %1$sContent Positions%2$s & Settings, %3$sUpgrade "
+"to Pro!%4$s"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:62
-msgid "Upgrade to Pro!"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:67
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:74
 msgid "Below Content"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:71
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:78
 msgid "Above Content"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:76
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:83
 msgid "Right Content"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:81
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:88
 msgid "Left Content"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:86
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:93
 msgid "Overlay"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:91
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:98
 msgid "Overlay Top"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:96
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:103
 msgid "Overlay Mid"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:101
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:108
 msgid "Overlay Bottom"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:110
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:113
+msgid "Overlay Box"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:122
 msgid "Make it Card Style"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:111
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:125
+#, php-format
 msgid ""
-"By checking it, you can bring a material feel into your design through "
-"customization."
+"Add a material feel to your design through customization. %1$sSee Demo%2$s"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:117
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:201
-msgid "Border Width"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:134
+msgid "Item Border"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:118
-msgid "Set category content border width for the slider item."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:135
+msgid "Set border for the items."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:138
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:220
-msgid "Border Style"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:149
+msgid "Item Background"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:139
-msgid "Set category content border style for the slider item."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:150
+msgid "Set color for the category items background."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:161
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:164
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:423
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:242
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:152
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:496
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:365
 msgid "Background"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:162
-msgid "Set color for the category content background."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:165
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:424
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:243
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:153
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:497
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:366
 msgid "Hover Background"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:182
-msgid "Inner Padding"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:169
+msgid "Content Border Width"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:183
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:170
+msgid "Set category content border width for the slider items."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:190
+msgid "Content Border Style"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:191
+msgid "Set category content border style for the slider items."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:214
+msgid "Content Padding"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:215
 msgid "Set category content inner padding."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:201
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:230
+msgid "Item Box-Shadow"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:231
+msgid "Set Box-Shadow for the items."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:234
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:257
+#: admin/partials/wcsp-framework/fields/border/border.php:89
+#: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:88
+msgid "Outset"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:237
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:252
+#: admin/partials/wcsp-framework/fields/border/border.php:88
+#: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:87
+msgid "Inset"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:240
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:227
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:262
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:301
+#: admin/partials/wcsp-framework/fields/border/border.php:92
+#: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:91
+#: admin/partials/wcsp-framework/fields/typography/typography.php:231
+#: admin/partials/wcsp-framework/fields/typography/typography.php:249
+msgid "None"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:248
+msgid "Box-Shadow Values"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:249
+msgid "Set box-shadow property values for the item."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:269
 msgid "Enable Equal Height"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:202
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:270
 msgid ""
 "Enable to adjust the height of all the category items to match the tallest "
 "one."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:203
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:246
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:255
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:50
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:90
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:106
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:137
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:398
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:408
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:418
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:428
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:271
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:249
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:258
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:76
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:130
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:146
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:156
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:502
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:512
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:522
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:532
 msgid "Enabled"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:204
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:247
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:256
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:51
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:91
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:107
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:138
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:399
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:409
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:419
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:429
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:272
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:250
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:259
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:77
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:131
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:147
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:157
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:503
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:513
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:523
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:533
 msgid "Disabled"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:211
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:279
 msgid "Category Content"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:219
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:287
 #, php-format
 msgid ""
-"To access the Category Icon library and Custom Text for your product "
-"category, %1$sUpgrade to Pro!%2$s"
+"To access the %1$sCategory Icon library%2$s and %3$sCustom Text%4$s for your "
+"product category, %5$sUpgrade to Pro!%6$s"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:229
-msgid "Category Icon"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:301
+msgid "Icon"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:230
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:302
 msgid "Show/Hide category icon."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:239
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:311
 msgid "Category Name"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:240
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:312
 msgid "Show/Hide category name."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:250
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:322
 msgid "Category Name Margin"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:251
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:323
 msgid "Set category name margin."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:254
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:317
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:366
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:454
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:535
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:326
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:389
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:437
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:527
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:613
 #: admin/partials/section/metabox/class-woo-category-slider-general.php:70
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:320
 msgid "px"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:255
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:318
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:367
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:455
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:536
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:327
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:390
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:438
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:528
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:614
 msgid "em"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:274
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:346
 msgid "Product Count"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:275
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:347
 msgid "Show/Hide product count."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:285
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:357
 msgid "Product Count Position"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:286
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:358
 msgid "Set product count position."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:288
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:360
 msgid "Beside category name"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:289
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:361
 msgid "Under category name"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:297
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:369
 msgid "Product Count Before"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:298
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:370
 msgid "Set product count before text."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:305
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:377
 msgid "Product Count After"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:306
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:378
 msgid "Set product count after text."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:313
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:385
 msgid "Product Count Margin"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:314
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:386
 msgid "Set product count margin."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:340
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:412
 msgid "Custom Text"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:341
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:413
 msgid "Show/Hide custom text."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:351
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:422
 msgid "Description"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:352
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:423
 msgid "Show/Hide description."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:362
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:433
 msgid "Description Margin"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:363
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:434
 msgid "Set description margin."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:386
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:402
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:457
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:475
 msgid "Shop Now Button"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:394
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:465
 #, php-format
 msgid ""
-"To attract more potential customers with a customized \"Shop Now\" button, "
-"%1$sUpgrade to Pro!%2$s"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:403
-msgid "Show/Hide shop now button."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:412
-msgid "Shop Now Button Label"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:413
-msgid "Type shop now button label."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:420
-msgid "Shop Now Button Color"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:421
-msgid "Set shop now button color."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:435
-msgid "Shop Now Button Border"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:436
-msgid "Set border for the shop now button."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:450
-msgid "Button Margin"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:451
-msgid "Set shop now button margin."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:469
-msgid "Link Target"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:470
-msgid "Set link target."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:472
-msgid "_self"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:473
-msgid "_blank"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:474
-msgid "_parent"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:475
-msgid "_top"
+"To attract more potential customers with a customized %3$sShop Now%4$s "
+"button, %1$sUpgrade to Pro!%2$s"
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-display.php:476
-msgid "framename"
+msgid "Show/Hide shop now button."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:484
-msgid "Typography"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:485
+msgid "Shop Now Button Label"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:486
+msgid "Type shop now button label."
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-display.php:493
-#, php-format
-msgid ""
-"Want to customize everything (typography, color, and margin) easily? "
-"%1$sUpgrade to Pro!%2$s"
+msgid "Shop Now Button Color"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:496
-msgid " P.S. Note: The color and margin options work in the lite version."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:501
-msgid "Load Slider Section Title Font"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:502
-msgid "On/Off google font for the slider section title."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:494
+msgid "Set shop now button color."
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-display.php:509
-msgid "Slider Section Title Font"
+msgid "Shop Now Button Border"
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-display.php:510
-msgid "Set slider section title font properties."
+msgid "Set border for the shop now button."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:531
-msgid "Margin from Section Title"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:523
+msgid "Button Margin"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:532
-msgid "Set margin for category showcase section title."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:524
+msgid "Set shop now button margin."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:555
-msgid "Load Category Name Font"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:542
+msgid "Link Target"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:556
-msgid "On/Off google font for the category name."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:543
+msgid "Set link target."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:563
-msgid "Category Name Font"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:545
+msgid "_self"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:564
-msgid "Set category name font properties."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:546
+msgid "_blank"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:547
+msgid "_parent"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:548
+msgid "_top"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:549
+msgid "framename"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:557
+msgid "Typography"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:566
+#, php-format
+msgid ""
+"Want to customize everything (%3$stypography, color, and margin%4$s) easily? "
+"%1$sUpgrade to Pro!%2$s"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:571
+msgid " P.S. Note: The color and margin options work in the lite version."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:576
+msgid "Load Slider Section Title Font"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:577
+msgid "On/Off google font for the slider section title."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:584
+msgid "Slider Section Title Font"
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-display.php:585
-msgid "Load Product Count Font"
+msgid "Set slider section title font properties."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:586
-msgid "On/Off google font for the product count."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:608
+msgid "Margin from Section Title"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:593
-msgid "Product Count Font"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:609
+msgid "Set margin for category showcase section title."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:594
-msgid "Set product count font properties."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:633
+msgid "Load Category Name Font"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:613
-msgid "Load Child Category Font"
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:634
+msgid "On/Off google font for the category name."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:614
-msgid "On/Off google font for the child category."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:621
-msgid "Child Category Font"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:622
-msgid "Set child category font properties."
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:641
+msgid "Category Name Font"
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-display.php:642
+msgid "Set category name font properties."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:665
+msgid "Load Product Count Font"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:666
+msgid "On/Off google font for the product count."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:673
+msgid "Product Count Font"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:674
+msgid "Set product count font properties."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:695
+msgid "Load Child Category Font"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:696
+msgid "On/Off google font for the child category."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:703
+msgid "Child Category Font"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:704
+msgid "Set child category font properties."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:726
 msgid "Load Custom Text Font"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:643
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:727
 msgid "On/Off google font for the custom text."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:650
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:734
 msgid "Custom Text Font"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:651
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:735
 msgid "Set custom text font properties."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:669
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:755
 msgid "Load Description Font"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:670
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:756
 msgid "On/Off google font for the description."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:678
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:764
 msgid "Description Font"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:679
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:765
 msgid "Set description font properties."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:698
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:786
 msgid "Load Shop Now Button Font"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:699
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:787
 msgid "On/Off google font for the shop now button."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:707
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:795
 msgid "Shop Now Button Font"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-display.php:708
+#: admin/partials/section/metabox/class-woo-category-slider-display.php:796
 msgid "Set shop now button font properties."
 msgstr ""
 
@@ -911,161 +988,151 @@ msgstr ""
 #: admin/partials/section/metabox/class-woo-category-slider-general.php:104
 #, php-format
 msgid ""
-"To display Parent with %1$sChild, Grand Child, Great-grand Child%2$s, "
-"%3$sUpgrade to Pro!%4$s"
+"To display %5$sParent with Child%6$s%1$s, Grand Child, Great-grand "
+"Child%2$s, %3$sUpgrade to Pro!%4$s"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:117
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:119
 msgid "Display Type"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:118
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:120
 msgid "Select an display type for parent and child categories."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:123
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:125
 msgid "Individualize Each"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:128
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:130
 msgid "Child Under Parent"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:140
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:142
 msgid "Exclude Level(s)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:141
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:143
 msgid "Exclude different level of categories."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:143
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:145
 msgid "Parent (Pro)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:144
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:146
 msgid "Child (Pro)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:145
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:147
 msgid "Grand Child (Pro)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:146
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:148
 msgid "Great-grand Child (Pro)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:153
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:155
 msgid "Filter Categories"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:154
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:156
 msgid "Select an option to filter the categories."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:157
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:159
 msgid "All"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:161
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:163
 msgid "Specific"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:165
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:167
 msgid "Exclude (Pro)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:176
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:178
 msgid "Choose Category(s)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:177
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:179
 msgid "Choose the specific category(s) to show."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:183
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:185
 msgid "Select Category(s)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:195
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:197
 msgid "Hide Empty Categories"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:196
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:198
 msgid "Check to hide empty categories from the slider."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:202
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:205
 msgid "Total Categories to Show"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:203
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:206
 msgid "Total number of categories to display."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:216
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:219
 msgid "Order By"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:217
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:220
 msgid "Select an order by option."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:219
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:222
 msgid "ID"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:220
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:223
 msgid "Name"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:222
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:225
 msgid "Drag & Drop"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:223
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:226
 msgid "Count number of product"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:224
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:259
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:298
-#: admin/partials/wcsp-framework/fields/border/border.php:90
-#: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:91
-#: admin/partials/wcsp-framework/fields/typography/typography.php:213
-#: admin/partials/wcsp-framework/fields/typography/typography.php:231
-msgid "None"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:231
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:234
 msgid "Order"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:232
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:235
 msgid "Select an order option."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:234
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:237
 msgid "Ascending"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:235
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:238
 msgid "Descending"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:243
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:246
 msgid "Randomize Categories"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:244
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:247
 msgid "Enable to randomize category order on each page load."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:253
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:256
 msgid "Preloader"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-general.php:254
+#: admin/partials/section/metabox/class-woo-category-slider-general.php:257
 msgid "Slider will be hidden until page load completed."
 msgstr ""
 
@@ -1077,305 +1144,334 @@ msgstr ""
 msgid "Slider Controls"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:48
-msgid "AutoPlay"
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:49
+msgid "Slider Orientation"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:49
-msgid "Enable/Disable auto play."
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:54
+msgid "Horizontal"
 msgstr ""
 
 #: admin/partials/section/metabox/class-woo-category-slider-slider.php:58
+msgid "Vertical"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:74
+msgid "AutoPlay"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:75
+msgid "Enable/Disable auto play."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:84
 msgid "AutoPlay Delay"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:59
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:85
 msgid "Set auto play delay time in millisecond."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:60
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:86
 msgid "AutoPlay Delay Time"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:60
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:86
 msgid ""
 "Set autoplay delay or interval time. The amount of time to delay between "
 "automatically cycling a category item. e.g. 1000 milliseconds(ms) = 1 second."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:61
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:79
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:87
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:105
 msgid "ms"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:76
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:78
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:102
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:104
 msgid "Scroll Speed"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:77
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:103
 msgid "Set pagination speed in millisecond."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:78
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:104
 msgid "Set carousel scrolling speed. e.g. 1000 milliseconds(ms) = 1 second."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:88
-msgid "Pause on Hover"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:89
-msgid "Enable/Disable slider pause on hover."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:104
-msgid "Infinite Loop"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:105
-msgid "Enable/Disable infinite loop mode."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:115
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:117
-msgid "Slide Effect"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:116
-msgid "Select a sliding effect."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:117
-msgid ""
-"Enhance your slide transition with charming Slide Effects to add elegance "
-"and dynamic motion to your slides."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:119
-msgid "Slide"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:120
-msgid "Fade (Pro)"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:121
-msgid "Coverflow (Pro)"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:122
-msgid "Flip (Pro)"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:123
-msgid "Cube (Pro)"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:124
-msgid "Kenburn (Pro)"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:135
-msgid "Auto Height"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:136
-msgid "Enable/Disable auto height."
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:145
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:114
 msgid "Slide To Scroll"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:146
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:115
 msgid "Set slide to scroll in different devices."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:159
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:128
+msgid "Pause on Hover"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:129
+msgid "Enable/Disable slider pause on hover."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:144
+msgid "Infinite Loop"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:145
+msgid "Enable/Disable infinite loop mode."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:154
+msgid "Adaptive Height"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:155
+msgid "Enable/Disable adaptive height."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:165
+msgid "Slider Direction"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:166
+msgid "Set slider direction as you need."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:169
+msgid "Right to Left"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:173
+msgid "Left to Right"
+msgstr ""
+
 #: admin/partials/section/metabox/class-woo-category-slider-slider.php:182
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:207
 msgid "Navigation"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:168
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:191
 #, php-format
 msgid ""
-"Want even more fine-tuned control over your Category Slider navigation "
-"display? %1$sUpgrade to Pro!%2$s"
+"Want even more fine-tuned control over your %3$sCategory Slider%4$s "
+"navigation display? %1$sUpgrade to Pro!%2$s"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:183
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:208
 msgid "Show/Hide carousel navigation."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:194
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:317
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:219
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:421
 msgid "Hide on Mobile"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:205
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:230
 msgid "Navigation Position"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:206
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:231
 msgid "Select navigation position."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:210
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:235
 #, php-format
 msgid "%1$sThis is a %2$sPro Feature!%3$s"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:216
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:241
 msgid "Top Right"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:217
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:242
 msgid "Top Center"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:218
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:243
 msgid "Top Left"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:219
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:244
 msgid "Bottom Left"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:220
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:245
 msgid "Bottom Center"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:221
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:246
 msgid "Bottom Right"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:222
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:247
 msgid "Vertical Inner"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:223
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:248
 msgid "Vertical Outer"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:224
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:249
 msgid "Vertical Center"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:237
-msgid "Navigation Color"
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:263
+msgid "Show On Hover"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:238
-msgid "Set color for the slider navigation."
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:264
+msgid "Card Style"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:240
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:372
-msgid "Color"
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:264
+msgid "Check to show navigation on hover in the carousel or slider area."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:241
-msgid "Hover Color"
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:271
+msgid "Navigation Arrow Icon"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:262
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:272
+msgid "Choose a slider navigation arrow icon."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:314
+msgid "Icon Size"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:315
+msgid "Set navigation arrow icon size."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:318
+msgid "size"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:330
+msgid "Icon Border & Background"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:331
+msgid "Show/Hide icon border & background."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:341
 msgid "Navigation Border"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:263
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:342
 msgid "Set border for the slider navigation."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:282
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:305
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:360
+msgid "Navigation Color"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:361
+msgid "Set color for the slider navigation."
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:363
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:476
+msgid "Color"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:364
+msgid "Hover Color"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:384
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:409
 msgid "Pagination"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:291
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:393
 #, php-format
 msgid ""
-"Want even more fine-tuned control over your Category Slider pagination "
-"display? %1$sUpgrade to Pro!%2$s"
+"Want even more fine-tuned control over your %3$sCategory Slider%4$s "
+"pagination display? %1$sUpgrade to Pro!%2$s"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:306
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:410
 msgid "Show/Hide carousel pagination."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:328
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:432
 msgid "Pagination Style"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:329
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:433
 msgid "Select carousel pagination type."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:333
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:437
 msgid "Bullets"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:337
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:441
 msgid "Dynamic"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:342
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:446
 msgid "Strokes"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:347
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:451
 msgid "Scrollbar"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:352
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:456
 msgid "Numbers"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:369
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:473
 msgid "Pagination Color"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:370
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:474
 msgid "Set color for the slider pagination."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:373
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:477
 msgid "Active Color"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:389
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:493
 msgid "Miscellaneous"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:396
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:500
 msgid "Touch Swipe"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:397
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:501
 msgid "Enable/Disable touch swipe."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:406
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:510
 msgid "Mousewheel Control"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:407
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:511
 msgid "Enable/Disable mousewheel control."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:416
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:520
 msgid "Mouse Draggable"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:417
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:521
 msgid "Enable/Disable mouse draggable."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:426
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:530
 msgid "Free Mode"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-slider.php:427
+#: admin/partials/section/metabox/class-woo-category-slider-slider.php:531
 msgid "Enable/Disable free mode."
 msgstr ""
 
@@ -1444,101 +1540,97 @@ msgstr ""
 #: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:148
 #, php-format
 msgid ""
-"To unleash your creativity with flexible Category Thumbnail styling options, "
-"%1$sUpgrade to Pro!%2$s"
+"To unleash your creativity with flexible Category %3$sThumbnail styling%4$s "
+"options, %1$sUpgrade to Pro!%2$s"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:155
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:157
 msgid "Square"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:159
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:161
 msgid "Rounded"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:164
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:166
 msgid "Circle"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:169
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:171
 msgid "Custom"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:185
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:188
 msgid "Border"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:186
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:189
 msgid "Set border for the category thumbnail."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:202
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:221
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:204
+msgid "Border Width"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:205
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:224
 msgid "Set border for thumbnail."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:243
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:223
+msgid "Border Style"
+msgstr ""
+
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:246
 msgid "BoxShadow"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:244
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:247
 msgid "Set box-shadow for thumbnail."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:249
-#: admin/partials/wcsp-framework/fields/border/border.php:86
-#: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:87
-msgid "Inset"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:254
-#: admin/partials/wcsp-framework/fields/border/border.php:87
-#: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:88
-msgid "Outset"
-msgstr ""
-
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:273
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:276
 msgid "Margin"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:274
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:277
 msgid "Set margin for thumbnail."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:295
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:298
 msgid "Zoom"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:296
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:299
 msgid "Set a zoom effect for thumbnail."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:299
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:302
 msgid "Zoom In (Pro)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:300
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:303
 msgid "Zoom Out (Pro)"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:315
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:318
 msgid "Image Mode"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:316
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:319
 msgid "Set a mode for category thumbnail or image."
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:318
-#: admin/partials/wcsp-framework/fields/typography/typography.php:196
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:321
+#: admin/partials/wcsp-framework/fields/typography/typography.php:214
 msgid "Normal"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:320
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:323
 msgid "Grayscale"
 msgstr ""
 
-#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:324
+#: admin/partials/section/metabox/class-woo-category-slider-thumbnail.php:327
 msgid "Custom Color"
 msgstr ""
 
@@ -1586,8 +1678,12 @@ msgid "Custom CSS"
 msgstr ""
 
 #: admin/partials/wcsp-framework/classes/metabox.class.php:339
-#: admin/partials/wcsp-framework/classes/options.class.php:792
+#: admin/partials/wcsp-framework/classes/options.class.php:782
 msgid "No option provided by developer."
+msgstr ""
+
+#: admin/partials/wcsp-framework/classes/metabox.class.php:350
+msgid "Show Preview"
 msgstr ""
 
 #: admin/partials/wcsp-framework/classes/metabox.class.php:359
@@ -1602,148 +1698,148 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:352
+#: admin/partials/wcsp-framework/classes/options.class.php:350
 #: admin/partials/wcsp-framework/functions/actions.php:72
 #: admin/partials/wcsp-framework/functions/actions.php:97
 msgid "Error while saving."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:417
+#: admin/partials/wcsp-framework/classes/options.class.php:412
 msgid "Success. Imported backup options."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:427
+#: admin/partials/wcsp-framework/classes/options.class.php:422
 msgid "Default options restored."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:440
+#: admin/partials/wcsp-framework/classes/options.class.php:435
 msgid "Default options restored for only this section."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:495
+#: admin/partials/wcsp-framework/classes/options.class.php:490
 msgid "Settings saved."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:699
+#: admin/partials/wcsp-framework/classes/options.class.php:689
 msgid "Save Settings"
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:699
+#: admin/partials/wcsp-framework/classes/options.class.php:689
 msgid "Saving..."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:700
+#: admin/partials/wcsp-framework/classes/options.class.php:690
 msgid "Reset Tab"
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:700
+#: admin/partials/wcsp-framework/classes/options.class.php:690
 msgid "Are you sure to reset all the settings of this tab?"
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:701
+#: admin/partials/wcsp-framework/classes/options.class.php:691
 msgid "Reset All"
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/options.class.php:701
+#: admin/partials/wcsp-framework/classes/options.class.php:691
 msgid "Are you sure to reset all options?"
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/setup.class.php:393
+#: admin/partials/wcsp-framework/classes/setup.class.php:385
 msgid "Are you sure?"
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/setup.class.php:394
+#: admin/partials/wcsp-framework/classes/setup.class.php:386
 msgid "Restoring options."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/setup.class.php:395
+#: admin/partials/wcsp-framework/classes/setup.class.php:387
 msgid "Importing options."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/setup.class.php:443
+#: admin/partials/wcsp-framework/classes/setup.class.php:434
 #, php-format
 msgid "Ooops! This field type (%s) can not be used here, yet."
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/setup.class.php:493
+#: admin/partials/wcsp-framework/classes/setup.class.php:484
 msgid "This field class is not available!"
 msgstr ""
 
-#: admin/partials/wcsp-framework/classes/setup.class.php:496
+#: admin/partials/wcsp-framework/classes/setup.class.php:487
 msgid "This type is not found!"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:53
+#: admin/partials/wcsp-framework/fields/border/border.php:54
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:53
 #: admin/partials/wcsp-framework/fields/spacing/spacing.php:54
 msgid "top"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:54
+#: admin/partials/wcsp-framework/fields/border/border.php:55
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:54
 #: admin/partials/wcsp-framework/fields/spacing/spacing.php:55
 msgid "right"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:55
+#: admin/partials/wcsp-framework/fields/border/border.php:56
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:55
 #: admin/partials/wcsp-framework/fields/spacing/spacing.php:56
 msgid "bottom"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:56
+#: admin/partials/wcsp-framework/fields/border/border.php:57
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:56
 #: admin/partials/wcsp-framework/fields/spacing/spacing.php:57
 msgid "left"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:57
+#: admin/partials/wcsp-framework/fields/border/border.php:58
 #: admin/partials/wcsp-framework/fields/column/column.php:61
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:57
 #: admin/partials/wcsp-framework/fields/spacing/spacing.php:58
 msgid "all"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:82
+#: admin/partials/wcsp-framework/fields/border/border.php:84
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:83
-#: admin/partials/wcsp-framework/fields/typography/typography.php:232
+#: admin/partials/wcsp-framework/fields/typography/typography.php:250
 msgid "Solid"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:83
+#: admin/partials/wcsp-framework/fields/border/border.php:85
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:84
-#: admin/partials/wcsp-framework/fields/typography/typography.php:235
+#: admin/partials/wcsp-framework/fields/typography/typography.php:253
 msgid "Dashed"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:84
+#: admin/partials/wcsp-framework/fields/border/border.php:86
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:85
-#: admin/partials/wcsp-framework/fields/typography/typography.php:234
+#: admin/partials/wcsp-framework/fields/typography/typography.php:252
 msgid "Dotted"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:85
+#: admin/partials/wcsp-framework/fields/border/border.php:87
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:86
-#: admin/partials/wcsp-framework/fields/typography/typography.php:233
+#: admin/partials/wcsp-framework/fields/typography/typography.php:251
 msgid "Double"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:88
+#: admin/partials/wcsp-framework/fields/border/border.php:90
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:89
 msgid "Groove"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:89
+#: admin/partials/wcsp-framework/fields/border/border.php:91
 #: admin/partials/wcsp-framework/fields/dimensions_advanced/dimensions_advanced.php:90
 msgid "ridge"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:100
-#: admin/partials/wcsp-framework/fields/border/border.php:118
+#: admin/partials/wcsp-framework/fields/border/border.php:102
+#: admin/partials/wcsp-framework/fields/border/border.php:120
 msgid "Width"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/border/border.php:128
+#: admin/partials/wcsp-framework/fields/border/border.php:130
 msgid "Style"
 msgstr ""
 
@@ -1823,130 +1919,124 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:123
+#: admin/partials/wcsp-framework/fields/typography/typography.php:141
 msgid "Font Family"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:135
+#: admin/partials/wcsp-framework/fields/typography/typography.php:153
 msgid "Font Style"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:137
-#: admin/partials/wcsp-framework/fields/typography/typography.php:150
-#: admin/partials/wcsp-framework/fields/typography/typography.php:165
-#: admin/partials/wcsp-framework/fields/typography/typography.php:184
-#: admin/partials/wcsp-framework/fields/typography/typography.php:201
+#: admin/partials/wcsp-framework/fields/typography/typography.php:155
+#: admin/partials/wcsp-framework/fields/typography/typography.php:168
+#: admin/partials/wcsp-framework/fields/typography/typography.php:183
+#: admin/partials/wcsp-framework/fields/typography/typography.php:202
 #: admin/partials/wcsp-framework/fields/typography/typography.php:219
-#: admin/partials/wcsp-framework/fields/typography/typography.php:241
+#: admin/partials/wcsp-framework/fields/typography/typography.php:237
+#: admin/partials/wcsp-framework/fields/typography/typography.php:259
 msgid "Default"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:149
-#: admin/partials/wcsp-framework/fields/typography/typography.php:150
+#: admin/partials/wcsp-framework/fields/typography/typography.php:167
+#: admin/partials/wcsp-framework/fields/typography/typography.php:168
 msgid "Load Extra Styles"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:163
+#: admin/partials/wcsp-framework/fields/typography/typography.php:181
 msgid "Subset"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:173
+#: admin/partials/wcsp-framework/fields/typography/typography.php:191
 msgid "Text Align"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:176
+#: admin/partials/wcsp-framework/fields/typography/typography.php:194
 msgid "Inherit"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:177
+#: admin/partials/wcsp-framework/fields/typography/typography.php:195
 msgid "Left"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:178
+#: admin/partials/wcsp-framework/fields/typography/typography.php:196
 msgid "Center"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:179
+#: admin/partials/wcsp-framework/fields/typography/typography.php:197
 msgid "Right"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:180
+#: admin/partials/wcsp-framework/fields/typography/typography.php:198
 msgid "Justify"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:181
+#: admin/partials/wcsp-framework/fields/typography/typography.php:199
 msgid "Initial"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:193
+#: admin/partials/wcsp-framework/fields/typography/typography.php:211
 msgid "Font Variant"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:197
+#: admin/partials/wcsp-framework/fields/typography/typography.php:215
 msgid "Small Caps"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:198
+#: admin/partials/wcsp-framework/fields/typography/typography.php:216
 msgid "All Small Caps"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:210
+#: admin/partials/wcsp-framework/fields/typography/typography.php:228
 msgid "Text Transform"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:214
+#: admin/partials/wcsp-framework/fields/typography/typography.php:232
 msgid "Capitalize"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:215
+#: admin/partials/wcsp-framework/fields/typography/typography.php:233
 msgid "Uppercase"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:216
+#: admin/partials/wcsp-framework/fields/typography/typography.php:234
 msgid "Lowercase"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:228
+#: admin/partials/wcsp-framework/fields/typography/typography.php:246
 msgid "Text Decoration"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:236
+#: admin/partials/wcsp-framework/fields/typography/typography.php:254
 msgid "Wavy"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:237
+#: admin/partials/wcsp-framework/fields/typography/typography.php:255
 msgid "Overline"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:238
+#: admin/partials/wcsp-framework/fields/typography/typography.php:256
 msgid "Line-through"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:254
+#: admin/partials/wcsp-framework/fields/typography/typography.php:271
+#: admin/partials/wcsp-framework/fields/typography/typography.php:282
+#: admin/partials/wcsp-framework/fields/typography/typography.php:293
 msgid "Font Size"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:266
+#: admin/partials/wcsp-framework/fields/typography/typography.php:304
 msgid "Line Height"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:278
-msgid "Letter Spacing"
-msgstr ""
-
-#: admin/partials/wcsp-framework/fields/typography/typography.php:290
-msgid "Word Spacing"
-msgstr ""
-
-#: admin/partials/wcsp-framework/fields/typography/typography.php:306
+#: admin/partials/wcsp-framework/fields/typography/typography.php:319
 msgid "Font Color"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:317
+#: admin/partials/wcsp-framework/fields/typography/typography.php:330
 msgid "Font Hover Color"
 msgstr ""
 
-#: admin/partials/wcsp-framework/fields/typography/typography.php:330
+#: admin/partials/wcsp-framework/fields/typography/typography.php:343
 msgid "Custom Style"
 msgstr ""
 
@@ -2008,7 +2098,7 @@ msgid "Category View"
 msgstr ""
 
 #: includes/class-woo-category-slider-post-types.php:80
-msgid "Add New Category View"
+msgid "Add Category View"
 msgstr ""
 
 #: includes/class-woo-category-slider-post-types.php:81

@@ -36,15 +36,24 @@ class Woo_Category_Slider_Admin {
 		$this->suffix = defined( 'WP_DEBUG' ) && WP_DEBUG ? '' : '.min';
 		spl_autoload_register( array( $this, 'autoload' ) );
 
+		add_action( 'after_setup_theme', array( $this, 'include_framework_option_setup_files' ) );
+
+		add_action( 'admin_action_wcs_shortcode_duplicate', array( $this, 'wcs_shortcode_duplicate' ) );
+		add_filter( 'post_row_actions', array( $this, 'wcs_shortcode_duplicate_link' ), 10, 2 );
+	}
+
+	/**
+	 * This function include framework_options setup_files.
+	 *
+	 * @return void
+	 */
+	public function include_framework_option_setup_files() {
 		SP_WCS_Settings::settings( 'sp_wcsp_settings' );
 		SP_WCS_Tools::tools( 'sp_wcsp_tools' );
 		SP_WCS_Metaboxs::preview_metabox( 'sp_wcsp_live_preview' );
 		SP_WCS_Metaboxs::side_metabox();
 		SP_WCS_Metaboxs::metabox_layout( 'sp_wcsp_layout_options' );
 		SP_WCS_Metaboxs::metabox( 'sp_wcsp_shortcode_options' );
-
-		add_action( 'admin_action_wcs_shortcode_duplicate', array( $this, 'wcs_shortcode_duplicate' ) );
-		add_filter( 'post_row_actions', array( $this, 'wcs_shortcode_duplicate_link' ), 10, 2 );
 	}
 
 	/**
@@ -389,8 +398,23 @@ class Woo_Category_Slider_Admin {
 	 * @return void
 	 */
 	public function woo_notice_message( $type ) {
-		$actual_link = esc_url( ( isset( $_SERVER['HTTPS'] ) ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" );
-		$sign        = empty( $_GET ) ? '?' : '&';
+		// Get the actual link.
+		$scheme = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] ) ||
+			( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && 'https' === $_SERVER['HTTP_X_FORWARDED_PROTO'] )
+			? 'https' : 'http';
+
+		// Sanitize host and request URI.
+		$host        = isset( $_SERVER['HTTP_HOST'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_HOST'] ) ) : '';
+		$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+
+		// Validate URL.
+		if ( ! empty( $host ) && ! empty( $request_uri ) ) {
+			$actual_link = esc_url( "{$scheme}://{$host}{$request_uri}" );
+		} else {
+			$actual_link = '';
+		}
+
+		$sign = empty( $_GET ) ? '?' : '&';
 
 		echo '<div class="updated notice is-dismissible notice-sp-wcsp-woo" data-nonce="' . wp_create_nonce( 'dismiss-wcsp-woo-notice' ) . '"><p>';
 		echo wp_kses_post( 'Please ' . $type . ' <a href="' . esc_url( $actual_link . $sign . 'sp-wcsp-woo=' . $type ) . '">WooCommerce</a> plugin to make the <b>WooCategory</b> work.', 'woo-category-slider-grid' );

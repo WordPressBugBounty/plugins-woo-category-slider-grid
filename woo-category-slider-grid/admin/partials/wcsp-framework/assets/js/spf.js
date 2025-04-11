@@ -1957,6 +1957,7 @@
 				// Field colors
 				$this.children('.spf-field-gradient_color').find('.spf-color').spf_color();
 				$this.children('.spf-field-border').find('.spf-color').spf_color();
+				$this.children('.spf-field-box_shadow').find('.spf-color').spf_color();
 				$this.children('.spf-field-color_group').find('.spf-color').spf_color();
 				$this.children('.spf-field-color').find('.spf-color').spf_color();
 				$this.children('.spf-field-typography').find('.spf-color').spf_color();
@@ -2281,6 +2282,22 @@
 			$('input[name="sp_wcsp_layout_options[wcsp_layout_presets]"][value="' + layoutPresetValue + '"]').prop('checked', true);
 		}
 	});
+
+	const cardStyleSelector = $('input[name="sp_wcsp_shortcode_options[wcsp_make_it_card_style]"]');
+	cardStyleSelector.on('change', function () {
+		const selectedValue = $(this).val();
+		if (selectedValue == 1) {
+			// Set the border radius and border width to 4px.
+			$(document).find('input[name="sp_wcsp_shortcode_options[wcsp_slide_border][all]"]').val('1');
+			$(document).find('input[name="sp_wcsp_shortcode_options[wcsp_slide_border][radius]"]').val('4');
+			$(document).find('.wcsp_category_thumb_border .spf--switcher').removeClass('spf--active').find('input').val(0);
+		} else {
+			// Set the border radius and border width to 0px.
+			$(document).find('input[name="sp_wcsp_shortcode_options[wcsp_slide_border][all]"],input[name="sp_wcsp_shortcode_options[wcsp_slide_border][radius]"]').val('0');
+			$(document).find('.wcsp_category_thumb_border .spf--switcher:not(.spf--active)').addClass('spf--active').find('input').val(1);
+		}
+	});
+
 
 	$('.wcsp-icon-demo_link').on('click', function (e) {
 		e.stopPropagation();

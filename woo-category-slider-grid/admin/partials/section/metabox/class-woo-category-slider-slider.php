@@ -42,6 +42,32 @@ class SP_WCS_Slider {
 								'title'  => __( 'Slider Controls', 'woo-category-slider-grid' ),
 								'icon'   => '<i class="sp--category-icon wcsp-icon-basic-settings"></i>',
 								'fields' => array(
+
+									array(
+										'id'         => 'wcsp_slider_orientation',
+										'type'       => 'image_select',
+										'title'      => __( 'Slider Orientation', 'woo-category-slider-grid' ),
+										'class'      => 'wcsp_layout_presets carousel-style sp-no-selected-icon',
+										'options'    => array(
+											'horizontal' => array(
+												'image' => SP_WCS_URL . 'admin/img/slider-orientation/horizontal.svg',
+												'option_name' => __( 'Horizontal', 'woo-category-slider-grid' ),
+											),
+											'vertical'   => array(
+												'image'    => SP_WCS_URL . 'admin/img/slider-orientation/vertical.svg',
+												'option_name' => __( 'Vertical', 'woo-category-slider-grid' ),
+												'pro_only' => true,
+											),
+										),
+										'default'    => 'horizontal',
+										'dependency' => array(
+											'wcsp_layout_presets',
+											'==',
+											'slider',
+											true,
+										),
+									),
+
 									array(
 										'id'         => 'wcsp_auto_play',
 										'type'       => 'switcher',
@@ -83,6 +109,20 @@ class SP_WCS_Slider {
 										'default'    => 600,
 									),
 									array(
+										'id'       => 'wcsp_slide_to_scroll',
+										'type'     => 'column',
+										'title'    => __( 'Slide To Scroll', 'woo-category-slider-grid' ),
+										'subtitle' => __( 'Set slide to scroll in different devices.', 'woo-category-slider-grid' ),
+										'min'      => '1',
+										'default'  => array(
+											'large_desktop' => '1',
+											'desktop' => '1',
+											'laptop'  => '1',
+											'tablet'  => '1',
+											'mobile'  => '1',
+										),
+									),
+									array(
 										'id'         => 'wcsp_pause_on_hover',
 										'type'       => 'switcher',
 										'title'      => __( 'Pause on Hover', 'woo-category-slider-grid' ),
@@ -109,49 +149,32 @@ class SP_WCS_Slider {
 										'default'    => true,
 									),
 									array(
-										'id'         => 'wcsp_slider_animation',
-										'class'      => 'wcsp_slider_animation',
-										'type'       => 'select',
-										'title'      => __( 'Slide Effect', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Select a sliding effect.', 'woo-category-slider-grid' ),
-										'title_help' => '<div class="spf-info-label">' . __( 'Slide Effect', 'woo-category-slider-grid' ) . '</div><div class="spf-short-content">' . __( 'Enhance your slide transition with charming Slide Effects to add elegance and dynamic motion to your slides.', 'woo-category-slider-grid' ) . '</div>',
-										'options'    => array(
-											'slide'     => __( 'Slide', 'woo-category-slider-grid' ),
-											'fade'      => __( 'Fade (Pro)', 'woo-category-slider-grid' ),
-											'coverflow' => __( 'Coverflow (Pro)', 'woo-category-slider-grid' ),
-											'flip'      => __( 'Flip (Pro)', 'woo-category-slider-grid' ),
-											'cube'      => __( 'Cube (Pro)', 'woo-category-slider-grid' ),
-											'kenburn'   => __( 'Kenburn (Pro)', 'woo-category-slider-grid' ),
-										),
-										'default'    => 'slide',
-										'attributes' => array(
-											'data-depend-id' => 'slider_animation',
-										),
-										'dependency' => array( 'wcsp_carousel_style', '!=', 'ticker', true ),
-									),
-									array(
 										'id'         => 'wcsp_auto_height',
 										'type'       => 'switcher',
-										'title'      => __( 'Auto Height', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Enable/Disable auto height.', 'woo-category-slider-grid' ),
+										'title'      => __( 'Adaptive Height', 'woo-category-slider-grid' ),
+										'subtitle'   => __( 'Enable/Disable adaptive height.', 'woo-category-slider-grid' ),
 										'text_on'    => __( 'Enabled', 'woo-category-slider-grid' ),
 										'text_off'   => __( 'Disabled', 'woo-category-slider-grid' ),
 										'text_width' => 94,
 										'default'    => true,
 									),
 									array(
-										'id'       => 'wcsp_slide_to_scroll',
-										'type'     => 'column',
-										'title'    => __( 'Slide To Scroll', 'woo-category-slider-grid' ),
-										'subtitle' => __( 'Set slide to scroll in different devices.', 'woo-category-slider-grid' ),
-										'min'      => '1',
-										'default'  => array(
-											'large_desktop' => '1',
-											'desktop' => '1',
-											'laptop'  => '1',
-											'tablet'  => '1',
-											'mobile'  => '1',
+										'id'       => 'wcsp_direction',
+										'type'     => 'button_set',
+										'pro_only' => true,
+										'title'    => __( 'Slider Direction', 'woo-category-slider-grid' ),
+										'subtitle' => __( 'Set slider direction as you need.', 'woo-category-slider-grid' ),
+										'options'  => array(
+											'ltr' => array(
+												'option_name' => __( 'Right to Left', 'woo-category-slider-grid' ),
+												'pro_only' => true,
+											),
+											'rtl' => array(
+												'option_name' => __( 'Left to Right', 'woo-category-slider-grid' ),
+												'pro_only' => true,
+											),
 										),
+										'default'  => 'ltr',
 									),
 								),
 							),
@@ -165,8 +188,10 @@ class SP_WCS_Slider {
 										'style'   => 'normal',
 										'content' => sprintf(
 											/* translators: 1: start link and bold tag, 2: close tag. */
-											__( 'Want even more fine-tuned control over your Category Slider navigation display? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
+											__( 'Want even more fine-tuned control over your %3$sCategory Slider%4$s navigation display? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
 											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+											'</b></a>',
+											'<a href="https://demo.shapedplugin.com/woocategory/slider/#Full-width-Category-Slider" target="_blank"><b>',
 											'</b></a>'
 										),
 									),
@@ -207,7 +232,7 @@ class SP_WCS_Slider {
 										'preview'    => true,
 										'desc'       => sprintf(
 											/* translators: %1$s: Help text starting tag, %2$s: starting of anchor tag, %3$s: ending of anchor tag. */
-											__( '%1$sThis is a %2$sPro Feature!%3$s', 'testimonial-free' ),
+											__( '%1$sThis is a %2$sPro Feature!%3$s', 'woo-category-slider-grid' ),
 											'<div class="sp_carousel-navigation-notice">',
 											'<a target="_blank" href="https://realtestimonials.io/pricing/?ref=1">',
 											'</a></div>'
@@ -228,6 +253,104 @@ class SP_WCS_Slider {
 											'navigation|wcsp_carousel_style',
 											'==|!=',
 											'true|ticker',
+											true,
+										),
+									),
+									array(
+										'id'         => 'nav_visible_on_hover',
+										'type'       => 'checkbox',
+										'class'      => 'pro_only_field',
+										'title'      => __( 'Show On Hover', 'woo-category-slider-grid' ),
+										'title_help' => '<div class="spf-info-label">' . __( 'Card Style', 'woo-category-slider-grid' ) . '</div><div class="spf-short-content">' . __( 'Check to show navigation on hover in the carousel or slider area.', 'woo-category-slider-grid' ) . '</div>',
+										'default'    => false,
+									),
+									array(
+										'id'       => 'wcsp_navigation_icon',
+										'type'     => 'button_set',
+										'pro_only' => true,
+										'title'    => __( 'Navigation Arrow Icon', 'woo-category-slider-grid' ),
+										'subtitle' => __( 'Choose a slider navigation arrow icon.', 'woo-category-slider-grid' ),
+										'class'    => 'wcsp_navigation_icon',
+										'options'  => array(
+											'right_open'   => array(
+												'option_name' => '<i class="wcsp-icon-right-open"></i>',
+												// 'pro_only' => true,
+											),
+											'angle'        => array(
+												'option_name' => '<i class="wcsp-icon-angle-right"></i>',
+												// 'pro_only' => true,
+											),
+											'chevron_open_big' => array(
+												'option_name' => '<i class="wcsp-icon-right-open-big"></i>',
+												// 'pro_only' => true,
+											),
+											'chevron'      => array(
+												'option_name' => '<i class="wcsp-icon-right-open-1"></i>',
+												// 'pro_only' => true,
+											),
+											'right_open_3' => array(
+												'option_name' => '<i class="wcsp-icon-right-open-3"></i>',
+												// 'pro_only' => true,
+											),
+											'right_open_outline' => array(
+												'option_name' => '<i class="wcsp-icon-right-open-outline"></i>',
+												// 'pro_only' => true,
+											),
+											'arrow'        => array(
+												'option_name' => '<i class="wcsp-icon-right"></i>',
+												// 'pro_only' => true,
+											),
+											'triangle'     => array(
+												'option_name' => '<i class="wcsp-icon-arrow-triangle-right"></i>',
+												'pro_only' => true,
+											),
+										),
+										'default'  => 'right_open',
+									),
+									array(
+										'id'              => 'wcsp_nav_arrow_icon_size',
+										'type'            => 'spacing',
+										'class'           => 'wcsp_single_input pro_only_field',
+										'title'           => __( 'Icon Size', 'woo-category-slider-grid' ),
+										'subtitle'        => __( 'Set navigation arrow icon size.', 'woo-category-slider-grid' ),
+										'all'             => true,
+										'all_text'        => false,
+										'all_placeholder' => __( 'size', 'woo-category-slider-grid' ),
+										'units'           => array(
+											esc_html__( 'px', 'woo-category-slider-grid' ),
+										),
+										'default'         => array(
+											'all' => '22',
+										),
+									),
+									array(
+										'id'         => 'wcsp_border_and_background',
+										'type'       => 'switcher',
+										'class'      => 'pro_only_field',
+										'title'      => __( 'Icon Border & Background', 'woo-category-slider-grid' ),
+										'subtitle'   => __( 'Show/Hide icon border & background.', 'woo-category-slider-grid' ),
+										'default'    => true,
+										'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
+										'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
+										'text_width' => 80,
+									),
+									array(
+										'id'          => 'wcsp_nav_border',
+										'type'        => 'border',
+										'class'       => 'wcsp-nav-border',
+										'title'       => __( 'Navigation Border', 'woo-category-slider-grid' ),
+										'subtitle'    => __( 'Set border for the slider navigation.', 'woo-category-slider-grid' ),
+										'all'         => true,
+										'hover_color' => true,
+										'default'     => array(
+											'all'         => '1',
+											'color'       => '#aaaaaa',
+											'hover_color' => '#cc2b5e',
+										),
+										'dependency'  => array(
+											'navigation',
+											'!=',
+											'false',
 											true,
 										),
 									),
@@ -255,27 +378,6 @@ class SP_WCS_Slider {
 											true,
 										),
 									),
-									array(
-										'id'          => 'wcsp_nav_border',
-										'type'        => 'border',
-										'class'       => 'wcsp-nav-border',
-										'title'       => __( 'Navigation Border', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set border for the slider navigation.', 'woo-category-slider-grid' ),
-										'all'         => true,
-										'hover_color' => true,
-										'default'     => array(
-											'all'         => '1',
-											'color'       => '#aaaaaa',
-											'hover_color' => '#cc2b5e',
-										),
-										'dependency'  => array(
-											'navigation',
-											'!=',
-											'false',
-											true,
-										),
-									),
-
 								),
 							),
 							array(
@@ -288,8 +390,10 @@ class SP_WCS_Slider {
 										'style'   => 'normal',
 										'content' => sprintf(
 											/* translators: 1: start link and bold tag, 2: close tag. */
-											__( 'Want even more fine-tuned control over your Category Slider pagination display? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
+											__( 'Want even more fine-tuned control over your %3$sCategory Slider%4$s pagination display? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
 											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+											'</b></a>',
+											'<a href="https://demo.shapedplugin.com/woocategory/slider/#Full-width-Category-Slider" target="_blank"><b>',
 											'</b></a>'
 										),
 									),

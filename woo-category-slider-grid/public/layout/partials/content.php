@@ -25,6 +25,8 @@ $under_cat_product_count  = $cat_name && $cat_product_count && 'under_cat' == $c
 $cat_description_data     = $cat_description && $wcs_term->description ? '<div class="sp-wcsp-cat-desc">' . $wcs_term->description . '</div>' : '';
 $cat_shop_now_button_data = $cat_shop_now_button ? '<div class="sp-wcsp-text-center" ><a href="' . esc_url( get_term_link( $wcs_term->term_id ) ) . '" class="sp-wcsp-shop-now" target="' . $cat_link_target . '">' . $cat_shop_now_button_text . '</a></div>' : '';
 $cat_name_data            = $cat_name ? '<div class="sp-wcsp-cat-name"><a href="' . esc_url( get_term_link( $wcs_term->term_id ) ) . '">' . esc_html( $wcs_term->name ) . '' . $beside_cat_product_count . '</a></div>' . $under_cat_product_count : '';
-
+if ( $thumbnail && ! $thumbnail_src ) {
+	$item_class .= ' sp-wcsp-cat-item-no-thumb';
+}
 $output .= '<div class="sp-wcsp-cat-item' . $item_class . '"><div class="sp-wcsp-cat-item-thumb-content">' . $thumbnail_data . '<div class="sp-wcsp-cat-details"><div class="sp-wcsp-cat-details-content">' . $cat_name_data;
 $output .= $cat_description_data . $cat_shop_now_button_data . '</div></div></div></div>'; // sp-wcsp-cat-item.
