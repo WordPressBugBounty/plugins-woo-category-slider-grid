@@ -105,6 +105,29 @@ class SP_WCS_Metaboxs {
 				),
 			)
 		);
+
+		SP_WCS::createMetabox(
+			'sp_wcsp_notice',
+			array(
+				'title'        => __( 'Unlock Pro Feature', 'woo-category-slider-grid' ),
+				'post_type'    => 'sp_wcslider',
+				'context'      => 'side',
+				'show_restore' => false,
+			)
+		);
+
+		SP_WCS::createSection(
+			'sp_wcsp_notice',
+			array(
+				'fields' => array(
+					array(
+						'type'      => 'shortcode',
+						'shortcode' => 'pro_notice',
+						'class'     => 'spwps-admin-sidebar',
+					),
+				),
+			)
+		);
 	}
 
 	/**

@@ -291,7 +291,7 @@ class Woo_Category_Slider_Admin {
 	public function plugin_row_meta( $plugin_meta, $plugin_file ) {
 		if ( SP_WCS_BASENAME === $plugin_file ) {
 			$row_meta = array(
-				'live_demo' => '<a href="https://demo.shapedplugin.com/woocommerce-category-slider/" aria-label="' . esc_attr( __( 'Live Demo', 'woo-category-slider-grid' ) ) . '" target="_blank">' . __( 'Live Demo', 'woo-category-slider-grid' ) . '</a>',
+				'live_demo' => '<a href="https://demo.shapedplugin.com/woocategory/" aria-label="' . esc_attr( __( 'Live Demo', 'woo-category-slider-grid' ) ) . '" target="_blank">' . __( 'Live Demo', 'woo-category-slider-grid' ) . '</a>',
 			);
 
 			$plugin_meta = array_merge( $plugin_meta, $row_meta );

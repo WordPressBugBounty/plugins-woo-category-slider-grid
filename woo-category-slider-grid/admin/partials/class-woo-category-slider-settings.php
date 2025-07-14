@@ -43,5 +43,6 @@ class SP_WCS_Settings {
 		);
 		SP_WCS_Advanced::section( $prefix );
 		SP_WCS_Style::section( $prefix );
+		SP_WCS_License::section( $prefix );
 	}
 }

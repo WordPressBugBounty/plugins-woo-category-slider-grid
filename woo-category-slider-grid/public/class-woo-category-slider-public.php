@@ -82,7 +82,6 @@ class Woo_Category_Slider_Public {
 			wp_enqueue_style( 'woo-category-slider-grid' );
 			wp_add_inline_style( 'woo-category-slider-grid', wp_strip_all_tags( $dynamic_style['dynamic_css'] ) );
 		}
-
 	}
 
 	/**
@@ -120,6 +119,10 @@ class Woo_Category_Slider_Public {
 		// Scripts for admin notice.
 		wp_register_script( 'woo-category-slider-grid-admin-js', SP_WCS_URL . 'admin/js/woo-category-slider-admin' . $this->suffix . '.js', array( 'jquery' ), SP_WCS_VERSION, true );
 
+		$custom_js = isset( $setting_options['custom_js'] ) ? html_entity_decode( $setting_options['custom_js'] ) : '';
+		if ( ! empty( $custom_js ) ) {
+			wp_add_inline_script( 'sp-wcs-swiper-config', $custom_js );
+		}
 	}
 
 	/**
@@ -134,10 +137,8 @@ class Woo_Category_Slider_Public {
 			if ( get_site_option( $option_key ) ) {
 				delete_site_option( $option_key );
 			}
-		} else {
-			if ( get_option( 'sp_category_slider_page_id' . $post_ID ) ) {
+		} elseif ( get_option( 'sp_category_slider_page_id' . $post_ID ) ) {
 				delete_option( 'sp_category_slider_page_id' . $post_ID );
-			}
 		}
 	}
 

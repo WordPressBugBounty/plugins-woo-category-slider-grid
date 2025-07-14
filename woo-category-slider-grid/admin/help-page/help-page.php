@@ -437,7 +437,7 @@ class Woo_Category_Slider_Help {
 							<iframe width="724" height="405" src="https://www.youtube.com/embed/X_Czmx3ndjU?si=FG32mVzfhkC-3WEA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 							<ul>
 								<li><a class='spwoocs-medium-btn' href="<?php echo esc_url( home_url( '/' ) . 'wp-admin/post-new.php?post_type=sp_wcslider' ); ?>">Create a Category View</a></li>
-								<li><a target="_blank" class='spwoocs-medium-btn' href="https://demo.shapedplugin.com/woocommerce-category-slider/">Live Demo</a></li>
+								<li><a target="_blank" class='spwoocs-medium-btn' href="https://demo.shapedplugin.com/woocategory/">Live Demo</a></li>
 								<li><a target="_blank" class='spwoocs-medium-btn arrow-btn' href="https://shapedplugin.com/woocategory/?ref=115">Explore WooCategory <i class="spwoocs-icon-button-arrow-icon"></i></a></li>
 							</ul>
 						</div>
@@ -664,7 +664,7 @@ class Woo_Category_Slider_Help {
 									<span class='spwoocs-small-paragraph'>14-Day No-Questions-Asked <a target="_blank" href="https://shapedplugin.com/refund-policy/">Refund Policy</a></span>
 								</div>
 								<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115" class='spwoocs-big-btn-border'>See All Features</a>
-								<a target="_blank" href="https://demo.shapedplugin.com/woocommerce-category-slider/" class='spwoocs-big-btn-border spwoocs-live-pro-demo'>Pro Live Demo</a>
+								<a target="_blank" href="https://shapedplugin.com/woocategory/" class='spwoocs-big-btn-border spwoocs-live-pro-demo'>Pro Live Demo</a>
 							</div>
 						</div>
 					</div>

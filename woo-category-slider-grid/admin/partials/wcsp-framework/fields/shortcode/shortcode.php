@@ -67,6 +67,41 @@ if ( ! class_exists( 'SP_WCS_Field_shortcode' ) ) {
 					<div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  ' . esc_html__( 'Shortcode  Copied to Clipboard!', 'woo-category-slider-grid' ) . '</div>
 				</div>';
 
+			} elseif ( ! empty( $this->field['shortcode'] ) && 'pro_notice' === $this->field['shortcode'] ) {
+				if ( ! empty( $post_id ) ) {
+					echo '<div class="sp_wcsp_shortcode-area sp_wcsp-notice-wrapper">';
+					echo '<div class="sp_wcsp-notice-heading">' . sprintf(
+						/* translators: 1: start span tag, 2: close tag. */
+						esc_html__( 'Unlock Full Potential with %1$sPRO%2$s', 'woo-category-slider-grid' ),
+						'<span>',
+						'</span>'
+					) . '</div>';
+
+					echo '<p class="sp_wcsp-notice-desc">' . sprintf(
+						/* translators: 1: start bold tag, 2: close tag. */
+						esc_html__( 'Enhance the shopping experience with Stunning Product Category Displays!', 'woo-category-slider-grid' ),
+						'<b>',
+						'</b>'
+					) . '</p>';
+
+					echo '<ul>';
+					echo '<li><i class="wcsp-icon-check-icon"></i> ' . esc_html__( '11+ Category Layouts', 'woo-category-slider-grid' ) . '</li>';
+					echo '<li><i class="wcsp-icon-check-icon"></i> ' . esc_html__( 'A Lot of Templates & Styles', 'woo-category-slider-grid' ) . '</li>';
+					echo '<li><i class="wcsp-icon-check-icon"></i> ' . esc_html__( 'Multi-level (up to 4) Categories', 'woo-category-slider-grid' ) . '</li>';
+					echo '<li><i class="wcsp-icon-check-icon"></i> ' . esc_html__( 'Highlight Special Categories', 'woo-category-slider-grid' ) . '</li>';
+					echo '<li><i class="wcsp-icon-check-icon"></i> ' . esc_html__( 'Random Order & Item Counter', 'woo-category-slider-grid' ) . '</li>';
+					echo '<li><i class="wcsp-icon-check-icon"></i> ' . esc_html__( 'Show Childs Independently', 'woo-category-slider-grid' ) . '</li>';
+					echo '<li><i class="wcsp-icon-check-icon"></i> ' . esc_html__( 'Auto Hide Empty Categories', 'woo-category-slider-grid' ) . '</li>';
+					echo '<li><i class="wcsp-icon-check-icon"></i> ' . esc_html__( '130+ Customizations and More', 'woo-category-slider-grid' ) . '</li>';
+					echo '</ul>';
+
+					echo '<div class="sp_wcsp-notice-button">';
+					echo '<a class="sp_wcsp-open-live-demo" href="https://shapedplugin.com/woocategory/#pricing" target="_blank">';
+					echo esc_html__( 'Upgrade to Pro Now', 'woo-category-slider-grid' ) . ' <i class="wcsp-icon-shuttle_2285485-1"></i>';
+					echo '</a>';
+					echo '</div>';
+					echo '</div>';
+				}
 			} else {
 
 				echo '

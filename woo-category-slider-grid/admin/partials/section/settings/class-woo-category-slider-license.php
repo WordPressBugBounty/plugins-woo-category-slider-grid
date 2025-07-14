@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.1.0
  */
-class SP_WCS_Style {
+class SP_WCS_License {
 	/**
 	 * Settings section.
 	 *
@@ -32,28 +32,13 @@ class SP_WCS_Style {
 		SP_WCS::createSection(
 			$prefix,
 			array(
-				'id'     => 'custom_css_section',
-				'title'  => __( 'Additional CSS & JS', 'woo-category-slider-grid' ),
-				'icon'   => 'fa wcsp-icon-code',
+				'id'     => 'license_key_section',
+				'title'  => __( 'License', 'woo-category-slider-grid' ),
+				'icon'   => 'fa wcsp-icon-key-01',
 				'fields' => array(
 					array(
-						'id'       => 'wcsp_custom_css',
-						'type'     => 'code_editor',
-						'title'    => __( 'Custom CSS', 'woo-category-slider-grid' ),
-						'settings' => array(
-							'icon'  => 'fa fa-sliders',
-							'theme' => 'mbo',
-							'mode'  => 'css',
-						),
-					),
-					array(
-						'id'       => 'custom_js',
-						'type'     => 'code_editor',
-						'title'    => __( 'Custom JS', 'woo-category-slider-grid' ),
-						'settings' => array(
-							'theme' => 'monokai',
-							'mode'  => 'javascript',
-						),
+						'id'   => 'license_key',
+						'type' => 'license',
 					),
 				),
 			)

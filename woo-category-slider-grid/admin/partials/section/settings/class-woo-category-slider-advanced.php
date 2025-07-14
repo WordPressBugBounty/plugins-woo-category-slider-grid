@@ -33,7 +33,7 @@ class SP_WCS_Advanced {
 			$prefix,
 			array(
 				'title'  => 'Advanced Controls',
-				'icon'   => 'fa fa-wrench',
+				'icon'   => 'fa wcsp-icon-advanced',
 				'fields' => array(
 					array(
 						'id'         => 'wcsp_delete_all_data',

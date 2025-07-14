@@ -2,11 +2,11 @@
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: product category slider, woocommerce category carousel, product category showcase, woocommerce category slider, product category list
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.8.1
 Requires PHP: 7.0
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 WC requires at least: 4.5
-WC tested up to: 9.8.1
+WC tested up to: 9.9.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,13 +14,13 @@ Display product categories in a visually appealing slider or grid to strategical
 
 == Description ==
 
-[__Live Demo__](https://demo.shapedplugin.com/woocommerce-category-slider/) | [__Documentation__](https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/) | [__Upgrade to Pro!__](https://shapedplugin.com/woocategory/?ref=115#pricing)
+[__Live Demo__](https://demo.shapedplugin.com/woocategory/) | [__Documentation__](https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/) | [__Upgrade to Pro!__](https://shapedplugin.com/woocategory/?ref=115#pricing)
 
 [youtube https://www.youtube.com/watch?v=X_Czmx3ndjU&list=PLoUb-7uG-5jMzpAUaCkor0Ldc4F_7gfjz]
 
 = Overview =
 
-[__WooCategory__](https://demo.shapedplugin.com/woocommerce-category-slider/) helps you display by filtering specific WooCommerce Categories aesthetically in a sliding manner. You can show your product categories with thumbnail, child category, description, shop now button. The plugin has simple and easy to use shortcode generator interface with many handy options which will help you to customize and manage WooCommerce Categories and its content easily without coding.
+[__WooCategory__](https://shapedplugin.com/woocategory/) helps you display by filtering specific WooCommerce Categories aesthetically in a sliding manner. You can show your product categories with thumbnail, child category, description, shop now button. The plugin has simple and easy to use shortcode generator interface with many handy options which will help you to customize and manage WooCommerce Categories and its content easily without coding.
 
 A WooCategory is one of the best ways to highlight your specific product categories and, if put in the strategic or right position, it will certainly allow you to increase the conversion rate in your shop or site. WooCategory is free, rapidly growing and comes with great support.
 
@@ -153,6 +153,11 @@ The WordPress codex contains <a href="https://codex.wordpress.org/Managing_Plugi
 
 
 == Changelog ==
+
+= 1.6.1 - Jul 14, 2025 =
+* New: The Custom JS option.
+* Improved: The plugin setting page tab icons.
+* Tested: WooCommerce 9.9.5 compatibility.
 
 = 1.6.0 - Apr 11, 2025 =
 * New: The Item Border Option.
