@@ -8,8 +8,8 @@
  *
  * Plugin Name:       WooCategory
  * Plugin URI:        https://shapedplugin.com/woocategory/?ref=115
- * Description:       WooCategory helps you display WooCommerce Categories aesthetically in a nice Slider, Grid, Hierarchy Grid, or Inline layouts. You can manage and show your product categories with thumbnail, child category (beside), description, shop now button with an easy to use shortcode generator interface with many handy options.
- * Version:           1.6.1
+ * Description:       WooCategory helps you display WooCommerce Categories aesthetically in a Slider, Grid, Hierarchy Grid, or Inline layouts. You can manage and show your product categories with thumbnail, child category (beside), description, shop now button with an easy to use shortcode generator interface with many handy options.
+ * Version:           1.6.2
  * Author:            ShapedPlugin LLC
  * Author URI:        https://shapedplugin.com/
  * License:           GPL-2.0+
@@ -20,7 +20,7 @@
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * WC requires at least: 4.5
- * WC tested up to: 9.9.5
+ * WC tested up to: 10.1.2
  */
 
 // If this file is called directly, abort.
@@ -65,7 +65,7 @@ class Woo_Category_Slider {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $version = '1.6.1';
+	protected $version = '1.6.2';
 
 	/**
 	 * Holds class object
@@ -126,7 +126,6 @@ class Woo_Category_Slider {
 	 * Include the following files that make up the plugin:
 	 *
 	 * - Woo_Category_Slider_Loader. Orchestrates the hooks of the plugin.
-	 * - Woo_Category_Slider_i18n. Defines internationalization functionality.
 	 * - Woo_Category_Slider_Admin. Defines all hooks for the admin area.
 	 * - Woo_Category_Slider_Public. Defines all hooks for the public side of the site.
 	 *
@@ -167,7 +166,6 @@ class Woo_Category_Slider {
 		require_once SP_WCS_INCLUDES . '/class-woo-category-slider-import-export.php';
 		require_once SP_WCS_PATH . 'admin/partials/wcsp-framework/classes/setup.class.php';
 		require_once SP_WCS_PATH . 'admin/partials/notices/review.php';
-		require_once SP_WCS_PATH . 'admin/partials/notices/offer-banner.php';
 		require_once SP_WCS_PATH . 'admin/preview/class-woo-category-slider-preview.php';
 
 		$this->loader = new Woo_Category_Slider_Loader();

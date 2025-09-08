@@ -104,22 +104,22 @@ class Woo_Category_Slider_Help {
 	public function help_admin_menu() {
 		add_submenu_page(
 			'edit.php?post_type=sp_wcslider',
-			__( 'Category Slider', 'woo-category-slider-grid' ),
-			__( 'Recommended', 'woo-category-slider-grid' ),
+			esc_html__( 'Category Slider', 'woo-category-slider-grid' ),
+			esc_html__( 'Recommended', 'woo-category-slider-grid' ),
 			'manage_options',
 			'edit.php?post_type=sp_wcslider&page=wcsp_help#recommended'
 		);
 		add_submenu_page(
 			'edit.php?post_type=sp_wcslider',
-			__( 'Category Slider', 'woo-category-slider-grid' ),
-			__( 'Lite vs Pro', 'woo-category-slider-grid' ),
+			esc_html__( 'Category Slider', 'woo-category-slider-grid' ),
+			esc_html__( 'Lite vs Pro', 'woo-category-slider-grid' ),
 			'manage_options',
 			'edit.php?post_type=sp_wcslider&page=wcsp_help#lite-to-pro'
 		);
 		add_submenu_page(
 			'edit.php?post_type=sp_wcslider',
-			__( 'WooCategory Help', 'woo-category-slider-grid' ),
-			__( 'Get Help', 'woo-category-slider-grid' ),
+			esc_html__( 'WooCategory Help', 'woo-category-slider-grid' ),
+			esc_html__( 'Get Help', 'woo-category-slider-grid' ),
 			'manage_options',
 			'wcsp_help',
 			array(
@@ -208,7 +208,6 @@ class Woo_Category_Slider_Help {
 				} else {
 					$plugin_file = $plugin_slug . '.php';
 				}
-
 
 				$details_link = network_admin_url( 'plugin-install.php?tab=plugin-information&amp;plugin=' . $plugin['slug'] . '&amp;TB_iframe=true&amp;width=745&amp;height=550' );
 				?>
@@ -755,7 +754,7 @@ class Woo_Category_Slider_Help {
 							</div>
 						</div>
 						<div class="spwoocs-about-img">
-							<img src="https://shapedplugin.com/wp-content/uploads/2024/01/shapedplugin-team.jpg" alt="">
+							<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/shapedplugin-team.jpg' ); ?>" alt="ShapedPlugin Team">
 							<span>Team ShapedPlugin LLC at WordCamp Sylhet</span>
 						</div>
 					</div>
@@ -779,7 +778,7 @@ class Woo_Category_Slider_Help {
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://realtestimonials.io/?ref=1">
 							<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="https://ps.w.org/testimonial-free/assets/icon-256x256.gif" alt="">
+								<img src="<?php echo esc_url( $plugin_icon['testimonial-free'] ); ?>" alt="Real Testimonials">
 								<h4>Real Testimonials</h4>
 								<p>Simply collect, manage, and display Testimonials on your website and boost conversions.</p>
 							</a>
@@ -864,7 +863,6 @@ class Woo_Category_Slider_Help {
 		</div>
 		<?php
 	}
-
 }
 
 Woo_Category_Slider_Help::instance();

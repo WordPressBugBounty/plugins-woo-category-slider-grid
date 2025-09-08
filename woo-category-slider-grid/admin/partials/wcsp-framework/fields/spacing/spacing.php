@@ -88,7 +88,7 @@ if ( ! class_exists( 'SP_WCS_Field_spacing' ) ) {
 
 				echo '<div class="spf--input">';
 				echo ( ! empty( $args['all_text'] ) ) ? '<span class="spf--label spf--label-icon">' . wp_kses_post( $args['all_text'] ) . '</span>' : '';
-				echo '<input type="number" name="' . esc_attr( $this->field_name( '[all]' ) ) . '" value="' . esc_attr( $value['all'] ) . '"' . $placeholder . $min . ' class="spf-number" />';
+				echo '<input type="number" name="' . esc_attr( $this->field_name( '[all]' ) ) . '" value="' . esc_attr( $value['all'] ) . '"' . $placeholder . $min . ' class="spf-number" />'; // phpcs:ignore -- WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above.
 				echo ( count( $args['units'] ) === 1 && ! empty( $args['unit'] ) ) ? '<span class="spf--label spf--label-unit">' . esc_html( $args['units'][0] ) . '</span>' : '';
 				echo '</div>';
 
@@ -129,7 +129,6 @@ if ( ! class_exists( 'SP_WCS_Field_spacing' ) ) {
 			echo '<div class="clear"></div>';
 
 			echo wp_kses_post( $this->field_after() );
-
 		}
 
 		/**
@@ -172,8 +171,6 @@ if ( ! class_exists( 'SP_WCS_Field_spacing' ) ) {
 			$this->parent->output_css .= $output;
 
 			return $output;
-
 		}
-
 	}
 }

@@ -377,8 +377,8 @@ if ( ! class_exists( 'SP_WCS_Field_typography' ) ) {
 			$multiple_name = ( $is_multiple ) ? '[]' : '';
 			$multiple_attr = ( $is_multiple ) ? ' multiple data-multiple="true"' : '';
 			$chosen_rtl    = ( $this->chosen && is_rtl() ) ? ' chosen-rtl' : '';
-			$output  = '<select disabled name="' . esc_attr( $this->field_name( '[' . $name . ']' . $multiple_name ) ) . '" class="spf--' . esc_attr( $name . $chosen_rtl ) . '" data-placeholder="' . esc_attr( $placeholder ) . '"' . wp_kses_post( $multiple_attr ) . '>';
-			$output .= ( ! empty( $placeholder ) ) ? '<option value="">' . ( ( ! $this->chosen ) ? $placeholder : '' ) . '</option>' : '';
+			$output        = '<select disabled name="' . esc_attr( $this->field_name( '[' . $name . ']' . $multiple_name ) ) . '" class="spf--' . esc_attr( $name . $chosen_rtl ) . '" data-placeholder="' . esc_attr( $placeholder ) . '"' . wp_kses_post( $multiple_attr ) . '>';
+			$output       .= ( ! empty( $placeholder ) ) ? '<option value="">' . ( ( ! $this->chosen ) ? $placeholder : '' ) . '</option>' : '';
 
 			if ( ! empty( $options ) ) {
 				foreach ( $options as $option_key => $option_value ) {

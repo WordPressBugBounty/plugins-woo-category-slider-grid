@@ -33,25 +33,25 @@ class SP_WCS_Style {
 			$prefix,
 			array(
 				'id'     => 'custom_css_section',
-				'title'  => __( 'Additional CSS & JS', 'woo-category-slider-grid' ),
+				'title'  => esc_html__( 'Additional CSS & JS', 'woo-category-slider-grid' ),
 				'icon'   => 'fa wcsp-icon-code',
 				'fields' => array(
 					array(
 						'id'       => 'wcsp_custom_css',
 						'type'     => 'code_editor',
-						'title'    => __( 'Custom CSS', 'woo-category-slider-grid' ),
+						'title'    => esc_html__( 'Custom CSS', 'woo-category-slider-grid' ),
 						'settings' => array(
 							'icon'  => 'fa fa-sliders',
-							'theme' => 'mbo',
+							'theme' => 'default',
 							'mode'  => 'css',
 						),
 					),
 					array(
 						'id'       => 'custom_js',
 						'type'     => 'code_editor',
-						'title'    => __( 'Custom JS', 'woo-category-slider-grid' ),
+						'title'    => esc_html__( 'Custom JS', 'woo-category-slider-grid' ),
 						'settings' => array(
-							'theme' => 'monokai',
+							'theme' => 'default',
 							'mode'  => 'javascript',
 						),
 					),

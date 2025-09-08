@@ -32,7 +32,7 @@ class SP_WCS_Display {
 		SP_WCS::createSection(
 			$prefix,
 			array(
-				'title'  => __( 'Display Settings', 'woo-category-slider-grid' ),
+				'title'  => esc_html__( 'Display Settings', 'woo-category-slider-grid' ),
 				'icon'   => 'fa fa-th-large',
 				'fields' => array(
 					array(
@@ -40,16 +40,16 @@ class SP_WCS_Display {
 						'class' => 'sp-category-slider-display-settings',
 						'tabs'  => array(
 							array(
-								'title'  => __( 'Basic Styles', 'woo-category-slider-grid' ),
+								'title'  => esc_html__( 'Basic Styles', 'woo-category-slider-grid' ),
 								'icon'   => '<i class="sp--category-icon wcsp-icon-basic-style"></i>',
 								'fields' => array(
 									array(
 										'id'         => 'wcsp_section_title',
 										'type'       => 'switcher',
-										'title'      => __( 'Section Title', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Show/Hide category showcase section title.', 'woo-category-slider-grid' ),
-										'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
-										'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Section Title', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Show/Hide category showcase section title.', 'woo-category-slider-grid' ),
+										'text_on'    => esc_html__( 'Show', 'woo-category-slider-grid' ),
+										'text_off'   => esc_html__( 'Hide', 'woo-category-slider-grid' ),
 										'text_width' => 80,
 										'default'    => true,
 									),
@@ -57,11 +57,11 @@ class SP_WCS_Display {
 										'id'          => 'wcsp_cat_content_position',
 										'class'       => 'wcsp_cat_content_position sp-no-selected-icon',
 										'type'        => 'image_select',
-										'title'       => __( 'Category Content Position', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Select a position for the category content.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Category Content Position', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Select a position for the category content.', 'woo-category-slider-grid' ),
 										'desc'        => sprintf(
 											/* translators: 1: start link and bold tag, 2: close tag, 3: start link and bold tag, 4: close tag. */
-											__( 'To access amazing category %1$sContent Positions%2$s & Settings, %3$sUpgrade to Pro!%4$s', 'woo-category-slider-grid' ),
+											esc_html__( 'To access amazing category %1$sContent Positions%2$s & Settings, %3$sUpgrade to Pro!%4$s', 'woo-category-slider-grid' ),
 											'<a href="https://demo.shapedplugin.com/woocategory/category-content-position/" target="_blank"><b>',
 											'</b></a>',
 											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
@@ -71,46 +71,46 @@ class SP_WCS_Display {
 										'options'     => array(
 											'thumb-above-cont-below' => array(
 												'image' => SP_WCS_URL . 'admin/img/content-positions/below-content.svg',
-												'option_name' => __( 'Below Content', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Below Content', 'woo-category-slider-grid' ),
 											),
 											'cont-above-thumb-below' => array(
 												'image'    => SP_WCS_URL . 'admin/img/content-positions/above-content.svg',
-												'option_name' => __( 'Above Content', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Above Content', 'woo-category-slider-grid' ),
 												'pro_only' => true,
 											),
 											'left-thumb-right-cont'  => array(
 												'image'    => SP_WCS_URL . 'admin/img/content-positions/right-content.svg',
-												'option_name' => __( 'Right Content', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Right Content', 'woo-category-slider-grid' ),
 												'pro_only' => true,
 											),
 											'left-cont-right-thumb'  => array(
 												'image'    => SP_WCS_URL . 'admin/img/content-positions/left-content.svg',
-												'option_name' => __( 'Left Content', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Left Content', 'woo-category-slider-grid' ),
 												'pro_only' => true,
 											),
 											'cont-over-thumb'        => array(
 												'image'    => SP_WCS_URL . 'admin/img/content-positions/overlay-content.svg',
-												'option_name' => __( 'Overlay', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Overlay', 'woo-category-slider-grid' ),
 												'pro_only' => true,
 											),
 											'top-overlay-cont'        => array(
 												'image'    => SP_WCS_URL . 'admin/img/content-positions/overlay-content-top.svg',
-												'option_name' => __( 'Overlay Top', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Overlay Top', 'woo-category-slider-grid' ),
 												'pro_only' => true,
 											),
 											'middle-overlay-cont'        => array(
 												'image'    => SP_WCS_URL . 'admin/img/content-positions/overlay-content-middle.svg',
-												'option_name' => __( 'Overlay Mid', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Overlay Mid', 'woo-category-slider-grid' ),
 												'pro_only' => true,
 											),
 											'bottom-overlay-cont'        => array(
 												'image'    => SP_WCS_URL . 'admin/img/content-positions/overlay-content-bottom.svg',
-												'option_name' => __( 'Overlay Bottom', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Overlay Bottom', 'woo-category-slider-grid' ),
 												'pro_only' => true,
 											),
 											'overlay-content'        => array(
 												'image'    => SP_WCS_URL . 'admin/img/content-positions/overlay-box.svg',
-												'option_name' => __( 'Overlay Box', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Overlay Box', 'woo-category-slider-grid' ),
 												'pro_only' => true,
 											),
 										),
@@ -119,10 +119,10 @@ class SP_WCS_Display {
 									array(
 										'id'       => 'wcsp_make_it_card_style',
 										'type'     => 'checkbox',
-										'title'    => __( 'Make it Card Style', 'woo-category-slider-grid' ),
+										'title'    => esc_html__( 'Make it Card Style', 'woo-category-slider-grid' ),
 										'subtitle' => sprintf(
 											/* translators: %1$s is opening anchor tag, %2$s is closing anchor tag. */
-											__( 'Add a material feel to your design through customization. %1$sSee Demo%2$s', 'woo-category-slider-grid' ),
+											esc_html__( 'Add a material feel to your design through customization. %1$sSee Demo%2$s', 'woo-category-slider-grid' ),
 											'<a href="https://demo.shapedplugin.com/woocategory/grid/#Category-Card-Style" target="_blank"><b>',
 											'</b></a>'
 										),
@@ -131,8 +131,8 @@ class SP_WCS_Display {
 									array(
 										'id'          => 'wcsp_slide_border',
 										'type'        => 'border',
-										'title'       => __( 'Item Border', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set border for the items.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Item Border', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set border for the items.', 'woo-category-slider-grid' ),
 										'all'         => true,
 										'hover-color' => false,
 										'radius'      => true,
@@ -146,11 +146,11 @@ class SP_WCS_Display {
 									array(
 										'id'       => 'wcsp_cat_background',
 										'type'     => 'color_group',
-										'title'    => __( 'Item Background', 'woo-category-slider-grid' ),
-										'subtitle' => __( 'Set color for the category items background.', 'woo-category-slider-grid' ),
+										'title'    => esc_html__( 'Item Background', 'woo-category-slider-grid' ),
+										'subtitle' => esc_html__( 'Set color for the category items background.', 'woo-category-slider-grid' ),
 										'options'  => array(
-											'background' => __( 'Background', 'woo-category-slider-grid' ),
-											'hover_background' => __( 'Hover Background', 'woo-category-slider-grid' ),
+											'background' => esc_html__( 'Background', 'woo-category-slider-grid' ),
+											'hover_background' => esc_html__( 'Hover Background', 'woo-category-slider-grid' ),
 										),
 										'default'  => array(
 											'background' => 'transparent',
@@ -166,8 +166,8 @@ class SP_WCS_Display {
 									array(
 										'id'            => 'wcsp_cat_border',
 										'type'          => 'spacing',
-										'title'         => __( 'Content Border Width', 'woo-category-slider-grid' ),
-										'subtitle'      => __( 'Set category content border width for the slider items.', 'woo-category-slider-grid' ),
+										'title'         => esc_html__( 'Content Border Width', 'woo-category-slider-grid' ),
+										'subtitle'      => esc_html__( 'Set category content border width for the slider items.', 'woo-category-slider-grid' ),
 										'hover_color'   => false,
 										'color'         => false,
 										'border_radius' => true,
@@ -187,8 +187,8 @@ class SP_WCS_Display {
 									array(
 										'id'          => 'wcsp_cat_border_style',
 										'type'        => 'border',
-										'title'       => __( 'Content Border Style', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set category content border style for the slider items.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Content Border Style', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set category content border style for the slider items.', 'woo-category-slider-grid' ),
 										'hover_color' => true,
 										'top'         => false,
 										'left'        => false,
@@ -211,8 +211,8 @@ class SP_WCS_Display {
 										'id'          => 'wcsp_cat_padding',
 										'type'        => 'spacing',
 										'class'       => 'wcsp-cat-padding',
-										'title'       => __( 'Content Padding', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set category content inner padding.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Content Padding', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set category content inner padding.', 'woo-category-slider-grid' ),
 										'output_mode' => 'padding',
 										'unit'        => true,
 										'units'       => array( 'px' ),
@@ -227,17 +227,17 @@ class SP_WCS_Display {
 									array(
 										'id'       => 'wcsp_box_shadow_style',
 										'type'     => 'button_set',
-										'title'    => __( 'Item Box-Shadow', 'woo-category-slider-grid' ),
-										'subtitle' => __( 'Set Box-Shadow for the items.', 'woo-category-slider-grid' ),
+										'title'    => esc_html__( 'Item Box-Shadow', 'woo-category-slider-grid' ),
+										'subtitle' => esc_html__( 'Set Box-Shadow for the items.', 'woo-category-slider-grid' ),
 										'options'  => array(
 											'outset' => array(
-												'option_name' => __( 'Outset', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Outset', 'woo-category-slider-grid' ),
 											),
 											'inset'  => array(
-												'option_name' => __( 'Inset', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'Inset', 'woo-category-slider-grid' ),
 											),
 											'none'   => array(
-												'option_name' => __( 'None', 'woo-category-slider-grid' ),
+												'option_name' => esc_html__( 'None', 'woo-category-slider-grid' ),
 											),
 										),
 										'default'  => 'none',
@@ -245,8 +245,8 @@ class SP_WCS_Display {
 									array(
 										'id'          => 'wcsp_box_shadow',
 										'type'        => 'box_shadow',
-										'title'       => __( 'Box-Shadow Values', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set box-shadow property values for the item.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Box-Shadow Values', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set box-shadow property values for the item.', 'woo-category-slider-grid' ),
 										'style'       => false,
 										'hover_color' => true,
 										'default'     => array(
@@ -266,17 +266,17 @@ class SP_WCS_Display {
 										'class'      => 'pro_only_field',
 										'only_pro'   => true,
 										'attributes' => array( 'disabled' => 'disabled' ),
-										'title'      => __( 'Enable Equal Height', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Enable to adjust the height of all the category items to match the tallest one.', 'woo-category-slider-grid' ),
-										'text_on'    => __( 'Enabled', 'woo-category-slider-grid' ),
-										'text_off'   => __( 'Disabled', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Enable Equal Height', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Enable to adjust the height of all the category items to match the tallest one.', 'woo-category-slider-grid' ),
+										'text_on'    => esc_html__( 'Enabled', 'woo-category-slider-grid' ),
+										'text_off'   => esc_html__( 'Disabled', 'woo-category-slider-grid' ),
 										'text_width' => 95,
 										'default'    => false,
 									),
 								),
 							),
 							array(
-								'title'  => __( 'Category Content', 'woo-category-slider-grid' ),
+								'title'  => esc_html__( 'Category Content', 'woo-category-slider-grid' ),
 								'icon'   => '<i class="sp--category-icon wcsp-icon-cat-content"></i>',
 								'fields' => array(
 									array(
@@ -284,7 +284,7 @@ class SP_WCS_Display {
 										'style'   => 'normal',
 										'content' => sprintf(
 											/* translators: 1: start link and bold tag, 2: close tag. */
-											__( 'To access the %1$sCategory Icon library%2$s and %3$sCustom Text%4$s for your product category, %5$sUpgrade to Pro!%6$s', 'woo-category-slider-grid' ),
+											esc_html__( 'To access the %1$sCategory Icon library%2$s and %3$sCustom Text%4$s for your product category, %5$sUpgrade to Pro!%6$s', 'woo-category-slider-grid' ),
 											'<a href="https://demo.shapedplugin.com/woocategory/grid/#Category-with-Icon-Library" target="_blank"><b>',
 											'</b></a>',
 											'<a href="https://demo.shapedplugin.com/woocategory/slider/#Custom-Offer" target="_blank"><b>',
@@ -298,20 +298,20 @@ class SP_WCS_Display {
 										'class'      => 'pro_only_field',
 										'type'       => 'switcher',
 										'only_pro'   => true,
-										'title'      => __( 'Icon', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Show/Hide category icon.', 'woo-category-slider-grid' ),
-										'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
-										'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Icon', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Show/Hide category icon.', 'woo-category-slider-grid' ),
+										'text_on'    => esc_html__( 'Show', 'woo-category-slider-grid' ),
+										'text_off'   => esc_html__( 'Hide', 'woo-category-slider-grid' ),
 										'text_width' => 80,
 										'default'    => false,
 									),
 									array(
 										'id'         => 'wcsp_cat_name',
 										'type'       => 'switcher',
-										'title'      => __( 'Category Name', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Show/Hide category name.', 'woo-category-slider-grid' ),
-										'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
-										'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Category Name', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Show/Hide category name.', 'woo-category-slider-grid' ),
+										'text_on'    => esc_html__( 'Show', 'woo-category-slider-grid' ),
+										'text_off'   => esc_html__( 'Hide', 'woo-category-slider-grid' ),
 										'text_width' => 80,
 										'default'    => true,
 									),
@@ -319,8 +319,8 @@ class SP_WCS_Display {
 										'id'          => 'wcsp_cat_name_margin',
 										'type'        => 'spacing',
 										'class'       => 'wcsp-cat-name-margin',
-										'title'       => __( 'Category Name Margin', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set category name margin.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Category Name Margin', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set category name margin.', 'woo-category-slider-grid' ),
 										'output_mode' => 'margin',
 										'units'       => array(
 											esc_html__( 'px', 'woo-category-slider-grid' ),
@@ -343,10 +343,10 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_cat_product_count',
 										'type'       => 'switcher',
-										'title'      => __( 'Product Count', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Show/Hide product count.', 'woo-category-slider-grid' ),
-										'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
-										'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Product Count', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Show/Hide product count.', 'woo-category-slider-grid' ),
+										'text_on'    => esc_html__( 'Show', 'woo-category-slider-grid' ),
+										'text_off'   => esc_html__( 'Hide', 'woo-category-slider-grid' ),
 										'text_width' => 80,
 										'default'    => true,
 										'dependency' => array( 'wcsp_cat_name', '==', 'true', true ),
@@ -354,11 +354,11 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_cat_product_count_position',
 										'type'       => 'radio',
-										'title'      => __( 'Product Count Position', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Set product count position.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Product Count Position', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Set product count position.', 'woo-category-slider-grid' ),
 										'options'    => array(
-											'beside_cat' => __( 'Beside category name', 'woo-category-slider-grid' ),
-											'under_cat'  => __( 'Under category name', 'woo-category-slider-grid' ),
+											'beside_cat' => esc_html__( 'Beside category name', 'woo-category-slider-grid' ),
+											'under_cat'  => esc_html__( 'Under category name', 'woo-category-slider-grid' ),
 										),
 										'default'    => 'beside_cat',
 										'dependency' => array( 'wcsp_cat_name|wcsp_cat_product_count', '==|==', 'true|true', true ),
@@ -366,24 +366,24 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_cat_product_count_before',
 										'type'       => 'text',
-										'title'      => __( 'Product Count Before', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Set product count before text.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Product Count Before', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Set product count before text.', 'woo-category-slider-grid' ),
 										'default'    => ' (',
 										'dependency' => array( 'wcsp_cat_name|wcsp_cat_product_count', '==|==', 'true|true', true ),
 									),
 									array(
 										'id'         => 'wcsp_cat_product_count_after',
 										'type'       => 'text',
-										'title'      => __( 'Product Count After', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Set product count after text.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Product Count After', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Set product count after text.', 'woo-category-slider-grid' ),
 										'default'    => ')',
 										'dependency' => array( 'wcsp_cat_name|wcsp_cat_product_count', '==|==', 'true|true', true ),
 									),
 									array(
 										'id'          => 'wcsp_product_count_margin',
 										'type'        => 'spacing',
-										'title'       => __( 'Product Count Margin', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set product count margin.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Product Count Margin', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set product count margin.', 'woo-category-slider-grid' ),
 										'output_mode' => 'margin',
 										'units'       => array(
 											esc_html__( 'px', 'woo-category-slider-grid' ),
@@ -409,20 +409,20 @@ class SP_WCS_Display {
 										'attributes' => array( 'disabled' => 'disabled' ),
 										'type'       => 'switcher',
 										'only_pro'   => true,
-										'title'      => __( 'Custom Text', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Show/Hide custom text.', 'woo-category-slider-grid' ),
-										'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
-										'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Custom Text', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Show/Hide custom text.', 'woo-category-slider-grid' ),
+										'text_on'    => esc_html__( 'Show', 'woo-category-slider-grid' ),
+										'text_off'   => esc_html__( 'Hide', 'woo-category-slider-grid' ),
 										'text_width' => 80,
 										'default'    => false,
 									),
 									array(
 										'id'         => 'wcsp_cat_description',
 										'type'       => 'switcher',
-										'title'      => __( 'Description', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Show/Hide description.', 'woo-category-slider-grid' ),
-										'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
-										'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Description', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Show/Hide description.', 'woo-category-slider-grid' ),
+										'text_on'    => esc_html__( 'Show', 'woo-category-slider-grid' ),
+										'text_off'   => esc_html__( 'Hide', 'woo-category-slider-grid' ),
 										'text_width' => 80,
 										'default'    => true,
 									),
@@ -430,8 +430,8 @@ class SP_WCS_Display {
 										'id'          => 'wcsp_description_margin',
 										'type'        => 'spacing',
 										'class'       => 'wcsp-description-margin',
-										'title'       => __( 'Description Margin', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set description margin.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Description Margin', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set description margin.', 'woo-category-slider-grid' ),
 										'output_mode' => 'margin',
 										'units'       => array(
 											esc_html__( 'px', 'woo-category-slider-grid' ),
@@ -454,7 +454,7 @@ class SP_WCS_Display {
 								),
 							),
 							array(
-								'title'  => __( 'Shop Now Button', 'woo-category-slider-grid' ),
+								'title'  => esc_html__( 'Shop Now Button', 'woo-category-slider-grid' ),
 								'icon'   => '<i class="sp--category-icon wcsp-icon-shop-now-button"></i>',
 								'fields' => array(
 									array(
@@ -462,7 +462,7 @@ class SP_WCS_Display {
 										'style'   => 'normal',
 										'content' => sprintf(
 											/* translators: 1: start link and bold tag, 2: close tag. */
-											__( 'To attract more potential customers with a customized %3$sShop Now%4$s button, %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
+											esc_html__( 'To attract more potential customers with a customized %3$sShop Now%4$s button, %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
 											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
 											'</b></a>',
 											'<a href="https://demo.shapedplugin.com/woocategory/carousel/#Shop-Now-Button-Styles" target="_blank"><b>',
@@ -472,29 +472,29 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_cat_shop_now_button',
 										'type'       => 'switcher',
-										'title'      => __( 'Shop Now Button', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Show/Hide shop now button.', 'woo-category-slider-grid' ),
-										'text_on'    => __( 'Show', 'woo-category-slider-grid' ),
-										'text_off'   => __( 'Hide', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Shop Now Button', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Show/Hide shop now button.', 'woo-category-slider-grid' ),
+										'text_on'    => esc_html__( 'Show', 'woo-category-slider-grid' ),
+										'text_off'   => esc_html__( 'Hide', 'woo-category-slider-grid' ),
 										'text_width' => 80,
 										'default'    => true,
 									),
 									array(
 										'id'         => 'wcsp_cat_shop_now_button_text',
 										'type'       => 'text',
-										'title'      => __( 'Shop Now Button Label', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Type shop now button label.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Shop Now Button Label', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Type shop now button label.', 'woo-category-slider-grid' ),
 										'default'    => 'Shop Now',
 										'dependency' => array( 'wcsp_cat_shop_now_button', '==', 'true', true ),
 									),
 									array(
 										'id'         => 'wcsp_cat_shop_button_color',
 										'type'       => 'color_group',
-										'title'      => __( 'Shop Now Button Color', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Set shop now button color.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Shop Now Button Color', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Set shop now button color.', 'woo-category-slider-grid' ),
 										'options'    => array(
-											'background' => __( 'Background', 'woo-category-slider-grid' ),
-											'hover_background' => __( 'Hover Background', 'woo-category-slider-grid' ),
+											'background' => esc_html__( 'Background', 'woo-category-slider-grid' ),
+											'hover_background' => esc_html__( 'Hover Background', 'woo-category-slider-grid' ),
 										),
 										'default'    => array(
 											'background' => '#cc2b5e',
@@ -506,8 +506,8 @@ class SP_WCS_Display {
 										'id'          => 'wcsp_cat_shop_button_border',
 										'type'        => 'border',
 										'class'       => 'wcsp-cat-button-border',
-										'title'       => __( 'Shop Now Button Border', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set border for the shop now button.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Shop Now Button Border', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set border for the shop now button.', 'woo-category-slider-grid' ),
 										'all'         => true,
 										'hover_color' => true,
 										'default'     => array(
@@ -520,8 +520,8 @@ class SP_WCS_Display {
 										'id'          => 'wcsp_cat_button_margin',
 										'type'        => 'spacing',
 										'class'       => 'wcsp-cat-button-margin',
-										'title'       => __( 'Button Margin', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set shop now button margin.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Button Margin', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set shop now button margin.', 'woo-category-slider-grid' ),
 										'output_mode' => 'margin',
 										'units'       => array(
 											esc_html__( 'px', 'woo-category-slider-grid' ),
@@ -539,14 +539,14 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_cat_link_target',
 										'type'       => 'select',
-										'title'      => __( 'Link Target', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'Set link target.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Link Target', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'Set link target.', 'woo-category-slider-grid' ),
 										'options'    => array(
-											'_self'     => __( '_self', 'woo-category-slider-grid' ),
-											'_blank'    => __( '_blank', 'woo-category-slider-grid' ),
-											'_parent'   => __( '_parent', 'woo-category-slider-grid' ),
-											'_top'      => __( '_top', 'woo-category-slider-grid' ),
-											'framename' => __( 'framename', 'woo-category-slider-grid' ),
+											'_self'     => esc_html__( '_self', 'woo-category-slider-grid' ),
+											'_blank'    => esc_html__( '_blank', 'woo-category-slider-grid' ),
+											'_parent'   => esc_html__( '_parent', 'woo-category-slider-grid' ),
+											'_top'      => esc_html__( '_top', 'woo-category-slider-grid' ),
+											'framename' => esc_html__( 'framename', 'woo-category-slider-grid' ),
 										),
 										'default'    => '_self',
 										'dependency' => array( 'wcsp_cat_shop_now_button', '==', 'true', true ),
@@ -554,7 +554,7 @@ class SP_WCS_Display {
 								),
 							),
 							array(
-								'title'           => __( 'Typography', 'woo-category-slider-grid' ),
+								'title'           => esc_html__( 'Typography', 'woo-category-slider-grid' ),
 								'icon'            => '<i class="sp--category-icon wcsp-icon-typhograpy"></i>',
 								'enqueue_webfont' => true,
 								'fields'          => array(
@@ -563,26 +563,26 @@ class SP_WCS_Display {
 										'style'   => 'normal',
 										'content' => sprintf(
 											/* translators: 1: start link and bold tag, 2: close tag. */
-											__( 'Want to customize everything (%3$stypography, color, and margin%4$s) easily? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
+											esc_html__( 'Want to customize everything (%3$stypography, color, and margin%4$s) easily? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
 											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
 											'</b></a>',
 											'<a href="https://demo.shapedplugin.com/woocategory/hierarchy-grid/#Custom-Typography" target="_blank"><b>',
 											'</b></a>'
-										) . __( ' P.S. Note: The color and margin options work in the lite version.', 'woo-category-slider-grid' ),
+										) . esc_html__( ' P.S. Note: The color and margin options work in the lite version.', 'woo-category-slider-grid' ),
 									),
 									array(
 										'id'         => 'wpsp_section_title_font_load',
 										'type'       => 'switcherf',
-										'title'      => __( 'Load Slider Section Title Font', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'On/Off google font for the slider section title.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Load Slider Section Title Font', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'On/Off google font for the slider section title.', 'woo-category-slider-grid' ),
 										'default'    => false,
 										'dependency' => array( 'wcsp_section_title', '==', 'true', true ),
 									),
 									array(
 										'id'           => 'wpsp_section_title_typography',
 										'type'         => 'typography',
-										'title'        => __( 'Slider Section Title Font', 'woo-category-slider-grid' ),
-										'subtitle'     => __( 'Set slider section title font properties.', 'woo-category-slider-grid' ),
+										'title'        => esc_html__( 'Slider Section Title Font', 'woo-category-slider-grid' ),
+										'subtitle'     => esc_html__( 'Set slider section title font properties.', 'woo-category-slider-grid' ),
 										'default'      => array(
 											'color'       => '#444444',
 											'font-family' => 'Open Sans',
@@ -605,8 +605,8 @@ class SP_WCS_Display {
 										'id'          => 'wcsp_section_title_margin',
 										'type'        => 'spacing',
 										'class'       => 'wcsp-section-title-margin',
-										'title'       => __( 'Margin from Section Title', 'woo-category-slider-grid' ),
-										'subtitle'    => __( 'Set margin for category showcase section title.', 'woo-category-slider-grid' ),
+										'title'       => esc_html__( 'Margin from Section Title', 'woo-category-slider-grid' ),
+										'subtitle'    => esc_html__( 'Set margin for category showcase section title.', 'woo-category-slider-grid' ),
 										'output_mode' => 'margin',
 										'min'         => '-100',
 										'units'       => array(
@@ -630,16 +630,16 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_cat_name_font_load',
 										'type'       => 'switcherf',
-										'title'      => __( 'Load Category Name Font', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'On/Off google font for the category name.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Load Category Name Font', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'On/Off google font for the category name.', 'woo-category-slider-grid' ),
 										'default'    => false,
 										'dependency' => array( 'wcsp_cat_name', '==', 'true', true ),
 									),
 									array(
 										'id'           => 'wcsp_cat_name_typography',
 										'type'         => 'typography',
-										'title'        => __( 'Category Name Font', 'woo-category-slider-grid' ),
-										'subtitle'     => __( 'Set category name font properties.', 'woo-category-slider-grid' ),
+										'title'        => esc_html__( 'Category Name Font', 'woo-category-slider-grid' ),
+										'subtitle'     => esc_html__( 'Set category name font properties.', 'woo-category-slider-grid' ),
 										'hover-color'  => true,
 										'default'      => array(
 											'color'       => '#444444',
@@ -662,16 +662,16 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_product_count_font_load',
 										'type'       => 'switcherf',
-										'title'      => __( 'Load Product Count Font', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'On/Off google font for the product count.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Load Product Count Font', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'On/Off google font for the product count.', 'woo-category-slider-grid' ),
 										'default'    => false,
 										'dependency' => array( 'wcsp_cat_product_count', '==', 'true', true ),
 									),
 									array(
 										'id'           => 'wcsp_product_count_typography',
 										'type'         => 'typography',
-										'title'        => __( 'Product Count Font', 'woo-category-slider-grid' ),
-										'subtitle'     => __( 'Set product count font properties.', 'woo-category-slider-grid' ),
+										'title'        => esc_html__( 'Product Count Font', 'woo-category-slider-grid' ),
+										'subtitle'     => esc_html__( 'Set product count font properties.', 'woo-category-slider-grid' ),
 										'default'      => array(
 											'color'       => '#777777',
 											'font-family' => 'Open Sans',
@@ -692,16 +692,16 @@ class SP_WCS_Display {
 									array(
 										'id'       => 'wcsp_child_cat_font_load',
 										'type'     => 'switcherf',
-										'title'    => __( 'Load Child Category Font', 'woo-category-slider-grid' ),
-										'subtitle' => __( 'On/Off google font for the child category.', 'woo-category-slider-grid' ),
+										'title'    => esc_html__( 'Load Child Category Font', 'woo-category-slider-grid' ),
+										'subtitle' => esc_html__( 'On/Off google font for the child category.', 'woo-category-slider-grid' ),
 										'default'  => false,
 									),
 									array(
 										'id'           => 'wcsp_child_cat_typography',
 										'type'         => 'typography',
 										'class'        => 'wcsp_child_cat_typography',
-										'title'        => __( 'Child Category Font', 'woo-category-slider-grid' ),
-										'subtitle'     => __( 'Set child category font properties.', 'woo-category-slider-grid' ),
+										'title'        => esc_html__( 'Child Category Font', 'woo-category-slider-grid' ),
+										'subtitle'     => esc_html__( 'Set child category font properties.', 'woo-category-slider-grid' ),
 										'hover-color'  => true,
 										'default'      => array(
 											'color'       => '#636363',
@@ -723,16 +723,16 @@ class SP_WCS_Display {
 									array(
 										'id'       => 'wcsp_custom_text_font_load',
 										'type'     => 'switcherf',
-										'title'    => __( 'Load Custom Text Font', 'woo-category-slider-grid' ),
-										'subtitle' => __( 'On/Off google font for the custom text.', 'woo-category-slider-grid' ),
+										'title'    => esc_html__( 'Load Custom Text Font', 'woo-category-slider-grid' ),
+										'subtitle' => esc_html__( 'On/Off google font for the custom text.', 'woo-category-slider-grid' ),
 										'default'  => false,
 									),
 									array(
 										'id'           => 'wcsp_custom_text_typography',
 										'type'         => 'typography',
 										'class'        => 'wcsp_custom_text_typography',
-										'title'        => __( 'Custom Text Font', 'woo-category-slider-grid' ),
-										'subtitle'     => __( 'Set custom text font properties.', 'woo-category-slider-grid' ),
+										'title'        => esc_html__( 'Custom Text Font', 'woo-category-slider-grid' ),
+										'subtitle'     => esc_html__( 'Set custom text font properties.', 'woo-category-slider-grid' ),
 										'default'      => array(
 											'color'       => '#535353',
 											'font-family' => 'Lato',
@@ -752,8 +752,8 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_description_font_load',
 										'type'       => 'switcherf',
-										'title'      => __( 'Load Description Font', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'On/Off google font for the description.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Load Description Font', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'On/Off google font for the description.', 'woo-category-slider-grid' ),
 										'default'    => false,
 										'dependency' => array( 'wcsp_cat_description', '==', 'true', true ),
 
@@ -761,8 +761,8 @@ class SP_WCS_Display {
 									array(
 										'id'           => 'wcsp_description_typography',
 										'type'         => 'typography',
-										'title'        => __( 'Description Font', 'woo-category-slider-grid' ),
-										'subtitle'     => __( 'Set description font properties.', 'woo-category-slider-grid' ),
+										'title'        => esc_html__( 'Description Font', 'woo-category-slider-grid' ),
+										'subtitle'     => esc_html__( 'Set description font properties.', 'woo-category-slider-grid' ),
 										'default'      => array(
 											'color'       => '#444444',
 											'font-family' => 'Open Sans',
@@ -783,8 +783,8 @@ class SP_WCS_Display {
 									array(
 										'id'         => 'wcsp_shop_now_font_load',
 										'type'       => 'switcherf',
-										'title'      => __( 'Load Shop Now Button Font', 'woo-category-slider-grid' ),
-										'subtitle'   => __( 'On/Off google font for the shop now button.', 'woo-category-slider-grid' ),
+										'title'      => esc_html__( 'Load Shop Now Button Font', 'woo-category-slider-grid' ),
+										'subtitle'   => esc_html__( 'On/Off google font for the shop now button.', 'woo-category-slider-grid' ),
 										'default'    => false,
 										'dependency' => array( 'wcsp_cat_shop_now_button', '==', 'true', true ),
 
@@ -792,8 +792,8 @@ class SP_WCS_Display {
 									array(
 										'id'           => 'wcsp_shop_now_typography',
 										'type'         => 'typography',
-										'title'        => __( 'Shop Now Button Font', 'woo-category-slider-grid' ),
-										'subtitle'     => __( 'Set shop now button font properties.', 'woo-category-slider-grid' ),
+										'title'        => esc_html__( 'Shop Now Button Font', 'woo-category-slider-grid' ),
+										'subtitle'     => esc_html__( 'Set shop now button font properties.', 'woo-category-slider-grid' ),
 										'hover-color'  => true,
 										'default'      => array(
 											'color'       => '#ffffff',

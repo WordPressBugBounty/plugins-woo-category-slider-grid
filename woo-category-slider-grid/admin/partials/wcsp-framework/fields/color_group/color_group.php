@@ -64,8 +64,6 @@ if ( ! class_exists( 'SP_WCS_Field_color_group' ) ) {
 			echo '<div class="clear"></div>';
 
 			echo wp_kses_post( $this->field_after() );
-
 		}
-
 	}
 }

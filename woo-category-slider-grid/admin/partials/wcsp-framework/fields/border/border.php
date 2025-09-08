@@ -159,7 +159,7 @@ if ( ! class_exists( 'SP_WCS_Field_border' ) ) {
 				echo '<div class="spf--left spf--input">';
 				echo '<div class="spf--title">Radius</div>';
 				echo ( ! empty( $args['radius_icon'] ) ) ? '<span class="spf--label spf--label-icon">' . wp_kses_post( $args['radius_icon'] ) . '</span>' : '';
-				echo '<input type="number" name="' . esc_attr( $this->field_name( '[radius]' ) ) . '" value="' . esc_attr( $value['radius'] ) . '"' . wp_kses_post( $placeholder ) . $this->field_attributes() . ' class="spf-number" />';
+				echo '<input type="number" name="' . esc_attr( $this->field_name( '[radius]' ) ) . '" value="' . esc_attr( $value['radius'] ) . '"' . wp_kses_post( $placeholder ) . $this->field_attributes() . ' class="spf-number" />'; // phpcs:ignore -- outputs safely 
 				echo ( ! empty( $args['radius'] ) ) ? '<span class="spf--label spf--label-unit">' . esc_attr( $args['unit'] ) . '</span>' : '';
 				echo '</div>';
 			}

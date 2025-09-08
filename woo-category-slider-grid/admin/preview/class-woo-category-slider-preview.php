@@ -9,6 +9,10 @@
  * @subpackage Woo_Category_Slider/admin
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die; // Cannot access directly.
+}
+
 /**
  * The admin preview.
  */
@@ -58,7 +62,7 @@ class Woo_Category_Slider_Preview {
 		if ( 'slider' !== $layout_preset && 'carousel' !== $layout_preset ) {
 			printf(
 				/* translators: 1: start div tag, 2: start link and bold tag, 3: close bold and link tag. */
-				__( '%1$sThis feature is only available to pro users. To access it, %2$sUpgrade to Pro!%3$s', 'woo-category-slider-grid' ),
+				esc_html__( '%1$sThis feature is only available to pro users. To access it, %2$sUpgrade to Pro!%3$s', 'woo-category-slider-grid' ),
 				'<div class="wcsp-pro-notice-preview">',
 				'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
 				'</b></a></div>'
@@ -71,8 +75,6 @@ class Woo_Category_Slider_Preview {
 		echo '<style id="sp_category_dynamic_css' . $post_id . '">' . wp_strip_all_tags( $dynamic_style['dynamic_css'] ) . '</style>';//phpcs:ignore
 		Woo_Category_Slider_Shortcode::sp_wcsp_html_show( $post_id, $shortcode_meta, $title, $layout_meta );
 		?>
-		<script src="<?php echo esc_url( SP_WCS_URL . 'public/js/swiper-config.js' ); ?>" ></script>
-		<script src="<?php echo esc_url( SP_WCS_URL . 'public/js/preloader.js' ); ?>" ></script>
 		<?php
 		die();
 	}

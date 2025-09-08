@@ -324,34 +324,18 @@ if ( ! class_exists( 'SP_WCS_Options' ) ) {
 		 */
 		public function ajax_save() {
 
-			if ( ! empty( $_POST['data'] ) ) {
+			$result = $this->set_options( true );
 
-				$_POST = json_decode( stripslashes( $_POST['data'] ), true ); // phpcs:ignore
-
-				if ( ! empty( $_POST['spf_options_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['spf_options_nonce'] ) ), 'spf_options_nonce' ) ) {
-
-					$this->set_options();
-
-					wp_send_json_success(
-						array(
-							'success' => true,
-							'notice'  => $this->notice,
-							'errors'  => $this->errors,
-						)
-					);
-
-				}
+			if ( ! $result ) {
+				wp_send_json_error( array( 'error' => esc_html__( 'Error while saving the changes.', 'woo-category-slider-grid' ) ) );
+			} else {
+				wp_send_json_success(
+					array(
+						'notice' => $this->notice,
+						'errors' => $this->errors,
+					)
+				);
 			}
-
-			wp_send_json_error(
-				array(
-					'success' => false,
-					'error'   => esc_html__(
-						'Error while saving.',
-						'woo-category-slider-grid'
-					),
-				)
-			);
 		}
 
 		/**
@@ -391,104 +375,180 @@ if ( ! class_exists( 'SP_WCS_Options' ) ) {
 		}
 
 		/**
-		 * Set options.
+		 * Sanitize options before saving.
 		 *
-		 * @return bool
+		 * @param array $options Raw options.
+		 * @return array Sanitized options.
 		 */
-		public function set_options() {
+		public function sanitize_options( $options ) {
+			if ( ! is_array( $options ) ) {
+				return array();
+			}
 
-			if ( wp_verify_nonce( spf_get_var( 'spf_options_nonce' ), 'spf_options_nonce' ) ) {
+			$sanitized = array();
 
-				$request    = spf_get_var( $this->unique, array() );
-				$transient  = spf_get_var( 'spf_transient' );
-				$section_id = ( ! empty( $transient['section'] ) ) ? $transient['section'] : '';
+			foreach ( $options as $key => $value ) {
+				switch ( $key ) {
 
-				// import data.
-				if ( ! empty( $transient['spf_import_data'] ) ) {
-
-					$import_data = json_decode( stripslashes( trim( $transient['spf_import_data'] ) ), true );
-					$request     = ( is_array( $import_data ) ) ? $import_data : array();
-
-					$this->notice = esc_html__( 'Success. Imported backup options.', 'woo-category-slider-grid' );
-
-				} elseif ( ! empty( $transient['reset'] ) ) {
-
-					foreach ( $this->pre_fields as $field ) {
-						if ( ! empty( $field['id'] ) ) {
-							$request[ $field['id'] ] = $this->get_default( $field );
-						}
-					}
-
-					$this->notice = esc_html__( 'Default options restored.', 'woo-category-slider-grid' );
-
-				} elseif ( ! empty( $transient['reset_section'] ) && ! empty( $section_id ) ) {
-
-					if ( ! empty( $this->pre_sections[ $section_id - 1 ]['fields'] ) ) {
-
-						foreach ( $this->pre_sections[ $section_id - 1 ]['fields'] as $field ) {
-							if ( ! empty( $field['id'] ) ) {
-								$request[ $field['id'] ] = $this->get_default( $field );
+					// --- spf_transient ---
+					case 'spf_transient':
+						$sanitized['spf_transient'] = array();
+						if ( is_array( $value ) ) {
+							foreach ( $value as $sub_key => $sub_val ) {
+								$sanitized['spf_transient'][ $sub_key ] = sanitize_text_field( $sub_val );
 							}
 						}
-					}
+						break;
 
-					$this->notice = esc_html__( 'Default options restored for only this section.', 'woo-category-slider-grid' );
+					// --- Nonce & Referer ---
+					case 'spf_options_noncesp_wcsp_settings':
+					case '_wp_http_referer':
+						$sanitized[ $key ] = sanitize_text_field( $value );
+						break;
 
-				} else {
+					// --- sp_wcsp_settings ---
+					case 'sp_wcsp_settings':
+						$sanitized['sp_wcsp_settings'] = array();
+						if ( is_array( $value ) ) {
+							foreach ( $value as $sub_key => $sub_val ) {
+								switch ( $sub_key ) {
 
-					// sanitize and validate.
-					foreach ( $this->pre_fields as $field ) {
+									// Boolean-like values (cast to int 0/1).
+									case 'wcsp_delete_all_data':
+									case 'wcsp_swiper_css':
+									case 'wcsp_fa_css':
+									case 'wcsp_swiper_js':
+										$sanitized['sp_wcsp_settings'][ $sub_key ] = (int) $sub_val;
+										break;
 
-						if ( ! empty( $field['id'] ) ) {
+									// Custom CSS/JS – strip tags completely.
+									case 'wcsp_custom_css':
+									case 'custom_js':
+										$sanitized['sp_wcsp_settings'][ $sub_key ] = wp_strip_all_tags( $sub_val );
+										break;
 
-							// sanitize.
-							if ( ! empty( $field['sanitize'] ) ) {
-
-								$sanitize                = $field['sanitize'];
-								$value_sanitize          = isset( $request[ $field['id'] ] ) ? $request[ $field['id'] ] : '';
-								$request[ $field['id'] ] = call_user_func( $sanitize, $value_sanitize );
-
-							}
-
-							// validate.
-							if ( ! empty( $field['validate'] ) ) {
-
-								$value_validate = isset( $request[ $field['id'] ] ) ? $request[ $field['id'] ] : '';
-								$has_validated  = call_user_func( $field['validate'], $value_validate );
-
-								if ( ! empty( $has_validated ) ) {
-									$request[ $field['id'] ]      = ( isset( $this->options[ $field['id'] ] ) ) ? $this->options[ $field['id'] ] : '';
-									$this->errors[ $field['id'] ] = $has_validated;
+									// Fallback for unexpected keys.
+									default:
+										$sanitized['sp_wcsp_settings'][ $sub_key ] = sanitize_text_field( $sub_val );
+										break;
 								}
 							}
+						}
+						break;
 
-							// auto sanitize.
-							if ( ! isset( $request[ $field['id'] ] ) || is_null( $request[ $field['id'] ] ) ) {
-								$request[ $field['id'] ] = '';
-							}
+					// --- Fallback for unexpected fields ---
+					default:
+						$sanitized[ $key ] = is_scalar( $value ) ? sanitize_text_field( $value ) : '';
+						break;
+				}
+			}
+
+			return $sanitized;
+		}
+
+
+		/**
+		 * Set options.
+		 *
+		 * @param  mixed $ajax value.
+		 * @return bool
+		 */
+		public function set_options( $ajax = false ) {
+			// Retrieve nonce.
+			$nonce = '';
+			if ( $ajax && ! empty( $_POST['nonce'] ) ) {
+				// Nonce sent via AJAX request.
+				$nonce = sanitize_text_field( wp_unslash( $_POST['nonce'] ) );
+			} elseif ( ! empty( $_POST[ 'spf_options_nonce' . $this->unique ] ) ) {
+				// Nonce sent via standard form (with unique field key).
+				$nonce = sanitize_text_field( wp_unslash( $_POST[ 'spf_options_nonce' . $this->unique ] ) );
+			}
+
+			if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'spf_options_nonce' ) ) {
+				return false;
+			}
+
+			// XSS ok.
+			// No worries, This "POST" requests is sanitizing in the below foreach.
+			$response = ( $ajax && ! empty( $_POST['data'] ) ) ? json_decode( wp_unslash( trim( $_POST['data'] ) ), true ) : wp_unslash( $_POST ); // phpcs:ignore
+			$response = $this->sanitize_options( $response ); // Sanitize json response.
+
+			// Set variables.
+			$data      = array();
+			$options   = ( ! empty( $response[ $this->unique ] ) ) ? wp_kses_post_deep( $response[ $this->unique ] ) : array();
+			$transient = ( ! empty( $response['spf_transient'] ) ) ? wp_kses_post_deep( $response['spf_transient'] ) : array();
+
+			$importing  = false;
+			$section_id = ( ! empty( $transient['section'] ) ) ? $transient['section'] : '';
+
+			if ( ! empty( $transient['reset'] ) ) {
+				foreach ( $this->pre_fields as $field ) {
+					if ( ! empty( $field['id'] ) ) {
+						$data[ $field['id'] ] = $this->get_default( $field );
+					}
+				}
+
+				$this->notice = esc_html__( 'Default settings restored.', 'woo-category-slider-grid' );
+			} elseif ( ! empty( $transient['reset_section'] ) && ! empty( $section_id ) ) {
+				if ( ! empty( $this->pre_sections[ $section_id - 1 ]['fields'] ) ) {
+					foreach ( $this->pre_sections[ $section_id - 1 ]['fields'] as $field ) {
+						if ( ! empty( $field['id'] ) ) {
+							$data[ $field['id'] ] = $this->get_default( $field );
 						}
 					}
 				}
 
-				// ignore nonce requests.
-				if ( isset( $request['_nonce'] ) ) {
-					unset( $request['_nonce'] ); }
+				$data         = wp_parse_args( $data, $this->options );
+				$this->notice = esc_html__( 'Default settings restored.', 'woo-category-slider-grid' );
 
-				$request = wp_unslash( $request );
+			} else {
 
-				$request = apply_filters( "spf_{$this->unique}_save", $request, $this );
+				// Sanitize and validate.
+				foreach ( $this->pre_fields as $field ) {
+					if ( ! empty( $field['id'] ) ) {
 
-				do_action( "spf_{$this->unique}_save_before", $request, $this );
+						$field_id    = $field['id'];
+						$field_value = isset( $options[ $field_id ] ) ? $options[ $field_id ] : '';
 
-				$this->options = $request;
+						// Ajax and Importing doing wp_unslash already.
+						if ( ! $ajax && ! $importing ) {
+							$field_value = wp_unslash( $field_value );
+						}
 
-				$this->save_options( $request );
+						// Sanitize "post" request of field.
+						if ( isset( $field['sanitize'] ) && is_callable( $field['sanitize'] ) ) {
+							$data[ $field_id ] = call_user_func( $field['sanitize'], $field_value );
+						} elseif ( is_array( $field_value ) ) {
 
-				do_action( "spf_{$this->unique}_save_after", $request, $this );
+							$data[ $field_id ] = wp_kses_post_deep( $field_value );
+						} else {
 
-				if ( empty( $this->notice ) ) {
-					$this->notice = esc_html__( 'Settings saved.', 'woo-category-slider-grid' );
+							$data[ $field_id ] = wp_kses_post( $field_value );
+						}
+						// Validate "post" request of field.
+						if ( isset( $field['validate'] ) && is_callable( $field['validate'] ) ) {
+
+							$has_validated = call_user_func( $field['validate'], $field_value );
+
+							if ( ! empty( $has_validated ) ) {
+
+								$data[ $field_id ]         = ( isset( $this->options[ $field_id ] ) ) ? $this->options[ $field_id ] : '';
+								$this->errors[ $field_id ] = $has_validated;
+							}
+						}
+					}
 				}
+			}
+
+			$data = apply_filters( "spf_{$this->unique}_save", $data, $this );
+			do_action( "spf_{$this->unique}_save_before", $data, $this );
+
+			$this->options = $data;
+			$this->save_options( $data );
+			do_action( "spf_{$this->unique}_save_after", $data, $this );
+
+			if ( empty( $this->notice ) ) {
+				$this->notice = esc_html__( 'Settings saved.', 'woo-category-slider-grid' );
 			}
 
 			return true;
@@ -545,8 +605,17 @@ if ( ! class_exists( 'SP_WCS_Options' ) ) {
 		 * @return void
 		 */
 		public function add_admin_menu() {
+			$args = $this->args;
 
-			extract( $this->args ); // phpcs:ignore
+			$menu_type       = $args['menu_type'] ?? '';
+			$menu_parent     = $args['menu_parent'] ?? '';
+			$menu_title      = $args['menu_title'] ?? '';
+			$menu_capability = $args['menu_capability'] ?? 'manage_options';
+			$menu_slug       = $args['menu_slug'] ?? '';
+			$menu_icon       = $args['menu_icon'] ?? '';
+			$menu_position   = $args['menu_position'] ?? null;
+			$sub_menu_title  = $args['sub_menu_title'] ?? '';
+			$menu_hidden     = $args['menu_hidden'] ?? false;
 
 			if ( 'submenu' === $menu_type ) {
 
@@ -671,7 +740,7 @@ if ( ! class_exists( 'SP_WCS_Options' ) ) {
 			echo '<form method="post" action="" enctype="multipart/form-data" id="spf-form">';
 
 			echo '<input type="hidden" class="spf-section-id" name="spf_transient[section]" value="1">';
-			wp_nonce_field( 'spf_options_nonce', 'spf_options_nonce' );
+			wp_nonce_field( 'spf_options_nonce', 'spf_options_nonce' . $this->unique );
 
 			echo '<div class="spf-header' . esc_attr( $sticky_class ) . '">';
 			echo '<div class="spf-header-inner">';
@@ -680,7 +749,7 @@ if ( ! class_exists( 'SP_WCS_Options' ) ) {
 			if ( $show_buttons ) {
 				echo '<h1><img src="' . esc_attr( SP_WCS_URL . 'admin/img/wcs-icon-color.svg' ) . '" alt="">' . wp_kses_post( $this->args['framework_title'] ) . '</h1>';
 			} else {
-				echo '<h1><img src="' . SP_WCS_URL . 'admin/img/import-export.svg" alt="">' . wp_kses_post( $this->args['framework_title'] ) . '</h1>';
+				echo '<h1><img src="' . esc_url( SP_WCS_URL . 'admin/img/import-export.svg' ) . '" alt="">' . wp_kses_post( $this->args['framework_title'] ) . '</h1>';
 			}
 			echo '</div>';
 			echo '<div class="spf-header-right">';

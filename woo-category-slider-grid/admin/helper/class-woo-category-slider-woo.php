@@ -104,11 +104,10 @@ class SP_WCS_WOO {
 		echo '<div class="updated notice is-dismissible"><p>';
 		printf(
 			/* translators: 1: start bold tag, 2: close tag. */
-			__( 'Plugin %1$sactivated.%2$s', 'woo-category-slider-grid' ),
+			esc_html__( 'Plugin %1$sactivated.%2$s', 'woo-category-slider-grid' ),
 			'<strong>',
 			'</strong>'
 		);
 		echo '</p></div>';
 	}
-
 }

@@ -41,6 +41,5 @@ if ( ! class_exists( 'SP_WCS_Field_preview' ) ) {
 		public function render() {
 			echo '<div class="sp-wcs-preview-box"><div id="sp-wcs-preview-box"></div></div>';
 		}
-
 	}
 }

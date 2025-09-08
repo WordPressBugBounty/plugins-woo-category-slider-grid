@@ -22,18 +22,6 @@ if ( ! class_exists( 'SP_WCS_Field_code_editor' ) ) {
 	 * @version 1.0.0
 	 */
 	class SP_WCS_Field_code_editor extends SP_WCS_Fields {
-		/**
-		 * Version
-		 *
-		 * @var string
-		 */
-		public $version = '5.41.0';
-		/**
-		 * Cdn url
-		 *
-		 * @var string
-		 */
-		public $cdn_url = 'https://cdn.jsdelivr.net/npm/codemirror@';
 
 		/**
 		 * Field constructor.
@@ -59,8 +47,6 @@ if ( ! class_exists( 'SP_WCS_Field_code_editor' ) ) {
 				'tabSize'     => 2,
 				'lineNumbers' => true,
 				'theme'       => 'default',
-				'mode'        => 'htmlmixed',
-				'cdnURL'      => $this->cdn_url . $this->version,
 			);
 
 			$settings = ( ! empty( $this->field['settings'] ) ) ? $this->field['settings'] : array();
@@ -70,7 +56,6 @@ if ( ! class_exists( 'SP_WCS_Field_code_editor' ) ) {
 			echo wp_kses_post( $this->field_before() );
 			echo '<textarea name="' . esc_attr( $this->field_name() ) . '"' . wp_kses_post( $this->field_attributes() ) . ' data-editor="' . esc_attr( $encoded ) . '">' . wp_kses_post( $this->value ) . '</textarea>';
 			echo wp_kses_post( $this->field_after() );
-
 		}
 
 		/**
@@ -79,21 +64,9 @@ if ( ! class_exists( 'SP_WCS_Field_code_editor' ) ) {
 		 * @return void
 		 */
 		public function enqueue() {
-
-			// Do not loads CodeMirror in revslider page.
-			if ( in_array( spf_get_var( 'page' ), array( 'revslider' ), true ) ) {
-				return; }
-
-			if ( ! wp_script_is( 'spf-codemirror' ) ) {
-				wp_enqueue_script( 'spf-codemirror', $this->cdn_url . $this->version . '/lib/codemirror.min.js', array( 'spf' ), $this->version, true );
-				wp_enqueue_script( 'spf-codemirror-loadmode', $this->cdn_url . $this->version . '/addon/mode/loadmode.min.js', array( 'spf-codemirror' ), $this->version, true );
-			}
-
-			if ( ! wp_style_is( 'spf-codemirror' ) ) {
-				wp_enqueue_style( 'spf-codemirror', $this->cdn_url . $this->version . '/lib/codemirror.min.css', array(), $this->version );
-			}
-
+			// Enqueue code-mirror.
+			wp_enqueue_script( 'code-editor' );
+			wp_enqueue_style( 'code-editor' );
 		}
-
 	}
 }

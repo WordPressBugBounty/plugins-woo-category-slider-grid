@@ -94,8 +94,6 @@ if ( ! class_exists( 'SP_WCS_Field_selectf' ) ) {
 			}
 
 			echo wp_kses_post( $this->field_after() );
-
 		}
-
 	}
 }

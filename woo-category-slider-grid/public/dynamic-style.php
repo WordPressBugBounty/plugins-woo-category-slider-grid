@@ -9,6 +9,10 @@
  * @subpackage Woo_Category_Slider/public
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die; // Cannot access directly.
+}
+
 $cat_padding  = isset( $shortcode_meta['wcsp_cat_padding'] ) ? $shortcode_meta['wcsp_cat_padding'] : '';
 $wcsp_options = get_option( 'sp_wcsp_settings' );
 

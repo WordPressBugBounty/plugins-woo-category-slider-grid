@@ -58,7 +58,7 @@ if ( ! class_exists( 'SP_WCS_Field_shortcode' ) ) {
 				<div class="wcsp-scode-content">
 					<p>' . sprintf(
 						/* translators: 1: start link tag, 2: close link tag. */
-					__( 'To display your product category view, add the following shortcode into your post, custom post types, page, widget or block editor. If adding the category view to your theme files, additionally include the surrounding PHP code, %1$ssee how%2$s.', 'woo-category-slider-grid' ),
+					esc_html__( 'To display your product category view, add the following shortcode into your post, custom post types, page, widget or block editor. If adding the category view to your theme files, additionally include the surrounding PHP code, %1$ssee how%2$s.', 'woo-category-slider-grid' ),
 					'<a href="https://docs.shapedplugin.com/docs/woocommerce-category-slider-pro/faq/#template-include" target="_blank">',
 					'</a>'
 				) . '</p>
@@ -109,7 +109,7 @@ if ( ! class_exists( 'SP_WCS_Field_shortcode' ) ) {
 					<p>' .
 					sprintf(
 						/* translators: 1: start strong tag, 2: close tag. */
-						__( 'WooCategory has seamless integration with Gutenberg, Classic Editor, %1$sElementor%2$s, Divi, Bricks, Beaver, Oxygen, WPBakery Builder, etc.', 'woo-category-slider-grid' ),
+						esc_html__( 'WooCategory has seamless integration with Gutenberg, Classic Editor, %1$sElementor%2$s, Divi, Bricks, Beaver, Oxygen, WPBakery Builder, etc.', 'woo-category-slider-grid' ),
 						'<strong>',
 						'</strong>'
 					) . '

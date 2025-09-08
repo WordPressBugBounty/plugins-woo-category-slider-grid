@@ -92,7 +92,6 @@ if ( ! class_exists( 'SP_WCS_Fields' ) ) {
 			}
 
 			return $field_name . $nested_name;
-
 		}
 
 		/**
@@ -129,7 +128,6 @@ if ( ! class_exists( 'SP_WCS_Fields' ) ) {
 			}
 
 			return $atts;
-
 		}
 
 		/**
@@ -172,13 +170,15 @@ if ( ! class_exists( 'SP_WCS_Fields' ) ) {
 
 				case 'sp_wcsp_categories':
 				case 'sp_wcsp_category':
-					$taxonomies = ( isset( $query_args['taxonomies'] ) ) ? $query_args['taxonomies'] : 'product_cat';
-					$cat_args   = array(
-						'taxonomy'   => 'product_cat',
-						'hide_empty' => 0,
+					$taxonomies = isset( $query_args['taxonomies'] ) ? $query_args['taxonomies'] : array( 'product_cat' );
+
+					$cat_args = array(
+						'taxonomy'   => $taxonomies,
+						'hide_empty' => false,
 						'parent'     => 0,
 					);
-					$tags       = get_terms( $taxonomies, $cat_args );
+
+					$tags = get_terms( $cat_args );
 
 					if ( ! is_wp_error( $tags ) && ! empty( $tags ) ) {
 						foreach ( $tags as $tag ) {
@@ -293,8 +293,17 @@ if ( ! class_exists( 'SP_WCS_Fields' ) ) {
 
 				case 'tag':
 				case 'tags':
-					$taxonomies = ( isset( $query_args['taxonomies'] ) ) ? $query_args['taxonomies'] : 'post_tag';
-					$tags       = get_terms( $taxonomies, $query_args );
+					// Use 'post_tag' as default taxonomy if none is set.
+					$taxonomies = isset( $query_args['taxonomies'] ) ? $query_args['taxonomies'] : array( 'post_tag' );
+
+					// Merge taxonomy into query args.
+					$term_args             = $query_args;
+					$term_args['taxonomy'] = $taxonomies;
+
+					unset( $term_args['taxonomies'] ); // avoid conflict.
+
+					// Get terms.
+					$tags = get_terms( $term_args );
 
 					if ( ! is_wp_error( $tags ) && ! empty( $tags ) ) {
 						foreach ( $tags as $tag ) {
@@ -368,8 +377,6 @@ if ( ! class_exists( 'SP_WCS_Fields' ) ) {
 			}
 
 			return $options;
-
 		}
-
 	}
 }

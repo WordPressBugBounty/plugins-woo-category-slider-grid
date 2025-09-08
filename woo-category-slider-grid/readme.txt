@@ -1,108 +1,87 @@
-=== Product Category Slider and Product Category Showcase for WooCommerce – WooCategory ===
+=== Product Category Slider & Grid for WooCommerce – WooCategory ===
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
-Tags: product category slider, woocommerce category carousel, product category showcase, woocommerce category slider, product category list
+Tags: WooCommerce category slider, product category, Product Category Showcase, shop category grid, category carousel
 Requires at least: 5.0
-Tested up to: 6.8.1
+Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 WC requires at least: 4.5
-WC tested up to: 9.9.5
+WC tested up to: 10.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Display product categories in a visually appealing slider or grid to strategically position them on your online shop and instantly boost sales!
+Display product categories in responsive sliders or grids to showcase them effectively on your WooCommerce store and improve shoppers' navigation.
 
 == Description ==
 
-[__Live Demo__](https://demo.shapedplugin.com/woocategory/) | [__Documentation__](https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/) | [__Upgrade to Pro!__](https://shapedplugin.com/woocategory/?ref=115#pricing)
+### WooCommerce Product Category Slider & Grid Plugin ###
+
+**WooCategory** is a powerful yet lightweight WooCommerce Category Slider and Grid plugin that helps you beautifully display your store’s product categories. You can showcase WooCommerce featured categories in a responsive slider, carousel, or grid layout with thumbnails, titles, product counts, descriptions, and a Shop Now button.
 
 [youtube https://www.youtube.com/watch?v=X_Czmx3ndjU&list=PLoUb-7uG-5jMzpAUaCkor0Ldc4F_7gfjz]
 
-= Overview =
-
-[__WooCategory__](https://shapedplugin.com/woocategory/) helps you display by filtering specific WooCommerce Categories aesthetically in a sliding manner. You can show your product categories with thumbnail, child category, description, shop now button. The plugin has simple and easy to use shortcode generator interface with many handy options which will help you to customize and manage WooCommerce Categories and its content easily without coding.
-
-A WooCategory is one of the best ways to highlight your specific product categories and, if put in the strategic or right position, it will certainly allow you to increase the conversion rate in your shop or site. WooCategory is free, rapidly growing and comes with great support.
+[__Live Demo__](https://demo.shapedplugin.com/woocategory/) | [__Documentation__](https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/) | [__Upgrade to Pro!__](https://shapedplugin.com/woocategory/?ref=115#pricing)
 
 
-= Why WooCategory is important? =
+= 👉 How This Plugin Helps Your WooCommerce Store =
+* **Highlight featured categories** on the homepage, shop page, or anywhere with a shortcode.
+* **Engage shoppers** visually with clean, modern category sliders and grid layouts.
+* **Guiding customers** directly to the categories they’re most interested in.
+No coding required – simply generate shortcodes and customize layouts directly from your dashboard.
 
-In a WooCommerce store or shop, there are many products and their categories. Generally, the product categories are not highlighted well in the store. That’s why your potential customers can’t understand what categories of products are being offered or sold in your shop.
+= 👉 Exciting Main Features =
+**Responsive & Mobile Friendly:** The plugin is fully mobile-friendly and works seamlessly on desktops, tablets, and mobile devices.
 
-WooCategory lets your visitors find the category they are looking for without struggling and looking all over the WooCommerce store or site. You can show more product categories at the same time and let them scroll automatically in a slider or show in grid or block view so that your prospective customers can see them all. This makes your shop or site look much more professional, clean and sharp in your customers’ eyes.
+**Unlimited Category Sliders & Grids:** Create as many sliders and grids as you need, and customize each one with simple shortcode options.
 
-If you can showcase your product categories in the strategic spots of your store or site, it will effectively increase the conversion rate and achieve the goal!
+**Category Filters & Display:** Show or hide specific categories, hide empty ones, and limit the number of categories displayed. Easily choose which product categories to include or exclude.
 
-= Exciting Features List =
+**Category Display Options:** Display category details such as the name, thumbnail or color background, product count, description, and a shop now button.
 
-* Responsive and mobile-ready.
-* Slick, powerful, and fast loading.
-* Create unlimited category sliders.
-* Shortcode Generator.
-* Filter the list of categories you want to show.
-* Display specific categories in the slider.
-* Hide empty categories.
-* A total number of categories to display (you can limit).
-* Device-wise specific responsive control.
-* Display category content:
-**-Category name**
-**-Category thumbnail and flat color background**
-**-Category counter**
-**-Description**
-**-Shop now button etc.**
-* Highly customizable.
-* Unlimited color and styling options.
-* 12+ Slider Controls:
-**-AutoPlay**
-**-AutoPlay speed**
-**-Slide scroll speed**
-**-slide to scroll**
-**-Slide to scroll in different devices**
-**-Pause on hover**
-**-Infinite loop slider**
-**-Show/hide navigation**
-**-Navigation color**
-**-Show/hide pagination dots**
-**-Pagination color and active color**
-**-Touch swipe**
-**-Auto height etc.**
-* Display your categories in sidebar or widget.
-* Set space between categories.
-* Ability to design material or flat style.
-* Category name show/hide and margin.
-* Show/hide product count and position.
-* Show/hide description content and control margin.
-* Show/hide shop now button, change the label, color, margin, link target, etc.
-* Show/hide category thumbnail.
-* Category thumbnails available cropped sizes.
-* Add custom category thumbnail.
-* Thumbnail border, box-shadow, inner padding, margin, etc.
-* Classic & gradient color and background.
-* Category order and order by.
-* Preloader enable/disable.
-* Advanced enqueue or dequeue to avoid conflicts.
-* Section title and its margin.
-* Custom CSS option to override styles.
-* Option to remove data when the plugin deleted.
-* Page builders compatible.
-* RTL supported.
-* Multisite supported.
-* Multilingual ready.
-* Compatible with popular WooCommerce themes and plugins.
-* Frequently updated and secured codebase.
-* Fast forum support.
-* All modern browsers supported.
-* SEO friendly and fully optimized.
-* And many more options.
+**Product Category Thumbnail or Image:** Choose from existing category thumbnails, add custom images, and customize appearance with borders, box shadows, padding, and margins.
+
+**Color & Styling Options:** Customize colors, layouts, contents, and spacing to match your theme and store’s design.
+
+**Advanced Slider Settings:** Control autoplay and slide speed, enable infinite loop, show navigation arrows and dots, support touch/swipe gestures, and pause on hover.
+
+**Lightweight & Fast:** Optimized for performance to load quickly and run smoothly on your store.
+
+**Import and Export Category Showcases:** Easily import or export category sliders and grids with just a few clicks.
+
+**Support, Feature Requests, & Bug Reporting:** For any issues, feature requests, or bug reports, please contact our Support team. We are happy to assist you and address your queries.
 
 
-= For Fast Support, Feature Request, and Bug Reporting =
->Ask us at either via our [__Support__](https://shapedplugin.com/support/) or [__WordPress.org__](https://wordpress.org/support/plugin/woo-category-slider-grid/)
+= 👉 ​​Want More Features? =
 
-We're really proud to serve and enhance [__WooCommerce__](https://wordpress.org/plugins/woocommerce/).
+**WooCategory** also comes with a [__Pro version__](https://shapedplugin.com/woocategory/?ref=115) that extends functionality with more layouts, design flexibility, and advanced controls.
+
+* Choose which categories to show or hide.
+* **Display multi-level categories (parent, child, grandchild, great-grandchild).**
+* Access extra slider and grid layouts.
+* Unlock advanced customization and styling options.
+* Get priority updates and premium support.
+
+
+= Multilingual Ready =
+* [WPML](https://wpml.org/)
+* [Polylang](https://wordpress.org/plugins/polylang/)
+* [Loco Translate](https://wordpress.org/plugins/loco-translate/)
+* [qTranslate-x](https://wordpress.org/plugins/qtranslate-x/)
+* [GTranslate](https://wordpress.org/plugins/gtranslate/)
+* [Google Language Translator](https://wordpress.org/plugins/google-language-translator/)
+* [WPGlobus](https://wordpress.org/plugins/wpglobus/)
+
+= Page Builders Ready =
+* Gutenberg
+* Elementor
+* Divi Builder
+* WPBakery
+* BeaverBuilder
+* SiteOrgin
+* Fusion Builder
 
 = Author =
-Designed and Developed by [__ShapedPlugin__](https://shapedplugin.com/)
+The **WooCommerce Category Slider and Grid** plugin is developed and maintained by [__ShapedPlugin LLC__](https://shapedplugin.com).
 
 
 == Installation ==
@@ -139,6 +118,28 @@ The WordPress codex contains <a href="https://codex.wordpress.org/Managing_Plugi
 
 == Frequently Asked Questions ==
 
+= What is WooCategory, and is it free? =
+WooCategory is a free WordPress plugin that allows WooCommerce store owners to display product categories in responsive sliders and grids. You can showcase categories with thumbnails, names, product counts, descriptions, and a “Shop Now” button to improve navigation and engagement.
+The core version is free on WordPress.org, with an optional Pro version that adds advanced layouts, styling options, and additional customization features.
+
+= Can I customize the appearance of the category sliders or grids? =
+Yes, WooCategory offers extensive customization options. You can adjust colors, layouts, spacing, and typography to match your store's design. Additionally, you can control the visibility of category elements like names, thumbnails, descriptions, and the "Shop Now" button.
+
+= Is WooCategory mobile-friendly? =
+Absolutely. WooCategory is fully responsive and optimized for mobile devices, ensuring that your category sliders and grids look great on desktops, tablets, and smartphones.
+
+= How do I add a product category slider or grid layout to my site? =
+You can add a category slider or grid using the built-in shortcode generator. Simply configure your desired settings, generate the shortcode, and place it in any post, page, or widget area. Alternatively, WooCategory is compatible with the Gutenberg block editor, allowing you to insert the slider directly into your content.
+
+= Can I filter which categories to display? =
+Yes, WooCategory provides filtering options to display specific categories. You can choose to show or hide particular categories, exclude empty ones, and limit the number of categories displayed in the slider or grid.
+
+= Is there a premium version of WooCategory? =
+Yes, WooCategory offers a [__Pro version__](https://shapedplugin.com/woocategory/?ref=115) with additional features, including advanced styling options, more slider controls, and enhanced customization capabilities. You can upgrade to the Pro version to access these premium features. 
+
+= Does WooCategory work with any theme or plugin? =
+Yes, WooCategory is compatible with most standard WordPress themes that support WooCommerce. In some cases, minor adjustments or custom CSS may be needed to ensure proper display.
+
 
 == Screenshots ==
 1. Live Demo.
@@ -153,6 +154,11 @@ The WordPress codex contains <a href="https://codex.wordpress.org/Managing_Plugi
 
 
 == Changelog ==
+
+= 1.6.2 - Mon 08, 2025 =
+* Improved: Enhanced plugin security and data validation.
+* Improved: The Additional CSS and JS option.
+* Tested: WooCommerce 10.1.2 compatibility.
 
 = 1.6.1 - Jul 14, 2025 =
 * New: The Custom JS option.

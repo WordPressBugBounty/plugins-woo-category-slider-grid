@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Framework checkbox field file.
  *

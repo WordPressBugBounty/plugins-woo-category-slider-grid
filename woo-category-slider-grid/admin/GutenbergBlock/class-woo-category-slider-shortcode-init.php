@@ -43,7 +43,7 @@ if ( ! class_exists( 'Woo_Category_Slider_Gutenberg_Block_Init' ) ) {
 		public function woo_category_slider_block_editor_assets() {
 			wp_enqueue_script(
 				'woo-category-slider-shortcode-block',
-				plugins_url( '/GutenbergBlock/build/index.js', dirname( __FILE__ ) ),
+				plugins_url( '/GutenbergBlock/build/index.js', __DIR__ ),
 				array( 'jquery' ),
 				SP_WCS_VERSION,
 				true

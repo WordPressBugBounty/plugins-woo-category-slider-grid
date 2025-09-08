@@ -28,7 +28,7 @@ class SP_WCS_Tools {
 		SP_WCS::createOptions(
 			$prefix,
 			array(
-				'menu_title'       => __( 'Tools', 'woo-category-slider-grid' ),
+				'menu_title'       => esc_html__( 'Tools', 'woo-category-slider-grid' ),
 				'menu_slug'        => 'wcsp_tools',
 				'menu_parent'      => 'edit.php?post_type=sp_wcslider',
 				'menu_type'        => 'submenu',
@@ -41,7 +41,7 @@ class SP_WCS_Tools {
 				'show_footer'      => false,
 				'show_buttons'     => false, // Custom show button option added for hide save button in tools page.
 				'theme'            => 'light',
-				'framework_title'  => __( 'Tools', 'woo-category-slider-grid' ),
+				'framework_title'  => esc_html__( 'Tools', 'woo-category-slider-grid' ),
 				'framework_class'  => 'sp-wcsp-options wcsp_tools',
 			)
 		);
@@ -49,17 +49,17 @@ class SP_WCS_Tools {
 		SP_WCS::createSection(
 			$prefix,
 			array(
-				'title'  => __( 'Export', 'woo-category-slider-grid' ),
+				'title'  => esc_html__( 'Export', 'woo-category-slider-grid' ),
 				'fields' => array(
 					array(
 						'id'       => 'wcsp_what_export',
 						'type'     => 'radio',
 						'class'    => 'wcsp_what_export',
-						'title'    => __( 'Choose What To Export', 'woo-category-slider-grid' ),
+						'title'    => esc_html__( 'Choose What To Export', 'woo-category-slider-grid' ),
 						'multiple' => false,
 						'options'  => array(
-							'all_shortcodes'      => __( 'All Sliders (Shortcodes)', 'woo-category-slider-grid' ),
-							'selected_shortcodes' => __( 'Selected Slider (Shortcode)', 'woo-category-slider-grid' ),
+							'all_shortcodes'      => esc_html__( 'All Sliders (Shortcodes)', 'woo-category-slider-grid' ),
+							'selected_shortcodes' => esc_html__( 'Selected Slider (Shortcode)', 'woo-category-slider-grid' ),
 						),
 						'default'  => 'all_shortcodes',
 					),
@@ -72,7 +72,7 @@ class SP_WCS_Tools {
 						'chosen'      => true,
 						'sortable'    => false,
 						'multiple'    => true,
-						'placeholder' => __( 'Choose slider(s)', 'woo-category-slider-grid' ),
+						'placeholder' => esc_html__( 'Choose slider(s)', 'woo-category-slider-grid' ),
 						'query_args'  => array(
 							'posts_per_page' => -1,
 						),
@@ -85,7 +85,7 @@ class SP_WCS_Tools {
 						'type'    => 'button_set',
 						'title'   => ' ',
 						'options' => array(
-							'' => __( 'Export', 'woo-category-slider-grid' ),
+							'' => esc_html__( 'Export', 'woo-category-slider-grid' ),
 						),
 					),
 				),
@@ -94,12 +94,12 @@ class SP_WCS_Tools {
 		SP_WCS::createSection(
 			$prefix,
 			array(
-				'title'  => __( 'Import', 'woo-category-slider-grid' ),
+				'title'  => esc_html__( 'Import', 'woo-category-slider-grid' ),
 				'fields' => array(
 					array(
 						'class' => 'wcsp_import',
 						'type'  => 'custom_import',
-						'title' => __( 'Import JSON File To Upload', 'woo-category-slider-grid' ),
+						'title' => esc_html__( 'Import JSON File To Upload', 'woo-category-slider-grid' ),
 					),
 				),
 			)

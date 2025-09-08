@@ -10,6 +10,10 @@
  * @author     ShapedPlugin <support@shapedplugin.com>
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die; // Cannot access directly.
+}
+
 /**
  * Woo_Category_Slider_Loader class
  */
@@ -42,7 +46,6 @@ class Woo_Category_Slider_Loader {
 
 		$this->actions = array();
 		$this->filters = array();
-
 	}
 
 	/**
@@ -98,7 +101,6 @@ class Woo_Category_Slider_Loader {
 		);
 
 		return $hooks;
-
 	}
 
 	/**
@@ -115,7 +117,5 @@ class Woo_Category_Slider_Loader {
 		foreach ( $this->actions as $hook ) {
 			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
 		}
-
 	}
-
 }

@@ -57,7 +57,7 @@ if ( ! class_exists( 'SP_WCS_Field_tabbed' ) ) {
 				$tabbed_icon   = ( ! empty( $tab['icon'] ) ) ? $tab['icon'] : '';
 				$tabbed_active = ( empty( $key ) ) ? ' class="spf-tabbed-active"' : '';
 
-				echo '<a class="spf-tab-item-' . esc_attr( $key ) . '" href="#"' . wp_kses_post( $tabbed_active ) . '>' . $tabbed_icon . wp_kses_post( $tab['title'] ) . '</a>';
+				echo '<a class="spf-tab-item-' . esc_attr( $key ) . '" href="#"' . wp_kses_post( $tabbed_active ) . '>' . $tabbed_icon . wp_kses_post( $tab['title'] ) . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- intentionally not escaped to support html tags.
 			}
 			echo '</div>';
 

@@ -72,8 +72,6 @@ if ( ! class_exists( 'SP_WCS_Field_custom_select' ) ) {
 
 			<?php
 				echo wp_kses_post( $this->field_after() );
-
 		}
-
 	}
 }

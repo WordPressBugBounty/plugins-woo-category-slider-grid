@@ -80,8 +80,8 @@ if ( ! class_exists( 'SP_WCS_Field_image_sizes' ) ) {
 			$sizes = array_merge(
 				$sizes,
 				array(
-					'full'   => __( 'Original uploaded image', 'woo-category-slider-grid' ),
-					'custom' => __( 'Set custom size', 'woo-category-slider-grid' ),
+					'full'   => esc_html__( 'Original uploaded image', 'woo-category-slider-grid' ),
+					'custom' => esc_html__( 'Set custom size', 'woo-category-slider-grid' ),
 				)
 			);
 
@@ -134,8 +134,6 @@ if ( ! class_exists( 'SP_WCS_Field_image_sizes' ) ) {
 			}
 
 			echo wp_kses_post( $this->field_after() );
-
 		}
-
 	}
 }

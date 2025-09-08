@@ -126,47 +126,5 @@ if ( ! class_exists( 'SP_WCS_Field_column' ) ) {
 			}
 			echo wp_kses_post( $this->field_after() );
 		}
-
-		/**
-		 * Output
-		 *
-		 * @return statement
-		 */
-		public function output() {
-
-			$output    = '';
-			$element   = ( is_array( $this->field['output'] ) ) ? join( ',', $this->field['output'] ) : $this->field['output'];
-			$important = ( ! empty( $this->field['output_important'] ) ) ? '!important' : '';
-			$unit      = ( ! empty( $this->value['unit'] ) ) ? $this->value['unit'] : 'px';
-			$mode      = ( ! empty( $this->field['output_mode'] ) ) ? $this->field['output_mode'] : 'padding';
-			$mode      = ( 'relative' === $mode || 'absolute' === $mode || 'none' === $mode ) ? '' : $mode;
-			$mode      = ( ! empty( $mode ) ) ? $mode . '-' : '';
-
-			if ( ! empty( $this->field['all'] ) && isset( $this->value['all'] ) && '' !== $this->value['all'] ) {
-
-				$output  = $element . '{';
-				$output .= $mode . 'large_desktop:' . $this->value['all'] . $unit . $important . ';';
-				$output .= $mode . 'desktop:' . $this->value['all'] . $unit . $important . ';';
-				$output .= $mode . 'laptop:' . $this->value['all'] . $unit . $important . ';';
-				$output .= $mode . 'tablet:' . $this->value['all'] . $unit . $important . ';';
-				$output .= $mode . 'mobile:' . $this->value['all'] . $unit . $important . ';';
-				$output .= '}';
-
-			} else {
-
-				$large_desktop = ( isset( $this->value['large_desktop'] ) && '' !== $this->value['large_desktop'] ) ? $mode . 'large_desktop:' . $this->value['large_desktop'] . $unit . $important . ';' : '';
-				$desktop       = ( isset( $this->value['desktop'] ) && '' !== $this->value['desktop'] ) ? $mode . 'desktop:' . $this->value['desktop'] . $unit . $important . ';' : '';
-				$laptop        = ( isset( $this->value['laptop'] ) && '' !== $this->value['laptop'] ) ? $mode . 'laptop:' . $this->value['laptop'] . $unit . $important . ';' : '';
-				$tablet        = ( isset( $this->value['tablet'] ) && '' !== $this->value['tablet'] ) ? $mode . 'tablet:' . $this->value['tablet'] . $unit . $important . ';' : '';
-				$mobile        = ( isset( $this->value['mobile'] ) && '' !== $this->value['mobile'] ) ? $mode . 'mobile:' . $this->value['mobile'] . $unit . $important . ';' : '';
-
-				if ( '' !== $large_desktop || '' !== $desktop || '' !== $laptop || '' !== $tablet || '' !== $mobile ) {
-					$output = $element . '{' . $large_desktop . $desktop . $laptop . $tablet . $mobile . '}';
-				}
-			}
-
-			$this->parent->output_css .= $output;
-			return $output;
-		}
 	}
 }

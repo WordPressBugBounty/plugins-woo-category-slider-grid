@@ -42,12 +42,15 @@ if ( ! class_exists( 'Woo_Category_Slider_Import_Export' ) ) {
 				if ( ! empty( $shortcodes ) ) {
 					foreach ( $shortcodes as $shortcode ) {
 						$shortcode_export = array(
-							'title'       => $shortcode->post_title,
-							'original_id' => $shortcode->ID,
+							'title'       => sanitize_text_field( $shortcode->post_title ),
+							'original_id' => absint( $shortcode->ID ),
 							'meta'        => array(),
 						);
 						foreach ( get_post_meta( $shortcode->ID ) as $metakey => $value ) {
-							$shortcode_export['meta'][ $metakey ] = $value[0];
+							$meta_key                              = sanitize_key( $metakey );
+							$meta_value                            = is_serialized( $value[0] ) ? $value[0] : sanitize_text_field( $value[0] );
+							$shortcode_export['meta'][ $meta_key ] = $meta_value;
+							// $shortcode_export['meta'][ $metakey ] = $value[0];
 						}
 						$export['shortcode'][] = $shortcode_export;
 
@@ -72,19 +75,28 @@ if ( ! class_exists( 'Woo_Category_Slider_Import_Export' ) ) {
 			if ( ! wp_verify_nonce( $nonce, 'spf_options_nonce' ) ) {
 				wp_send_json_error(
 					array(
-						'message' => __( 'Error: Invalid nonce verification!', 'woo-category-slider-grid' ),
+						'message' => esc_html__( 'Error: Invalid nonce verification!', 'woo-category-slider-grid' ),
 					),
 					401
 				);
 			}
-			$shortcode_ids = isset( $_POST['wcsp_ids'] ) ? $_POST['wcsp_ids'] : ''; // phpcs:ignore
+
+			$_capability = apply_filters( 'sp_category_slider_import_export_capability', 'manage_options' );
+			if ( ! current_user_can( $_capability ) ) {
+				wp_send_json_error( array( 'error' => esc_html__( 'You do not have permission to export.', 'woo-category-slider-grid' ) ) );
+			}
+
+			$shortcode_ids = '';
+			if ( isset( $_POST['wcsp_ids'] ) ) {
+				$shortcode_ids = is_array( $_POST['wcsp_ids'] ) ? wp_unslash( array_map( 'absint', $_POST['wcsp_ids'] ) ) : sanitize_text_field( wp_unslash( $_POST['wcsp_ids'] ) );
+			}
 
 			$export = $this->export( $shortcode_ids );
 
 			if ( is_wp_error( $export ) ) {
 				wp_send_json_error(
 					array(
-						'message' => $export->get_error_message(),
+						'message' => esc_html( $export->get_error_message() ),
 					),
 					400
 				);
@@ -114,7 +126,7 @@ if ( ! class_exists( 'Woo_Category_Slider_Import_Export' ) ) {
 				try {
 					$new_shortcode_id = wp_insert_post(
 						array(
-							'post_title'  => isset( $shortcode['title'] ) ? $shortcode['title'] : '',
+							'post_title'  => isset( $shortcode['title'] ) ? sanitize_text_field( $shortcode['title'] ) : '',
 							'post_status' => 'publish',
 							'post_type'   => 'sp_wcslider',
 						),
@@ -154,7 +166,7 @@ if ( ! class_exists( 'Woo_Category_Slider_Import_Export' ) ) {
 		}
 
 		/**
-		 * Import woo-product-slider by ajax.
+		 * Import woo-category-slider-grid by ajax.
 		 *
 		 * @return void
 		 */
@@ -163,23 +175,58 @@ if ( ! class_exists( 'Woo_Category_Slider_Import_Export' ) ) {
 			if ( ! wp_verify_nonce( $nonce, 'spf_options_nonce' ) ) {
 				wp_send_json_error(
 					array(
-						'message' => __( 'Error: Invalid nonce verification!', 'woo-category-slider-grid' ),
+						'message' => esc_html__( 'Error: Invalid nonce verification!', 'woo-category-slider-grid' ),
 					),
 					401
 				);
 			}
-			$data       = isset( $_POST['shortcode'] ) ? wp_kses_data( wp_unslash( $_POST['shortcode'] ) ) : '';
-			$data       = json_decode( $data );
-			$data       = json_decode( $data, true );
-			$shortcodes = $data['shortcode'];
+
+			$_capability = apply_filters( 'sp_category_slider_import_export_capability', 'manage_options' );
+			if ( ! current_user_can( $_capability ) ) {
+				wp_send_json_error( array( 'error' => esc_html__( 'You do not have permission to import.', 'woo-category-slider-grid' ) ) );
+			}
+
+			$data = isset( $_POST['shortcode'] ) ? wp_kses_data( wp_unslash( $_POST['shortcode'] ) ) : '';
 			if ( ! $data ) {
 				wp_send_json_error(
 					array(
-						'message' => __( 'Nothing to import.', 'woo-category-slider-grid' ),
+						'message' => esc_html__( 'Nothing to import.', 'woo-category-slider-grid' ),
 					),
 					400
 				);
 			}
+
+			// Decode JSON with error checking.
+			$decoded_data = json_decode( $data, true );
+			if ( is_string( $decoded_data ) ) {
+				$decoded_data = json_decode( $decoded_data, true );
+			}
+
+			if ( json_last_error() !== JSON_ERROR_NONE ) {
+				wp_send_json_error(
+					array(
+						'message' => esc_html__( 'Invalid JSON data.', 'woo-category-slider-grid' ),
+					),
+					400
+				);
+			}
+
+			// Check if shortcode key exists and is valid.
+			if ( ! isset( $decoded_data['shortcode'] ) || ! is_array( $decoded_data['shortcode'] ) ) {
+				wp_send_json_error(
+					array(
+						'message' => esc_html__( 'Invalid shortcode data structure.', 'woo-category-slider-grid' ),
+					),
+					400
+				);
+			}
+
+			$shortcodes = map_deep(
+				$decoded_data['shortcode'],
+				function ( $value ) {
+					return is_string( $value ) ? sanitize_text_field( $value ) : $value;
+				}
+			);
 
 			$status = $this->import( $shortcodes );
 

@@ -36,7 +36,6 @@ if ( ! function_exists( 'spf_array_search' ) ) {
 		}
 
 		return $results;
-
 	}
 }
 
@@ -59,7 +58,6 @@ if ( ! function_exists( 'spf_get_var' ) ) {
 		}
 
 		return $default;
-
 	}
 }
 
@@ -83,7 +81,6 @@ if ( ! function_exists( 'spf_get_vars' ) ) {
 		}
 
 		return $default;
-
 	}
 }
 
@@ -100,6 +97,5 @@ if ( ! function_exists( 'spf_wp_editor_api' ) ) {
 		global $wp_version;
 
 		return version_compare( $wp_version, '4.8', '>=' );
-
 	}
 }

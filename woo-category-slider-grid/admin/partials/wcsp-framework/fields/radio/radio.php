@@ -42,7 +42,6 @@ if ( ! class_exists( 'SP_WCS_Field_radio' ) ) {
 		 * @return void
 		 */
 		public function render() {
-
 			$args = wp_parse_args(
 				$this->field,
 				array(
@@ -60,27 +59,22 @@ if ( ! class_exists( 'SP_WCS_Field_radio' ) ) {
 				$options = ( is_array( $options ) ) ? $options : array_filter( $this->field_data( $options ) );
 
 				if ( ! empty( $options ) ) {
-
-					echo '<ul' . $inline_class . '>';
+					echo '<ul' . wp_kses_post( $inline_class ) . '>';
 					foreach ( $options as $option_key => $option_value ) {
 						$checked = ( $option_key === $this->value ) ? ' checked' : '';
 						echo '<li><label><input type="radio" name="' . esc_attr( $this->field_name() ) . '" value="' . esc_attr( $option_key ) . '"' . wp_kses_post( $this->field_attributes() . $checked ) . '/> ' . esc_html( $option_value ) . '</label></li>';
 					}
 					echo '</ul>';
-
 				} else {
 
 					echo ! empty( $this->field['empty_message'] ) ? esc_html( $this->field['empty_message'] ) : esc_html__( 'No data provided for this option type.', 'woo-category-slider-grid' );
-
 				}
 			} else {
-					$label = ( isset( $this->field['label'] ) ) ? $this->field['label'] : '';
-					echo '<label><input type="radio" name="' . esc_attr( $this->field_name() ) . '" value="1"' . wp_kses_post( $this->field_attributes() ) . checked( $this->value, 1, false ) . '/> ' . wp_kses_post( $label ) . '</label>';
+				$label = ( isset( $this->field['label'] ) ) ? $this->field['label'] : '';
+				echo '<label><input type="radio" name="' . esc_attr( $this->field_name() ) . '" value="1"' . wp_kses_post( $this->field_attributes() ) . checked( $this->value, 1, false ) . '/> ' . wp_kses_post( $label ) . '</label>';
 			}
 
 			echo wp_kses_post( $this->field_after() );
-
 		}
-
 	}
 }

@@ -1,4 +1,17 @@
 <?php
+/**
+ * The plugin elementor deprecated widget.
+ *
+ * @link       https://shapedplugin.com/
+ *
+ * @package    Woo_Category_Slider
+ * @subpackage Woo_Category_Slider/admin
+ * @author     ShapedPlugin <support@shapedplugin.com>
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	die; // Cannot access directly.
+}
 
 /**
  * Elementor WooCategory slider free shortcode Widget.
@@ -116,7 +129,6 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 		);
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -150,13 +162,9 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 
 			Woo_Category_Slider_Shortcode::sp_wcsp_html_show( $post_id, $shortcode_meta, $title, $layout_meta );
 			?>
-			<script src="<?php echo esc_url( SP_WCS_URL . 'public/js/swiper-config.min.js' ); ?>" ></script>
-			<script src="<?php echo esc_url( SP_WCS_URL . 'public/js/preloader.min.js' ); ?>" ></script>
 			<?php
 		} else {
 			echo do_shortcode( '[woocatslider id="' . $generator_id . '"]' );
 		}
-
 	}
-
 }

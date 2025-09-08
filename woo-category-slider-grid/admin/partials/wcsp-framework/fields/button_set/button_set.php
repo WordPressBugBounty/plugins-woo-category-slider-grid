@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Framework button set field file.
  *

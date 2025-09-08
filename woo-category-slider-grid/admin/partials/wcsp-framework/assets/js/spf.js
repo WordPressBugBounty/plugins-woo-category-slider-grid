@@ -428,54 +428,29 @@
 	//
 	$.fn.spf_field_code_editor = function () {
 		return this.each(function () {
-
-			if (typeof CodeMirror !== 'function') { return; }
+			if (typeof wp === 'undefined' || typeof wp.codeEditor === 'undefined') {
+				return;
+			}
 
 			var $this = $(this),
 				$textarea = $this.find('textarea'),
-				$inited = $this.find('.CodeMirror'),
-				data_editor = $textarea.data('editor');
+				settings = $textarea.data('editor') || {};
 
-			if ($inited.length) {
-				$inited.remove();
-			}
+			// Merge with WP defaults
+			var editorSettings = wp.codeEditor.defaultSettings ? _.clone(wp.codeEditor.defaultSettings) : {};
+			editorSettings.codemirror = _.extend(
+				{},
+				editorSettings.codemirror,
+				settings
+			);
 
-			var interval = setInterval(function () {
-				if ($this.is(':visible')) {
-
-					var code_editor = CodeMirror.fromTextArea($textarea[0], data_editor);
-
-					// load code-mirror theme css.
-					if (data_editor.theme !== 'default' && SP_WCS.vars.code_themes.indexOf(data_editor.theme) === -1) {
-
-						var $cssLink = $('<link>');
-
-						$('#spf-codemirror-css').after($cssLink);
-
-						$cssLink.attr({
-							rel: 'stylesheet',
-							id: 'spf-codemirror-' + data_editor.theme + '-css',
-							href: data_editor.cdnURL + '/theme/' + data_editor.theme + '.min.css',
-							type: 'text/css',
-							media: 'all'
-						});
-
-						SP_WCS.vars.code_themes.push(data_editor.theme);
-
-					}
-
-					CodeMirror.modeURL = data_editor.cdnURL + '/mode/%N/%N.min.js';
-					CodeMirror.autoLoadMode(code_editor, data_editor.mode);
-
-					code_editor.on('change', function (editor, event) {
-						$textarea.val(code_editor.getValue()).trigger('change');
-					});
-
-					clearInterval(interval);
-
-				}
+			// Initialize editor
+			var editor = wp.codeEditor.initialize($textarea[0], editorSettings);
+			//editor.codemirror.setOption('theme', 'monokai');
+			// Sync changes back to textarea
+			editor.codemirror.on('change', function () {
+				$textarea.val(editor.codemirror.getValue()).trigger('change');
 			});
-
 		});
 	};
 
@@ -1091,7 +1066,8 @@
 						$buttons.prop('disabled', true);
 
 						window.wp.ajax.post('spf_' + $panel.data('unique') + '_ajax_save', {
-							data: $('#spf-form').serializeJSONSP_WCS()
+							data: $('#spf-form').serializeJSONSP_WCS(),
+							nonce: $('#spf_options_nonce' + $panel.data('unique')).val(),
 						})
 							.done(function (response) {
 
@@ -2093,7 +2069,8 @@
 	$('.wcsp_export .spf--button').on('click', function (event) {
 		event.preventDefault();
 		var $shortcode_ids = $('.wcsp_post_ids select').val();
-		var $ex_nonce = $('#spf_options_nonce').val();
+		
+		var $ex_nonce = $('#spf_options_noncesp_wcsp_tools').val();
 		var selected_shortcode = $export_type === 'selected_shortcodes' ? $shortcode_ids : 'all_shortcodes';
 		if ($export_type === 'all_shortcodes' || $export_type === 'selected_shortcodes') {
 			var data = {
@@ -2137,7 +2114,7 @@
 		event.preventDefault();
 		var wcsp_shortcodes = $('#import').prop('files')[0];
 		if ($('#import').val() != '') {
-			var $im_nonce = $('#spf_options_nonce').val();
+			var $im_nonce = $('#spf_options_noncesp_wcsp_tools').val();
 			var reader = new FileReader();
 			reader.readAsText(wcsp_shortcodes);
 			reader.onload = function (event) {
@@ -2180,6 +2157,9 @@
 	});
 	$(document).on('click', '#sp-wcsp-show-preview:not(:contains(Hide))', function (e) {
 		e.preventDefault();
+		var previewJS = window.spf_vars.categoryPreviewJS,
+		pluginPreloader =  window.spf_vars.categoryPreloaderJS;
+
 		var layoutPreset = $('.wcsp_layout_presets').find('input[name="sp_wcsp_shortcode_options[wcsp_layout_presets]"]:checked').val();
 		var _data = $('form#post').serialize();
 		var _this = $(this);
@@ -2198,12 +2178,15 @@
 			success: function (response) {
 				preview_display.show();
 				preview_box.html(response);
-				_this.html('<i class="fa fa-eye-slash" aria-hidden="true"></i> Hide Preview');
-				$(document).on('keyup change', '.post-type-sp_wcslider', function (e) {
-					e.preventDefault();
-					_this.html('<i class="fa fa-refresh" aria-hidden="true"></i> Update Preview');
-				});
-				$("html, body").animate({ scrollTop: preview_display.offset().top - 50 }, "slow");
+				$.getScript(pluginPreloader);
+				$.getScript(previewJS, function () {
+					_this.html('<i class="fa fa-eye-slash" aria-hidden="true"></i> Hide Preview');
+					$(document).on('keyup change', '.post-type-sp_wcslider', function (e) {
+						e.preventDefault();
+						_this.html('<i class="fa fa-refresh" aria-hidden="true"></i> Update Preview');
+					});
+					$("html, body").animate({ scrollTop: preview_display.offset().top - 50 }, "slow");
+				})
 			}
 		})
 	});
@@ -2265,11 +2248,11 @@
 	var mainNavFourSelector = $('#sp_wcsp_shortcode_options').find('.spf-nav.spf-nav-metabox li:nth-child(4)');
 
 	// Onchange layout.
-	layoutPresetSelector.on( 'change', function () {
+	layoutPresetSelector.on('change', function () {
 		let $this = $(this).val();
 
 		// Show/hide main navigation items.
-		if ( ['carousel', 'slider', 'multi_row'].includes( $this ) ) {
+		if (['carousel', 'slider', 'multi_row'].includes($this)) {
 			mainNavFourSelector.show();
 		} else {
 			mainNavFourSelector.hide();

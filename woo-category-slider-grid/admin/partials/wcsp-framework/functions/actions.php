@@ -88,7 +88,7 @@ if ( ! function_exists( 'spf_reset_ajax' ) ) {
 	 */
 	function spf_reset_ajax() {
 		if ( ! empty( $_POST['unique'] ) && ! empty( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'spf_backup_nonce' ) ) {
-			delete_option( wp_unslash( $_POST['unique'] ) );
+			delete_option( sanitize_text_field( wp_unslash( $_POST['unique'] ) ) );
 			wp_send_json_success( array( 'success' => true ) );
 		}
 		wp_send_json_error(

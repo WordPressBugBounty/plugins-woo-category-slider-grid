@@ -28,14 +28,14 @@ class SP_WCS_Settings {
 		SP_WCS::createOptions(
 			$prefix,
 			array(
-				'menu_title'      => __( 'Settings', 'woo-category-slider-grid' ),
+				'menu_title'      => esc_html__( 'Settings', 'woo-category-slider-grid' ),
 				'menu_slug'       => 'wcsp_settings',
 				'menu_parent'     => 'edit.php?post_type=sp_wcslider',
 				'menu_type'       => 'submenu',
 				'ajax_save'       => true,
 				'save_defaults'   => true,
 				'show_reset_all'  => false,
-				'framework_title' => __( 'Settings', 'woo-category-slider-grid' ),
+				'framework_title' => esc_html__( 'Settings', 'woo-category-slider-grid' ),
 				'framework_class' => 'sp-wcsp-options',
 				'theme'           => 'light',
 				'show_bar_menu'   => false,
@@ -43,6 +43,5 @@ class SP_WCS_Settings {
 		);
 		SP_WCS_Advanced::section( $prefix );
 		SP_WCS_Style::section( $prefix );
-		SP_WCS_License::section( $prefix );
 	}
 }

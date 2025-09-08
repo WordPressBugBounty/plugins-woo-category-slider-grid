@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Framework abstract.class file.
  *

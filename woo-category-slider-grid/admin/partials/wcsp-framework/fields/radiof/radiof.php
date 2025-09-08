@@ -80,8 +80,6 @@ if ( ! class_exists( 'SP_WCS_Field_radiof' ) ) {
 			}
 
 			echo wp_kses_post( $this->field_after() );
-
 		}
-
 	}
 }

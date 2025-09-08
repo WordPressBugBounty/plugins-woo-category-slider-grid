@@ -12,6 +12,10 @@
  * @author     ShapedPlugin <support@shapedplugin.com>
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die; // Cannot access directly.
+}
+
 /**
  * Woo_Category_Slider_Admin class
  */
@@ -181,7 +185,7 @@ class Woo_Category_Slider_Admin {
 		$capability = apply_filters( 'sp_wcslider_ui_permission', 'manage_options' );
 		$show_ui    = current_user_can( $capability ) ? true : false;
 		if ( $show_ui && 'sp_wcslider' === $post->post_type ) {
-			$actions['duplicate'] = '<a href="' . wp_nonce_url( 'admin.php?action=wcs_shortcode_duplicate&post=' . $post->ID, basename( __FILE__ ), 'sp_wcs_duplicate_nonce' ) . '" rel="permalink">' . __( 'Duplicate', 'woo-category-slider-grid' ) . '</a>';
+			$actions['duplicate'] = '<a href="' . wp_nonce_url( 'admin.php?action=wcs_shortcode_duplicate&post=' . $post->ID, basename( __FILE__ ), 'sp_wcs_duplicate_nonce' ) . '" rel="permalink">' . esc_html__( 'Duplicate', 'woo-category-slider-grid' ) . '</a>';
 		}
 		return $actions;
 	}
@@ -224,10 +228,10 @@ class Woo_Category_Slider_Admin {
 	 */
 	public function add_shortcode_column() {
 		$new_columns['cb']        = '<input type="checkbox" />';
-		$new_columns['title']     = __( 'Title', 'woo-category-slider-grid' );
-		$new_columns['shortcode'] = __( 'Shortcode', 'woo-category-slider-grid' );
+		$new_columns['title']     = esc_html__( 'Title', 'woo-category-slider-grid' );
+		$new_columns['shortcode'] = esc_html__( 'Shortcode', 'woo-category-slider-grid' );
 		$new_columns['']          = '';
-		$new_columns['date']      = __( 'Date', 'woo-category-slider-grid' );
+		$new_columns['date']      = esc_html__( 'Date', 'woo-category-slider-grid' );
 
 		return $new_columns;
 	}
@@ -261,7 +265,7 @@ class Woo_Category_Slider_Admin {
 
 		if ( SP_WCS_BASENAME === $file ) {
 
-			$ui_links = sprintf( '<a href="%s">%s</a>', admin_url( 'post-new.php?post_type=sp_wcslider' ), __( 'Add New', 'woo-category-slider-grid' ) );
+			$ui_links = sprintf( '<a href="%s">%s</a>', admin_url( 'post-new.php?post_type=sp_wcslider' ), esc_html__( 'Add New', 'woo-category-slider-grid' ) );
 
 			array_unshift( $links, $ui_links );
 
@@ -291,7 +295,7 @@ class Woo_Category_Slider_Admin {
 	public function plugin_row_meta( $plugin_meta, $plugin_file ) {
 		if ( SP_WCS_BASENAME === $plugin_file ) {
 			$row_meta = array(
-				'live_demo' => '<a href="https://demo.shapedplugin.com/woocategory/" aria-label="' . esc_attr( __( 'Live Demo', 'woo-category-slider-grid' ) ) . '" target="_blank">' . __( 'Live Demo', 'woo-category-slider-grid' ) . '</a>',
+				'live_demo' => '<a href="https://demo.shapedplugin.com/woocategory/" aria-label="' . esc_attr( __( 'Live Demo', 'woo-category-slider-grid' ) ) . '" target="_blank">' . esc_html__( 'Live Demo', 'woo-category-slider-grid' ) . '</a>',
 			);
 
 			$plugin_meta = array_merge( $plugin_meta, $row_meta );
@@ -327,10 +331,10 @@ class Woo_Category_Slider_Admin {
 	public function admin_footer( $text ) {
 		$screen = get_current_screen();
 		if ( 'sp_wcslider' === $screen->post_type ) {
-			$url  = 'https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/?filter=5#new-post';
+			$url  = 'https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/';
 			$text = sprintf(
 				/* translators: 1: start strong tag, 2: close strong tag, 3: start link tag, 4: close link tag. */
-				__( 'Enjoying %1$sWooCategory?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊', 'woo-category-slider-grid' ),
+				esc_html__( 'Enjoying %1$sWooCategory?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊', 'woo-category-slider-grid' ),
 				'<strong>',
 				'</strong>',
 				'<span class="spwoocs-footer-text-star">★★★★★</span> <a href="' . esc_url( $url ) . '" target="_blank">',
@@ -365,7 +369,7 @@ class Woo_Category_Slider_Admin {
 	public function admin_notice() {
 		if ( current_user_can( 'install_plugins' ) ) {
 
-			$action = empty( $_GET['sp-wcsp-woo'] ) ? '' : \sanitize_text_field( wp_unslash( $_GET['sp-wcsp-woo'] ) );
+			$action = empty( $_GET['sp-wcsp-woo'] ) ? '' : \sanitize_text_field( wp_unslash( $_GET['sp-wcsp-woo'] ) ); // phpcs:ignore 
 			$plugin = 'woocommerce/woocommerce.php';
 			require_once SP_WCS_PATH . 'admin/helper/class-woo-category-slider-woo.php';
 			$woo_install = new SP_WCS_WOO();
@@ -414,9 +418,9 @@ class Woo_Category_Slider_Admin {
 			$actual_link = '';
 		}
 
-		$sign = empty( $_GET ) ? '?' : '&';
+		$sign = empty( $_GET ) ? '?' : '&'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only checking query vars for building URL, no sensitive action
 
-		echo '<div class="updated notice is-dismissible notice-sp-wcsp-woo" data-nonce="' . wp_create_nonce( 'dismiss-wcsp-woo-notice' ) . '"><p>';
+		echo '<div class="updated notice is-dismissible notice-sp-wcsp-woo" data-nonce="' . esc_attr( wp_create_nonce( 'dismiss-wcsp-woo-notice' ) ) . '"><p>';
 		echo wp_kses_post( 'Please ' . $type . ' <a href="' . esc_url( $actual_link . $sign . 'sp-wcsp-woo=' . $type ) . '">WooCommerce</a> plugin to make the <b>WooCategory</b> work.', 'woo-category-slider-grid' );
 		echo '</p></div>';
 	}

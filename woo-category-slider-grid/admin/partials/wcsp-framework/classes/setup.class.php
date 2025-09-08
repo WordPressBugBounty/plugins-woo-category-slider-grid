@@ -92,8 +92,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 			self::includes();
 
 			// setup textdomain.
-			add_action( 'init', array( 'SP_WCS', 'textdomain' ) );
-
 			add_action( 'after_setup_theme', array( 'SP_WCS', 'setup' ) );
 			add_action( 'init', array( 'SP_WCS', 'setup' ) );
 			add_action( 'switch_theme', array( 'SP_WCS', 'setup' ) );
@@ -187,7 +185,7 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 		public static function constants() {
 
 			// we need this path-finder code for set URL of framework.
-			$dirname        = wp_normalize_path( dirname( dirname( __FILE__ ) ) );
+			$dirname        = wp_normalize_path( dirname( __DIR__ ) );
 			$theme_dir      = wp_normalize_path( get_theme_file_path() );
 			$plugin_dir     = wp_normalize_path( WP_PLUGIN_DIR );
 			$located_plugin = ( preg_match( '#' . self::sanitize_dirname( $plugin_dir ) . '#', self::sanitize_dirname( $dirname ) ) ) ? true : false;
@@ -309,17 +307,6 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 		}
 
 		/**
-		 * Load textdomain.
-		 *
-		 * @return void
-		 */
-		public static function textdomain() {
-			require_once SP_WCS_INCLUDES . '/class-woo-category-slider-i18n.php';
-			$plugin_i18n = new Woo_Category_Slider_i18n();
-			$plugin_i18n->load_plugin_textdomain();
-		}
-
-		/**
 		 * Get all of fields.
 		 *
 		 * @param  mixed $sections sections.
@@ -380,8 +367,10 @@ if ( ! class_exists( 'SP_WCS' ) ) {
 					'spf',
 					'spf_vars',
 					array(
-						'color_palette' => apply_filters( 'spf_color_palette', array() ),
-						'i18n'          => array(
+						'categoryPreviewJS'   => esc_url( SP_WCS_URL . 'public/js/swiper-config' . $min . '.js' ),
+						'categoryPreloaderJS' => esc_url( SP_WCS_URL . 'public/js/preloader' . $min . '.js' ),
+						'color_palette'       => apply_filters( 'spf_color_palette', array() ),
+						'i18n'                => array(
 							'confirm'             => esc_html__( 'Are you sure?', 'woo-category-slider-grid' ),
 							'reset_notification'  => esc_html__( 'Restoring options.', 'woo-category-slider-grid' ),
 							'import_notification' => esc_html__( 'Importing options.', 'woo-category-slider-grid' ),

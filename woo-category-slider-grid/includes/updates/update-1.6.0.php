@@ -10,6 +10,10 @@
  * @author     ShapedPlugin <support@shapedplugin.com>
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die; // Cannot access directly.
+}
+
 update_option( 'woo_category_slider_version', '1.6.0' );
 update_option( 'woo_category_slider_db_version', '1.6.0' );
 

@@ -9,6 +9,10 @@
  * @author     ShapedPlugin<support@shapedplugin.com>
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die; // Cannot access directly.
+}
+
 /**
  * The Review class.
  *
@@ -76,11 +80,11 @@ class Woo_Category_Slider_Review {
 			</div>
 			<div class="sp-woocatslider-notice-text">
 				<h3>Enjoying <strong>WooCategory</strong>?</h3>
-				<p>We hope you had a wonderful experience using <strong>WooCategory</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/?filter=5#new-post" target="_blank"><strong>WordPress.org</strong></a>.
+				<p>We hope you had a wonderful experience using <strong>WooCategory</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/" target="_blank"><strong>WordPress.org</strong></a>.
 				Your positive review will help us improve. Thank you! 😊</p>
 
 				<p class="sp-woocatslider-review-actions" data-nonce="<?php echo esc_attr( wp_create_nonce( 'dismiss-review-notice' ) ); ?>">
-					<a href="https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/?filter=5#new-post" target="_blank" class="button button-primary notice-dismissed rate-woo-category-slider-grid">Ok, you deserve ★★★★★</a>
+					<a href="https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/" target="_blank" class="button button-primary notice-dismissed rate-woo-category-slider-grid">Ok, you deserve ★★★★★</a>
 					<a href="#" class="notice-dismissed remind-me-later"><span class="dashicons dashicons-clock"></span>Nope, maybe later</a>
 					<a href="#" class="notice-dismissed never-show-again"><span class="dashicons dashicons-dismiss"></span>Never show again</a>
 				</p>

@@ -37,7 +37,10 @@ class Woo_Category_Slider_Widget extends WP_Widget {
 	 * @param array $instance widget instance value.
 	 */
 	public function widget( $args, $instance ) {
-		extract( $args ); //phpcs:ignore
+		$before_widget = isset( $args['before_widget'] ) ? $args['before_widget'] : '';
+		$after_widget  = isset( $args['after_widget'] ) ? $args['after_widget'] : '';
+		$before_title  = isset( $args['before_title'] ) ? $args['before_title'] : '';
+		$after_title   = isset( $args['after_title'] ) ? $args['after_title'] : '';
 
 		$title        = apply_filters( 'widget_title', esc_attr( $instance['title'] ) );
 		$shortcode_id = isset( $instance['shortcode_id'] ) ? absint( $instance['shortcode_id'] ) : 0;
@@ -46,14 +49,13 @@ class Woo_Category_Slider_Widget extends WP_Widget {
 			return;
 		}
 
-		echo wp_kses_post( $args['before_widget'] );
-
+		echo wp_kses_post( $before_widget );
 		if ( ! empty( $title ) ) {
 			echo wp_kses_post( $args['before_title'] . $title . $args['after_title'] );
 		}
 
 		echo do_shortcode( '[woocatslider id=' . $shortcode_id . ']' );
-		echo wp_kses_post( $args['after_widget'] );
+		echo wp_kses_post( $after_widget );
 	}
 
 
@@ -69,14 +71,14 @@ class Woo_Category_Slider_Widget extends WP_Widget {
 
 		if ( count( $shortcodes ) > 0 ) {
 
-			echo sprintf( '<p><label for="%1$s">%2$s</label>', esc_attr( $this->get_field_id( 'title' ) ), esc_html( __( 'Title:', 'woo-category-slider-grid' ) ) );
-			echo sprintf( '<input type="text" class="widefat" id="%1$s" name="%2$s" value="%3$s" /></p>', esc_attr( $this->get_field_id( 'title' ) ), esc_attr( $this->get_field_name( 'title' ) ), esc_attr( $title ) );
+			printf( '<p><label for="%1$s">%2$s</label>', esc_attr( $this->get_field_id( 'title' ) ), esc_html( __( 'Title:', 'woo-category-slider-grid' ) ) );
+			printf( '<input type="text" class="widefat" id="%1$s" name="%2$s" value="%3$s" /></p>', esc_attr( $this->get_field_id( 'title' ) ), esc_attr( $this->get_field_name( 'title' ) ), esc_attr( $title ) );
 
-			echo sprintf( '<p><label>%s</label>', esc_html( __( 'Shortcode:', 'woo-category-slider-grid' ) ) );
-			echo sprintf( '<select class="widefat" name="%s">', esc_attr( $this->get_field_name( 'shortcode_id' ) ) );
+			printf( '<p><label>%s</label>', esc_html( __( 'Shortcode:', 'woo-category-slider-grid' ) ) );
+			printf( '<select class="widefat" name="%s">', esc_attr( $this->get_field_name( 'shortcode_id' ) ) );
 			foreach ( $shortcodes as $shortcode ) {
 				$selected = $shortcode->id === $shortcode_id ? 'selected="selected"' : '';
-				echo sprintf(
+				printf(
 					'<option value="%1$d" %3$s>%2$s</option>',
 					esc_attr( $shortcode->id ),
 					esc_html( $shortcode->title ),
@@ -86,7 +88,7 @@ class Woo_Category_Slider_Widget extends WP_Widget {
 			echo '</select></p>';
 
 		} else {
-			echo sprintf(
+			printf(
 				'<p>%1$s <a href="' . esc_url( admin_url( 'post-new.php?post_type=sp_wcslider' ) ) . '">%3$s</a> %2$s</p>',
 				esc_html__( 'You did not generate any slider yet.', 'woo-category-slider-grid' ),
 				esc_html__( 'to generate a new slider now.', 'woo-category-slider-grid' ),
@@ -137,7 +139,6 @@ class Woo_Category_Slider_Widget extends WP_Widget {
 			$shortcodes
 		);
 	}
-
 }
 
 /**

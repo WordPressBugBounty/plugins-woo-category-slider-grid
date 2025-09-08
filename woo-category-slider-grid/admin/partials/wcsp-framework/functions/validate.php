@@ -27,7 +27,6 @@ if ( ! function_exists( 'spf_validate_email' ) ) {
 		if ( ! filter_var( $value, FILTER_VALIDATE_EMAIL ) ) {
 			return esc_html__( 'Please write a valid email address!', 'woo-category-slider-grid' );
 		}
-
 	}
 }
 
@@ -43,7 +42,6 @@ if ( ! function_exists( 'spf_validate_numeric' ) ) {
 		if ( ! is_numeric( $value ) ) {
 			return esc_html__( 'Please write a numeric data!', 'woo-category-slider-grid' );
 		}
-
 	}
 }
 
@@ -60,7 +58,6 @@ if ( ! function_exists( 'spf_validate_required' ) ) {
 		if ( empty( $value ) ) {
 			return esc_html__( 'Error! This field is required!', 'woo-category-slider-grid' );
 		}
-
 	}
 }
 
@@ -77,7 +74,6 @@ if ( ! function_exists( 'spf_validate_url' ) ) {
 		if ( ! filter_var( $value, FILTER_VALIDATE_URL ) ) {
 			return esc_html__( 'Please write a valid url!', 'woo-category-slider-grid' );
 		}
-
 	}
 }
 
@@ -99,7 +95,6 @@ if ( ! function_exists( 'spf_customize_validate_email' ) ) {
 		}
 
 		return $validity;
-
 	}
 }
 
@@ -122,7 +117,6 @@ if ( ! function_exists( 'spf_customize_validate_numeric' ) ) {
 		}
 
 		return $validity;
-
 	}
 }
 
@@ -144,7 +138,6 @@ if ( ! function_exists( 'spf_customize_validate_required' ) ) {
 		}
 
 		return $validity;
-
 	}
 }
 
@@ -166,7 +159,5 @@ if ( ! function_exists( 'spf_customize_validate_url' ) ) {
 		}
 
 		return $validity;
-
 	}
 }
-

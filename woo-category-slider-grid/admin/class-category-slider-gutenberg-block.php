@@ -27,6 +27,5 @@ if ( ! class_exists( 'Woo_Category_Slider_Gutenberg_Block' ) ) {
 			require_once SP_WCS_PATH . '/admin/GutenbergBlock/class-woo-category-slider-shortcode-init.php';
 			new Woo_Category_Slider_Gutenberg_Block_Init();
 		}
-
 	}
 }

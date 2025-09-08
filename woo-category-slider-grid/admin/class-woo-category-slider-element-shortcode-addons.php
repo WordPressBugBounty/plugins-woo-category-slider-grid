@@ -10,6 +10,10 @@
  * @author     ShapedPlugin <support@shapedplugin.com>
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die; // Cannot access directly.
+}
+
 /**
  * Elementor shortcode block.
  */
@@ -53,7 +57,6 @@ class Woo_Category_Slider_Free_Element_Shortcode_Addons {
 			self::$_instance = new self();
 		}
 		return self::$_instance;
-
 	}
 
 	/**
@@ -69,7 +72,6 @@ class Woo_Category_Slider_Free_Element_Shortcode_Addons {
 		add_action( 'elementor/preview/enqueue_scripts', array( $this, 'wcs_addons_enqueue_scripts' ) );
 		add_action( 'elementor/preview/enqueue_styles', array( $this, 'wcs_addons_enqueue_styles' ) );
 		add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'woo_category_slider_free_addons_icon' ) );
-
 	}
 
 	/**
@@ -174,7 +176,6 @@ class Woo_Category_Slider_Free_Element_Shortcode_Addons {
 		require_once SP_WCS_PATH . 'admin/ElementAddons/Sp_Category_Shortcode_Widget.php';
 		\Elementor\Plugin::instance()->widgets_manager->register( new Sp_Category_Shortcode_Widget() );
 	}
-
 }
 
 Woo_Category_Slider_Free_Element_Shortcode_Addons::instance();
