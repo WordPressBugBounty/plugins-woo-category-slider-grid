@@ -20,7 +20,7 @@ class Woo_Category_Slider_Help {
 	 *
 	 * @var null
 	 */
-	protected static $_instance = null;
+	protected static $instance = null;
 
 	/**
 	 * Plugins Path variable.
@@ -77,11 +77,11 @@ class Woo_Category_Slider_Help {
 	 * @return self Main instance
 	 */
 	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
 		}
 
-		return self::$_instance;
+		return self::$instance;
 	}
 
 	/**

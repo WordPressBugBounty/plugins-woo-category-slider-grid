@@ -2,11 +2,11 @@
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: WooCommerce category slider, product category, Product Category Showcase, shop category grid, category carousel
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 1.6.2
+Stable tag: 1.6.4
 WC requires at least: 4.5
-WC tested up to: 10.1.2
+WC tested up to: 10.4.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -154,6 +154,15 @@ Yes, WooCategory is compatible with most standard WordPress themes that support 
 
 
 == Changelog ==
+
+= 1.6.4 - Jan 13, 2026 =
+* Improved: Standardized singleton instance property naming.
+* Improved: Code readability and maintainability improved.
+* Tested: WooCommerce 10.4.3 compatibility.
+
+= 1.6.3 - Nov 25, 2025 =
+* Tested: WordPress 6.9 compatibility.
+* Tested: WooCommerce 10.3.5 compatibility.
 
 = 1.6.2 - Mon 08, 2025 =
 * Improved: Enhanced plugin security and data validation.

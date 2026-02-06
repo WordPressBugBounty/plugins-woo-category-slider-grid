@@ -25,7 +25,7 @@ class Woo_Category_Slider_Free_Element_Shortcode_Addons_Deprecated {
 	 *
 	 * @var Woo_Category_Slider_Free_Element_Shortcode_Addons_Deprecated The single instance of the class.
 	 */
-	private static $_instance = null;
+	private static $instance = null;
 
 	/**
 	 * Script and style suffix
@@ -50,10 +50,10 @@ class Woo_Category_Slider_Free_Element_Shortcode_Addons_Deprecated {
 	 */
 	public static function instance() {
 
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
 		}
-		return self::$_instance;
+		return self::$instance;
 	}
 
 	/**
