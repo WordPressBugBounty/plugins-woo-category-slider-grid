@@ -459,8 +459,8 @@ class Woo_Category_Slider_Help {
 								<div class="spwoocs-info-box-title">
 									<h4><i class="spwoocs-icon-team-icon"></i> Join The Community</h4>
 								</div>
-								<span class='spwoocs-normal-paragraph'>Join the official ShapedPlugin Facebook group to share your experiences, thoughts, and ideas.</span>
-								<a target="_blank" class='spwoocs-small-btn' href="https://www.facebook.com/groups/ShapedPlugin/">Join Now</a>
+								<span class='spwoocs-normal-paragraph'>Join the official ShapedPlugin community to share your experiences, thoughts, and ideas.</span>
+								<a target="_blank" class='spwoocs-small-btn' href="https://community.shapedplugin.com/">Join Now</a>
 							</div>
 						</div>
 					</div>
