@@ -37,8 +37,8 @@ if ( ! function_exists( 'spf_get_icons' ) ) {
 	 * @version 1.0.0
 	 */
 	function spf_get_icons() {
-
-		if ( ! empty( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'spf_icon_nonce' ) ) {
+		$capability = apply_filters( 'sp_wcslider_ui_permission', 'manage_options' );
+		if ( ! empty( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'spf_icon_nonce' ) && current_user_can( $capability ) ) {
 
 			ob_start();
 
@@ -87,7 +87,8 @@ if ( ! function_exists( 'spf_reset_ajax' ) ) {
 	 * @version 1.0.0
 	 */
 	function spf_reset_ajax() {
-		if ( ! empty( $_POST['unique'] ) && ! empty( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'spf_backup_nonce' ) ) {
+		$capability = apply_filters( 'sp_wcslider_ui_permission', 'manage_options' );
+		if ( ! empty( $_POST['unique'] ) && ! empty( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'spf_backup_nonce' ) && current_user_can( $capability ) ) {
 			delete_option( sanitize_text_field( wp_unslash( $_POST['unique'] ) ) );
 			wp_send_json_success( array( 'success' => true ) );
 		}

@@ -160,7 +160,10 @@ class Woo_Category_Slider_Admin {
 			// Duplicate all post meta.
 			foreach ( $post_meta_infos as $key => $values ) {
 				foreach ( $values as $value ) {
-					$value = wp_slash( maybe_unserialize( $value ) ); // Unserialize data to avoid conflicts.
+					if ( is_serialized( $value ) ) {
+						$value = unserialize( $value, array( 'allowed_classes' => false ) ); // phpcs:ignore -- no classes allowed.
+					}
+					$value = wp_slash( $value );
 					add_post_meta( $new_post_id, $key, $value );
 				}
 			}

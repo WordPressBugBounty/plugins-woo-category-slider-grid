@@ -137,7 +137,7 @@ class Woo_Category_Slider_Help {
 	public function spwoocs_plugins_info_api_help_page() {
 		$plugins_arr = get_transient( 'spwoocs_plugins' );
 		if ( false === $plugins_arr ) {
-			$args    = (object) array(
+			$args = array(
 				'author'   => 'shapedplugin',
 				'per_page' => '120',
 				'page'     => '1',
@@ -155,34 +155,30 @@ class Woo_Category_Slider_Help {
 					'icons',
 				),
 			);
-			$request = array(
-				'action'  => 'query_plugins',
-				'timeout' => 30,
-				'request' => serialize( $args ),
-			);
-			// https://codex.wordpress.org/WordPress.org_API.
-			$url      = 'http://api.wordpress.org/plugins/info/1.0/';
-			$response = wp_remote_post( $url, array( 'body' => $request ) );
 
-			if ( ! is_wp_error( $response ) ) {
+			if ( ! function_exists( 'plugins_api' ) ) {
+				require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+			}
+
+			$plugin_info = plugins_api( 'query_plugins', $args );
+
+			if ( ! is_wp_error( $plugin_info ) ) {
 
 				$plugins_arr = array();
-				$plugins     = unserialize( $response['body'] );
-
-				if ( isset( $plugins->plugins ) && ( count( $plugins->plugins ) > 0 ) ) {
-					foreach ( $plugins->plugins as $pl ) {
-						if ( ! in_array( $pl->slug, self::$not_show_plugin_list, true ) ) {
+				if ( isset( $plugin_info->plugins ) && ( count( $plugin_info->plugins ) > 0 ) ) {
+					foreach ( $plugin_info->plugins as $pl ) {
+						if ( ! in_array( $pl['slug'], self::$not_show_plugin_list, true ) ) {
 							$plugins_arr[] = array(
-								'slug'              => $pl->slug,
-								'name'              => $pl->name,
-								'version'           => $pl->version,
-								'downloaded'        => $pl->downloaded,
-								'active_installs'   => $pl->active_installs,
-								'last_updated'      => strtotime( $pl->last_updated ),
-								'rating'            => $pl->rating,
-								'num_ratings'       => $pl->num_ratings,
-								'short_description' => $pl->short_description,
-								'icons'             => $pl->icons['2x'],
+								'slug'              => $pl['slug'],
+								'name'              => $pl['name'],
+								'version'           => $pl['version'],
+								'downloaded'        => $pl['downloaded'],
+								'active_installs'   => $pl['active_installs'],
+								'last_updated'      => strtotime( $pl['last_updated'] ),
+								'rating'            => $pl['rating'],
+								'num_ratings'       => $pl['num_ratings'],
+								'short_description' => $pl['short_description'],
+								'icons'             => $pl['icons']['2x'],
 							);
 						}
 					}
@@ -193,7 +189,8 @@ class Woo_Category_Slider_Help {
 		}
 
 		if ( is_array( $plugins_arr ) && ( count( $plugins_arr ) > 0 ) ) {
-			array_multisort( array_column( $plugins_arr, 'active_installs' ), SORT_DESC, $plugins_arr );
+			$active_installs = array_column( $plugins_arr, 'active_installs' );
+			array_multisort( $active_installs, SORT_DESC, $plugins_arr );
 
 			foreach ( $plugins_arr as $plugin ) {
 				$plugin_slug = $plugin['slug'];
@@ -385,12 +382,12 @@ class Woo_Category_Slider_Help {
 		$plugin   = isset( $_GET['plugin'] ) ? sanitize_text_field( wp_unslash( $_GET['plugin'] ) ) : '';
 		$_wpnonce = isset( $_GET['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) : '';
 
-		if ( isset( $action, $plugin ) && ( 'activate' === $action ) && wp_verify_nonce( $_wpnonce, 'activate-plugin_' . $plugin ) ) {
+		if ( isset( $action, $plugin ) && ( 'activate' === $action ) && wp_verify_nonce( $_wpnonce, 'activate-plugin_' . $plugin ) && current_user_can( 'activate_plugins' ) ) {
 			activate_plugin( $plugin, '', false, true );
 		}
 
-		if ( isset( $action, $plugin ) && ( 'deactivate' === $action ) && wp_verify_nonce( $_wpnonce, 'deactivate-plugin_' . $plugin ) ) {
-			deactivate_plugins( $plugin, '', false, true );
+		if ( isset( $action, $plugin ) && ( 'deactivate' === $action ) && wp_verify_nonce( $_wpnonce, 'deactivate-plugin_' . $plugin ) && current_user_can( 'deactivate_plugins' ) ) {
+			deactivate_plugins( $plugin, '', false );
 		}
 
 		?>
@@ -766,7 +763,8 @@ class Woo_Category_Slider_Help {
 							$plugin_icon[ $plugin['slug'] ] = $plugin['icons'];
 						}
 					}
-					?>
+					if ( isset( $plugin_icon['wp-carousel-free'] ) ) :
+						?>
 					<div class="spwoocs-our-plugin-list">
 						<h3 class="spwoocs-section-title">Upgrade your Website with our High-quality Plugins!</h3>
 						<div class="spwoocs-our-plugin-list-wrap">
@@ -844,6 +842,7 @@ class Woo_Category_Slider_Help {
 							</a>
 						</div>
 					</div>
+					<?php endif; ?>
 				</div>
 			</section>
 

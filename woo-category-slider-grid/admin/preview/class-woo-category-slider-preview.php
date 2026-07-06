@@ -46,6 +46,10 @@ class Woo_Category_Slider_Preview {
 		if ( ! wp_verify_nonce( $nonce, 'spf_metabox_nonce' ) ) {
 			return;
 		}
+		$capability = apply_filters( 'sp_wcslider_ui_permission', 'manage_options' );
+		if ( ! current_user_can( $capability ) ) {
+			wp_send_json_error( array( 'error' => esc_html__( 'Authorization failed!', 'woo-category-slider-grid' ) ), 401 );
+		}
 
 		$setting = array();
 		// XSS ok.

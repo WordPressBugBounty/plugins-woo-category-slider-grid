@@ -467,6 +467,10 @@ if ( ! class_exists( 'SP_WCS_Options' ) ) {
 			if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'spf_options_nonce' ) ) {
 				return false;
 			}
+			$capability = apply_filters( 'sp_wcslider_ui_permission', 'manage_options' );
+			if ( ! current_user_can( $capability ) ) {
+				return false;
+			}
 
 			// XSS ok.
 			// No worries, This "POST" requests is sanitizing in the below foreach.
