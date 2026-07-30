@@ -1,12 +1,12 @@
-=== Product Category Slider & Grid for WooCommerce – WooCategory ===
+=== Product Category Slider & Grid for WooCommerce – Reno Product Category ===
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: WooCommerce category slider, product category, Product Category Showcase, shop category grid, category carousel
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 1.6.6
+Stable tag: 1.7.0
 WC requires at least: 4.5
-WC tested up to: 10.9.3
+WC tested up to: 10.9.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,13 +14,13 @@ Display product categories in responsive sliders or grids to showcase them effec
 
 == Description ==
 
-### WooCommerce Product Category Slider & Grid Plugin ###
+### Product Category Showcase for WooCommerce ###
 
-**WooCategory** is a powerful yet lightweight WooCommerce Category Slider and Grid plugin that helps you beautifully display your store’s product categories. You can showcase WooCommerce featured categories in a responsive slider, carousel, or grid layout with thumbnails, titles, product counts, descriptions, and a Shop Now button.
+**Reno Product Category** is a powerful yet lightweight Product Category Slider & Grid for WooCommerce plugin that helps you beautifully display your store’s product categories. You can showcase WooCommerce featured categories in a responsive slider, carousel, or grid layout with thumbnails, titles, product counts, descriptions, and a Shop Now button.
 
 [youtube https://www.youtube.com/watch?v=X_Czmx3ndjU&list=PLoUb-7uG-5jMzpAUaCkor0Ldc4F_7gfjz]
 
-[__Live Demo__](https://demo.shapedplugin.com/woocategory/) | [__Documentation__](https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/) | [__Upgrade to Pro!__](https://shapedplugin.com/woocategory/?ref=115#pricing)
+[__Live Demo__](https://demo.shapedplugin.com/woocategory/) | [__Documentation__](https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/) | [__Upgrade to Pro!__](https://shapedplugin.com/reno-product-category/?ref=115#pricing)
 
 
 = 👉 How This Plugin Helps Your WooCommerce Store =
@@ -53,7 +53,7 @@ No coding required – simply generate shortcodes and customize layouts directly
 
 = 👉 ​​Want More Features? =
 
-**WooCategory** also comes with a [__Pro version__](https://shapedplugin.com/woocategory/?ref=115) that extends functionality with more layouts, design flexibility, and advanced controls.
+**Reno Product Category** also comes with a [__Pro version__](https://shapedplugin.com/reno-product-category/?ref=115) that extends functionality with more layouts, design flexibility, and advanced controls.
 
 * Choose which categories to show or hide.
 * **Display multi-level categories (parent, child, grandchild, great-grandchild).**
@@ -77,11 +77,11 @@ No coding required – simply generate shortcodes and customize layouts directly
 * Divi Builder
 * WPBakery
 * BeaverBuilder
-* SiteOrgin
+* SiteOrigin
 * Fusion Builder
 
 = Author =
-The **WooCommerce Category Slider and Grid** plugin is developed and maintained by [__ShapedPlugin LLC__](https://shapedplugin.com).
+The **Reno Product Category** plugin is developed and maintained by [__ShapedPlugin LLC__](https://shapedplugin.com).
 
 
 == Installation ==
@@ -90,8 +90,8 @@ The **WooCommerce Category Slider and Grid** plugin is developed and maintained 
 
 = AUTOMATIC INSTALLATION (EASIEST WAY) =
 
-To do an automatic install of WooCategory, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
-In the search field type "WooCategory". Once you have found it you can install it by simply clicking "Install Now" and then "Activate".
+To do an automatic install of Reno Product Category, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
+In the search field type "Reno Product Category". Once you have found it you can install it by simply clicking "Install Now" and then "Activate".
 
 = MANUAL INSTALLATION =
 
@@ -111,34 +111,34 @@ In the search field type "WooCategory". Once you have found it you can install i
 * Upload the woo-category-slider-grid directory to the /wp-content/plugins/ directory
 * Activate the plugin in the Plugin dashboard
 
-You will now see the Post Carousel menu in your WordPress admin panel.
+You will now see the Product Category menu in your WordPress admin panel.
 
 The WordPress codex contains <a href="https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation">instructions</a> on how to install a WordPress plugin.
 
 
 == Frequently Asked Questions ==
 
-= What is WooCategory, and is it free? =
-WooCategory is a free WordPress plugin that allows WooCommerce store owners to display product categories in responsive sliders and grids. You can showcase categories with thumbnails, names, product counts, descriptions, and a “Shop Now” button to improve navigation and engagement.
+= What is Reno Product Category, and is it free? =
+Reno Product Category is a free WordPress plugin that allows WooCommerce store owners to display product categories in responsive sliders and grids. You can showcase categories with thumbnails, names, product counts, descriptions, and a “Shop Now” button to improve navigation and engagement.
 The core version is free on WordPress.org, with an optional Pro version that adds advanced layouts, styling options, and additional customization features.
 
 = Can I customize the appearance of the category sliders or grids? =
-Yes, WooCategory offers extensive customization options. You can adjust colors, layouts, spacing, and typography to match your store's design. Additionally, you can control the visibility of category elements like names, thumbnails, descriptions, and the "Shop Now" button.
+Yes, Reno Product Category offers extensive customization options. You can adjust colors, layouts, spacing, and typography to match your store's design. Additionally, you can control the visibility of category elements like names, thumbnails, descriptions, and the "Shop Now" button.
 
-= Is WooCategory mobile-friendly? =
-Absolutely. WooCategory is fully responsive and optimized for mobile devices, ensuring that your category sliders and grids look great on desktops, tablets, and smartphones.
+= Is Reno Product Category mobile-friendly? =
+Absolutely. Reno Product Category is fully responsive and optimized for mobile devices, ensuring that your category sliders and grids look great on desktops, tablets, and smartphones.
 
 = How do I add a product category slider or grid layout to my site? =
-You can add a category slider or grid using the built-in shortcode generator. Simply configure your desired settings, generate the shortcode, and place it in any post, page, or widget area. Alternatively, WooCategory is compatible with the Gutenberg block editor, allowing you to insert the slider directly into your content.
+You can add a category slider or grid using the built-in shortcode generator. Simply configure your desired settings, generate the shortcode, and place it in any post, page, or widget area. Alternatively, Reno Product Category is compatible with the Gutenberg block editor, allowing you to insert the slider directly into your content.
 
 = Can I filter which categories to display? =
-Yes, WooCategory provides filtering options to display specific categories. You can choose to show or hide particular categories, exclude empty ones, and limit the number of categories displayed in the slider or grid.
+Yes, Reno Product Category provides filtering options to display specific categories. You can choose to show or hide particular categories, exclude empty ones, and limit the number of categories displayed in the slider or grid.
 
-= Is there a premium version of WooCategory? =
-Yes, WooCategory offers a [__Pro version__](https://shapedplugin.com/woocategory/?ref=115) with additional features, including advanced styling options, more slider controls, and enhanced customization capabilities. You can upgrade to the Pro version to access these premium features. 
+= Is there a premium version of Reno Product Category? =
+Yes, Reno Product Category offers a [__Pro version__](https://shapedplugin.com/reno-product-category/?ref=115) with additional features, including advanced styling options, more slider controls, and enhanced customization capabilities. You can upgrade to the Pro version to access these premium features. 
 
-= Does WooCategory work with any theme or plugin? =
-Yes, WooCategory is compatible with most standard WordPress themes that support WooCommerce. In some cases, minor adjustments or custom CSS may be needed to ensure proper display.
+= Does Reno Product Category work with any theme or plugin? =
+Yes, Reno Product Category is compatible with most standard WordPress themes that support WooCommerce. In some cases, minor adjustments or custom CSS may be needed to ensure proper display.
 
 
 == Screenshots ==
@@ -154,6 +154,15 @@ Yes, WooCategory is compatible with most standard WordPress themes that support 
 
 
 == Changelog ==
+
+= 1.7.0 - Jul 30, 2026 =
+* New: The plugin has been rebranded from 'WooCategory' to 'Reno Product Category'.
+* New: The `[renocatslider]` shortcode added.
+* Improved: The plugin menu name was renamed to 'Product Category'.
+* Improved: The WooCategory block was renamed to Reno Product Category.
+* Updated: The translation (POT) file with the rebranded strings.
+* Tested: WooCommerce 10.9.4 compatibility.
+* Dev: The legacy `[woocatslider]` shortcode remains registered and fully supported.
 
 = 1.6.6 - Jul 06, 2026 =
 * Improved: The recommended plugins section now uses the plugins_api function for more reliable data.
@@ -174,7 +183,7 @@ Yes, WooCategory is compatible with most standard WordPress themes that support 
 * Tested: WordPress 6.9 compatibility.
 * Tested: WooCommerce 10.3.5 compatibility.
 
-= 1.6.2 - Mon 08, 2025 =
+= 1.6.2 - Sep 08, 2025 =
 * Improved: Enhanced plugin security and data validation.
 * Improved: The Additional CSS and JS option.
 * Tested: WooCommerce 10.1.2 compatibility.
@@ -344,7 +353,7 @@ Yes, WooCategory is compatible with most standard WordPress themes that support 
 * Improved: Shortcode settings panel text.
 * Fix: Several minor tweaking.
 
-= 1.3.0 - Set 25, 2021 =
+= 1.3.0 - Sep 25, 2021 =
 * New: Export and Import option.
 * Tested: Compatibility tested with WooCommerce 5.7.1 version.
 * Improved: Plugin security.

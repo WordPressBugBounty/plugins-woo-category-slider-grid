@@ -58,6 +58,9 @@ function sp_wcsp_delete_plugin_data() {
 	delete_post_meta_by_key( 'sp_wcsp_layout_options' );
 	delete_post_meta_by_key( 'sp_wcsp_shortcode_options' );
 
+	// Delete the rebrand notice dismissed state.
+	delete_option( 'sp_wcsp_rebrand_notice_dismissed' );
+
 	// Delete offer banner related option keys.
 	delete_option( 'shapedplugin_offer_banner_dismissed_black_friday_2025' );
 	delete_option( 'shapedplugin_offer_banner_dismissed_new_year_2026' );

@@ -40,7 +40,7 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'WooCategory Deprecated', 'woo-category-slider-grid' );
+		return __( 'Reno Product Category Deprecated', 'woo-category-slider-grid' );
 	}
 
 	/**
@@ -107,7 +107,7 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 		$this->add_control(
 			'sp_woo_category_slider_free_shortcode',
 			array(
-				'label'       => __( 'WooCategory Shortcode(s)', 'woo-category-slider-grid' ),
+				'label'       => __( 'Reno Product Category Shortcode(s)', 'woo-category-slider-grid' ),
 				'type'        => \Elementor\Controls_Manager::SELECT2,
 				'label_block' => true,
 				'default'     => '',
@@ -119,11 +119,11 @@ class Sp_Category_Shortcode_Widget_Deprecated extends \Elementor\Widget_Base {
 			'deprecated_notice',
 			array(
 				'type'            => \Elementor\Controls_Manager::DEPRECATED_NOTICE,
-				'widget'          => 'WooCategory Deprecated',
+				'widget'          => 'Reno Product Category Deprecated',
 				'since'           => '1.4.6',
 				'last'            => '2.2.0',
-				'plugin'          => 'WooCategory',
-				'replacement'     => 'WooCategory',
+				'plugin'          => 'Reno Product Category',
+				'replacement'     => 'Reno Product Category',
 				'content_classes' => 'sp-woo-category-slider-deprecated',
 			)
 		);

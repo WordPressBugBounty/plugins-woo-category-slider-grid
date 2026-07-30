@@ -23,9 +23,9 @@ class Woo_Category_Slider_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'Woo_Category_Slider_Widget',
-			__( 'WooCategory', 'woo-category-slider-grid' ),
+			__( 'Reno Product Category', 'woo-category-slider-grid' ),
 			array(
-				'description' => __( 'Display WooCategory.', 'woo-category-slider-grid' ),
+				'description' => __( 'Display Reno Product Category.', 'woo-category-slider-grid' ),
 			)
 		);
 	}

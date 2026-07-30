@@ -12,9 +12,9 @@ const el = createElement;
  * Register: WooCategory Gutenberg Block.
  */
 registerBlockType("woo-category-slider/shortcode", {
-	title: escapeHTML(__("WooCategory", "woo-category-slider-grid") ),
+	title: escapeHTML(__("Reno Product Category", "woo-category-slider-grid") ),
   description: escapeHTML( __(
-    "Use WooCategory to insert a shortcode in your page.",
+    "Use Reno Product Category to insert a shortcode in your page.",
     "woo-category-slider-grid"
   )),
   icon: escapeAttribute(' wcsp-icon-wcs-icon'),
@@ -81,7 +81,7 @@ registerBlockType("woo-category-slider/shortcode", {
             el('div', {className: 'components-placeholder components-placeholder is-large'}, 
               el('div', {className: 'components-placeholder__label'}, 
                 el('span', {className: 'block-editor-block-icon wcsp-icon-wcs-icon'}),
-				  escapeHTML(__("WooCategory", "woo-category-slider-grid") )
+				  escapeHTML(__("Reno Product Category", "woo-category-slider-grid") )
               ),
               el('div', {className: 'components-placeholder__instructions'}, 
 				  escapeHTML(__("No shortcode found. ", "woo-category-slider-grid") ),
@@ -113,7 +113,7 @@ registerBlockType("woo-category-slider/shortcode", {
             el('div', {className: 'components-placeholder components-placeholder is-large'}, 
               el('div', {className: 'components-placeholder__label'},
                 el('span', { className: 'block-editor-block-icon wcsp-icon-wcs-icon'}),
-				  escapeHTML(__("WooCategory", "woo-category-slider-grid") )
+				  escapeHTML(__("Reno Product Category", "woo-category-slider-grid") )
               ),
 				el('div', { className: 'components-placeholder__instructions' }, escapeHTML(__("Select a shortcode", "woo-category-slider-grid") ) ),
               <DynamicShortcodeInput

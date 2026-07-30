@@ -39,7 +39,7 @@ class SP_WCS_Advanced {
 						'id'         => 'wcsp_delete_all_data',
 						'type'       => 'checkbox',
 						'title'      => esc_html__( 'Clean-up Data on Deletion', 'woo-category-slider-grid' ),
-						'title_help' => esc_html__( 'Check this box if you would like WooCategory to completely remove all of its data when the plugin is deleted.', 'woo-category-slider-grid' ),
+						'title_help' => esc_html__( 'Check this box if you would like Reno Product Category to completely remove all of its data when the plugin is deleted.', 'woo-category-slider-grid' ),
 						'default'    => false,
 					),
 					array(

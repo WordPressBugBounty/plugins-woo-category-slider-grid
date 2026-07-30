@@ -76,11 +76,11 @@ class Woo_Category_Slider_Review {
 		?>
 		<div id="sp-woocatslider-review-notice" class="sp-woocatslider-review-notice">
 			<div class="sp-woocatslider-plugin-icon">
-				<img src="<?php echo esc_url( SP_WCS_URL . 'admin/img/wcs-notice.svg' ); ?>" alt="WooCategory">
+				<img src="<?php echo esc_url( SP_WCS_URL . 'admin/img/wcs-notice.svg' ); ?>" alt="Reno Product Category">
 			</div>
 			<div class="sp-woocatslider-notice-text">
-				<h3>Enjoying <strong>WooCategory</strong>?</h3>
-				<p>We hope you had a wonderful experience using <strong>WooCategory</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/" target="_blank"><strong>WordPress.org</strong></a>.
+				<h3>Enjoying <strong>Reno Product Category</strong>?</h3>
+				<p>We hope you had a wonderful experience using <strong>Reno Product Category</strong>. Please take a moment to leave a review on <a href="https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/" target="_blank"><strong>WordPress.org</strong></a>.
 				Your positive review will help us improve. Thank you! 😊</p>
 
 				<p class="sp-woocatslider-review-actions" data-nonce="<?php echo esc_attr( wp_create_nonce( 'dismiss-review-notice' ) ); ?>">
@@ -209,7 +209,7 @@ class Woo_Category_Slider_Review {
 			);
 			$nonce     = wp_create_nonce( 'wps-notice' );
 			// $arrow variable is ignore escaping because of svg icon.
-			echo sprintf( '<div class="wps-notice notice is-dismissible" data-nonce="%7$s"><img src="%1$s"/><div class="wps-notice-text">To Create <strong>Interactive Product Sliders</strong> in your Shop to <strong>Boost Sales</strong>, %4$s the <a href="%2$s" class="thickbox open-plugin-details-modal"><strong>Product Slider for WooCommerce</strong></a> <a href="%3$s" rel="noopener" class="wps-activate-btn">%5$s</a><a href="https://shapedplugin.com/woocommerce-product-slider/lite-version-demo/" target="_blank" class="wps-demo-button">See How It Works<span>%6$s</span></a></div></div>', esc_url( $icon ), esc_url( $popup_url ), esc_url( $install_url ), esc_html( $text ), esc_html( $button_text ), $arrow, esc_attr( $nonce ) ); // phpcs:ignore
+			echo sprintf( '<div class="wps-notice notice is-dismissible" data-nonce="%7$s"><img src="%1$s"/><div class="wps-notice-text">To Create <strong>Interactive Product Sliders</strong> in your Shop to <strong>Boost Sales</strong>, %4$s the <a href="%2$s" class="thickbox open-plugin-details-modal"><strong>Reno Product Slider</strong></a> <a href="%3$s" rel="noopener" class="wps-activate-btn">%5$s</a><a href="https://shapedplugin.com/woocommerce-product-slider/lite-version-demo/" target="_blank" class="wps-demo-button">See How It Works<span>%6$s</span></a></div></div>', esc_url( $icon ), esc_url( $popup_url ), esc_url( $install_url ), esc_html( $text ), esc_html( $button_text ), $arrow, esc_attr( $nonce ) ); // phpcs:ignore
 		}
 	}
 

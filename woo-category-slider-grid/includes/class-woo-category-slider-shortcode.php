@@ -52,6 +52,9 @@ class Woo_Category_Slider_Shortcode {
 	 * Woo_Category_Slider_Shortcode constructor.
 	 */
 	public function __construct() {
+		// New branded shortcode.
+		add_shortcode( 'renocatslider', array( $this, 'sp_wcsp_shortcode_attr' ) );
+		// Legacy shortcode kept for full backward compatibility.
 		add_shortcode( 'woocatslider', array( $this, 'sp_wcsp_shortcode_attr' ) );
 	}
 

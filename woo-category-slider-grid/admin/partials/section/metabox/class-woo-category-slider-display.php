@@ -64,7 +64,7 @@ class SP_WCS_Display {
 											esc_html__( 'To access amazing category %1$sContent Positions%2$s & Settings, %3$sUpgrade to Pro!%4$s', 'woo-category-slider-grid' ),
 											'<a href="https://demo.shapedplugin.com/woocategory/category-content-position/" target="_blank"><b>',
 											'</b></a>',
-											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+											'<a href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" target="_blank"><b>',
 											'</b></a>'
 										),
 										'option_name' => true,
@@ -289,7 +289,7 @@ class SP_WCS_Display {
 											'</b></a>',
 											'<a href="https://demo.shapedplugin.com/woocategory/slider/#Custom-Offer" target="_blank"><b>',
 											'</b></a>',
-											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+											'<a href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" target="_blank"><b>',
 											'</b></a>'
 										),
 									),
@@ -463,7 +463,7 @@ class SP_WCS_Display {
 										'content' => sprintf(
 											/* translators: 1: start link and bold tag, 2: close tag. */
 											esc_html__( 'To attract more potential customers with a customized %3$sShop Now%4$s button, %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
-											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+											'<a href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" target="_blank"><b>',
 											'</b></a>',
 											'<a href="https://demo.shapedplugin.com/woocategory/carousel/#Shop-Now-Button-Styles" target="_blank"><b>',
 											'</b></a>'
@@ -564,7 +564,7 @@ class SP_WCS_Display {
 										'content' => sprintf(
 											/* translators: 1: start link and bold tag, 2: close tag. */
 											esc_html__( 'Want to customize everything (%3$stypography, color, and margin%4$s) easily? %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
-											'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+											'<a href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" target="_blank"><b>',
 											'</b></a>',
 											'<a href="https://demo.shapedplugin.com/woocategory/hierarchy-grid/#Custom-Typography" target="_blank"><b>',
 											'</b></a>'

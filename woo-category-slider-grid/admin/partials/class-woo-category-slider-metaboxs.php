@@ -142,7 +142,7 @@ class SP_WCS_Metaboxs {
 		SP_WCS::createMetabox(
 			$prefix,
 			array(
-				'title'        => esc_html__( 'WooCategory', 'woo-category-slider-grid' ),
+				'title'        => esc_html__( 'Reno Product Category', 'woo-category-slider-grid' ),
 				'post_type'    => 'sp_wcslider',
 				'show_restore' => false,
 				'context'      => 'normal',
@@ -157,7 +157,7 @@ class SP_WCS_Metaboxs {
 				'fields' => array(
 					array(
 						'type'  => 'heading',
-						'image' => plugin_dir_url( __DIR__ ) . 'img/woo-category-slider-logo-new.svg',
+						'image' => plugin_dir_url( __DIR__ ) . 'img/reno-category-slider-white-logo.svg',
 						'after' => '<i class="fa fa-life-ring"></i> Support',
 						'link'  => 'https://shapedplugin.com/support/',
 						'class' => 'wcsp-admin-header',
@@ -369,7 +369,7 @@ class SP_WCS_Metaboxs {
 						'content' => sprintf(
 							/* translators: 1: start link and bold tag, 2: close tag. */
 							esc_html__( 'To enhance your store with beautiful Ticker, Multi-row, Grid, Hierarchy Grid, Inline layouts, and more to boost sales, %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
-							'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+							'<a href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" target="_blank"><b>',
 							'</b></a>'
 						),
 					),

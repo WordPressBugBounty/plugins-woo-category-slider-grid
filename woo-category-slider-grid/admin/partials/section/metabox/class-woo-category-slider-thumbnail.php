@@ -146,7 +146,7 @@ class SP_WCS_Thumbnail {
 						'desc'        => sprintf(
 							/* translators: 1: start link and bold tag, 2: close tag. */
 							esc_html__( 'To unleash your creativity with flexible Category %3$sThumbnail styling%4$s options, %1$sUpgrade to Pro!%2$s', 'woo-category-slider-grid' ),
-							'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+							'<a href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" target="_blank"><b>',
 							'</b></a>',
 							'<a href="https://demo.shapedplugin.com/woocategory/carousel/#Category-with-Thumbnails" target="_blank"><b>',
 							'</b></a>'

@@ -104,7 +104,7 @@ class SP_WCS_General {
 							esc_html__( 'To display %5$sParent with Child%6$s%1$s, Grand Child, Great-grand Child%2$s, %3$sUpgrade to Pro!%4$s', 'woo-category-slider-grid' ),
 							'<strong>',
 							'</strong>',
-							'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+							'<a href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" target="_blank"><b>',
 							'</b></a>',
 							'<a href="https://demo.shapedplugin.com/woocategory/carousel/#parent-and-child-both" target="_blank"><b>',
 							'</b></a>'

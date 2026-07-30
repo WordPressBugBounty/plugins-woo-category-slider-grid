@@ -248,7 +248,7 @@ class Woo_Category_Slider_Admin {
 	public function add_shortcode_form( $column, $post_id ) {
 		switch ( $column ) {
 			case 'shortcode':
-				echo '<div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  ' . esc_html__( 'Shortcode  Copied to Clipboard!', 'woo-category-slider-grid' ) . ' </div><input style="width: 230px;padding: 6pwidth: 230px;padding: 6px;;cursor:pointer;" type="text" onClick="this.select();" readonly="readonly" value="[woocatslider id=&quot;' . esc_attr( $post_id ) . '&quot;]"/>';
+				echo '<div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  ' . esc_html__( 'Shortcode  Copied to Clipboard!', 'woo-category-slider-grid' ) . ' </div><input style="width: 230px;padding: 6pwidth: 230px;padding: 6px;;cursor:pointer;" type="text" onClick="this.select();" readonly="readonly" value="[renocatslider id=&quot;' . esc_attr( $post_id ) . '&quot;]"/>';
 				break;
 			default:
 				break;
@@ -272,7 +272,7 @@ class Woo_Category_Slider_Admin {
 
 			array_unshift( $links, $ui_links );
 
-			$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #35b747; font-weight: 700;">Go Pro!</a>', 'https://shapedplugin.com/woocategory/?ref=115#pricing' );
+			$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #35b747; font-weight: 700;">Go Pro!</a>', 'https://shapedplugin.com/reno-product-category/?ref=115#pricing' );
 		}
 
 		return $links;
@@ -333,11 +333,21 @@ class Woo_Category_Slider_Admin {
 	 */
 	public function admin_footer( $text ) {
 		$screen = get_current_screen();
+
+		if ( ! $screen ) {
+			return $text;
+		}
+
+		// The Get Started page ships its own footer with a "Rate us!" link, so keep this one empty there.
+		if ( $this->is_help_page() ) {
+			return '';
+		}
+
 		if ( 'sp_wcslider' === $screen->post_type ) {
 			$url  = 'https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/';
 			$text = sprintf(
 				/* translators: 1: start strong tag, 2: close strong tag, 3: start link tag, 4: close link tag. */
-				esc_html__( 'Enjoying %1$sWooCategory?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊', 'woo-category-slider-grid' ),
+				esc_html__( 'Enjoying %1$sReno Product Category?%2$s Please rate us %3$sWordPress.org%4$s. Your positive feedback will help us grow more. Thank you! 😊', 'woo-category-slider-grid' ),
 				'<strong>',
 				'</strong>',
 				'<span class="spwoocs-footer-text-star">★★★★★</span> <a href="' . esc_url( $url ) . '" target="_blank">',
@@ -355,11 +365,32 @@ class Woo_Category_Slider_Admin {
 	 */
 	public function admin_footer_version( $text ) {
 		$screen = get_current_screen();
+
+		if ( ! $screen ) {
+			return $text;
+		}
+
+		// The Get Started page shows the version in its own header badge.
+		if ( $this->is_help_page() ) {
+			return '';
+		}
+
 		if ( 'sp_wcslider' === $screen->post_type ) {
-			$text = 'WooCategory ' . SP_WCS_VERSION;
+			$text = 'Reno Product Category ' . SP_WCS_VERSION;
 		}
 
 		return $text;
+	}
+
+	/**
+	 * Whether the current request is the plugin's Get Started (help) page.
+	 *
+	 * @return boolean
+	 */
+	private function is_help_page() {
+		$page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		return 'wcsp_help' === $page;
 	}
 
 	/**
@@ -424,7 +455,7 @@ class Woo_Category_Slider_Admin {
 		$sign = empty( $_GET ) ? '?' : '&'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only checking query vars for building URL, no sensitive action
 
 		echo '<div class="updated notice is-dismissible notice-sp-wcsp-woo" data-nonce="' . esc_attr( wp_create_nonce( 'dismiss-wcsp-woo-notice' ) ) . '"><p>';
-		echo wp_kses_post( 'Please ' . $type . ' <a href="' . esc_url( $actual_link . $sign . 'sp-wcsp-woo=' . $type ) . '">WooCommerce</a> plugin to make the <b>WooCategory</b> work.', 'woo-category-slider-grid' );
+		echo wp_kses_post( 'Please ' . $type . ' <a href="' . esc_url( $actual_link . $sign . 'sp-wcsp-woo=' . $type ) . '">WooCommerce</a> plugin to make the <b>Reno Product Category</b> work.', 'woo-category-slider-grid' );
 		echo '</p></div>';
 	}
 

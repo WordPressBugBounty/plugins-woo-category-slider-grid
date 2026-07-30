@@ -41,7 +41,7 @@ class Sp_Category_Shortcode_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'WooCategory', 'woo-category-slider-grid' );
+		return __( 'Reno Product Category', 'woo-category-slider-grid' );
 	}
 
 	/**
@@ -108,7 +108,7 @@ class Sp_Category_Shortcode_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'sp_woo_category_slider_pro_shortcode',
 			array(
-				'label'       => __( 'WooCategory Shortcode(s)', 'woo-category-slider-grid' ),
+				'label'       => __( 'Reno Product Category Shortcode(s)', 'woo-category-slider-grid' ),
 				'type'        => \Elementor\Controls_Manager::SELECT2,
 				'label_block' => true,
 				'default'     => '',

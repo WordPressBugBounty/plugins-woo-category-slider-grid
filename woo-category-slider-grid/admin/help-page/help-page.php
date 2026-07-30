@@ -1,6 +1,6 @@
 <?php
 /**
- * The help page for the WooCategory
+ * The help page for the Reno Product Category
  *
  * @package WooCategory
  * @subpackage woo-category-slider-grid/admin
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }  // if direct access.
 
 /**
- * The help class for the WooCategory
+ * The help class for the Reno Product Category
  */
 class Woo_Category_Slider_Help {
 
@@ -104,22 +104,15 @@ class Woo_Category_Slider_Help {
 	public function help_admin_menu() {
 		add_submenu_page(
 			'edit.php?post_type=sp_wcslider',
-			esc_html__( 'Category Slider', 'woo-category-slider-grid' ),
-			esc_html__( 'Recommended', 'woo-category-slider-grid' ),
-			'manage_options',
-			'edit.php?post_type=sp_wcslider&page=wcsp_help#recommended'
-		);
-		add_submenu_page(
-			'edit.php?post_type=sp_wcslider',
-			esc_html__( 'Category Slider', 'woo-category-slider-grid' ),
+			esc_html__( 'Reno Product Category', 'woo-category-slider-grid' ),
 			esc_html__( 'Lite vs Pro', 'woo-category-slider-grid' ),
 			'manage_options',
 			'edit.php?post_type=sp_wcslider&page=wcsp_help#lite-to-pro'
 		);
 		add_submenu_page(
 			'edit.php?post_type=sp_wcslider',
-			esc_html__( 'WooCategory Help', 'woo-category-slider-grid' ),
-			esc_html__( 'Get Help', 'woo-category-slider-grid' ),
+			esc_html__( 'Reno Product Category Help', 'woo-category-slider-grid' ),
+			esc_html__( 'Get Started', 'woo-category-slider-grid' ),
 			'manage_options',
 			'wcsp_help',
 			array(
@@ -127,6 +120,50 @@ class Woo_Category_Slider_Help {
 				'help_page_callback',
 			)
 		);
+
+		$this->add_submenu_classes();
+	}
+
+	/**
+	 * Tag the plugin submenu items with dedicated CSS classes.
+	 *
+	 * WordPress has no argument for this on add_submenu_page(), so the class
+	 * slot (index 4) of the registered items is filled in directly. It keeps
+	 * the admin menu styling off brittle :nth-child() selectors.
+	 *
+	 * @return void
+	 */
+	private function add_submenu_classes() {
+		global $submenu;
+
+		$parent = 'edit.php?post_type=sp_wcslider';
+
+		if ( empty( $submenu[ $parent ] ) ) {
+			return;
+		}
+
+		$classes = array(
+			'edit.php?post_type=sp_wcslider&page=wcsp_help#lite-to-pro' => 'spwoocs-menu-lite-vs-pro',
+			'wcsp_help' => 'spwoocs-menu-get-started',
+		);
+
+		foreach ( $submenu[ $parent ] as $index => $item ) {
+			if ( isset( $item[2], $classes[ $item[2] ] ) ) {
+				$submenu[ $parent ][ $index ][4] = isset( $item[4] ) ? trim( $item[4] . ' ' . $classes[ $item[2] ] ) : $classes[ $item[2] ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+			}
+		}
+	}
+
+	/**
+	 * Build the URL of a help page tab.
+	 *
+	 * @param string $hash Tab hash without the leading "#".
+	 * @return string
+	 */
+	private function tab_url( $hash = '' ) {
+		$url = admin_url( 'edit.php?post_type=sp_wcslider&page=wcsp_help' );
+
+		return $hash ? $url . '#' . $hash : $url;
 	}
 
 	/**
@@ -367,11 +404,20 @@ class Woo_Category_Slider_Help {
 			if ( isset( $wp_filter['all_admin_notices'] ) ) {
 				unset( $wp_filter['all_admin_notices'] );
 			}
+
+			// The purge above drops every notice, third-party ones included. Put the
+			// rebrand announcement back: it is a one-off, site-wide dismissible bar
+			// that has to reach people who land straight on this page. Its own
+			// stylesheet is already enqueued by then, because this runs on
+			// admin_print_scripts, after admin_enqueue_scripts.
+			if ( class_exists( 'Woo_Category_Slider_Rebrand_Notice' ) ) {
+				add_action( 'admin_notices', array( Woo_Category_Slider_Rebrand_Notice::instance(), 'render_rebrand_notice' ) );
+			}
 		}
 	}
 
 	/**
-	 * The WooCategory Slider Help Callback.
+	 * The Reno Product Category Help Callback.
 	 *
 	 * @return void
 	 */
@@ -390,76 +436,83 @@ class Woo_Category_Slider_Help {
 			deactivate_plugins( $plugin, '', false );
 		}
 
+		$img         = SP_WCS_URL . 'admin/help-page/img/';
+		$review_url  = 'https://wordpress.org/support/plugin/woo-category-slider-grid/reviews/';
+		$support_url = 'https://shapedplugin.com/create-new-ticket/';
 		?>
 		<div class="sp-woo-cat-slider-help">
-			<!-- Header section start -->
-			<section class="spwoocs__help header">
-				<div class="spwoocs-header-area-top">
-					<p>You’re currently using <b>WooCategory Lite</b>. To access additional features, consider <a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115#pricing" ><b>upgrading to Pro!</b></a> 🚀</p>
-				</div>
-				<div class="spwoocs-header-area">
-					<div class="spwoocs-container">
-						<div class="spwoocs-header-logo">
-							<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/logo-new.svg' ); ?>" alt="">
-							<span><?php echo esc_html( SP_WCS_VERSION ); ?></span>
+			<div class="spwoocs-topbar">
+				<div class="spwoocs-topbar__inner">
+					<div class="spwoocs-topbar__start">
+						<div class="spwoocs-topbar__brand">
+							<img class="spwoocs-topbar__logo" src="<?php echo esc_url( $img . 'reno-product-cat-logo.svg' ); ?>" alt="<?php esc_attr_e( 'Reno Product Category', 'woo-category-slider-grid' ); ?>" width="128" height="24">
+							<span class="spwoocs-topbar__version">
+								<img src="<?php echo esc_url( $img . 'version-icon.svg' ); ?>" alt="" width="12" height="12">
+								<?php echo esc_html( SP_WCS_VERSION ); ?>
+							</span>
 						</div>
-					</div>
-					<div class="spwoocs-header-logo-shape">
-						<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/logo-shape.svg' ); ?>" alt="">
-					</div>
-				</div>
-				<div class="spwoocs-header-nav">
-					<div class="spwoocs-container">
-						<div class="spwoocs-header-nav-menu">
+						<nav class="spwoocs-header-nav-menu" aria-label="<?php esc_attr_e( 'Reno Product Category help navigation', 'woo-category-slider-grid' ); ?>">
 							<ul>
-								<li><a class="active" data-id="get-start-tab"  href="<?php echo esc_url( home_url( '' ) . '/wp-admin/edit.php?post_type=sp_wcslider&page=wcsp_help#get-start' ); ?>"><i class="spwoocs-icon-play"></i> Get Started</a></li>
-								<li><a href="<?php echo esc_url( home_url( '' ) . '/wp-admin/edit.php?post_type=sp_wcslider&page=wcsp_help#recommended' ); ?>" data-id="recommended-tab"><i class="spwoocs-icon-recommended"></i> Recommended</a></li>
-								<li><a href="<?php echo esc_url( home_url( '' ) . '/wp-admin/edit.php?post_type=sp_wcslider&page=wcsp_help#lite-to-pro' ); ?>" data-id="lite-to-pro-tab"><i class="spwoocs-icon-lite-to-pro-icon"></i> Lite Vs Pro</a></li>
-								<li><a href="<?php echo esc_url( home_url( '' ) . '/wp-admin/edit.php?post_type=sp_wcslider&page=wcsp_help#about-us' ); ?>" data-id="about-us-tab"><i class="spwoocs-icon-info-circled-alt"></i> About Us</a></li>
+								<li><a class="active" data-id="get-start-tab" href="<?php echo esc_url( $this->tab_url( 'get-start' ) ); ?>"><?php esc_html_e( 'Get Started', 'woo-category-slider-grid' ); ?></a></li>
+								<li class="spwoocs-header-nav-menu__separator" aria-hidden="true"></li>
+								<li><a data-id="lite-to-pro-tab" href="<?php echo esc_url( $this->tab_url( 'lite-to-pro' ) ); ?>"><?php esc_html_e( 'Lite vs Pro', 'woo-category-slider-grid' ); ?></a></li>
+								<li><a data-id="recommended-tab" href="<?php echo esc_url( $this->tab_url( 'recommended' ) ); ?>"><i class="spwoocs-nav-icon spwoocs-nav-icon--plugins" aria-hidden="true"></i><?php esc_html_e( 'Our Plugins', 'woo-category-slider-grid' ); ?></a></li>
+								<li><a data-id="about-us-tab" href="<?php echo esc_url( $this->tab_url( 'about-us' ) ); ?>"><?php esc_html_e( 'About Us', 'woo-category-slider-grid' ); ?></a></li>
 							</ul>
-						</div>
+						</nav>
 					</div>
+					<a class="spwoocs-topbar__support" target="_blank" href="<?php echo esc_url( $support_url ); ?>">
+						<img src="<?php echo esc_url( $img . 'get-help-icon.svg' ); ?>" alt="" width="15" height="15">
+						<?php esc_html_e( 'Get Help', 'woo-category-slider-grid' ); ?>
+					</a>
 				</div>
-			</section>
+			</div>
 			<!-- Header section end -->
 
+			<div class="spwoocs-help-content">
 			<!-- Start Page -->
 			<section class="spwoocs__help start-page" id="get-start-tab">
-				<div class="spwoocs-container">
-					<div class="spwoocs-start-page-wrap">
-						<div class="spwoocs-video-area">
-							<h2 class='spwoocs-section-title'>Welcome to WooCategory!</h2>
-							<span class='spwoocs-normal-paragraph'>Thank you for installing WooCategory! This video will help you get started with the plugin. Enjoy!</span>
-							<iframe width="724" height="405" src="https://www.youtube.com/embed/X_Czmx3ndjU?si=FG32mVzfhkC-3WEA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-							<ul>
-								<li><a class='spwoocs-medium-btn' href="<?php echo esc_url( home_url( '/' ) . 'wp-admin/post-new.php?post_type=sp_wcslider' ); ?>">Create a Category View</a></li>
-								<li><a target="_blank" class='spwoocs-medium-btn' href="https://demo.shapedplugin.com/woocategory/">Live Demo</a></li>
-								<li><a target="_blank" class='spwoocs-medium-btn arrow-btn' href="https://shapedplugin.com/woocategory/?ref=115">Explore WooCategory <i class="spwoocs-icon-button-arrow-icon"></i></a></li>
-							</ul>
+				<div class="spwoocs-start-page-wrap">
+					<div class="spwoocs-welcome-card">
+						<div class="spwoocs-welcome-card__intro">
+							<h2 class="spwoocs-section-title-help"><?php esc_html_e( 'Welcome to Reno Product Category!', 'woo-category-slider-grid' ); ?></h2>
+							<p><?php esc_html_e( 'Thank you for installing Reno Product Category! This video will help you get started with the plugin. Enjoy!', 'woo-category-slider-grid' ); ?></p>
 						</div>
-						<div class="spwoocs-start-page-sidebar">
-							<div class="spwoocs-start-page-sidebar-info-box">
-								<div class="spwoocs-info-box-title">
-									<h4><i class="spwoocs-icon-doc-icon"></i> Documentation</h4>
-								</div>
-								<span class='spwoocs-normal-paragraph'>Explore WooCategory plugin capabilities in our enriched documentation.</span>
-								<a target="_blank" class='spwoocs-small-btn' href="https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/">Browse Now</a>
-							</div>
-							<div class="spwoocs-start-page-sidebar-info-box">
-								<div class="spwoocs-info-box-title">
-									<h4><i class="spwoocs-icon-support"></i> Technical Support</h4>
-								</div>
-								<span class='spwoocs-normal-paragraph'>For personalized assistance, reach out to our skilled support team for prompt help.</span>
-								<a target="_blank" class='spwoocs-small-btn' href="https://shapedplugin.com/create-new-ticket/">Ask Now</a>
-							</div>
-							<div class="spwoocs-start-page-sidebar-info-box">
-								<div class="spwoocs-info-box-title">
-									<h4><i class="spwoocs-icon-team-icon"></i> Join The Community</h4>
-								</div>
-								<span class='spwoocs-normal-paragraph'>Join the official ShapedPlugin community to share your experiences, thoughts, and ideas.</span>
-								<a target="_blank" class='spwoocs-small-btn' href="https://community.shapedplugin.com/">Join Now</a>
-							</div>
+						<div class="spwoocs-welcome-card__actions">
+							<a class="spwoocs-btn spwoocs-btn--primary" href="<?php echo esc_url( admin_url( 'post-new.php?post_type=sp_wcslider' ) ); ?>">
+								<img src="<?php echo esc_url( $img . 'plus-icon.svg' ); ?>" alt="" width="14" height="14">
+								<?php esc_html_e( 'Create a Category View', 'woo-category-slider-grid' ); ?>
+							</a>
+							<a class="spwoocs-btn spwoocs-btn--outline" target="_blank" href="https://demo.shapedplugin.com/woocategory/"><?php esc_html_e( 'Live Demo', 'woo-category-slider-grid' ); ?></a>
 						</div>
+						<div class="spwoocs-welcome-card__video">
+							<iframe width="804" height="452" loading="lazy" src="https://www.youtube.com/embed/X_Czmx3ndjU?si=FG32mVzfhkC-3WEA" title="<?php esc_attr_e( 'Getting started with Reno Product Category', 'woo-category-slider-grid' ); ?>" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="spwoocs-cta-cards">
+						<?php
+						$this->render_cta_card(
+							$img . 'card-doc-icon.svg',
+							__( 'Documentation', 'woo-category-slider-grid' ),
+							__( 'Explore clear, well-organized documentation to understand features, settings, and get the most out of the plugin.', 'woo-category-slider-grid' ),
+							__( 'Browse Now', 'woo-category-slider-grid' ),
+							'https://docs.shapedplugin.com/docs/woocommerce-category-slider/introduction/'
+						);
+						$this->render_cta_card(
+							$img . 'card-support-icon.svg',
+							__( 'Technical Support', 'woo-category-slider-grid' ),
+							__( 'Need assistance? Reach out to our expert support team for fast, reliable help with any issues or questions.', 'woo-category-slider-grid' ),
+							__( 'Ask Now', 'woo-category-slider-grid' ),
+							$support_url
+						);
+						$this->render_cta_card(
+							$img . 'card-community-icon.svg',
+							__( 'Show Your Love', 'woo-category-slider-grid' ),
+							__( 'Join the official ShapedPlugin community to connect with other users, share ideas, and stay updated with the latest news.', 'woo-category-slider-grid' ),
+							__( 'Rate Us', 'woo-category-slider-grid' ),
+							$review_url
+						);
+						?>
 					</div>
 				</div>
 			</section>
@@ -468,8 +521,8 @@ class Woo_Category_Slider_Help {
 			<section class="spwoocs__help lite-to-pro-page" id="lite-to-pro-tab">
 				<div class="spwoocs-container">
 					<div class="spwoocs-call-to-action-top">
-						<h2 class="spwoocs-section-title">Lite vs Pro Comparison</h2>
-						<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115#pricing" class='spwoocs-big-btn'>Upgrade to Pro Now!</a>
+						<h2 class="spwoocs-section-title-help">Lite vs Pro Comparison</h2>
+						<a target="_blank" href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" class='spwoocs-big-btn'>Upgrade to Pro Now!</a>
 					</div>
 					<div class="spwoocs-lite-to-pro-wrap">
 						<div class="spwoocs-features">
@@ -652,22 +705,22 @@ class Woo_Category_Slider_Help {
 							</ul>
 						</div>
 						<div class="spwoocs-upgrade-to-pro">
-							<h2 class='spwoocs-section-title'>Upgrade to PRO & Enjoy Advanced Features!</h2>
-							<span class='spwoocs-section-subtitle'>Already, <b>15000+</b> people are using WooCategory on their websites to create beautiful showcase, why won’t you!</span>
+							<h2 class='spwoocs-section-title-help'>Upgrade to PRO & Enjoy Advanced Features!</h2>
+							<span class='spwoocs-section-subtitle'>Already, <b>15000+</b> people are using Reno Product Category on their websites to create beautiful showcase, why won’t you!</span>
 							<div class="spwoocs-upgrade-to-pro-btn">
 								<div class="spwoocs-action-btn">
-									<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115#pricing" class='spwoocs-big-btn'>Upgrade to Pro Now!</a>
+									<a target="_blank" href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" class='spwoocs-big-btn'>Upgrade to Pro Now!</a>
 									<span class='spwoocs-small-paragraph'>14-Day No-Questions-Asked <a target="_blank" href="https://shapedplugin.com/refund-policy/">Refund Policy</a></span>
 								</div>
-								<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115" class='spwoocs-big-btn-border'>See All Features</a>
-								<a target="_blank" href="https://shapedplugin.com/woocategory/" class='spwoocs-big-btn-border spwoocs-live-pro-demo'>Pro Live Demo</a>
+								<a target="_blank" href="https://shapedplugin.com/reno-product-category/?ref=115" class='spwoocs-big-btn-border'>See All Features</a>
+								<a target="_blank" href="https://shapedplugin.com/reno-product-category/" class='spwoocs-big-btn-border spwoocs-live-pro-demo'>Pro Live Demo</a>
 							</div>
 						</div>
 					</div>
 					<div class="spwoocs-testimonial">
 						<div class="spwoocs-testimonial-title-section">
 							<span class='spwoocs-testimonial-subtitle'>NO NEED TO TAKE OUR WORD FOR IT</span>
-							<h2 class="spwoocs-section-title">Our Users Love WooCategory Pro!</h2>
+							<h2 class="spwoocs-section-title-help">Our Users Love Reno Product Category Pro!</h2>
 						</div>
 						<div class="spwoocs-testimonial-wrap">
 							<div class="spwoocs-testimonial-area">
@@ -676,7 +729,7 @@ class Woo_Category_Slider_Help {
 								</div>
 								<div class="spwoocs-testimonial-info">
 									<div class="spwoocs-img">
-										<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/green.png' ); ?>" alt="">
+										<img src="<?php echo esc_url( $img . 'green.png' ); ?>" alt="">
 									</div>
 									<div class="spwoocs-info">
 										<h3>Green Rep Exchange</h3>
@@ -692,7 +745,7 @@ class Woo_Category_Slider_Help {
 								</div>
 								<div class="spwoocs-testimonial-info">
 									<div class="spwoocs-img">
-										<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/testimonial.svg' ); ?>" alt="">
+										<img src="<?php echo esc_url( $img . 'testimonial.svg' ); ?>" alt="">
 									</div>
 									<div class="spwoocs-info">
 										<h3>Martynsaunders</h3>
@@ -708,7 +761,7 @@ class Woo_Category_Slider_Help {
 								</div>
 								<div class="spwoocs-testimonial-info">
 									<div class="spwoocs-img">
-										<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/ncia.png' ); ?>" alt="">
+										<img src="<?php echo esc_url( $img . 'ncia.png' ); ?>" alt="">
 									</div>
 									<div class="spwoocs-info">
 										<h3>Ncia</h3>
@@ -726,7 +779,7 @@ class Woo_Category_Slider_Help {
 			<!-- Recommended Page -->
 			<section id="recommended-tab" class="spwoocs-recommended-page">
 				<div class="spwoocs-container">
-					<h2 class="spwoocs-section-title">Enhance your Website with our Free Robust Plugins</h2>
+					<h2 class="spwoocs-section-title-help">Enhance your Website with our Free Robust Plugins</h2>
 					<div class="spwoocs-wp-list-table plugin-install-php">
 						<div class="spwoocs-recommended-plugins" id="the-list">
 							<?php
@@ -742,16 +795,16 @@ class Woo_Category_Slider_Help {
 				<div class="spwoocs-container">
 					<div class="spwoocs-about-box">
 						<div class="spwoocs-about-info">
-							<h3>The Best WooCommerce Category Showcase plugin by the WooCategory Team, ShapedPlugin, LLC</h3>
+							<h3>The Best WooCommerce Category Showcase plugin by the Reno Product Category Team, ShapedPlugin, LLC</h3>
 							<p>At <b>ShapedPlugin LLC</b>, we always want to help WooCommerce store owners boost sales with different easy sales booster plugins. However, we have yet to find a plugin that effectively displays product categories when it's vital for customers to know what products you offer.</p>
 							<p>Hence, we have created a plugin that beautifully displays WooCommerce categories. You can easily filter categories, including parent, child, grandchild, great-grandchild, and more. Check it out now, and you'll love it!</p>
 							<div class="spwoocs-about-btn">
-								<a target="_blank" href="https://shapedplugin.com/woocategory/?ref=115" class='spwoocs-medium-btn'>Explore WooCategory</a>
+								<a target="_blank" href="https://shapedplugin.com/reno-product-category/?ref=115" class='spwoocs-medium-btn'>Explore Reno Product Category</a>
 								<a target="_blank" href="https://shapedplugin.com/about-us/" class='spwoocs-medium-btn spwoocs-arrow-btn'>More About Us <i class="spwoocs-icon-button-arrow-icon"></i></a>
 							</div>
 						</div>
 						<div class="spwoocs-about-img">
-							<img src="<?php echo esc_url( SP_WCS_URL . 'admin/help-page/img/shapedplugin-team.jpg' ); ?>" alt="ShapedPlugin Team">
+							<img src="<?php echo esc_url( $img . 'shapedplugin-team.jpg' ); ?>" alt="ShapedPlugin Team">
 							<span>Team ShapedPlugin LLC at WordCamp Sylhet</span>
 						</div>
 					</div>
@@ -763,10 +816,19 @@ class Woo_Category_Slider_Help {
 							$plugin_icon[ $plugin['slug'] ] = $plugin['icons'];
 						}
 					}
+
+					// Smart Post ships an animated icon that the query_plugins payload
+					// has been seen to omit; fall back to the WordPress.org asset
+					// (unpinned, so it tracks the current revision) rather than
+					// hardcoding the entry out of the transient-backed lookup.
+					$smart_post_icon = isset( $plugin_icon['post-carousel'] )
+						? $plugin_icon['post-carousel']
+						: 'https://ps.w.org/post-carousel/assets/icon-256x256.gif';
+
 					if ( isset( $plugin_icon['wp-carousel-free'] ) ) :
 						?>
 					<div class="spwoocs-our-plugin-list">
-						<h3 class="spwoocs-section-title">Upgrade your Website with our High-quality Plugins!</h3>
+						<h3 class="spwoocs-section-title-help">Upgrade your Website with our High-quality Plugins!</h3>
 						<div class="spwoocs-our-plugin-list-wrap">
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://wpcarousel.io/?ref=1">
 							<i class="spwoocs-icon-button-arrow-icon"></i>
@@ -782,26 +844,26 @@ class Woo_Category_Slider_Help {
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://smartpostshow.com/?ref=1">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="<?php echo esc_url( $plugin_icon['post-carousel'] ); ?>" alt="Smart Post Show">
-								<h4>Smart Post Show</h4>
+								<img src="<?php echo esc_url( $smart_post_icon ); ?>" alt="Smart Post">
+								<h4>Smart Post</h4>
 								<p>Filter and display posts (any post types), pages, taxonomy, custom taxonomy, and custom field, in beautiful layouts.</p>
 							</a>
 							<a target="_blank" href="https://wooproductslider.io/?ref=1" class="spwoocs-our-plugin-list-box">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="<?php echo esc_url( $plugin_icon['woo-product-slider'] ); ?>" alt="Product Slider for WooCommerce">
-								<h4>Product Slider for WooCommerce</h4>
+								<img src="<?php echo esc_url( $plugin_icon['woo-product-slider'] ); ?>" alt="Reno Product Slider">
+								<h4>Reno Product Slider</h4>
 								<p>Boost sales by interactive product Slider, Grid, and Table in your WooCommerce website or store.</p>
 							</a>
-							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://woogallery.io/?ref=1">
+							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://renoproductgallery.com/?ref=1">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="<?php echo esc_url( $plugin_icon['gallery-slider-for-woocommerce'] ); ?>" alt="WooGallery">
-								<h4>WooGallery</h4>
+								<img src="<?php echo esc_url( $plugin_icon['gallery-slider-for-woocommerce'] ); ?>" alt="Reno Product Gallery">
+								<h4>Reno Product Gallery</h4>
 								<p>Product gallery slider and additional variation images gallery for WooCommerce and boost your sales.</p>
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://getwpteam.com/?ref=1">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="<?php echo esc_url( $plugin_icon['team-free'] ); ?>" alt="WP Team">
-								<h4>WP Team</h4>
+								<img src="<?php echo esc_url( $plugin_icon['team-free'] ); ?>" alt="Smart Team">
+								<h4>Smart Team</h4>
 								<p>Display your team members smartly who are at the heart of your company or organization!</p>
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://logocarousel.com/?ref=1">
@@ -824,14 +886,14 @@ class Woo_Category_Slider_Help {
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://wptabs.com/?ref=1">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="<?php echo esc_url( $plugin_icon['wp-expand-tabs-free'] ); ?>" alt="WP Tabs">
-								<h4>WP Tabs</h4>
+								<img src="<?php echo esc_url( $plugin_icon['wp-expand-tabs-free'] ); ?>" alt="Smart Tabs">
+								<h4>Smart Tabs</h4>
 								<p>Display tabbed content smartly & quickly on your WordPress site without coding skills.</p>
 							</a>
-							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://shapedplugin.com/quick-view-for-woocommerce/?ref=1">
+							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://shapedplugin.com/reno-quick-view?ref=1">
 								<i class="spwoocs-icon-button-arrow-icon"></i>
-								<img src="<?php echo esc_url( $plugin_icon['woo-quickview'] ); ?>" alt="Quick View for WooCommerce">
-								<h4>Quick View for WooCommerce</h4>
+								<img src="<?php echo esc_url( $plugin_icon['woo-quickview'] ); ?>" alt="Reno Quick View">
+								<h4>Reno Quick View</h4>
 								<p>Quickly view product information with smooth animation via AJAX in a nice Modal without opening the product page.</p>
 							</a>
 							<a target="_blank" class="spwoocs-our-plugin-list-box" href="https://shapedplugin.com/smart-brands/?ref=1">
@@ -845,20 +907,69 @@ class Woo_Category_Slider_Help {
 					<?php endif; ?>
 				</div>
 			</section>
+			</div><!-- /.spwoocs-help-content -->
 
 			<!-- Footer Section -->
-			<section class="spwoocs-footer">
-				<div class="spwoocs-footer-top">
-					<p><span>Made With <i class="spwoocs-icon-heart"></i> </span> By the <a target="_blank" href="https://shapedplugin.com/">ShapedPlugin LLC</a> Team</p>
-					<p>Get connected with</p>
-					<ul>
-						<li><a target="_blank" href="https://www.facebook.com/ShapedPlugin/"><i class="spwoocs-icon-fb"></i></a></li>
-						<li><a target="_blank" href="https://twitter.com/intent/follow?screen_name=ShapedPlugin"><i class="spwoocs-icon-x"></i></a></li>
-						<li><a target="_blank" href="https://profiles.wordpress.org/shapedplugin/#content-plugins"><i class="spwoocs-icon-wp-icon"></i></a></li>
-						<li><a target="_blank" href="https://youtube.com/@ShapedPlugin?sub_confirmation=1"><i class="spwoocs-icon-youtube-play"></i></a></li>
-					</ul>
+			<footer class="spwoocs-footer">
+				<div class="spwoocs-footer__inner">
+					<div class="spwoocs-footer__credit">
+						<span><?php esc_html_e( 'Made with', 'woo-category-slider-grid' ); ?></span>
+						<img src="<?php echo esc_url( $img . 'footer-heart.svg' ); ?>" alt="" width="16" height="16">
+						<span><?php esc_html_e( 'by the', 'woo-category-slider-grid' ); ?></span>
+						<a target="_blank" href="https://shapedplugin.com/about-us/"><?php esc_html_e( 'ShapedPlugin LLC Team', 'woo-category-slider-grid' ); ?></a>
+					</div>
+					<div class="spwoocs-footer__social">
+						<span><?php esc_html_e( 'Get Connected with', 'woo-category-slider-grid' ); ?></span>
+						<ul>
+							<li><a target="_blank" href="https://www.linkedin.com/company/shapedplugin/" aria-label="<?php esc_attr_e( 'LinkedIn', 'woo-category-slider-grid' ); ?>"><i class="spwoocs-icon-linkedin"></i></a></li>
+							<li><a target="_blank" href="https://twitter.com/intent/follow?screen_name=ShapedPlugin" aria-label="<?php esc_attr_e( 'X (Twitter)', 'woo-category-slider-grid' ); ?>"><i class="spwoocs-icon-x"></i></a></li>
+							<li><a target="_blank" href="https://profiles.wordpress.org/shapedplugin/#content-plugins" aria-label="<?php esc_attr_e( 'WordPress.org', 'woo-category-slider-grid' ); ?>"><i class="spwoocs-icon-wp-icon"></i></a></li>
+							<li><a target="_blank" href="https://www.facebook.com/ShapedPlugin/" aria-label="<?php esc_attr_e( 'Facebook', 'woo-category-slider-grid' ); ?>"><i class="spwoocs-icon-fb"></i></a></li>
+							<li><a target="_blank" href="https://youtube.com/@ShapedPlugin?sub_confirmation=1" aria-label="<?php esc_attr_e( 'YouTube', 'woo-category-slider-grid' ); ?>"><i class="spwoocs-icon-youtube-play"></i></a></li>
+						</ul>
+					</div>
+					<div class="spwoocs-footer__rating">
+						<span>
+							<?php
+							printf(
+								/* translators: %s: plugin name. */
+								esc_html__( 'Enjoying %s?', 'woo-category-slider-grid' ),
+								'<strong>' . esc_html__( 'Reno Product Category', 'woo-category-slider-grid' ) . '</strong>'
+							);
+							?>
+							<a target="_blank" href="<?php echo esc_url( $review_url ); ?>"><?php esc_html_e( 'Rate us!', 'woo-category-slider-grid' ); ?></a>
+						</span>
+						<a class="spwoocs-footer__stars" target="_blank" href="<?php echo esc_url( $review_url ); ?>" aria-label="<?php esc_attr_e( 'Rate Reno Product Category five stars on WordPress.org', 'woo-category-slider-grid' ); ?>">
+							<img src="<?php echo esc_url( $img . 'footer-rating-stars.svg' ); ?>" alt="" width="74" height="14">
+						</a>
+					</div>
 				</div>
-			</section>
+			</footer>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Render a help page CTA card.
+	 *
+	 * @param string $icon        Absolute URL of the card icon.
+	 * @param string $title       Card title.
+	 * @param string $description Card description.
+	 * @param string $button_text Button label.
+	 * @param string $button_url  Button URL.
+	 * @return void
+	 */
+	private function render_cta_card( $icon, $title, $description, $button_text, $button_url ) {
+		?>
+		<div class="spwoocs-cta-card">
+			<div class="spwoocs-cta-card__body">
+				<div class="spwoocs-cta-card__title">
+					<img src="<?php echo esc_url( $icon ); ?>" alt="" width="24" height="24">
+					<h3><?php echo esc_html( $title ); ?></h3>
+				</div>
+				<p><?php echo esc_html( $description ); ?></p>
+			</div>
+			<a class="spwoocs-btn spwoocs-btn--ghost" target="_blank" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html( $button_text ); ?></a>
 		</div>
 		<?php
 	}

@@ -68,7 +68,7 @@ class Woo_Category_Slider_Preview {
 				/* translators: 1: start div tag, 2: start link and bold tag, 3: close bold and link tag. */
 				esc_html__( '%1$sThis feature is only available to pro users. To access it, %2$sUpgrade to Pro!%3$s', 'woo-category-slider-grid' ),
 				'<div class="wcsp-pro-notice-preview">',
-				'<a href="https://shapedplugin.com/woocategory/?ref=115#pricing" target="_blank"><b>',
+				'<a href="https://shapedplugin.com/reno-product-category/?ref=115#pricing" target="_blank"><b>',
 				'</b></a></div>'
 			);
 			die();

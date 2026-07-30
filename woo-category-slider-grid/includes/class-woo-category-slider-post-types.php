@@ -75,7 +75,7 @@ class Woo_Category_Slider_Post_Type {
 			array(
 				'name'               => esc_html__( 'All Category Views', 'woo-category-slider-grid' ),
 				'singular_name'      => esc_html__( 'Category View', 'woo-category-slider-grid' ),
-				'menu_name'          => esc_html__( 'WooCategory', 'woo-category-slider-grid' ),
+				'menu_name'          => esc_html__( 'Product Category', 'woo-category-slider-grid' ),
 				'add_new'            => esc_html__( 'Add New', 'woo-category-slider-grid' ),
 				'add_new_item'       => esc_html__( 'Add Category View', 'woo-category-slider-grid' ),
 				'edit'               => esc_html__( 'Edit', 'woo-category-slider-grid' ),

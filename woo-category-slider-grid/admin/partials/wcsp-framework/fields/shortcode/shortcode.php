@@ -63,7 +63,7 @@ if ( ! class_exists( 'SP_WCS_Field_shortcode' ) ) {
 					'</a>'
 				) . '</p>
 					<div class="shortcode-wrap">
-					<div class="selectable">[woocatslider id="' . esc_attr( $post_id ) . '"]</div></div>
+					<div class="selectable">[renocatslider id="' . esc_attr( $post_id ) . '"]</div></div>
 					<div class="wcsp-after-copy-text"><i class="fa fa-check-circle"></i>  ' . esc_html__( 'Shortcode  Copied to Clipboard!', 'woo-category-slider-grid' ) . '</div>
 				</div>';
 
@@ -96,7 +96,7 @@ if ( ! class_exists( 'SP_WCS_Field_shortcode' ) ) {
 					echo '</ul>';
 
 					echo '<div class="sp_wcsp-notice-button">';
-					echo '<a class="sp_wcsp-open-live-demo" href="https://shapedplugin.com/woocategory/#pricing" target="_blank">';
+					echo '<a class="sp_wcsp-open-live-demo" href="https://shapedplugin.com/reno-product-category/#pricing" target="_blank">';
 					echo esc_html__( 'Upgrade to Pro Now', 'woo-category-slider-grid' ) . ' <i class="wcsp-icon-shuttle_2285485-1"></i>';
 					echo '</a>';
 					echo '</div>';
@@ -109,7 +109,7 @@ if ( ! class_exists( 'SP_WCS_Field_shortcode' ) ) {
 					<p>' .
 					sprintf(
 						/* translators: 1: start strong tag, 2: close tag. */
-						esc_html__( 'WooCategory has seamless integration with Gutenberg, Classic Editor, %1$sElementor%2$s, Divi, Bricks, Beaver, Oxygen, WPBakery Builder, etc.', 'woo-category-slider-grid' ),
+						esc_html__( 'Reno Product Category has seamless integration with Gutenberg, Classic Editor, %1$sElementor%2$s, Divi, Bricks, Beaver, Oxygen, WPBakery Builder, etc.', 'woo-category-slider-grid' ),
 						'<strong>',
 						'</strong>'
 					) . '
