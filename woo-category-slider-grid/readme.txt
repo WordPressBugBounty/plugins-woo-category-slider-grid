@@ -2,11 +2,11 @@
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: WooCommerce category slider, product category, Product Category Showcase, shop category grid, category carousel
 Requires at least: 5.0
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 WC requires at least: 4.5
-WC tested up to: 10.9.4
+WC tested up to: 11.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -154,6 +154,11 @@ Yes, Reno Product Category is compatible with most standard WordPress themes tha
 
 
 == Changelog ==
+
+= 1.7.1 – August 21, 2026 =
+* Fixed: The Reno Product Category block now works correctly in WordPress 7.1 iframed editor.
+* Tested: WordPress 7.1 compatibility.
+* Tested: Woocommerce 11.0.1 compatibility.
 
 = 1.7.0 - Jul 30, 2026 =
 * New: The plugin has been rebranded from 'WooCategory' to 'Reno Product Category'.

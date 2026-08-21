@@ -232,12 +232,16 @@ div#sp_wcsp_shortcode_options {
 
 
 /* Gutenberg selector field style */
-.spwcs-gutenberg-shortcode.editor-styles-wrapper {
+.spwcs-gutenberg-shortcode {
     padding: 0;
     line-height: 24px;
 }
 
-.spwcs-gutenberg-shortcode.editor-styles-wrapper::after {
+.spwcs-gutenberg-shortcode select {
+    padding: 8px 12px;
+}
+
+.spwcs-gutenberg-shortcode::after {
     display: none;
 }
 
@@ -245,11 +249,10 @@ div#sp_wcsp_shortcode_options {
     font-size: 20px;
 }
 
-.editor-styles-wrapper .spwcs-gutenberg-shortcode img {
+.spwcs-gutenberg-shortcode img {
     box-shadow: none;
 }
 
-.block-editor-page .editor-styles-wrapper select.spwcs-shortcode-selector,
 .block-editor-page select.spwcs-shortcode-selector,
 .block-editor-page select.spwcs-shortcode-selector:focus,
 .block-editor-page select.spwcs-shortcode-selector:focus-visible {
@@ -260,7 +263,7 @@ div#sp_wcsp_shortcode_options {
     padding-right: 25px;
 }
 
-.block-editor-page .editor-styles-wrapper .sp-wcsp-slider-area i.fa {
+.block-editor-page .sp-wcsp-slider-area i.fa {
     font-style: normal;
 }
 

@@ -125,4 +125,9 @@
         // For Deprecated widget.
         elementorFrontend.hooks.addAction('frontend/element_ready/sp_woo_category_slider_free_shortcode.default', SPCategorySliderInit);
     });
+
+    // Expose the initializer so consumers that inject markup after page load can
+    // re-run them. The block editor canvas, which is an iframe with its own window,
+    // uses this after every server side render of the shortcode block.
+    window.SPCategorySliderInit = SPCategorySliderInit;
 })(jQuery);

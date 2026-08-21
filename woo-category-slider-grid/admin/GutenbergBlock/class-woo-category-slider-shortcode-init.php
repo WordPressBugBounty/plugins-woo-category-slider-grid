@@ -34,27 +34,67 @@ if ( ! class_exists( 'Woo_Category_Slider_Gutenberg_Block_Init' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'init', array( $this, 'woo_category_slider_gutenberg_shortcode_block' ) );
-			add_action( 'enqueue_block_editor_assets', array( $this, 'woo_category_slider_block_editor_assets' ) );
+			add_action( 'enqueue_block_assets', array( $this, 'woo_category_slider_block_assets' ) );
 		}
 
 		/**
-		 * Register block editor script for backend.
+		 * Register block assets.
+		 *
+		 * Assets are enqueued in both the editor and the frontend, but the
+		 * is_admin() guard ensures that the front end only loads them when
+		 * a shortcode is actually present on the page.
+		 *
+		 * WordPress 7.1 uses an iframed editor for the post content. The
+		 * iframe document is built only from the handles collected on
+		 * enqueue_block_assets, so all assets that the block needs at
+		 * runtime must be registered here.
 		 */
-		public function woo_category_slider_block_editor_assets() {
-			wp_enqueue_script(
-				'woo-category-slider-shortcode-block',
-				plugins_url( '/GutenbergBlock/build/index.js', __DIR__ ),
-				array( 'jquery' ),
-				SP_WCS_VERSION,
+		public function woo_category_slider_block_assets() {
+			if ( ! is_admin() ) {
+				return;
+			}
+
+			$assets_url = SP_WCS_URL . 'public/js/';
+			$version    = defined( 'SP_WCS_VERSION' ) ? SP_WCS_VERSION : '1.0.0';
+			$suffix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+			// Register scripts first.
+			wp_register_script(
+				'sp-wcs-swiper-js',
+				$assets_url . 'swiper' . $suffix . '.js',
+				array(),
+				$version,
 				true
 			);
 
-			/**
-			* Register block editor css file enqueue for backend.
-			*/
+			wp_register_script(
+				'sp-wcs-swiper-config',
+				$assets_url . 'swiper-config' . $suffix . '.js',
+				array( 'sp-wcs-swiper-js', 'jquery' ),
+				$version,
+				true
+			);
+
+			wp_register_script(
+				'sp-wcs-preloader',
+				$assets_url . 'preloader' . $suffix . '.js',
+				array( 'jquery' ),
+				$version,
+				true
+			);
+
+			// Enqueue Swiper, Font Awesome, and plugin styles.
+			wp_enqueue_style( 'wcsp-fontello', SP_WCS_URL . 'admin/css/fontello.min.css', array(), SP_WCS_VERSION, 'all' );
+			wp_enqueue_style( 'woo-category-slider-grid-admin' );
 			wp_enqueue_style( 'sp-wcs-swiper' );
 			wp_enqueue_style( 'sp-wcs-font-awesome' );
 			wp_enqueue_style( 'woo-category-slider-grid' );
+
+			// Enqueue Swiper JS and plugin scripts in correct order.
+			// Swiper library must be loaded before the config script.
+			wp_enqueue_script( 'sp-wcs-swiper-js' );
+			wp_enqueue_script( 'sp-wcs-swiper-config' );
+			wp_enqueue_script( 'sp-wcs-preloader' );
 		}
 
 		/**
@@ -91,17 +131,25 @@ if ( ! class_exists( 'Woo_Category_Slider_Gutenberg_Block_Init' ) ) {
 		 */
 		public function woo_category_slider_gutenberg_shortcode_block() {
 
+			$asset_file = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+
 			/**
 			 * Register block editor js file enqueue for backend.
 			 */
-			wp_register_script( 'sp-wcs-gb_swiper-config', SP_WCS_URL . 'public/js/swiper-config' . $this->suffix . '.js', array( 'jquery' ), SP_WCS_VERSION, true );
+			wp_register_script(
+				'woo-category-slider-shortcode-block',
+				plugins_url( '/GutenbergBlock/build/index.js', __DIR__ ),
+				$asset_file['dependencies'],
+				$asset_file['version'],
+				true
+			);
+
 			wp_localize_script(
-				'sp-wcs-gb_swiper-config',
+				'woo-category-slider-shortcode-block',
 				'sp_woo_category_slider_load_script',
 				array(
 					'ajax_url'      => admin_url( 'admin-ajax.php' ),
 					'path'          => SP_WCS_URL,
-					'loadScript'    => SP_WCS_URL . 'public/js/swiper-config.js',
 					'url'           => admin_url( 'post-new.php?post_type=sp_wcslider' ),
 					'shortCodeList' => $this->woo_category_slider_pro_post_list(),
 				)
@@ -136,13 +184,7 @@ if ( ! class_exists( 'Woo_Category_Slider_Gutenberg_Block_Init' ) ) {
 							'preview' => true,
 						),
 					),
-					// Enqueue blocks.editor.build.js in the editor only.
-					'editor_script'   => array(
-						'sp-wcs-swiper-js',
-						'sp-wcs-gb_swiper-config',
-					),
-					// Enqueue blocks.editor.build.css in the editor only.
-					'editor_style'    => array(),
+					'editor_script'   => 'woo-category-slider-shortcode-block',
 					'render_callback' => array( $this, 'woo_category_slider_pro_render_shortcode' ),
 				)
 			);
