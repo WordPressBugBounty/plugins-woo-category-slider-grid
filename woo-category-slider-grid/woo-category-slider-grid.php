@@ -9,7 +9,7 @@
  * Plugin Name:       Reno Product Category (formerly WooCategory)
  * Plugin URI:        https://shapedplugin.com/reno-product-category/?ref=115
  * Description:       Reno Product Category helps you display WooCommerce Categories aesthetically in a Slider, Grid, Hierarchy Grid, or Inline layouts. You can manage and show your product categories with thumbnail, child category (beside), description, shop now button with an easy to use shortcode generator interface with many handy options.
- * Version:           1.7.1
+ * Version:           1.7.2
  * Author:            ShapedPlugin LLC
  * Author URI:        https://shapedplugin.com/
  * License:           GPL-2.0+
@@ -65,7 +65,7 @@ class Woo_Category_Slider {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $version = '1.7.1';
+	protected $version = '1.7.2';
 
 	/**
 	 * Holds class object

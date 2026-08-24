@@ -4,7 +4,7 @@ Tags: WooCommerce category slider, product category, Product Category Showcase, 
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 WC requires at least: 4.5
 WC tested up to: 11.0.1
 License: GPLv2 or later
@@ -154,6 +154,9 @@ Yes, Reno Product Category is compatible with most standard WordPress themes tha
 
 
 == Changelog ==
+
+= 1.7.2 – August 24, 2026 =
+* Fixed: The JavaScript syntax error (missing comma) in minified file that prevented slider initialization.
 
 = 1.7.1 – August 21, 2026 =
 * Fixed: The Reno Product Category block now works correctly in WordPress 7.1 iframed editor.
