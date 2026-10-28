@@ -9,7 +9,7 @@
  * Plugin Name:       Reno Product Category (formerly WooCategory)
  * Plugin URI:        https://shapedplugin.com/reno-product-category/?ref=115
  * Description:       Reno Product Category helps you display WooCommerce Categories aesthetically in a Slider, Grid, Hierarchy Grid, or Inline layouts. You can manage and show your product categories with thumbnail, child category (beside), description, shop now button with an easy to use shortcode generator interface with many handy options.
- * Version:           1.7.2
+ * Version:           1.7.3
  * Author:            ShapedPlugin LLC
  * Author URI:        https://shapedplugin.com/
  * License:           GPL-2.0+
@@ -20,7 +20,7 @@
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * WC requires at least: 4.5
- * WC tested up to: 11.0.1
+ * WC tested up to: 11.2.1
  */
 
 // If this file is called directly, abort.
@@ -65,7 +65,7 @@ class Woo_Category_Slider {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $version = '1.7.2';
+	protected $version = '1.7.3';
 
 	/**
 	 * Holds class object
@@ -207,7 +207,6 @@ class Woo_Category_Slider {
 			$this->loader->add_action( 'admin_notices', $plugin_admin, 'admin_notice' );
 		}
 		$this->loader->add_action( 'wp_ajax_dismiss_woo_notice', $plugin_admin, 'dismiss_woo_notice' );
-		$this->loader->add_action( 'before_woocommerce_init', $plugin_admin, 'declare_compatibility_with_woo_hpos_feature' );
 
 		if ( version_compare( $GLOBALS['wp_version'], '5.3', '>=' ) ) {
 			// Gutenberg block.
@@ -289,7 +288,7 @@ if ( ! function_exists( 'woocatslider' ) ) {
 	 * @return void
 	 */
 	function woocatslider( $post_id ) {
-		echo do_shortcode( '[woocatslider id="' . $post_id . '"]' );
+		echo do_shortcode( '[woocatslider id="' . absint( $post_id ) . '"]' );
 	}
 }
 
@@ -317,6 +316,22 @@ function run_woo_category_slider() {
 		include_once plugin_dir_path( __FILE__ ) . '/admin/partials/notices/ShapedPlugin_Offer_Banner.php';
 	}
 }
+
+/*
+ * Declared before the Pro-active gate below, and deliberately so: WooCommerce
+ * reads these declarations during its own boot, and an active plugin that
+ * declares nothing is listed as incompatible on the HPOS screen. The old
+ * registration lived in the loader -> Woo_Category_Slider_Admin, neither of
+ * which loads while this plugin stands down next to Pro.
+ */
+add_action(
+	'before_woocommerce_init',
+	function () {
+		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+		}
+	}
+);
 
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 if ( ! ( is_plugin_active( 'woo-category-slider-pro/woo-category-slider-pro.php' ) || is_plugin_active_for_network( 'woo-category-slider-pro/woo-category-slider-pro.php' ) ) ) {

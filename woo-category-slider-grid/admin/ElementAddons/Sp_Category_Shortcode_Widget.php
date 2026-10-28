@@ -135,7 +135,11 @@ class Sp_Category_Shortcode_Widget extends \Elementor\Widget_Base {
 			return;
 		}
 
-		$generator_id = $sp_wcsp_shortcode;
+		$generator_id = absint( $sp_wcsp_shortcode );
+
+		if ( ! $generator_id ) {
+			return;
+		}
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 			$post_id = $generator_id;

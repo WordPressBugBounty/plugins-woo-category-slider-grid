@@ -190,7 +190,9 @@ class Woo_Category_Slider_Shortcode {
 		 * Child Category.
 		 */
 		switch ( $child_categories ) {
+			case 'parent_and_child':
 			case 'beside_parent':
+				// Fetch every level of category (parent and child) as flat slides.
 				$parent_cat = array();
 				break;
 			default:
@@ -217,33 +219,35 @@ class Woo_Category_Slider_Shortcode {
 		if ( 'slider' === $layout_preset || 'carousel' === $layout_preset ) {
 			wp_enqueue_script( 'sp-wcs-swiper-js' );
 			wp_enqueue_script( 'sp-wcs-swiper-config' );
-			$data_slider = 'data-slider=\'{
-				"auto_play": ' . $auto_play . ',
-				"auto_play_speed": ' . $auto_play_speed . ',
-				"standard_scroll_speed": ' . $standard_scroll_speed . ',
-				"pause_on_hover": ' . $pause_on_hover . ',
-				"auto_height": ' . $auto_height . ',
-				"infinite_loop": ' . $infinite_loop . ',
-				"large_desktop": ' . $large_desktop . ',
-				"space_between_cat": ' . $space_between_cat . ',
-				"large_desktop_scroll": ' . $large_desktop_scroll . ',
-				"pagination": "' . $pagination . '",
-				"navigation": "' . $navigation . '",
-				"touch_swipe": ' . $touch_swipe . ',
-				"mouse_wheel": ' . $slider_mouse_wheel . ',
-				"mouse_draggable": ' . $slider_mouse_draggable . ',
-				"freeMode": ' . $free_mode . ',
-				"breakpoints": {
-					"desktop": ' . $desktop . ',
-					"laptop": ' . $laptop . ',
-					"tablet": ' . $tablet . ',
-					"mobile": ' . $mobile . ',
-					"desktop_scroll": ' . $desktop_scroll . ',
-					"laptop_scroll": ' . $laptop_scroll . ',
-					"tablet_scroll": ' . $tablet_scroll . ',
-					"mobile_scroll": ' . $mobile_scroll . '
-				}
-			}\'';
+			// Cast every value so admin-set meta can never break out of the attribute.
+			$slider_data = array(
+				'auto_play'             => (bool) $auto_play,
+				'auto_play_speed'       => absint( $auto_play_speed ),
+				'standard_scroll_speed' => absint( $standard_scroll_speed ),
+				'pause_on_hover'        => (bool) $pause_on_hover,
+				'auto_height'           => (bool) $auto_height,
+				'infinite_loop'         => (bool) $infinite_loop,
+				'large_desktop'         => (float) $large_desktop,
+				'space_between_cat'     => (int) $space_between_cat,
+				'large_desktop_scroll'  => max( 1, absint( $large_desktop_scroll ) ),
+				'pagination'            => 'show' === $pagination ? 'show' : 'hide',
+				'navigation'            => 'show' === $navigation ? 'show' : 'hide',
+				'touch_swipe'           => (bool) $touch_swipe,
+				'mouse_wheel'           => 'true' === $slider_mouse_wheel,
+				'mouse_draggable'       => 'true' === $slider_mouse_draggable,
+				'freeMode'              => 'true' === $free_mode,
+				'breakpoints'           => array(
+					'desktop'        => (float) $desktop,
+					'laptop'         => (float) $laptop,
+					'tablet'         => (float) $tablet,
+					'mobile'         => (float) $mobile,
+					'desktop_scroll' => max( 1, absint( $desktop_scroll ) ),
+					'laptop_scroll'  => max( 1, absint( $laptop_scroll ) ),
+					'tablet_scroll'  => max( 1, absint( $tablet_scroll ) ),
+					'mobile_scroll'  => max( 1, absint( $mobile_scroll ) ),
+				),
+			);
+			$data_slider = 'data-slider="' . esc_attr( wp_json_encode( $slider_data ) ) . '"';
 		}
 
 		/**
@@ -257,7 +261,9 @@ class Woo_Category_Slider_Shortcode {
 			case 'carousel':
 			case 'slider':
 				$wrapper_class   .= ' swiper-wrapper';
-				$container_class .= ' swiper-container';
+				// Swiper 9+ styles the `.swiper` class only, keep `swiper-container`
+				// for backward compatibility with older Swiper copies and custom CSS.
+				$container_class .= ' swiper swiper-container';
 				$item_class      .= ' swiper-slide';
 				break;
 		}
@@ -267,9 +273,9 @@ class Woo_Category_Slider_Shortcode {
 			$nav_top_right = 'nav-top-right';
 		}
 		// Slider Area Starts.
-		$output .= '<div id="sp-wcsp-slider-area-' . $post_id . '" class="sp-wcsp-slider-area sp-wcsp-slider-area-' . $post_id . ' ' . $nav_top_right . ' content-position-' . $content_position . $area_class . '" ' . $data_slider . '>';
+		$output .= '<div id="sp-wcsp-slider-area-' . esc_attr( $post_id ) . '" class="' . esc_attr( 'sp-wcsp-slider-area sp-wcsp-slider-area-' . $post_id . ' ' . $nav_top_right . ' content-position-' . $content_position . $area_class ) . '" ' . $data_slider . '>';
 		if ( $section_title ) {
-			$output .= '<h3 class="sp-wcsp-section-title">' . $title . '</h3>';
+			$output .= '<h3 class="sp-wcsp-section-title">' . esc_html( $title ) . '</h3>';
 		}
 
 		/**

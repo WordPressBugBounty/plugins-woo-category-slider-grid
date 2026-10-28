@@ -102,7 +102,7 @@ class Woo_Category_Slider_Admin {
 		$post_id    = isset( $_GET['post'] ) ? absint( $_GET['post'] ) : absint( $_POST['post'] );
 		$capability = apply_filters( 'sp_wcslider_ui_permission', 'manage_options' );
 		$show_ui    = current_user_can( $capability ) ? true : false;
-		if ( ! $show_ui && get_post_type( $post_id ) !== 'sp_wcslider' ) {
+		if ( ! $show_ui || 'sp_wcslider' !== get_post_type( $post_id ) || ! current_user_can( 'edit_post', $post_id ) ) {
 			wp_die( esc_html__( 'No shortcode to duplicate has been supplied!', 'woo-category-slider-grid' ) );
 		}
 
@@ -409,8 +409,16 @@ class Woo_Category_Slider_Admin {
 			$woo_install = new SP_WCS_WOO();
 
 			if ( 'install' === $action ) {
+				check_admin_referer( 'sp-wcsp-woo-install' );
+				if ( ! current_user_can( 'activate_plugins' ) ) {
+					wp_die( esc_html__( 'Sorry, you are not allowed to activate plugins.', 'woo-category-slider-grid' ) );
+				}
 				$woo_install->install_plugin( 'https://downloads.wordpress.org/plugin/woocommerce.zip' );
 			} elseif ( 'activate' === $action ) {
+				check_admin_referer( 'sp-wcsp-woo-activate' );
+				if ( ! current_user_can( 'activate_plugins' ) ) {
+					wp_die( esc_html__( 'Sorry, you are not allowed to activate plugins.', 'woo-category-slider-grid' ) );
+				}
 				$woo_install->activate_woo_plugin( $plugin );
 			}
 
@@ -436,26 +444,10 @@ class Woo_Category_Slider_Admin {
 	 * @return void
 	 */
 	public function woo_notice_message( $type ) {
-		// Get the actual link.
-		$scheme = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] ) ||
-			( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && 'https' === $_SERVER['HTTP_X_FORWARDED_PROTO'] )
-			? 'https' : 'http';
-
-		// Sanitize host and request URI.
-		$host        = isset( $_SERVER['HTTP_HOST'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_HOST'] ) ) : '';
-		$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
-
-		// Validate URL.
-		if ( ! empty( $host ) && ! empty( $request_uri ) ) {
-			$actual_link = esc_url( "{$scheme}://{$host}{$request_uri}" );
-		} else {
-			$actual_link = '';
-		}
-
-		$sign = empty( $_GET ) ? '?' : '&'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only checking query vars for building URL, no sensitive action
+		$woo_action_url = wp_nonce_url( add_query_arg( 'sp-wcsp-woo', $type ), 'sp-wcsp-woo-' . $type );
 
 		echo '<div class="updated notice is-dismissible notice-sp-wcsp-woo" data-nonce="' . esc_attr( wp_create_nonce( 'dismiss-wcsp-woo-notice' ) ) . '"><p>';
-		echo wp_kses_post( 'Please ' . $type . ' <a href="' . esc_url( $actual_link . $sign . 'sp-wcsp-woo=' . $type ) . '">WooCommerce</a> plugin to make the <b>Reno Product Category</b> work.', 'woo-category-slider-grid' );
+		echo wp_kses_post( 'Please ' . $type . ' <a href="' . esc_url( $woo_action_url ) . '">WooCommerce</a> plugin to make the <b>Reno Product Category</b> work.', 'woo-category-slider-grid' );
 		echo '</p></div>';
 	}
 
@@ -475,19 +467,6 @@ class Woo_Category_Slider_Admin {
 
 		update_option( 'sp-wcsp-woo-notice-dismissed', 1 );
 		die;
-	}
-
-	/**
-	 * Declare the compatibility of WooCommerce High-Performance Order Storage (HPOS) feature.
-	 *
-	 * @since 1.4.15
-	 *
-	 * @return void
-	 */
-	public function declare_compatibility_with_woo_hpos_feature() {
-		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', 'woo-category-slider-grid/woo-category-slider-grid.php', true );
-		}
 	}
 
 	/**

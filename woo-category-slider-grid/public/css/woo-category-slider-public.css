@@ -118,7 +118,8 @@
 	outline: none;
 }
 
-.swiper-container-horizontal>.sp-wcsp-pagination.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+.swiper-container-horizontal>.sp-wcsp-pagination.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-horizontal>.sp-wcsp-pagination.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
 	-webkit-transform: translateX(0);
 	-ms-transform: translateX(0);
 	transform: translateX(0);

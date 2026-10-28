@@ -383,6 +383,11 @@ if ( ! class_exists( 'SP_WCS_Metabox' ) ) {
 		 */
 		public function save_meta_box( $post_id, $post ) {
 
+			// Only save the metabox for its own post types when the user can edit the post.
+			if ( ! in_array( $post->post_type, $this->post_type, true ) || ! current_user_can( 'edit_post', $post_id ) ) {
+				return;
+			}
+
 			if ( wp_verify_nonce( spf_get_var( 'spf_metabox_nonce' ), 'spf_metabox_nonce' ) ) {
 
 				$errors  = array();

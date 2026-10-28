@@ -421,10 +421,14 @@ if ( ! class_exists( 'SP_WCS_Options' ) ) {
 										$sanitized['sp_wcsp_settings'][ $sub_key ] = (int) $sub_val;
 										break;
 
-									// Custom CSS/JS – strip tags completely.
+									// Custom CSS/JS – only from users who may write unfiltered HTML; strip tags completely.
 									case 'wcsp_custom_css':
 									case 'custom_js':
-										$sanitized['sp_wcsp_settings'][ $sub_key ] = wp_strip_all_tags( $sub_val );
+										if ( current_user_can( 'unfiltered_html' ) ) {
+											$sanitized['sp_wcsp_settings'][ $sub_key ] = wp_strip_all_tags( $sub_val );
+										} else {
+											$sanitized['sp_wcsp_settings'][ $sub_key ] = isset( $this->options[ $sub_key ] ) ? $this->options[ $sub_key ] : '';
+										}
 										break;
 
 									// Fallback for unexpected keys.

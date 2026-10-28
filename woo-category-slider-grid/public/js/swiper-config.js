@@ -7,14 +7,23 @@
 
             var _this = $(this),
                 sp_wcsp_id = $(this).attr('id');
-            if (_this.data('slider') && !$('#' + sp_wcsp_id + ' .sp-wcsp-slider-section').hasClass('swiper-container-initialized')) {
+            // Swiper 9+ applies the `swiper-initialized` class, while older
+            // versions apply `swiper-container-initialized`.
+            if (_this.data('slider') && !$('#' + sp_wcsp_id + ' .sp-wcsp-slider-section').hasClass('swiper-initialized') && !$('#' + sp_wcsp_id + ' .sp-wcsp-slider-section').hasClass('swiper-container-initialized')) {
                 var wcspSliderData = _this.data('slider');
 
                 var wcspSlider = new Swiper('#' + sp_wcsp_id + ' .swiper-container', {
                     // Optional parameters
                     loop: wcspSliderData.infinite_loop,
                     speed: wcspSliderData.standard_scroll_speed,
-                    autoplay: wcspSliderData.auto_play ? ({ delay: wcspSliderData.auto_play_speed, disableOnInteraction: false }) : '',
+                    autoplay: wcspSliderData.auto_play ? ({
+                        delay: wcspSliderData.auto_play_speed,
+                        disableOnInteraction: false,
+                        // Autoplay rewinds to the first slide by default once the
+                        // last slide is reached; stop at the end instead when the
+                        // infinite loop option is turned off.
+                        stopOnLastSlide: !wcspSliderData.infinite_loop,
+                    }) : '',
                     slidesPerView: wcspSliderData.breakpoints.mobile,
                     slidesPerGroup: wcspSliderData.breakpoints.mobile_scroll,
                     spaceBetween: wcspSliderData.space_between_cat,
@@ -22,7 +31,9 @@
                     autoHeight: wcspSliderData.auto_height,
                     allowTouchMove: wcspSliderData.touch_swipe,
                     mousewheel: wcspSliderData.mouse_wheel,
-                    freeMode: wcspSliderData.freeMode,
+                    // Swiper 7+ expects an object with an `enabled` flag; a plain
+                    // boolean is silently ignored by recent Swiper versions.
+                    freeMode: wcspSliderData.freeMode ? { enabled: true } : false,
                     grabCursor: true,
                     allowTouchMove: wcspSliderData.mouse_draggable,
                     navigation: wcspSliderData.navigation == 'show' || wcspSliderData.navigation == 'hide_mobile' ? ({

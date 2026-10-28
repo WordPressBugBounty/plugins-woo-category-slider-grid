@@ -4,9 +4,9 @@ Tags: WooCommerce category slider, product category, Product Category Showcase, 
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 WC requires at least: 4.5
-WC tested up to: 11.0.1
+WC tested up to: 11.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -154,6 +154,14 @@ Yes, Reno Product Category is compatible with most standard WordPress themes tha
 
 
 == Changelog ==
+
+= 1.7.3 – Oct 28, 2026 =
+* Fixed: The Parent and Child category type was showing only parent categories.
+* Fixed: Autoplay jumping back to the first slide when Infinite Loop is turned off.
+* Fixed: A PHP notice on the frontend when no custom CSS is saved.
+* Improved: The plugin security has been improved.
+* Updated: The Swiper slider library to version 14.3.0.
+* Tested: Woocommerce 11.2.1 compatibility.
 
 = 1.7.2 – August 24, 2026 =
 * Fixed: The JavaScript syntax error (missing comma) in minified file that prevented slider initialization.

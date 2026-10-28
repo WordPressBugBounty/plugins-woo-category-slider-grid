@@ -70,39 +70,12 @@ if ( ! function_exists( 'spf_get_icons' ) ) {
 				array(
 					'success' => false,
 					'error'   => esc_html__( 'Error while saving.', 'woo-category-slider-grid' ),
-					'debug'   => $_REQUEST,
 				)
 			);
 		}
 	}
 	add_action( 'wp_ajax_spf-get-icons', 'spf_get_icons' );
 }
-
-if ( ! function_exists( 'spf_reset_ajax' ) ) {
-	/**
-	 *
-	 * Reset Ajax
-	 *
-	 * @since 1.0.0
-	 * @version 1.0.0
-	 */
-	function spf_reset_ajax() {
-		$capability = apply_filters( 'sp_wcslider_ui_permission', 'manage_options' );
-		if ( ! empty( $_POST['unique'] ) && ! empty( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'spf_backup_nonce' ) && current_user_can( $capability ) ) {
-			delete_option( sanitize_text_field( wp_unslash( $_POST['unique'] ) ) );
-			wp_send_json_success( array( 'success' => true ) );
-		}
-		wp_send_json_error(
-			array(
-				'success' => false,
-				'error'   => esc_html__( 'Error while saving.', 'woo-category-slider-grid' ),
-				'debug'   => $_REQUEST,
-			)
-		);
-	}
-	add_action( 'wp_ajax_spf-reset', 'spf_reset_ajax' );
-}
-
 
 if ( ! function_exists( 'spf_set_icons' ) ) {
 	/**

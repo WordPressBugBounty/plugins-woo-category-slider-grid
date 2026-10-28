@@ -176,7 +176,8 @@ class Woo_Category_Slider_Public {
 	 */
 	public static function load_dynamic_style( $found_generator_id, $shortcode_meta = '' ) {
 		$dynamic_style = '';
-		$custom_css    = trim( html_entity_decode( get_option( 'sp_wcsp_settings' )['wcsp_custom_css'] ) );
+		$settings_opt  = get_option( 'sp_wcsp_settings' );
+		$custom_css    = ! empty( $settings_opt['wcsp_custom_css'] ) ? trim( html_entity_decode( $settings_opt['wcsp_custom_css'] ) ) : '';
 		// If multiple shortcode found in the page.
 		if ( is_array( $found_generator_id ) ) {
 			foreach ( $found_generator_id as $post_id ) {
