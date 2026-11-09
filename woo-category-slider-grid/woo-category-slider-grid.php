@@ -9,7 +9,7 @@
  * Plugin Name:       Reno Product Category (formerly WooCategory)
  * Plugin URI:        https://shapedplugin.com/reno-product-category/?ref=115
  * Description:       Reno Product Category helps you display WooCommerce Categories aesthetically in a Slider, Grid, Hierarchy Grid, or Inline layouts. You can manage and show your product categories with thumbnail, child category (beside), description, shop now button with an easy to use shortcode generator interface with many handy options.
- * Version:           1.7.3
+ * Version:           1.7.4
  * Author:            ShapedPlugin LLC
  * Author URI:        https://shapedplugin.com/
  * License:           GPL-2.0+
@@ -17,10 +17,10 @@
  * Text Domain:       woo-category-slider-grid
  * Domain Path:       /languages
  * Requires Plugins: woocommerce
- * Requires at least: 5.0
+ * Requires at least: 5.3
  * Requires PHP: 7.0
  * WC requires at least: 4.5
- * WC tested up to: 11.2.1
+ * WC tested up to: 11.2.2
  */
 
 // If this file is called directly, abort.
@@ -65,7 +65,7 @@ class Woo_Category_Slider {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $version = '1.7.3';
+	protected $version = '1.7.4';
 
 	/**
 	 * Holds class object
@@ -307,13 +307,22 @@ function run_woo_category_slider() {
 	$plugin = Woo_Category_Slider::init();
 	$plugin->run();
 
-	if ( ! defined( 'SHAPEDPLIUGIN_OFFER_BANNER_LOADED' ) ) {
-		define( 'SHAPEDPLIUGIN_OFFER_BANNER_LOADED', true );
-
+	if ( is_admin() ) {
 		/**
-		 * The class responsible for generating admin offer banner.
+		 * Shared ShapedPlugin BFCM notice. Only one notice renders even when
+		 * several ShapedPlugin free plugins are active.
 		 */
-		include_once plugin_dir_path( __FILE__ ) . '/admin/partials/notices/ShapedPlugin_Offer_Banner.php';
+		require_once SP_WCS_PATH . 'admin/partials/notices/shapedplugin-bfcm-notice.php';
+
+		ShapedPlugin_BFCM_Notice_2026::register(
+			array(
+				'slug'       => 'woo-category-slider-grid',
+				'name'       => 'Reno Product Category Pro',
+				'image'      => SP_WCS_URL . 'admin/img/offer-banner/bfcm-notice-2026.webp',
+				'link'       => 'https://shapedplugin.com/reno-product-category/?utm_source=dashboard&utm_medium=rpc_dealbutton&utm_campaign=bfcm26#pricing',
+				'post_types' => array( 'sp_wcslider' ),
+			)
+		);
 	}
 }
 

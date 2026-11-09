@@ -1,12 +1,12 @@
 === Product Category Slider & Grid for WooCommerce – Reno Product Category ===
 Contributors: shapedplugin, rubel_miah, shamimmiashuhagh, khalilu
 Tags: WooCommerce category slider, product category, Product Category Showcase, shop category grid, category carousel
-Requires at least: 5.0
+Requires at least: 5.3
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 1.7.3
+Stable tag: 1.7.4
 WC requires at least: 4.5
-WC tested up to: 11.2.1
+WC tested up to: 11.2.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -154,6 +154,11 @@ Yes, Reno Product Category is compatible with most standard WordPress themes tha
 
 
 == Changelog ==
+
+= 1.7.4 – Nov 09, 2026 =
+* Improved: The expired offer banner has been removed from the admin dashboard.
+* Fixed: The slider layout breaking in older browsers that do not support CSS nesting.
+* Tested: WooCommerce 11.2.2 compatibility.
 
 = 1.7.3 – Oct 28, 2026 =
 * Fixed: The Parent and Child category type was showing only parent categories.
